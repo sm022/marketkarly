@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="./css/mainpage.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
+  <title>메인페이지</title>
+</head>
+<body>
+
+  <div class="top-banner">상단 배너</div>
+  <header class="header">헤더</header>
+
+
+   <!-- 이벤트 배너 -->
+  <div class="event">
+    <h2 class="a11y-hidden">이벤트 배너</h2>
+    <div class="event-banner swiper">
+      <img src="/client/assets/banner/benefit_banner.png" alt="이벤트 베너" />
+    </div>
+
+    <!-- 이벤트 버튼 -->
+    <div class="event-button-wrapper">
+      <button type="button" class="event-button event-button-prev">이전 이벤트 보기</button>
+      <button type="button" class="event-button event-button-next">다음 이벤트 보기</button>
+    </div>
+    
+  </div>
+
+  <main class="main">
+
+    <div class="main-content">
+    
+      <!-- 추천 상품 목록 -->
+      <section class="recommend-items-list">
+        <h2 class="a11y-hidden">추천 상품 목록</h2>
+        <h2 class="items-list-title">이 상품 어때요?</h2>
+
+        <!-- 추천 상품 리스트 -->
+        <div class="item-container swiper">
+
+          <div class="item-card recommend1">
+            <div class="item">
+              <p class="item-thumbnail">
+                <img src="/client/assets/item/tangtang_main.png" alt="추천 상품 이미지 : 풀무원 탱탱 쫄면 4개입 4980원" />
+              </p>
+              <div class="cart-icon">
+                <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+              </div>
+            </div>
+            <div class="item-detail">
+              <p class="item-title">[풀무원] 탱탱 쫄면(4개입)</p>
+              <p class="discount-price"><span class="discount"></span><span class="item-price">4,980원</span></p>
+              <del class="origin-price"></del>
+            </div>
+          </div>
+
+          <div class="item-card recommend2">
+            <div class="item">
+              <p class="item-thumbnail">
+                <img src="/client/assets/item/sun_cushion_main.png" alt="추천 상품 이미지 : 온더바디 죠르디 시카 자석 선쿠션 32500원" />
+              </p>
+              <div class="cart-icon">
+                <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+              </div>
+            </div>
+            <div class="item-detail">
+              <p class="item-title">[온더바디] 죠르디 시카 자석 선쿠션</p>
+              <p class="discount-price"><span class="discount"></span><span class="item-price">32,500원</span></p>
+              <del class="origin-price"></del>
+            </div>
+          </div>
+
+          <div class="item-card recommend3">
+            <div class="item">
+              <p class="item-thumbnail">
+                <img src="/client/assets/item/rice_main.png" alt="추천 상품 이미지 : 유기농 밀키퀸 현미 4kg 25000원" />
+              </p>
+              <div class="cart-icon">
+                <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+              </div>
+            </div>
+            <div class="item-detail">
+              <p class="item-title">유기농 밀키퀸 현미 4kg</p>
+              <p class="discount-price"><span class="discount"></span><span class="item-price">25,000원</span></p>
+              <del class="origin-price"></del>
+            </div>
+          </div>
+
+          <div class="item-card recommend4">
+            <div class="item">
+              <p class="item-thumbnail">
+                <img src="/client/assets/item/baby_cleanser_main.png" alt="추천 상품 이미지 : 프로쉬 베이비 세탁세제 24% 할인가 18900원" />
+              </p>
+              <div class="cart-icon">`
+                <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+              </div>
+            </div>
+            <div class="item-detail">
+              <p class="item-title">[프로쉬] 베이비 세탁세제</p>
+              <p class="discount-price"><span class="discount">24% </span><span class="item-price">18,900원</span></p>
+              <del class="origin-price">24,000</del>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 추천 상품 버튼 -->
+          <button type="button" class="recommend-item-button">다음 추천 상품 보기</button>
+     
+      </section>
+
+      <!-- 광고 배너 -->
+      <div class="banner">
+        <h2 class="a11y-hidden">광고 배너</h2>
+        <div class="line-banner">
+          <img src="/client/assets/banner/line-banner.png" alt="광고 베너" />
+        </div>
+      </div>
+
+      <!-- 특가 상품 목록 -->
+      <section class="sale-items-list">
+        <h2 class="a11y-hidden">특가 상품 목록</h2>
+        <h2 class="items-list-title sale-title">놓치면 후회할 가격</h2>
+        
+        <!-- 특가 상품 리스트 -->
+        <div class="item-container swiper sale-item-container">
+
+          <div class="item-card sale1">
+            <div class="item">
+              <p class="item-thumbnail">
+                <img src="/client/assets/item/tangtang_main.png" alt="추천 상품 이미지 : 풀무원 탱탱 쫄면 4개입 4980원" />
+              </p>
+              <div class="cart-icon">
+                <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+              </div>
+            </div>
+            <div class="item-detail">
+              <p class="item-title">[풀무원] 탱탱 쫄면(4개입)</p>
+              <p class="discount-price"><span class="discount"></span><span class="item-price">4,980원</span></p>
+              <del class="origin-price"></del>
+            </div>
+          </div>
+
+          <div class="item-card sale2">
+            <div class="item">
+              <p class="item-thumbnail">
+                <img src="/client/assets/item/sun_cushion_main.png" alt="추천 상품 이미지 : 온더바디 죠르디 시카 자석 선쿠션 32500원" />
+              </p>
+              <div class="cart-icon">
+                <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+              </div>
+            </div>
+            <div class="item-detail">
+              <p class="item-title">[온더바디] 죠르디 시카 자석 선쿠션</p>
+              <p class="discount-price"><span class="discount"></span><span class="item-price">32,500원</span></p>
+              <del class="origin-price"></del>
+            </div>
+          </div>
+
+          <div class="item-card sale3">
+            <div class="item">
+              <p class="item-thumbnail">
+                <img src="/client/assets/item/rice_main.png" alt="추천 상품 이미지 : 유기농 밀키퀸 현미 4kg 25000원" />
+              </p>
+              <div class="cart-icon">
+                <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+              </div>
+            </div>
+            <div class="item-detail">
+              <p class="item-title">유기농 밀키퀸 현미 4kg</p>
+              <p class="discount-price"><span class="discount"></span><span class="item-price">25,000원</span></p>
+              <del class="origin-price"></del>
+            </div>
+          </div>
+
+          <div class="item-card sale4">
+            <div class="item">
+              <p class="item-thumbnail">
+                <img src="/client/assets/item/baby_cleanser_main.png" alt="추천 상품 이미지 : 프로쉬 베이비 세탁세제 24% 할인가 18900원" />
+              </p>
+              <div class="cart-icon">`
+                <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+              </div>
+            </div>
+            <div class="item-detail">
+              <p class="item-title">[프로쉬] 베이비 세탁세제</p>
+              <p class="discount-price"><span class="discount">24% </span><span class="item-price">18,900원</span></p>
+              <del class="origin-price">24,000</del>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 특가 상품 버튼 -->
+          <button type="button" class="sale-item-button">다음 특가 상품 보기</button>
+
+      </section>
+
+    </div>
+
+     <!-- 최근 본 상품 -->
+    <aside class="recent">
+      <div class="recent-items-list">
+        <h2>최근 본 상품</h2>
+        <div class="recent-item-container">
+          <div class="recent-thumbnail recent1">
+            <img src="/client/assets/item/tangtang_main.png" alt="풀무원 탱탱 쫄면" />
+          </div>
+          <div class="recent-thumbnail recent2">
+            <img src="/client/assets/item/baby_cleanser_main.png" alt="프로쉬 베이비 세탁세제" />
+          </div>
+        </div>
+
+        <!-- 최근 본 상품 버튼 -->
+        <div class="recent-button-wrapper">
+          <button type="button" class="recent-button recent-button-prev">이전 상품 보기</button>
+          <button type="button" class="recent-button recent-button-next">다음 상품 보기</button>
+        </div>
+      </div>
+    </aside> 
+    
+  </main>
+  
+
+  <footer class="footer">푸터</footer>
+
+  
+</body>
+</html>
