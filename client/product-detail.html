@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/main.js" type="module"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <!-- 칼리 로고 -->
+      <h1 class="karly-logo">
+        <!-- 접근성은 이미지 속성으로 처리 -->
+        <a href="#"
+          ><img src="./assets/icon/karly_logo.png" alt="marketKarly"
+        /></a>
+      </h1>
+      <!-- 텍스트 링크 -->
+      <ul class="text-link">
+        <li><a href="#">회원가입</a></li>
+        <li>
+          <img src="./assets/icon/bar.png" alt="" />
+          <a href="#">로그인</a>
+        </li>
+        <li>
+          <img src="./assets/icon/bar.png" alt="" />
+          <a href="#">고객센터</a>
+          <!-- 드롭다운 아이콘 추가 -->
+        </li>
+      </ul>
+      <!-- 검색창 포함 영역 -->
+      <div class="header-main">
+        <ul class="karly-category-link">
+          <li><a href="#" class="karly-category-market">마켓칼리</a></li>
+          <li>
+            <img src="./assets/icon/bar.png" alt="" />
+            <a class="karly-category-beauty" href="#">뷰티칼리</a>
+          </li>
+        </ul>
+        <!-- 검색창 -->
+        <h2 class="a11y-hidden">검색</h2>
+        <form>
+          <fieldset>
+            <legend>검색 폼</legend>
+            <div class="form-group">
+              <label for="search"
+                ><span aria-hidden="true"></span>상품검색</label
+              >
+              <input
+                id="search"
+                type="search"
+                required
+                placeholder="검색어를 입력해주세요."
+              />
+              <button type="button" class="search-button">
+                <img src="./assets/icon/Search.png" alt="검색 버튼" />
+              </button>
+            </div>
+          </fieldset>
+        </form>
+        <!-- 배송지, 찜목록, 장바구니 이동   -->
+        <ul class="icon-link">
+          <li>
+            <a href="#"
+              ><img src="./assets/icon/Location.png" alt="배송지 설정"
+            /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/Heart.png" alt="찜" /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="./assets/icon/Cart-1.png" alt="장바구니"
+            /></a>
+          </li>
+        </ul>
+      </div>
+      <!-- 헤더 메뉴 영역 -->
+      <nav class="navigation">
+        <div>
+          <div class="category-menu">
+            <img src="./assets/icon/black_hamburger.png" alt="카테고리" />
+            <span class="category-text" tabindex="0">카테고리</span>
+          </div>
+          <!-- 카테고리 상세 메뉴 -->
+          <ul class="category-list">
+            <li><a href="#">선물하기</a></li>
+            <li><a href="#">채소</a></li>
+            <li><a href="#">과일 · 견과 · 쌀</a></li>
+            <li><a href="#">수산 · 해산 · 건어물</a></li>
+            <li><a href="#">정육 · 계란</a></li>
+            <li><a href="#">국 · 반찬 · 메인요리</a></li>
+            <li><a href="#">샐러드 · 간편식</a></li>
+            <li><a href="#">면 · 양념 · 오일</a></li>
+            <li><a href="#">생수 · 음료 · 우유 · 커피</a></li>
+            <li><a href="#">간식 · 과자 · 떡</a></li>
+            <li><a href="#">베이커리 · 치즈 · 델리</a></li>
+            <li><a href="#">건강식품</a></li>
+            <li><a href="#">와인</a></li>
+            <li><a href="#">전통주</a></li>
+            <li><a href="#">생활용품 · 리빙 · 캠핑</a></li>
+            <li><a href="#">스킨케어 · 메이크업</a></li>
+            <li><a href="#">헤어 · 바디 · 구강</a></li>
+            <li><a href="#">주방용품</a></li>
+            <li><a href="#">가전제품</a></li>
+            <li><a href="#">반려동물</a></li>
+            <li><a href="#">베이비 · 키즈 · 완구</a></li>
+            <li><a href="#">여행 · 티켓</a></li>
+          </ul>
+        </div>
+        <ul class="page-navigation">
+          <li><a href="#">신상품</a></li>
+          <li><a href="#">베스트</a></li>
+          <li><a href="#">알뜰쇼핑</a></li>
+          <li><a href="#">특가/혜택</a></li>
+        </ul>
+        <a href="#" class="delivery-info"><span>샛별·낮</span> 배송안내</a>
+      </nav>
+    </header>
+  </body>
+</html>
