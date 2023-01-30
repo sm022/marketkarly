@@ -1,0 +1,65 @@
+@import url(./style.css);
+
+main {
+  width: 1050px;
+  margin: 0px auto;
+  padding-bottom: 80px;
+  min-width: 1050px;
+}
+.cart-title {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.333rem;
+  font-weight: 600;
+}
+
+.section {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* 장바구니 전체 리스트  */
+.cart-list {
+  background: pink;
+  width: 742px;
+  height: 292px;
+  display: flex;
+  /* flex-grow: 1;
+  flex-shrink: 0; */
+  flex-direction: column;
+  margin-right: 24px;
+}
+.cart-list .click-total {
+  background: orange;
+}
+
+/* 장바구니 전체 선택 */
+.click-total {
+  border-bottom: 1px solid #212121;
+}
+
+.click-total button {
+  border: none;
+  border-radius: 5px;
+  background-color: #ffff;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+.click-total img {
+}
+/* 결제 폼  */
+.cradit {
+  background-color: darkturquoise;
+  width: 284px;
+}
+.notice {
+  color: var(--gray-400);
+  width: 284px;
+  line-height: 18px;
+  font-size: 12px;
+}
