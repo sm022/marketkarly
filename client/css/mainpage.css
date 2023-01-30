@@ -2,3 +2,292 @@
 @import url(./reset.css);
 @import url(./font.css);
 
+
+/* 기본 스타일 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+/* 본문 스타일 */
+body {
+  width: 1920px;
+  margin: 0;
+  font-family: "Pretendard", "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+}
+
+/* 레이아웃 */
+.top-banner,
+.header,
+.event,
+.main,
+.footer {
+  width: 1920px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* 숨김 콘텐츠 */
+.a11y-hidden, legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  /* for legacy browers */
+  /* clip: rect(0 0 0 0); */
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+
+/* 상단 배너 */
+.top-banner {
+  height: 50px;
+}
+
+
+/* 헤더 */
+.header {
+  background-color: pink;
+  height: 197px;
+}
+
+
+/* --------------------------------- 이벤트 영역 --------------------------------- */
+.event {
+  width: 1920px;
+  height: 370px;
+  position: relative;
+}
+
+/* 이벤트 배너 */
+.event-banner {
+  height: 370px;
+}
+
+/* 이벤트 버튼 */
+
+.event-button {
+  width: 52px;
+  height: 52px;
+  background: url('/client/assets/icon/Arrow.png') no-repeat;
+  border: 0;
+  padding: 50px 0 0 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.event-button-prev {
+  position: absolute;
+  top: 146px;
+  left: 350px;
+}
+
+.event-button-next {
+  position: absolute;
+  top: 146px;
+  right: 350px;
+  transform: rotate(180deg);
+}
+
+/* ----------------------------------- 메인 ----------------------------------- */
+
+/* 메인 레이아웃 */
+.main {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* 메인 컨텐츠 */
+.main-content {
+  
+}
+
+/* 추천 상품 목록 */
+.recommend-items-list {
+  height: 601px;
+  width: 1846px;
+  padding-top: 40px;
+
+    /* 버튼 */
+    position: relative;
+
+}
+
+.items-list-title {
+  height: 64px;
+  font-size: 1.775rem;
+  font-weight: 700;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-container {
+  height: 429px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 28px;
+  margin-bottom: 40px;
+}
+
+.item-card {
+  width: 249px;
+  height: 429px;
+}
+
+
+.item {
+  position: relative;
+  width: 249px;
+  height: 320px;
+  margin: 0 auto;
+}
+
+.item-thumbnail > img {
+  width: 249px;
+  height: 320px;
+}
+
+.cart-icon {
+  position: absolute;
+  bottom: 17px;
+  right: 17px;
+}
+
+.item-detail {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: flex-start;
+  padding-top: 16px;
+}
+
+.item-title {
+  width: 249px;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.discount-price {
+  font-size: 1.3313rem;
+  font-weight: 600;
+  width: 249px;
+}
+
+.discount {
+  /* margin-right: 8px; */
+  color: var(--accent-yellow);
+}
+
+.origin-price {
+  width: 249px;
+  color: var(--gray-400);
+  font-size: .75rem;
+  margin-top: 8px;
+}
+
+
+/* 추천 상품 버튼 */
+
+.recommend-item-button {
+  width: 60px;
+  height: 60px;
+  background: url('/client/assets/icon/White_arrow.png') no-repeat;
+  border: 0;
+  padding: 60px 0 0 0;
+  overflow: hidden;
+  z-index: 1;
+
+  position: absolute;
+  top: 259px;
+  right: 369px;
+
+}
+
+/* 광고 배너 */
+
+.banner {
+  height: 219px;
+  width: 1090px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.line-banner > img {
+  height: 139px;
+  width: 1050px;
+}
+
+
+/* 특가 상품 목록 */
+
+.sale-items-list {
+  height: 601px;
+  width: 1846px;
+
+    /* 버튼 */
+    position: relative;
+
+}
+
+.sale-title {
+  margin-top: 40px;
+}
+
+.sale-item-container {
+  margin-top: 40px;
+}
+
+/* 특가 상품 버튼 */
+.sale-item-button {
+  width: 60px;
+  height: 60px;
+  background: url('/client/assets/icon/White_arrow.png') no-repeat;
+  border: 0;
+  padding: 60px 0 0 0;
+  overflow: hidden;
+  z-index: 1;
+
+  position: absolute;
+  top: 259px;
+  right: 369px;
+}
+
+/* 최근 본 상품 */
+.recent {
+  background-color: cornflowerblue;
+  width: 74px;
+  height: 223px;
+}
+
+/* 배너 */
+.banner {
+  /* background-color: skyblue; */
+  height: 219px;
+  width: 1846px;
+}
+
+/* 푸터 */
+.footer {
+  background-color: gray;
+  height: 629px;
+}
