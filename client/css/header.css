@@ -24,13 +24,20 @@ a {
 .top-banner {
   background-color: var(--primary);
   padding: 8px 435px;
-  color: white;
+  color: var(--white);
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .top-banner-text {
-  margin-left: 383px;
-  margin-right: 341px;
+  margin-left: 381px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.close-icon {
+  background: transparent;
+  border: none;
 }
 
 /* 헤더 */
