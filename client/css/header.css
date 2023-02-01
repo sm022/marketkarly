@@ -29,8 +29,11 @@ a {
 }
 
 a:focus-visible {
-  outline-color: blue;
+  outline: blue solid 3px;
+  position: relative;
+  z-index: 100;
 }
+
 /* 배너 */
 .top-banner {
   background-color: var(--primary);
@@ -78,13 +81,23 @@ a:focus-visible {
   padding: 2px 0;
 }
 
-.text-link a {
+.signin,
+.login {
   display: inline-block;
   padding: 1px 10px;
   color: var(--content);
 }
 
-.text-link img {
+.customer-center {
+  display: inline-block;
+  padding: 1px 10px;
+}
+.customer-center a {
+  margin-right: 4px;
+  color: var(--content);
+}
+
+.text-link img:not(:last-child) {
   display: inline-block;
   transform: translateY(2px);
 }
@@ -117,6 +130,11 @@ a:focus-visible {
 
 .karly-category-beauty {
   color: var(--gray-400);
+}
+
+.karly-category-beauty img {
+  position: relative;
+  top: -18px;
 }
 
 /* 검색창 */
