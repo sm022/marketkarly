@@ -57,8 +57,8 @@ a {
   font-weight: 600;
   font-size: 16px;
 }
-.category-list{
-  
+.category.lis{
+
 }
 
 /* 필터링 브랜드 */
@@ -70,16 +70,43 @@ a {
   line-height: 150%;
 }
 
-/* Label/Small */
-
+/* 카테고리 */
+.category{
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
-font-size: 12.003px;
+font-size: 16px;
 line-height: 150%;
-  background-color: blueviolet;
+color:var(--content);
 }
 
+.category.list{
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 160%;
+color:var(--content);
+
+}
+.is-checked-false{
+  height: 23px;
+  width: 23px;
+  left: 0.5px;
+  top: 0.5px;
+  border-radius: 0px;
+  /* position: absolute; */
+  left: 2.08%;
+  right: 2.08%;
+  top: 2.08%;
+  bottom: 2.08%;
+  color:var(gray-200);
+
+border: 1px solid #C4C4C4;
+}
+
+/* 리스트 끝입니다 */
 
 
 /* 섹션 베스트 상품  */
