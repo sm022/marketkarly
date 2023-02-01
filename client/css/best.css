@@ -128,11 +128,22 @@ a{
 }
 
 .product-name{
-
+  color:#333333;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 8px;
 }
 
 .price{
+
+}
+
+.del-price{
   
+}
+
+.product-info{
+
 }
 
 /* 색상 적용 코드 */
