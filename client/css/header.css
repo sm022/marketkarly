@@ -34,7 +34,7 @@ a:focus-visible {
 /* 배너 */
 .top-banner {
   background-color: var(--primary);
-  padding: 8px 435px;
+  padding: 0 435px;
   color: var(--white);
   display: flex;
   justify-content: space-between;
