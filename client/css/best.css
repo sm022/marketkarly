@@ -1,148 +1,320 @@
-@import url(./theme.css); 
+@import url(./theme.css);
 @import url(./reset.css);
 @import url(./fonts.css);
 
-li{
-  list-style-type : none;
+/* 효과 삭제 부분입니다. */
+/* 리스트 앞에 점 모양 삭제 */
+li {
+  list-style-type: none;
 }
 
-a{
+/* 링크태그 밑줄 제거 및 색상 검정색으로변경 */
+a {
   text-decoration-line: none;
   color: black;
 }
 
-.best-container{
- 
-  margin: 0 435px;
-  /* margin: top right bottom left
-  margin : top/bottom right/left */
 
-  /* flex:flex-end; */
-  /* align-items: stretch; */
-  /* text-align: center; */
+/* 베스트 전체 레이아웃 */
+.best-container {
+  margin: 0 435px;
 }
 
 
+/* h3 베스트 제목 */
+.best-title {
 
-.best-title{
-  background-color: greenyellow;
+  /* font-family: Pretendard; */
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
   text-align: center;
   margin: 48px 0;
 
 }
 
-
-.best-filter-wrapper{
-  
+/* h3 제외 필터와 상품리스트 레이아웃 */
+.best-filter-wrapper {
   display: flex;
   flex-wrap: nowrap;
 }
 
-.best-filter-container{
+/* 필터링 전체 레이아웃 */
+.best-filter-container {
   background-color: aqua;
-  border: solid 2px;
 }
 
-.best-filter{
+/* 필터링 초기화 head*/
+.best-filter-reset {
   display: flex;
-  /* background-color: yellow; */
-  /* text-align: left; */
-  /* display: flex; */
-  /* height: 24px;
-  width: 220px;
-  left: 0px;
-  top: 14px;
-  border-radius: 0px; */
   justify-content: space-between;
 }
 
-.best-filter span{
-  /* display: flex;
-  flex-direction: row;   */
+.category {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+}
+.category-list{
+  
 }
 
+/* 필터링 브랜드 */
+.brand {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+}
 
-.brand{
+/* Label/Small */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 12.003px;
+line-height: 150%;
   background-color: blueviolet;
 }
 
 
 
-/* 미션 */
-/* 
-1. food-nav 정렬
-- 사이 나누는 bar 넣고 
-- margin, padding으로 클릭 영역 고려해서 간격주기
-2. 이미지 아래 텍스트 정렬, 디자인 
-- 폰트 사이즈, 색상
-- 마진, 패딩 적용
- */
-
-.food-container{
-  background-color: royalblue;
+/* 섹션 베스트 상품  */
+.food-container {
+  margin-left: 50px;
 }
 
-.food-nav-box{
+/* 상품갯수 및 네비게이션 */
+.food-nav-box {
   display: flex;
-  /* 정렬 코드 작성 */
   justify-content: space-between;
- }
-
-.food-nav-box{
   padding: 0 0 20px 0;
 }
 
-.food-total{
-  
+
+/* 네비게이션 좌측 총 갯수 부분 */
+.food-total {
+  width: 62px;
+  height: 24px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 150%;
 }
 
-.food-nav{
+/* 네비게이션 우측 네비게이션 리스트(추천순,신상품..등) */
+.food-nav {
+  align-items: center;
+  padding: 0px;
+  /* margin-bottom: -20px; */
+  gap: 8px;
   display: flex;
-  margin:0;
+  flex-direction: row;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  /* line-height: 150%; */
+  color: var(--gray-300);
+}
+
+/* 푸드 네비게이션 추천순 검정색으로 변경 */
+.food-nav>li:first-child {
+  color: black;
+}
+
+/* 푸드 네비게이션 추천순 우측 물음표 띄우기 */
+.food-nav li:nth-child(1)::after {
+  background: url(../assets/icon/question_mark.png) no-repeat 0px 0px;
+  content: "";
+  display: inline-block;
+  height: 12.6px;
+  width: 12.6px;
+  margin-left: 8.5px;
+  /* Top:3.7px; */
+  /* Left:0.7px; */
+  /* margin-right: 8px; */
+  /* margin-bottom: -5px; */
 
 }
 
 /* 첫번째 요소 빼고 before 가상요소 삽입 */
-.food-nav li:not(:nth-child(1))::before{
-  
+.food-nav li:not(:nth-child(1))::before {
+  content: "|";
+  height: 10px;
+  width: 1px;
+  left: 68px;
+  top: 7px;
+  border-radius: 0px;
+  margin-right: 8px;
+  /* margin-bottom: 8px; */
 }
 
-/* 이미지 크기 임시 수정 */
-/* .product img{
-  width: 249px; 
-  height: 320px;
-} */
 
-.product{
+
+/* 상품리스트 */
+
+.product {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 
 }
 
+/* 장바구니 이미지 부모요소 */
+.product-img-wrap {
+  position: relative;
+  /* gap: 18px; */
+  /* margin : 20px 18px 18px 16px ; */
+  /* padding: 0; */
+}
 
-.delivery-info{
+/* .tangtang {
+  margin-bottom: 16px;
+}
+
+.sun-cushion{
+  margin-bottom: 18px;
+}
+
+.baby-cleanser{
+  margin-bottom:18px;
+}  */
+
+.cart-icon {
+  position: absolute;
+  right: 15px;
+  bottom: 17px;
+  z-index: 1;
+}
+
+
+
+.delivery-info {
   color: var(--gray-400);
   font-weight: 600;
   font-size: .75rem;
   margin-bottom: 8px;
+  margin-top: 18px
 }
 
-.product-name{
-  color:#333333;
+.product-name {
+  color: #333333;
   font-weight: 400;
   font-size: 1rem;
   margin-bottom: 8px;
 }
 
-.price{
+.price {
+  font-size: 1.3125rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.sale-price {
+  display: inline-block;
+  font-size: 1.3125rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.sale-percent {
+  display: inline-block;
+  color: var(--accent-yellow);
+  font-weight: 600;
+  font-size: 1.3333rem;
+  line-height: 150%;
+  margin-right: 8px;
+}
+
+
+
+
+.del-price {
+  color: var(--gray-400);
+  font-size: .75rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 8px;
 
 }
 
-.del-price{
-  
+.product-info {
+  margin-bottom: 50px;
 }
 
-.product-info{
+.product-info-explain {
+  color: var(--gray-400);
+  font-size: .75rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 8px;
+
+}
+
+.box-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  gap: 8px;
+  width: 200px;
+  height: 26px;
+
+}
+
+/* 칼리온리박스 클래스명 나중에 바꾸기 */
+.left-box {
+
+  background-color: var(--gray-100);
+
+  color: var(--primary);
+
+  align-items: flex-start;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 4px;
+  width: 65px;
+  height: 26px;
+  width: 57px;
+  height: 18px;
+
+  /* Label/Small */
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .7502rem;
+  line-height: 150%;
+}
+
+/* 한정수량박스 클래스명 나중에 바꾸기 */
+.right-box {
+
+  padding: 4px;
+  gap: 4px;
+  width: 42px;
+  height: 18px;
+  background-color: var(--gray-100);
+  border-radius: 4px;
+
+  /* 한정수량 */
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .7502rem;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+
+
 
 }
 
