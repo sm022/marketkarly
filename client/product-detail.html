@@ -28,13 +28,14 @@
         <p class="top-banner-text">
           지금 가입하고 인기상품 100원에 받아가세요!
         </p>
-        <img
-          src="./assets/icon/Close.png"
-          alt="닫기"
-          width="42px"
-          height="42px"
-          class="close-icon"
-        />
+        <button type="button" class="close-icon">
+          <img
+            src="./assets/icon/Close.png"
+            alt="닫기"
+            width="42px"
+            height="42px"
+          />
+        </button>
       </div>
       <div class="header-container">
         <h1 class="karly-logo">
@@ -106,9 +107,9 @@
         <!-- 헤더 메뉴 영역 -->
         <nav class="navigation">
           <div class="category-menu">
-            <div class="category-menu-cover">
+            <div class="category-menu-cover" tabindex="0">
               <img src="./assets/icon/black_hamburger.png" alt="카테고리" />
-              <span class="category-text" tabindex="0">카테고리</span>
+              <span class="category-text">카테고리</span>
             </div>
             <!-- 카테고리 상세 메뉴 -->
             <ul class="category-list">
