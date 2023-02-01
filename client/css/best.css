@@ -1,0 +1,142 @@
+@import url(./theme.css); 
+@import url(./reset.css);
+@import url(./fonts.css);
+
+li{
+  list-style-type : none;
+}
+
+a{
+  text-decoration-line: none;
+  color: black;
+}
+
+.best-container{
+ 
+  margin: 0 435px;
+  /* margin: top right bottom left
+  margin : top/bottom right/left */
+
+  /* flex:flex-end; */
+  /* align-items: stretch; */
+  /* text-align: center; */
+}
+
+
+
+.best-title{
+  background-color: greenyellow;
+  text-align: center;
+  margin: 48px 0;
+
+}
+
+
+.best-filter-wrapper{
+  
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.best-filter-container{
+  background-color: aqua;
+  border: solid 2px;
+}
+
+.best-filter{
+  display: flex;
+  /* background-color: yellow; */
+  /* text-align: left; */
+  /* display: flex; */
+  /* height: 24px;
+  width: 220px;
+  left: 0px;
+  top: 14px;
+  border-radius: 0px; */
+  justify-content: space-between;
+}
+
+.best-filter span{
+  /* display: flex;
+  flex-direction: row;   */
+}
+
+
+.brand{
+  background-color: blueviolet;
+}
+
+
+
+/* 미션 */
+/* 
+1. food-nav 정렬
+- 사이 나누는 bar 넣고 
+- margin, padding으로 클릭 영역 고려해서 간격주기
+2. 이미지 아래 텍스트 정렬, 디자인 
+- 폰트 사이즈, 색상
+- 마진, 패딩 적용
+ */
+
+.food-container{
+  background-color: royalblue;
+}
+
+.food-nav-box{
+  display: flex;
+  /* 정렬 코드 작성 */
+  justify-content: space-between;
+ }
+
+.food-nav-box{
+  padding: 0 0 20px 0;
+}
+
+.food-total{
+  
+}
+
+.food-nav{
+  display: flex;
+  margin:0;
+
+}
+
+/* 첫번째 요소 빼고 before 가상요소 삽입 */
+.food-nav li:not(:nth-child(1))::before{
+  
+}
+
+/* 이미지 크기 임시 수정 */
+/* .product img{
+  width: 249px; 
+  height: 320px;
+} */
+
+.product{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+
+.delivery-info{
+  color: var(--gray-400);
+  font-weight: 600;
+  font-size: .75rem;
+  margin-bottom: 8px;
+}
+
+.product-name{
+
+}
+
+.price{
+  
+}
+
+/* 색상 적용 코드 */
+
+/* .class{
+  color: var(--gray-400)
+} */
