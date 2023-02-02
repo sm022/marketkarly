@@ -231,7 +231,10 @@ main {
   height: 54px;
   transform: translateX(-6px);
 }
-.cart {
+
+/* 장바구니 담기  */
+
+.cart-button {
   width: 424px;
   height: 56px;
   background-color: var(--primary);
