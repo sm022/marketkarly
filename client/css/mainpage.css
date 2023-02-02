@@ -85,7 +85,6 @@ body {
   top: 324px;
 
   color: var(--white);
-  /* background: var(--gray-200); */
   background: rgba(64, 64, 64, 0.3);
   border-radius: 12px;
 
@@ -134,7 +133,23 @@ body {
   transform: rotate(180deg);
 }
 
+
+/* keyframe 하기!! */
+
+/* .button-wrapper {
+  opacity: 0;
+}
+
+.event:hover .button-wrapper{
+  transition: all 0.5s ease 0s;
+  opacity: 100;
+} */
+
+
+
 /* ----------------------------------- 메인 ----------------------------------- */
+
+
 
 /* 메인 레이아웃 */
 .main {
@@ -145,16 +160,9 @@ body {
   position: relative;
 }
 
-/* 추천 상품 목록 */
-.recommend-items-list {
-  height: 601px;
-  width: 1846px;
-  padding-top: 40px;
 
-    /* 버튼 */
-    position: relative;
+/* ------------------------------ 공통 상품 목록 CSS ------------------------------ */
 
-}
 
 .items-list-title {
   height: 64px;
@@ -166,8 +174,10 @@ body {
   justify-content: center;
 }
 
+
 .item-container {
   height: 429px;
+  
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -175,6 +185,7 @@ body {
   margin-top: 28px;
   margin-bottom: 40px;
 }
+
 
 .item-card {
   width: 249px;
@@ -189,9 +200,19 @@ body {
   margin: 0 auto;
 }
 
+.item-thumbnail {
+  overflow: hidden;
+}
+
 .item-thumbnail > img {
   width: 249px;
   height: 320px;
+  transition: all .5s ease-in-out;  
+}
+
+.item-thumbnail > img:hover {
+  transform: scale(1.03);
+  
 }
 
 .cart-icon {
@@ -235,6 +256,31 @@ body {
 }
 
 
+
+
+/* -------------------------------- 추천 상품 목록 -------------------------------- */
+
+.swiper-R {
+  overflow: hidden;
+}
+
+.recommend-items-list {
+  height: 601px;
+  width: 1846px;
+  padding-top: 40px;
+  
+  /* 버튼 */
+  position: relative;
+  
+}
+
+
+.recommend-container {
+  width: 1050px;
+  margin: 0 auto;
+}
+
+
 /* 추천 상품 버튼 */
 
 .recommend-item-button {
@@ -245,12 +291,24 @@ body {
   padding: 60px 0 0 0;
   overflow: hidden;
   z-index: 1;
+  
+}
 
+.recommend-prev-button {
+  position: absolute;
+  top: 259px;
+  left: 359px;
+  transform: rotate(180deg);
+}
+
+.recommend-next-button {
   position: absolute;
   top: 259px;
   right: 369px;
-
 }
+
+
+
 
 /* 광고 배너 */
 
@@ -270,11 +328,16 @@ body {
 }
 
 
-/* 특가 상품 목록 */
+/* -------------------------------- 특가 상품 목록 -------------------------------- */
+
+.swiper-S {
+  overflow: hidden;
+}
 
 .sale-items-list {
   height: 601px;
   width: 1846px;
+  margin-top: 40px;
 
     /* 버튼 */
     position: relative;
@@ -285,9 +348,14 @@ body {
   margin-top: 40px;
 }
 
-.sale-item-container {
-  margin-top: 40px;
+.sale-container {
+  width: 1050px;
+  margin: 0 auto;
 }
+
+/* .sale-item-container {
+
+} */
 
 /* 특가 상품 버튼 */
 .sale-item-button {
@@ -299,6 +367,16 @@ body {
   overflow: hidden;
   z-index: 1;
 
+}
+
+.sale-prev-button {
+  position: absolute;
+  top: 259px;
+  left: 359px;
+  transform: rotate(180deg);
+}
+
+.sale-next-button {
   position: absolute;
   top: 259px;
   right: 369px;
@@ -338,6 +416,8 @@ body {
   width: 40px;
   height: 51.41px;
 }
+
+
 
 /* 최근 본 상품 버튼 */
 
