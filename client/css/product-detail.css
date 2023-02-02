@@ -231,7 +231,8 @@ main {
   height: 54px;
   transform: translateX(-6px);
 }
-.cart {
+
+.cart-button {
   width: 424px;
   height: 56px;
   background-color: var(--primary);
