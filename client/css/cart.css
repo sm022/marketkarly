@@ -83,7 +83,9 @@ button {
 .list-name img {
   margin-right: 8px;
 }
-
+.product-name {
+  font-weight: 500;
+}
 /* 리스트 안의 상품 목록 */
 li > ul > .list-item {
   /* display: none; */
