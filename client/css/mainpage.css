@@ -134,19 +134,6 @@ body {
 }
 
 
-/* keyframe 하기!! */
-
-/* .button-wrapper {
-  opacity: 0;
-}
-
-.event:hover .button-wrapper{
-  transition: all 0.5s ease 0s;
-  opacity: 100;
-} */
-
-
-
 /* ----------------------------------- 메인 ----------------------------------- */
 
 
@@ -353,9 +340,6 @@ body {
   margin: 0 auto;
 }
 
-/* .sale-item-container {
-
-} */
 
 /* 특가 상품 버튼 */
 .sale-item-button {
