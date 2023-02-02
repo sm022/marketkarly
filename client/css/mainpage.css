@@ -1,6 +1,6 @@
 @import url(./theme.css); 
 @import url(./reset.css);
-@import url(./font.css);
+@import url(./fonts.css);
 
 
 /* 기본 스타일 */
@@ -76,7 +76,40 @@ body {
   height: 370px;
 }
 
+/* 이벤트 pagination */
+
+.swiper-pagination {
+  width: 50px;
+  height: 18px;
+  left: 1436px;
+  top: 324px;
+
+  color: var(--white);
+  /* background: var(--gray-200); */
+  background: rgba(64, 64, 64, 0.3);
+  border-radius: 12px;
+
+  padding: 0px 12px;
+
+  font-size: .75rem;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+}
+
 /* 이벤트 버튼 */
+
+.swiper-E img {
+  width: 1920px;
+  height: 370px;
+}
+
+.swiper-E {
+  overflow: hidden;
+}
 
 .event-button {
   width: 52px;
@@ -110,11 +143,6 @@ body {
 
   /* 최근 본 상품 absolute */
   position: relative;
-}
-
-/* 메인 컨텐츠 */
-.main-content {
-  
 }
 
 /* 추천 상품 목록 */

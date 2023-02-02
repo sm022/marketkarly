@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="./css/mainpage.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script defer src="./js/mainpage.js" type="module"></script>
-  <title>메인페이지-로컬</title>
+  <title>메인페이지</title>
 </head>
 <body>
 
@@ -22,7 +22,8 @@
    <!-- 이벤트 배너 -->
   <div class="event">
     <h2 class="a11y-hidden">이벤트 배너</h2>
-    <div class="event-banner swiper">
+
+    <div class="event-banner swiper-E">
       
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -34,13 +35,41 @@
           <div class="swiper-slide">
             <img src="/client/assets/banner/melon_banner.png" alt="컬리 과일 가게 홍보 배너" />
           </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/cosmetic_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/friend_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/gift_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/haircare_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/healing_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/makeup_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/perfume_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/santamaria_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/thebodyshop_banner.png" alt="" />
+          </div>
         </div>
       
       <!-- 이벤트 버튼 -->
-        <!-- <button type="button" tabindex="1" class="event-button event-button-prev">이전 이벤트 보기</button>
-        <button type="button" tabindex="2" class="event-button event-button-next">다음 이벤트 보기</button> -->
+        
+      <button class="event-button event-button-next">next</button>
+      <button class="event-button event-button-prev">prev</button>
       
-      <!-- <div class="swiper-pagination"></div> -->
+      <div class="swiper-pagination"></div>
     </div>
       
   </div>
@@ -58,7 +87,7 @@
           <h2 class="items-list-title">이 상품 어때요?</h2>
   
           <!-- 추천 상품 리스트 -->
-          <div class="item-container swiper">
+          <div class="item-container ">
   
             <div class="item-card recommend1">
               <div class="item">
@@ -150,7 +179,7 @@
           <h2 class="items-list-title sale-title">놓치면 후회할 가격</h2>
           
           <!-- 특가 상품 리스트 -->
-          <div class="item-container swiper sale-item-container">
+          <div class="item-container  sale-item-container">
   
             <div class="item-card sale1">
               <div class="item">
@@ -216,8 +245,7 @@
               </a>
             </div>
   
-          </div>
-  
+          </div>     
           <!-- 특가 상품 버튼 -->
             <button type="button" class="sale-item-button" tabindex="22">다음 특가 상품 보기</button>
 
