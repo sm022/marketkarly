@@ -1,0 +1,72 @@
+.scroll-header.close {
+  display: none;
+}
+.scroll-header {
+  width: 100%;
+  padding: 0 435px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  z-index: 10;
+}
+/* 카테고리 */
+.category-list.is-active {
+  display: block;
+}
+
+.scroll-category-text {
+  display: inline-block;
+  padding-left: 12px;
+}
+/* 메뉴 */
+.scroll-page-navigation li {
+  display: inline-block;
+  padding: 4px 36px;
+}
+
+.scroll-page-navigation a {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--content);
+}
+
+/* 검색창 */
+.scroll-form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 194px;
+  height: 36px;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+}
+
+.scroll-form-group input {
+  flex-grow: 1;
+  border: none;
+  font-weight: 400;
+  font-size: 0.75rem;
+  padding-left: 20px;
+}
+
+.scroll-form-group input:focus {
+  outline: none;
+}
+
+/* 아이콘 링크 모음 */
+.icon-link {
+  display: flex;
+  align-items: center;
+  transform: translateX(10px);
+}
+
+.heart-icon {
+  margin: 0 20px;
+}
