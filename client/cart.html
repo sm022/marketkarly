@@ -13,7 +13,8 @@
     />
     <link rel="stylesheet" href="./css/cart.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script defer src="./js/main.js" type="module"></script>
+    <script defer src="./js/cart.js"></script>
+    <!-- <script defer src="./js/main.js" type="module"></script> -->
     <title>Document</title>
   </head>
 
@@ -30,7 +31,7 @@
 
             <!-- 전체 선택 버튼/ 삭제버튼  -->
             <li class="click-total">
-              <img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="전채선택" />
+              <img id="check-false" class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="전채선택" />
               <button type="button">
                 <a href="./cartModal.html"></a>
                 전체선택 (${totalCartList})
@@ -49,12 +50,17 @@
               </div>
 
               <!-- 냉장 리스트 안에 상품 -->
-              <ul>
+              <ul class="main-list">
                 <li class="list-item">
                   <div class="item-left">
                     <!-- 상품 이름과 사진 체크유무 -->
                     <div class="list-pr-info">
-                      <img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="전채선택" />
+                      <img
+                        id="check-false"
+                        class="is-checked-false"
+                        src="./assets/icon/isChecked=false.png"
+                        alt="전채선택"
+                      />
                       <a href="/" class="list-image">
                         <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지" />
                       </a>
@@ -93,7 +99,12 @@
                   <div class="item-left">
                     <!-- 상품 이름과 사진 체크유무 -->
                     <div class="list-pr-info">
-                      <img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="전채선택" />
+                      <img
+                        id="check-false"
+                        class="is-checked-false"
+                        src="./assets/icon/isChecked=false.png"
+                        alt="전채선택"
+                      />
                       <a href="/" class="list-image">
                         <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지" />
                       </a>
@@ -144,7 +155,12 @@
                   <div class="item-left">
                     <!-- 상품 이름과 사진 체크유무 -->
                     <div class="list-pr-info">
-                      <img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="전채선택" />
+                      <img
+                        id="check-false"
+                        class="is-checked-false"
+                        src="./assets/icon/isChecked=false.png"
+                        alt="전채선택"
+                      />
                       <a href="/" class="list-image">
                         <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지" />
                       </a>
@@ -199,7 +215,12 @@
                   <div class="item-left">
                     <!-- 상품 이름과 사진 체크유무 -->
                     <div class="list-pr-info">
-                      <img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="전채선택" />
+                      <img
+                        id="check-false"
+                        class="is-checked-false"
+                        src="./assets/icon/isChecked=false.png"
+                        alt="전채선택"
+                      />
                       <a href="/" class="list-image">
                         <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지" />
                       </a>

@@ -1,11 +1,11 @@
 @import url(./style.css);
-
 main {
   width: 1050px;
   margin: 0px auto;
   padding-bottom: 80px;
   min-width: 1050px;
   font-size: 1rem;
+  font-family: fontello;
 }
 
 button {
@@ -70,7 +70,7 @@ button {
 .catagory {
   display: flex;
   justify-content: space-between;
-  padding: 15px 15px 15px 0;
+  padding: 15px 0;
 }
 .list-name {
   display: flex;
