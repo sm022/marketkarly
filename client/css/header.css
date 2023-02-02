@@ -34,7 +34,11 @@ a:focus-visible {
   z-index: 100;
 }
 
+/* 일반 헤더 스타일  */
 /* 배너 */
+.normal-header.close {
+  display: none;
+}
 .top-banner {
   background-color: var(--primary);
   padding: 0 435px;
@@ -176,6 +180,87 @@ a:focus-visible {
   margin: 0 10px;
 }
 
+/* 장바구니 */
+.cart-link {
+  position: relative;
+}
+
+.cart-number {
+  display: none;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 10px;
+  position: absolute;
+  top: -1px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0px 5px;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 9px;
+  line-height: 15px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cart-number.is-active {
+  display: block;
+}
+
+.cart-alarm {
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  transform: translate(40px, 18px);
+  border: 1px solid var(--gray-200);
+  width: 256px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  transition: all 0.5s;
+}
+.cart-alarm.is-not-exist {
+  /* transition 속성 적용을 위해 접근성 트리에 요소가 존재해야 함 
+    display: none; 사용하지 않기
+  */
+  opacity: 0;
+}
+.cart-alarm::after {
+  content: "";
+  position: absolute;
+  border-bottom: 20px solid var(--white);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  top: -17px;
+  right: 28px;
+}
+
+.cart-alarm::before {
+  content: "";
+  position: absolute;
+  border-bottom: 20px solid var(--gray-200);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  top: -20px;
+  right: 28px;
+}
+.alarm-image {
+  margin-right: 24px;
+}
+
+.alarm-text h2 {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--gray-300);
+  margin-bottom: 8px;
+}
+.alarm-text p {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
 /* 헤더 메뉴 영역 */
 .navigation {
   display: flex;
@@ -191,10 +276,11 @@ a:focus-visible {
 
 .category-menu {
   position: relative;
+  height: 67px;
 }
 
 .category-menu-cover {
-  padding: 4px 0;
+  line-height: 67px;
 }
 
 .category-text {
@@ -205,116 +291,33 @@ a:focus-visible {
 /* 카테고리 hover 메뉴 */
 .category-list {
   display: none;
+  position: absolute;
+  top: 67px;
+  width: 247px;
+  border: 1px solid var(--gray-300);
+  z-index: 10;
 }
-
+.category-list img {
+  margin: 0 8px 0 12px;
+}
 .category-list a {
-  display: inline-block;
-  padding: 8px 0 8px 44px;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
   width: 100%;
   font-size: 1rem;
   font-weight: 600;
+  background-color: var(--white);
+  color: var(--content);
 }
 
-.category-list li:nth-child(1) {
-  background: var(--white) url(../assets/icon/Type23.png) 12px 4px/24px 24px
-    no-repeat;
-}
-
-.category-list li:nth-child(2) {
-  background: var(--white) url(../assets/icon/Vegetable.png) 12px 4px/24px 24px
-    no-repeat;
-}
-
-.category-list li:nth-child(3) {
-  background: var(--white) url(../assets/icon/Fruit.png) 12px 4px/24px 24px
-    no-repeat;
-}
-
-.category-list li:nth-child(4) {
-  background: var(--white) url(../assets/icon/SeaFood.png) 12px 4px/24px 24px
-    no-repeat;
-}
-
-.category-list li:nth-child(5) {
-  background: var(--white) url(../assets/icon/Meet.png) 12px 4px/24px 24px
-    no-repeat;
-}
-
-.category-list li:nth-child(6) {
-  background: var(--white) url(../assets/icon/Cook.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(7) {
-  background: var(--white) url(../assets/icon/Salad.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(8) {
-  background: var(--white) url(../assets/icon/Oil.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(9) {
-  background: var(--white) url(../assets/icon/Coffee.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(10) {
-  background: var(--white) url(../assets/icon/Snack.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(11) {
-  background: var(--white) url(../assets/icon/Bread.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(12) {
-  background: var(--white) url(../assets/icon/Health.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(13) {
-  background: var(--white) url(../assets/icon/Wine.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(14) {
-  background: var(--white) url(../assets/icon/Traditional\ Liquor.png) 12px 4px/24px
-    24px no-repeat;
-}
-.category-list li:nth-child(15) {
-  background: var(--white) url(../assets/icon/Detergent.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(16) {
-  background: var(--white) url(../assets/icon/Cosmetics.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(17) {
-  background: var(--white) url(../assets/icon/shampoo.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(18) {
-  background: var(--white) url(../assets/icon/Food.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(19) {
-  background: var(--white) url(../assets/icon/HomeAppliances.png) 12px 4px/24px
-    24px no-repeat;
-}
-.category-list li:nth-child(20) {
-  background: var(--white) url(../assets/icon/Dog.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(21) {
-  background: var(--white) url(../assets/icon/Baby.png) 12px 4px/24px 24px
-    no-repeat;
-}
-.category-list li:nth-child(22) {
-  background: var(--white) url(../assets/icon/Travel.png) 12px 4px/24px 24px
-    no-repeat;
-}
-
-/* 카테고리 드롭다운 메뉴 is-active클래스 */
 .category-list.is-active {
   display: block;
-  position: absolute;
-  top: 46px;
-  width: 247px;
+}
+
+.category-list a:hover {
+  color: var(--primary);
+  background-color: var(--gray-50);
 }
 
 /* 헤더 메뉴 */
