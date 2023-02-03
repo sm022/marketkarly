@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <link rel="stylesheet" as="style" crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-  <link rel="stylesheet" href="./css/best.css" />
+  <link rel="stylesheet" href="./css/ex-best.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   <script src="./js/main.js" type="module"></script>
   <title>Best-product-page</title>
@@ -19,254 +19,260 @@
   <main>
     <div class="best-container">
       <h3 class="best-title">베스트</h3>
-      <div class="best-filter-wrapper">
-        <article class="best-filter-container">
+      <div class="best-filter-wrapper"> <!-- class명 -->
+        <article class="best-filter-container"> <!-- section 태그 + heading(a11y-hidden) -->
+          <!-- 요부분은 나랑 같이 detail+summury / input -->
           <div class="best-filter-reset">
             <span>필터</span>
-            <sapn>초기화</sapn>
+            <sapn class="reset-btn">초기화</sapn>
           </div>
 
           <!-- 카테고리 -->
           <div class="category">
-            카테고리
+            <div class="category-title">
+              <p>카테고리</p>
+              <button type="button"></button>
+            </div>
+           
             <ul class="category-list">
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식 65</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식</button>
               </li>
               <li>
                 <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>국·반찬 · 메인요리
-                  52</button>
+                  </button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란 41</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀 30</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀 </button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡 18</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡 </button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피 17</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물 16</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물 </button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리 13</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품 </button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑</button>
               </li>
             </ul>
-            <p>카테고리 더보기</p>
+            <p class="category-more">카테고리 더보기</p>
           </div>
 
           <!-- 브랜드 -->
-          <div class="brand">
-            브랜드
+          <div class="category">
+            <div class="category-title">
+              <p>브랜드</p>
+              <button type="button"></button>
+            </div>
             <ul class="brand-list">
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />감자밭
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />감자밭</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />강남면옥
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />강남면옥</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />경남제약
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />경남제약</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />경복궁
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />경복궁</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />고래사
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />고래사</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />고메공방
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />고메공방</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />고온어다이어트
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />고온어다이어트</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />교토마블
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />교토마블</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />그래놀라 하우스
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />그래놀라 하우스</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />그리츠 시그니처 램
-                  1</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon" />그리츠 시그니처 램</button>
               </li>
             </ul>
-            <p>브랜드 더보기</p>
+            <p class="category-more">브랜드 더보기</p>
           </div>
 
           <!-- 가격 -->
           <div class="category">
-            가격
+            <div class="category-title">
+              <p>가격</p>
+              <button type="button"></button>
+            </div>
             <ul class="category-list">
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식 65</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>국·반찬 · 메인요리
-                  52</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>국·반찬 · 메인요리</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란 41</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀 30</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡 18</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피 17</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물 16</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리 13</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑</button>
               </li>
             </ul>
-            <p>가격 더보기</p>
+            <p class="category-more">가격 더보기</p>
           </div>
 
           <!-- 혜택 -->
           <div class="category">
-            혜택
+            <div class="category-title">
+              <p>혜택</p>
+              <button type="button"></button>
+            </div>
             <ul class="category-list">
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식 65</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>국·반찬 · 메인요리
-                  52</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>국·반찬 · 메인요리</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란 41</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀 30</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡 18</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피 17</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물 16</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리 13</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑</button>
               </li>
             </ul>
-            <p>혜택 더보기</p>
+            <p class="category-more">혜택 더보기</p>
           </div>
 
           <!-- 유형 -->
           <div class="category">
-            유형
+            <div class="category-title">
+              <p>유형</p>
+              <button type="button"></button>
+            </div>
             <ul class="category-list">
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식 65</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>국·반찬 · 메인요리
-                  52</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>국·반찬 · 메인요리</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란 41</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀 30</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡 18</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피 17</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물 16</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리 13</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑</button>
               </li>
             </ul>
-            <p>유형 더보기</p>
+            <p class="category-more">유형 더보기</p>
           </div>
 
           <!-- 특정상품제외 -->
           <div class="category">
-            특정상품제외
+            <div class="category-title">
+              <p>특정상품제외</p>
+              <button type="button"></button>
+            </div>
             <ul class="category-list">
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식 65</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>샐러드 · 간편식</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>국·반찬 · 메인요리
-                  52</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>국·반찬 · 메인요리</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란 41</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>정육 · 계란</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀 30</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>과일 · 견과 · 쌀</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡 18</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>간식 · 과자 · 떡</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피 17</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생수 · 음료 · 우유 · 커피</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물 16</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>수산 · 해산 · 건어물</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리 13</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>베이커리 · 치즈 · 델리</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>건강식품</button>
               </li>
               <li>
-                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑 10</button>
+                <button><img class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="icon"/>생활용품 · 리빙 · 캠핑</button>
               </li>
             </ul>
-            <p>특정상품제외 더보기</p>
+            <p class="category-more">특정상품제외 더보기</p>
           </div>
          
         </article>
@@ -279,9 +285,10 @@
         <section class="food-container">
           <!-- 상품갯수 및 네비게이션 -->
           <div class="food-nav-box">
-            <div class="food-total">총 284건
-            </div>
+            <div class="food-total">총 284건 <!-- 텍스트 태그 사용 -->
+            </div> 
             <ul class="food-nav">
+              <!-- 버튼 태그 사용 -->
               <li>추천순</li>
               <li>신상품순</li>
               <li>판매량순</li>
@@ -294,11 +301,11 @@
           <div class="product-container">
             <div class="product">
               <!-- 페이지 전환을 위해 a태그 사용 -->
+              <!-- a태그를 감싸서 사용하면 안되고 이미지에만 사용 -->
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="tangtang" class="is-checked-false" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
-                    height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="tangtang" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px" height="320px" /> <!-- 절대로 css속성 인라인 적용하면 안되요^^ -->
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
                   <p class="delivery-info">샛별배송</p>
@@ -306,6 +313,7 @@
                   <p class="price">4,980 원</p>
                   <p class="product-info-explain">튀기지 않아 부담없는 매콤함</p>
                   <div class="box-container">
+                    <!-- div안에 텍스트 때려 넣으면 안되용^^ -->
                     <div class="left-box">Kalry Only</div>
                     <div class="right-box">한정수량</div>
                   </div>
@@ -313,8 +321,8 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="sun-cushion"  class="is-checked-false"src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="sun-cushion" src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
                   <p class="delivery-info">샛별배송</p>
@@ -325,8 +333,8 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="baby-cleanser" class="is-checked-false" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="baby-cleanser" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
 
@@ -346,9 +354,8 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="tangtang" class="is-checked-false" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
-                    height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="tangtang" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
                   <p class="delivery-info">샛별배송</p>
@@ -363,8 +370,8 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="sun-cushion"  class="is-checked-false"src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="sun-cushion" src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
                   <p class="delivery-info">샛별배송</p>
@@ -375,8 +382,58 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="baby-cleanser" class="is-checked-false" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="baby-cleanser" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[프로쉬] 베이비 세탁세제</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">18,900 원</p>
+                  </div>
+                  <p class="del-price"><del>24,900 원</del></p> <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">성분을 꼼꼼히 따져 골라 더욱 편안한</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="tangtang" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
+                    height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">튀기지 않아 부담없는 매콤함</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="sun-cushion" src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[온더바디] 죠르디 시카 자석 선쿠션</p>
+                  <p class="price">32,500 원</p>
+                  <p class="product-info-explain">끈적임 없이 보송한 무기자차 선쿠션</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="baby-cleanser" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
 
@@ -396,9 +453,9 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="tangtang" class="is-checked-false" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
+                  <img class="tangtang" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
                     height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
                   <p class="delivery-info">샛별배송</p>
@@ -413,8 +470,8 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="sun-cushion"  class="is-checked-false"src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="sun-cushion" src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
                   <p class="delivery-info">샛별배송</p>
@@ -425,8 +482,8 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="baby-cleanser" class="is-checked-false" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="baby-cleanser" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
 
@@ -446,9 +503,9 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="tangtang" class="is-checked-false" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
+                  <img class="tangtang" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
                     height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
                   <p class="delivery-info">샛별배송</p>
@@ -463,8 +520,8 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="sun-cushion"  class="is-checked-false"src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="sun-cushion" src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
                   <p class="delivery-info">샛별배송</p>
@@ -475,58 +532,8 @@
               </a>
               <a href="#">
                 <div class="product-img-wrap">
-                  <img class="baby-cleanser" class="is-checked-false" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
-                </div>
-                <div class="product-info">
-
-                  <p class="delivery-info">샛별배송</p>
-                  <p class="product-name">[프로쉬] 베이비 세탁세제</p>
-                  <div class="sale-info">
-                    <p class="sale-percent">24%</p>
-                    <p class="sale-price">18,900 원</p>
-                  </div>
-                  <p class="del-price"><del>24,900 원</del></p>
-                  <p class="product-info-explain">성분을 꼼꼼히 따져 골라 더욱 편안한</p>
-                  <div class="box-container">
-                    <div class="left-box">Kalry Only</div>
-                    <div class="right-box">한정수량</div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="product-img-wrap">
-                  <img class="tangtang" class="is-checked-false" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
-                    height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
-                </div>
-                <div class="product-info">
-                  <p class="delivery-info">샛별배송</p>
-                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
-                  <p class="price">4,980 원</p>
-                  <p class="product-info-explain">튀기지 않아 부담없는 매콤함</p>
-                  <div class="box-container">
-                    <div class="left-box">Kalry Only</div>
-                    <div class="right-box">한정수량</div>
-                  </div>
-                </div>
-              </a>
-              <a href="#">
-                <div class="product-img-wrap">
-                  <img class="sun-cushion"  class="is-checked-false"src ="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
-                </div>
-                <div class="product-info">
-                  <p class="delivery-info">샛별배송</p>
-                  <p class="product-name">[온더바디] 죠르디 시카 자석 선쿠션</p>
-                  <p class="price">32,500 원</p>
-                  <p class="product-info-explain">끈적임 없이 보송한 무기자차 선쿠션</p>
-                </div>
-              </a>
-              <a href="#">
-                <div class="product-img-wrap">
-                  <img class="baby-cleanser" class="is-checked-false" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
-                  <img class="cart-icon" class="is-checked-false" src="./assets/icon/Cart.png" art="cart">
+                  <img class="baby-cleanser" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" width="249px" height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
                 </div>
                 <div class="product-info">
 

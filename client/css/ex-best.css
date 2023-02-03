@@ -42,68 +42,132 @@ a {
 
 /* 필터링 전체 레이아웃 */
 .best-filter-container {
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 /* 필터링 초기화 head*/
 .best-filter-reset {
+  /* background-color: bisque; */
   display: flex;
   justify-content: space-between;
-}
-
-.category {
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-}
-.category.lis{
-
-}
-
-/* 필터링 브랜드 */
-.brand {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
+  color: var(--content);
+  margin-bottom: 22px;
 }
+
+.reset-btn {
+  margin-top: 4px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .625rem;
+  line-height: 160%;
+  color: var(--gray-300);
+}
+
 
 /* 카테고리 */
-.category{
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 150%;
-color:var(--content);
+.category {
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-.category.list{
-
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 160%;
-color:var(--content);
-
+.category-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+  /* background-color: burlywood; */
 }
-.is-checked-false{
-  height: 23px;
-  width: 23px;
-  left: 0.5px;
-  top: 0.5px;
-  border-radius: 0px;
-  /* position: absolute; */
-  left: 2.08%;
-  right: 2.08%;
-  top: 2.08%;
-  bottom: 2.08%;
-  color:var(gray-200);
 
-border: 1px solid #C4C4C4;
+.category-title p{
+  height: 0;
+}
+
+.category-title button {
+  width: 19px;
+  border: 0;
+  height: 0 !important;
+  background-image: url(../assets/icon/Direction=Up.png);
+  background-repeat: no-repeat;
+  padding: 18px 0 0 0;
+  line-height: 24px;
+  background-color: white;
+}
+
+
+.category.list {
+  /* margin-top: 22px; */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--content);
+  /* margin-bottom: 4px; */
+  /* padding: 0; */
+}
+
+/* 카테고리 li 영역어디까지 */
+.category-list li {
+  margin-top: 22px;
+  /* background-color: lightseagreen; */
+  border: 0;
+}
+
+.category-list li button {
+  background-color: white;
+  border: 0;
+}
+
+.category-more {
+  /* background-color: lightslategray; */
+  margin: 22px 0;
+}
+
+/* 브랜드 */
+.brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  /* line-height: 150%; */
+}
+
+.brand-title {
+  /* background-color: lightskyblue; */
+}
+
+/* 브랜드 li 영역어디까지 */
+.brand-list li {
+  /* background-color: lightcoral; */
+  border: 0;
+  margin-top: 22px;
+}
+
+.brand-list li button {
+  background-color: white;
+  border: 0;
+}
+
+/* 애프터 왜 안먹지요? */
+.category-more ::after {
+  content: "";
+
+  display: inline;
+  height: 12.6px;
+  width: 12.6px;
+}
+
+.is-checked-false {
+  color: var(--gray-200);
 }
 
 /* 리스트 끝입니다 */
@@ -137,7 +201,6 @@ border: 1px solid #C4C4C4;
 .food-nav {
   align-items: center;
   padding: 0px;
-  /* margin-bottom: -20px; */
   gap: 8px;
   display: flex;
   flex-direction: row;
@@ -152,6 +215,9 @@ border: 1px solid #C4C4C4;
 /* 푸드 네비게이션 추천순 검정색으로 변경 */
 .food-nav>li:first-child {
   color: black;
+  position: relative;
+  padding-right: 20px;
+
 }
 
 /* 푸드 네비게이션 추천순 우측 물음표 띄우기 */
@@ -159,13 +225,12 @@ border: 1px solid #C4C4C4;
   background: url(../assets/icon/question_mark.png) no-repeat 0px 0px;
   content: "";
   display: inline-block;
-  height: 12.6px;
-  width: 12.6px;
-  margin-left: 8.5px;
-  /* Top:3.7px; */
-  /* Left:0.7px; */
-  /* margin-right: 8px; */
-  /* margin-bottom: -5px; */
+  width: 14px;
+  height: 20px;
+  margin-left: 4px;
+  position: absolute;
+
+
 
 }
 
