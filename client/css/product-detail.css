@@ -1,5 +1,6 @@
 main {
-  padding: 0 435px;
+  max-width: 1050px;
+  margin: 0 auto;
 }
 
 .product-detail {
@@ -245,7 +246,6 @@ main {
 
 /* 북마크 링크 */
 .hyper-link-container {
-  width: 1050px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
