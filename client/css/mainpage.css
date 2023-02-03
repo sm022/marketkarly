@@ -383,7 +383,19 @@ body {
 
 .recent-item-container {
   width: 40px;
+  height: 129px;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.recent-swiper-wrapper {
+  height: 51.41px;
+  
+}
+
+.recent-thumbnail {
+  width: 40px;
+  height: 51.41px;
 }
 
 .recent-thumbnail > img {
