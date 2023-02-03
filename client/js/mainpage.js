@@ -1,9 +1,12 @@
 
 const swiper_E = new Swiper('.swiper-E', {
-  autoplay:true,
+  autoplay : {  
+    delay : 3000, 
+    disableOnInteraction : false,  
+  },
   loop:true,
   slidesPerView:'auto',
-  speed:2000,
+  speed:400,
   parallax: true,
   pagination: {
     el: ".swiper-pagination",
@@ -20,7 +23,7 @@ const swiper_R = new Swiper('.swiper-R', {
   loopFillGroupWithBlank: 'auto',
   spaceBetween: 18,
   loop:true,
-  speed:1000,
+  speed:400,
   parallax: true,
   navigation: {
     nextEl: '.recommend-next-button',
@@ -32,7 +35,7 @@ const swiper_S = new Swiper('.swiper-S', {
   loopFillGroupWithBlank: 'auto',
   spaceBetween: 18,
   loop:true,
-  speed:1000,
+  speed:400,
   parallax: true,
   navigation: {
     nextEl: '.sale-next-button',
