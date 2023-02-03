@@ -366,9 +366,12 @@ body {
   position: relative;
   padding-top: 34px;
 
-  position: absolute;
+  position: sticky;
   left: 1807px;
   top: 193px;
+
+  margin-top: 193px;
+  margin-bottom: 185px;
 }
 
 
@@ -393,10 +396,6 @@ body {
   
 }
 
-.recent-thumbnail {
-  width: 40px;
-  height: 51.41px;
-}
 
 .recent-thumbnail > img {
   width: 40px;
@@ -428,6 +427,10 @@ body {
   bottom: 8px;
   left: 28px;
 }
+
+
+
+
 
 
 
