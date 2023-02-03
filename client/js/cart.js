@@ -9,7 +9,7 @@ class CartProcessClass {
   normalList = getNode('.normal-list').querySelector('.main-list');
 
   async loadFoodsFromApi() {
-    const url = 'http://localhost:3000/products';
+    const url = 'http://localhost:3000/products'; //api
     return xhrPromise({ url }).catch((err) => {
       console.log(err);
       return [];
