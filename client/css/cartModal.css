@@ -1,0 +1,138 @@
+@import url(./style.css);
+
+/* 모달 크기 */
+body {
+  position: fixed;
+  font-family: fontello;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(181, 181, 181, 0.597);
+}
+.cart-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--gray-500);
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.875rem;
+  margin: 0 auto;
+  gap: 1.75rem;
+  width: 27.5rem;
+  height: 18.25rem;
+  background: #ffffff;
+  box-shadow: 0rem 0.5rem 2.25rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  font-size: 16px;
+  font-weight: 600;
+}
+/* 상품 이름  */
+.cart-modal .product-name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  margin-top: 2px;
+}
+/* 상품가격 표시 */
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 6px;
+}
+.original-price {
+  margin-left: 0.25rem;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgb(181, 181, 181);
+  text-decoration: line-through;
+}
+.modal-info {
+  padding: 12px 0;
+}
+/* 장바구니 버튼 */
+.modal-btn {
+  display: flex;
+}
+.cart-cancel-button,
+.cart-input-button {
+  width: 50%;
+  height: 3.375rem;
+  border: 0.0625rem solid #898989;
+  border-radius: 0.25rem;
+}
+.cart-input-button {
+  background: #5f0080;
+  color: white;
+  margin-left: 0.25rem;
+}
+.cart-cancel-button {
+  background: var(--white);
+}
+/* 상품 카운트 */
+.product-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.0625rem solid var(--gray-100);
+  border-radius: 0.25rem;
+  width: 6.5625rem;
+  height: 2.1875rem;
+}
+.product-count button {
+  border: none;
+  background-color: transparent;
+}
+.product-minus-btn img,
+.product-plus-btn img {
+  width: 1.625rem;
+  height: 1.625rem;
+}
+.count {
+  width: 1.9375rem;
+  text-align: center;
+  line-height: 1.75rem;
+}
+
+/* 상품의 총가격 표시 */
+.modal-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount {
+  font-size: 1.7769rem;
+}
+.price {
+  font-weight: 700;
+}
+.price-unit {
+  font-weight: 600;
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.accumulate {
+  width: 2.3125rem;
+  height: 1.125rem;
+  background: var(--notice-yellow);
+  border-radius: 0.5625rem;
+  color: var(--white);
+  padding: 0.125rem;
+  margin-right: 0.375rem;
+  text-align: center;
+}
+.accumulate-hint {
+  color: var(--gray-700);
+  font-weight: 500;
+}
