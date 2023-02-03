@@ -363,17 +363,17 @@ body {
   height: 223px;
   border: 1px solid var(--gray-200);
   padding : 8px;
-  position: relative;
   padding-top: 34px;
 
   position: sticky;
-  left: 1807px;
+
   top: 193px;
+  right: 39px;
 
   margin-top: 193px;
   margin-bottom: 185px;
+  
 }
-
 
 .recent-items-list > h2 {
   width: 58px;
@@ -393,7 +393,6 @@ body {
 
 .recent-swiper-wrapper {
   height: 51.41px;
-  
 }
 
 
