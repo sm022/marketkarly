@@ -1,0 +1,357 @@
+@import url("./style.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+/* 숨김처리 */
+label,
+legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: blue solid 3px;
+  position: relative;
+  z-index: 100;
+}
+
+/* 일반 헤더 스타일  */
+/* 배너 */
+.normal-header.close {
+  display: none;
+}
+.top-banner {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.top-banner-inner{
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.top-banner-text {
+  margin-left: 383px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.close-icon {
+  background: transparent;
+  border: none;
+}
+
+header{
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
+}
+/* 헤더 */
+.header-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  position: relative;
+
+}
+.karly-logo {
+  position: absolute;
+  top: 60px;
+  z-index: 10;
+}
+
+/* 텍스트 링크 모음 */
+.text-link {
+  text-align: right;
+  padding-top: 10px;
+  font-size: 0;
+  transform: translateX(12px);
+}
+
+.text-link li {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin: 0 2px;
+  padding: 2px 0;
+}
+
+.signin,
+.login {
+  display: inline-block;
+  padding: 1px 10px;
+  color: var(--content);
+}
+
+.customer-center {
+  display: inline-block;
+  padding: 1px 10px;
+}
+.customer-center a {
+  margin-right: 4px;
+  color: var(--content);
+}
+
+.text-link img:not(:last-child) {
+  display: inline-block;
+  transform: translateY(2px);
+}
+
+/* 헤더 메인 */
+.header-main {
+  display: flex;
+  align-items: center;
+  padding-left: 82px;
+  margin-top: 21px;
+  font-size: 1.3125rem;
+}
+
+/* 마켓칼리, 뷰티칼리 (칼리 카테고리 링크) */
+.karly-category-link {
+  display: flex;
+  align-items: center;
+}
+
+.karly-category-link li {
+  margin: 0 2px;
+}
+
+.karly-category-link a {
+  padding: 0 10px;
+}
+.karly-category-market {
+  color: var(--primary);
+}
+
+.karly-category-beauty {
+  color: var(--gray-400);
+}
+
+.karly-category-beauty img {
+  position: relative;
+  top: -18px;
+}
+
+/* 검색창 */
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  margin-left: 51px;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+}
+
+.form-group input {
+  flex-grow: 1;
+  border: none;
+  padding: 13px 0 13px 20px;
+  font-size: 1.3125rem;
+}
+
+.form-group input:focus {
+  outline: none;
+}
+
+.search-button {
+  background-color: transparent;
+  padding: 10px 20px 6px 0;
+  border: none;
+}
+/* 아이콘 링크 모음 */
+.icon-link {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  transform: translateX(10px);
+}
+
+.icon-link li {
+  margin: 0 10px;
+}
+
+/* 장바구니 */
+.cart-link {
+  position: relative;
+}
+
+.cart-number {
+  display: none;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: 10px;
+  position: absolute;
+  top: -1px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0px 5px;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 9px;
+  line-height: 15px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.cart-number.is-active {
+  display: block;
+}
+
+.cart-alarm {
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  transform: translate(40px, 18px);
+  border: 1px solid var(--gray-200);
+  width: 256px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  transition: all 0.5s;
+}
+.cart-alarm.is-not-exist {
+  /* transition 속성 적용을 위해 접근성 트리에 요소가 존재해야 함 
+    display: none; 사용하지 않기
+  */
+  opacity: 0;
+}
+.cart-alarm::after {
+  content: "";
+  position: absolute;
+  border-bottom: 20px solid var(--white);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  top: -17px;
+  right: 28px;
+}
+
+.cart-alarm::before {
+  content: "";
+  position: absolute;
+  border-bottom: 20px solid var(--gray-200);
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  top: -20px;
+  right: 28px;
+}
+.alarm-image {
+  margin-right: 24px;
+}
+
+.alarm-text h2 {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--gray-300);
+  margin-bottom: 8px;
+}
+.alarm-text p {
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* 헤더 메뉴 영역 */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 13px;
+  
+
+}
+
+.navigation a,
+.navigation span {
+  color: var(--content);
+}
+
+.category-menu {
+  position: relative;
+  height: 67px;
+}
+
+.category-menu-cover {
+  line-height: 67px;
+}
+
+.category-text {
+  display: inline-block;
+  padding-left: 12px;
+}
+
+/* 카테고리 hover 메뉴 */
+.category-list {
+  display: none;
+  position: absolute;
+  top: 67px;
+  width: 247px;
+  border: 1px solid var(--gray-300);
+  z-index: 10;
+}
+.category-list img {
+  margin: 0 8px 0 12px;
+}
+.category-list a {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--white);
+  color: var(--content);
+}
+
+.category-list.is-active {
+  display: block;
+}
+
+.category-list a:hover {
+  color: var(--primary);
+  background-color: var(--gray-50);
+}
+
+/* 헤더 메뉴 */
+.page-navigation {
+  margin: 16px 0;
+}
+
+.page-navigation li {
+  display: inline-block;
+  padding: 4px 36px;
+}
+
+.page-navigation a {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.delivery-info {
+  font-size: 0.75rem;
+  font-weight: 400;
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 4px 8px;
+}
+
+.delivery-info span {
+  color: var(--primary);
+}

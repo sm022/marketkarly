@@ -1,4 +1,14 @@
-@import url(./theme.css); 
+@import url(./theme.css);
 @import url(./reset.css);
-@import url(./font.css);
+@import url(./fonts.css);
 
+body {
+  display: block;
+}
+.a11y-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
