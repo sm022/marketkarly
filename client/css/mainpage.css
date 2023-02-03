@@ -51,17 +51,7 @@ body {
 }
 
 
-/* 상단 배너 */
-.top-banner {
-  height: 50px;
-}
 
-
-/* 헤더 */
-.header {
-  background-color: pink;
-  height: 197px;
-}
 
 
 /* --------------------------------- 이벤트 영역 --------------------------------- */
@@ -433,10 +423,4 @@ body {
 .banner {
   height: 219px;
   width: 1846px;
-}
-
-/* 푸터 */
-.footer {
-  background-color: gray;
-  height: 629px;
 }
