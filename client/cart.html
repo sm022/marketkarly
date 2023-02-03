@@ -41,7 +41,7 @@
             </li>
 
             <!-- 냉장리스트 -->
-            <li class="list">
+            <li class="list frozen-list">
               <div class="catagory">
                 <h3 class="list-name"><img src="./assets/icon/Type=Refrigerated.png" alt="냉장식품" /> 냉장 식품</h3>
                 <button class="click-down">
@@ -50,158 +50,28 @@
               </div>
 
               <!-- 냉장 리스트 안에 상품 -->
-              <ul class="main-list">
-                <li class="list-item">
-                  <div class="item-left">
-                    <!-- 상품 이름과 사진 체크유무 -->
-                    <div class="list-pr-info">
-                      <img
-                        id="check-false"
-                        class="is-checked-false"
-                        src="./assets/icon/isChecked=false.png"
-                        alt="전채선택"
-                      />
-                      <a href="/" class="list-image">
-                        <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지" />
-                      </a>
-
-                      <div class="product-name">
-                        <span> 쓱싹쓱싹 세제 </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="item-right">
-                    <!-- 상품 수량변경 -->
-                    <div class="product-count">
-                      <button type="button" value="-" aria-label="수량내리기" class="product-minus-btn">
-                        <img src="./assets/icon/Minus=true.png" alt="수량내리기" />
-                      </button>
-                      <div class="count" id="count-result">1</div>
-                      <button type="button" value="+" aria-label="수량올리기" class="product-plus-btn">
-                        <img src="./assets/icon/Plus=false.png" alt="수량올리기" />
-                      </button>
-                    </div>
-                    <!-- 상품 가격 표시 -->
-                    <div class="product-price">
-                      <span class="discount-price">4,000 원</span>
-                      <span class="original-price">5,000 원</span>
-                    </div>
-                    <!-- 상품 삭제 버튼 -->
-                    <button class="delete-button">
-                      <img src="./assets/icon/Cancel.png" alt="상품 삭제" />
-                    </button>
-                  </div>
-                </li>
-
-                <li class="list-item">
-                  <div class="item-left">
-                    <!-- 상품 이름과 사진 체크유무 -->
-                    <div class="list-pr-info">
-                      <img
-                        id="check-false"
-                        class="is-checked-false"
-                        src="./assets/icon/isChecked=false.png"
-                        alt="전채선택"
-                      />
-                      <a href="/" class="list-image">
-                        <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지" />
-                      </a>
-
-                      <div class="product-name">
-                        <span> 쓱싹쓱싹 세제 </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="item-right">
-                    <!-- 상품 수량변경 -->
-                    <div class="product-count">
-                      <button type="button" value="-" aria-label="수량내리기" class="product-minus-btn">
-                        <img src="./assets/icon/Minus=true.png" alt="수량내리기" />
-                      </button>
-                      <div class="count" id="count-result">1</div>
-                      <button type="button" value="+" aria-label="수량올리기" class="product-plus-btn">
-                        <img src="./assets/icon/Plus=false.png" alt="수량올리기" />
-                      </button>
-                    </div>
-                    <!-- 상품 가격 표시 -->
-                    <div class="product-price">
-                      <span class="discount-price">4,000 원</span>
-                      <span class="original-price">5,000 원</span>
-                    </div>
-                    <!-- 상품 삭제 버튼 -->
-                    <button class="delete-button">
-                      <img src="./assets/icon/Cancel.png" alt="상품 삭제" />
-                    </button>
-                  </div>
-                </li>
-              </ul>
+              <ul class="main-list"></ul>
             </li>
 
             <!-- 냉동리스트 -->
-            <li class="list">
+            <li class="list cold-list">
               <div class="catagory">
-                <h3 class="list-name"><img src="./assets/icon/Type=Frozen.png" alt="냉동식품" /> 냉동 식품 icon</h3>
+                <h3 class="list-name"><img src="./assets/icon/Type=Frozen.png" alt="냉동식품" /> 냉동 식품</h3>
                 <button class="click-down" type="button">
                   <img src="./assets/icon/arrow.png" alt="냉동 식품 펼쳐보기" />
                 </button>
               </div>
 
               <!-- 냉동 리스트 안에 상품 -->
-              <ul>
-                <li class="list-item">
-                  <div class="item-left">
-                    <!-- 상품 이름과 사진 체크유무 -->
-                    <div class="list-pr-info">
-                      <img
-                        id="check-false"
-                        class="is-checked-false"
-                        src="./assets/icon/isChecked=false.png"
-                        alt="전채선택"
-                      />
-                      <a href="/" class="list-image">
-                        <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지" />
-                      </a>
-
-                      <div class="product-name">
-                        <span> 쓱싹쓱싹 세제 </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="item-right">
-                    <!-- 상품 수량변경 -->
-
-                    <div class="product-count">
-                      <button type="button" value="-" aria-label="수량내리기" class="product-minus-btn">
-                        <img src="./assets/icon/Minus=true.png" alt="수량내리기" />
-                      </button>
-                      <div class="count" id="count-result">1</div>
-                      <button type="button" value="+" aria-label="수량올리기" class="product-plus-btn">
-                        <img src="./assets/icon/Plus=false.png" alt="수량올리기" />
-                      </button>
-                    </div>
-                    <!-- 상품 가격 표시 -->
-                    <div class="product-price">
-                      <span class="discount-price">4,000 원</span>
-                      <span class="original-price">5,000 원</span>
-                    </div>
-                    <!-- 상품 삭제 버튼 -->
-                    <button class="delete-button">
-                      <img src="./assets/icon/Cancel.png" alt="상품 삭제" />
-                    </button>
-                  </div>
-                </li>
-              </ul>
+              <ul class="main-list"></ul>
             </li>
 
             <!-- 상온리스트 -->
-            <li class="list">
+            <li class="list normal-list">
               <div class="catagory">
                 <h3 class="list-name">
                   <img src="./assets/icon/Type=_Normal.png" alt="상온식품" />
-                  상온 식품 icon
+                  상온 식품
                 </h3>
                 <button class="click-down">
                   <img src="./assets/icon/arrow.png" alt="상온 식품 펼쳐보기" />
@@ -209,50 +79,7 @@
               </div>
 
               <!-- 상온 리스트 안에 상품 -->
-              <ul>
-                <li class="list-item">
-                  <div class="item-left">
-                    <!-- 상품 이름과 사진 체크유무 -->
-                    <div class="list-pr-info">
-                      <img
-                        id="check-false"
-                        class="is-checked-false"
-                        src="./assets/icon/isChecked=false.png"
-                        alt="전채선택"
-                      />
-                      <a href="/" class="list-image">
-                        <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지" />
-                      </a>
-
-                      <div class="product-name">
-                        <span> 쓱싹쓱싹 세제 </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="item-right">
-                    <!-- 상품 수량변경 -->
-                    <div class="product-count">
-                      <button type="button" value="-" aria-label="수량내리기" class="product-minus-btn">
-                        <img src="./assets/icon/Minus=true.png" alt="수량내리기" />
-                      </button>
-                      <div class="count" id="count-result">1</div>
-                      <button type="button" value="+" aria-label="수량올리기" class="product-plus-btn">
-                        <img src="./assets/icon/Plus=false.png" alt="수량올리기" />
-                      </button>
-                    </div>
-                    <!-- 상품 가격 표시 -->
-                    <div class="product-price">
-                      <span class="discount-price">4,000 원</span>
-                      <span class="original-price">5,000 원</span>
-                    </div>
-                    <!-- 상품 삭제 버튼 -->
-                    <button class="delete-button">
-                      <img src="./assets/icon/Cancel.png" alt="상품 삭제" />
-                    </button>
-                  </div>
-                </li>
-              </ul>
+              <ul class="main-list"></ul>
             </li>
 
             <li class="click-total down">

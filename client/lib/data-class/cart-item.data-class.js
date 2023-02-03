@@ -39,6 +39,7 @@ export default class CartItemDataClass {
   toElement() {
     const listItem = document.createElement('li');
     listItem.className = 'list-item';
+    listItem.id = this.id;
     listItem.innerHTML = `
                   <div class="item-left">
                     <!-- 상품 이름과 사진 체크유무 -->
@@ -47,13 +48,11 @@ export default class CartItemDataClass {
                       <a href="/" class="list-image">
                         <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지">
                       </a>
-
                       <div class="product-name">
                         <span> ${this.name} </span>
                       </div>
                     </div>
                   </div>
-
                   <div class="item-right">
                     <!-- 상품 수량변경 -->
                     <div class="product-count">
