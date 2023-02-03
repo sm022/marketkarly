@@ -113,7 +113,7 @@ body {
 .event-button {
   width: 52px;
   height: 52px;
-  background: url('/client/assets/icon/Arrow.png') no-repeat;
+  background: url('/client/assets/icon/event_arraow.png') no-repeat;
   border: 0;
   padding: 50px 0 0 0;
   overflow: hidden;
@@ -124,27 +124,14 @@ body {
   position: absolute;
   top: 146px;
   left: 350px;
+  transform: rotate(180deg);
 }
 
 .event-button-next {
   position: absolute;
   top: 146px;
   right: 350px;
-  transform: rotate(180deg);
 }
-
-
-/* keyframe 하기!! */
-
-/* .button-wrapper {
-  opacity: 0;
-}
-
-.event:hover .button-wrapper{
-  transition: all 0.5s ease 0s;
-  opacity: 100;
-} */
-
 
 
 /* ----------------------------------- 메인 ----------------------------------- */
@@ -353,9 +340,6 @@ body {
   margin: 0 auto;
 }
 
-/* .sale-item-container {
-
-} */
 
 /* 특가 상품 버튼 */
 .sale-item-button {
