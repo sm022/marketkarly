@@ -7,6 +7,7 @@
       "price": 6900,
       "saleRatio": 0.24,
       "salePrice": 5244,
+      "type": "FROZEN",
       "image": {
         "thumbnail": "ubuho/thumbnail.jpg",
         "view": "ubuho/detail_view.jpg",
@@ -23,6 +24,7 @@
       "price": 4980,
       "saleRatio": 0,
       "salePrice": 0,
+      "type": "NORMAL",
       "image": {
         "thumbnail": "tangtang/thumbnail.jpg",
         "view": "tangtang/detail_view.jpg",
@@ -39,6 +41,7 @@
       "price": 7900,
       "saleRatio": 0.13,
       "salePrice": 6800,
+      "type": "FROZEN",
       "image": {
         "thumbnail": "jukkumi/thumbnail.jpg",
         "view": "jukkumi/detail_view.jpg",
@@ -55,6 +58,7 @@
       "price": 29800,
       "saleRatio": 0,
       "salePrice": 0,
+      "type": "COLD",
       "image": {
         "thumbnail": "kangnam/thumbnail.jpg",
         "view": "kangnam/detail_view.jpg",
@@ -71,6 +75,7 @@
       "price": 4500,
       "saleRatio": 0.25,
       "salePrice": 3375,
+      "type": "COLD",
       "image": {
         "thumbnail": "bacon/thumbnail.jpg",
         "view": "bacon/detail_view.jpg",
