@@ -1,0 +1,150 @@
+.footer-inner {
+  /* 임시 마진 */
+  margin-top: 30px;
+  padding: 0 435px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.footer-top {
+  padding-top: 28px;
+  padding-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+/* 고객 문의 */
+.inquiry-title {
+  color: var(--content);
+  font-weight: 700;
+  font-size: 21.328px;
+  margin-bottom: 16px;
+}
+
+.inquiry-number {
+  display: inline-block;
+  color: var(--content);
+  font-weight: 700;
+  font-size: 2.3687rem;
+  margin-bottom: 16px;
+}
+
+.inquiry-number span {
+  display: inline-block;
+  color: var(--content);
+  font-weight: 600;
+  font-size: 1rem;
+  transform: translateY(-50%);
+}
+
+/* 문의 버튼 */
+.customer-inquiry button {
+  width: 140px;
+  background-color: transparent;
+  margin-right: 16px;
+  padding: 7px 0;
+  border: 1px solid var(--gray-200);
+}
+
+.inquiry-kakao,
+.inquiry-personal,
+.inquiry-order {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.inquiry-non-member,
+.inquiry-non-member-order {
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--content);
+}
+
+.inquiry-non-member span,
+.inquiry-non-member-order span {
+  color: var(--primary);
+}
+
+/* 칼리 소개 */
+.about {
+  width: 486px;
+}
+.information {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.information span {
+  color: var(--content);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.additional-info {
+  color: var(--content);
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin-bottom: 28px;
+}
+
+.text-color {
+  color: var(--primary);
+}
+
+address {
+  display: inline-block;
+}
+
+.sns-link {
+  display: flex;
+}
+.sns-link li {
+  margin-right: 20px;
+}
+
+.bar-icon {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+/* 푸터 중앙 */
+.footer-middle {
+  padding: 24px 0 32px;
+}
+
+.partner-organization {
+  display: flex;
+}
+
+.partner-organization li {
+  width: 25%;
+  display: flex;
+}
+.partner-organization button {
+  display: flex;
+  align-items: flex-start;
+  border: none;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 0.625rem;
+  text-align: left;
+  padding: 0;
+  line-height: 1.6;
+}
+.partner-organization img {
+  margin-right: 8px;
+}
+
+/* footer-bottom */
+.footer-bottom {
+  background-color: var(--gray-50);
+  color: var(--gray-400);
+  text-align: center;
+  padding: 20px 32px;
+}
+
+.footer-bottom section {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
