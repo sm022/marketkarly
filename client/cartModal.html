@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./css/cartModal.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script defer src="./js/main.js" type="module"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <article class="cart-modal">
+      <div class="modal-info">
+        <div class="product-name">
+          <span>싱싱 맛난 딸기</span>
+        </div>
+        <div class="product-price">
+          <div>
+            <span class="discount-price">4,000</span>
+            <span class="price-unit">원</span>
+
+            <span class="original-price">5,000</span>
+          </div>
+          <div class="product-count">
+            <button type="button" aria-label="수량내리기" class="product-minus-btn">
+              <img src="./assets/icon/Minus=true.png" alt="수량내리기" />
+            </button>
+            <div class="count" id="count-result">3</div>
+            <button type="button" value="+" aria-label="수량올리기" class="product-plus-btn">
+              <img src="./assets/icon/Plus=false.png" alt="수량올리기" />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-amount">
+        <span>합계 </span>
+        <div class="amount">
+          <span class="price">상품금액</span>
+          <span class="price-unit">원</span>
+        </div>
+      </div>
+      <div class="notice">
+        <span class="accumulate">적립</span>
+        <span class="accumulate-hint">구매 시 5원 적립</span>
+      </div>
+      <div class="modal-btn">
+        <button type="button" id="cart-close" class="cart-cancel-button">취소</button>
+        <button type="button" id="cart-add" class="cart-input-button">장바구니</button>
+      </div>
+    </article>
+  </body>
+</html>
