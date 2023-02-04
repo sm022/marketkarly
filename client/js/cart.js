@@ -8,6 +8,13 @@ class CartProcessClass {
   frozenList = getNode('.frozen-list').querySelector('.main-list');
   normalList = getNode('.normal-list').querySelector('.main-list');
 
+  getTotalPrice(foods, deliveryPrice) {
+    foods.reduce((a, b) => {
+      console.log(a.getPrice().price, b.getPrice().price);
+    });
+    foods[0].getPrice().price;
+  }
+
   async loadFoodsFromApi() {
     const url = 'http://localhost:3000/products'; //api
     return xhrPromise({ url }).catch((err) => {
@@ -46,6 +53,8 @@ class CartProcessClass {
           return;
       }
     });
+
+    this.getTotalPrice(foods, 1000);
   }
 }
 

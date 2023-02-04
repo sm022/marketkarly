@@ -6,22 +6,28 @@ export default class CartItemDataClass {
   description;
   price;
   salePrice;
-  saleRate;
+  saleRatio;
   stock;
+  amount;
   image;
   isSelect = true;
 
   constructor(args) {
-    const { id, type, name, description, price, salePrice, saleRate, image, stock } = args;
+    const { id, type, name, description, price, salePrice, saleRatio, image, stock } = args;
     this.id = id;
     this.name = name;
     this.description = description;
     this.type = type;
     this.price = price;
     this.salePrice = salePrice;
-    this.saleRate = saleRate;
+    this.saleRatio = saleRatio;
     this.stock = stock;
+    this.amount = 1;
     this.image = image;
+  }
+
+  getPrice() {
+    return { price: this.price, salePrice: this.salePrice };
   }
 
   select() {
@@ -40,13 +46,14 @@ export default class CartItemDataClass {
     const listItem = document.createElement('li');
     listItem.className = 'list-item';
     listItem.id = this.id;
+    const priceInfo = +this.saleRatio > 0 ? `<span class="original-price">${this.price} 원</span>` : '';
     listItem.innerHTML = `
                   <div class="item-left">
                     <!-- 상품 이름과 사진 체크유무 -->
                     <div class="list-pr-info">
                       <img id="check-false" class="is-checked-false" src="./assets/icon/isChecked=false.png" alt="전채선택">
                       <a href="/" class="list-image">
-                        <img src="./assets/item/baby_cleanser_main.png" alt="상품이미지">
+                        <img src="${this.image.thumbnail}" alt="상품이미지">
                       </a>
                       <div class="product-name">
                         <span> ${this.name} </span>
@@ -59,7 +66,7 @@ export default class CartItemDataClass {
                       <button type="button" value="-" aria-label="수량내리기" class="product-minus-btn">
                         <img src="./assets/icon/Minus=true.png" alt="수량내리기">
                       </button>
-                      <div class="count" id="count-result">1</div>
+                      <div class="count" id="count-result">${this.amount}</div>
                       <button type="button" value="+" aria-label="수량올리기" class="product-plus-btn">
                         <img src="./assets/icon/Plus=false.png" alt="수량올리기">
                       </button>
@@ -67,7 +74,7 @@ export default class CartItemDataClass {
                     <!-- 상품 가격 표시 -->
                     <div class="product-price">
                       <span class="discount-price">${this.salePrice} 원</span>
-                      <span class="original-price">${this.price} 원</span>
+                      ${priceInfo}
                     </div>
                     <!-- 상품 삭제 버튼 -->
                     <button class="delete-button">
