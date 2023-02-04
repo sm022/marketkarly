@@ -67,12 +67,12 @@ a {
 
 /* 필터링 전체 레이아웃 */
 .best-filter-container {
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 /* 필터링 초기화 head*/
 .best-filter-reset {
-  background-color: bisque;
+  /* background-color: bisque; */
   display: flex;
   justify-content: space-between;
   font-family: 'Pretendard';
@@ -80,8 +80,14 @@ a {
   font-weight: 600;
   font-size: 1rem;
   color: var(--content);
-  margin-bottom: 22px;
-  border: 1;
+  /* margin-bottom: 22px; */
+  flex-direction: row;
+  align-items: center;
+  padding: 13px 0;
+  gap: 8px;
+  width: 220px;
+  height: 24px;
+  border-bottom: #333333 1px solid;
 
 }
 /* 필터링 버튼 */
@@ -93,10 +99,12 @@ a {
   font-size: .625rem;
   line-height: 160%;
   color: var(--gray-300);
+  /* border-bottom: #333333 1px solid; */
 }
 /* 디테일 밑줄 */
 details{
   border-bottom: 1px black solid;
+  padding: 13px 0;
   /* height: 80px; */
 }
 
@@ -114,16 +122,59 @@ details{
   font-weight: 400;
   font-size: 1rem;
   color: var(--content);
+  /* padding: 13px 0; */
   /* margin-bottom: 4px; */
   /* padding: 0; */
 }
 
-/* 카테고리 li 영역어디까지 */
+.category-ul li{
+border-top: 1px solid black;
+}
+
+.category-ul li span{
+  /* border-top: 1px solid black; */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--content);
+}
+
+/* 카테고리 li 영역어디까지인지 확인 */
 .category-ul li {
   margin-top: 22px;
   /* background-color: lightseagreen; */
   border: 0;
 }
+
+summary{
+  display: flex;
+  justify-content:space-between;
+}
+
+summary button{
+  width: 19px;
+  border: 0px;
+  height: 0px !important;
+  background-image: url(../assets/icon/Direction=Down.png);
+  background-repeat: no-repeat;
+  padding: 18px 0 0 0;
+  line-height: 24px;
+  
+}
+
+summary button::before{
+  /* width: 19px;
+  border: 0;
+  height: 0 !important;
+  background-image: url(../assets/icon/Direction=Up.png);
+  background-repeat: no-repeat;
+  padding: 18px 0 0 0;
+  line-height: 24px;
+  background-color: white; */
+}
+
 
 
 .category-more {
@@ -137,7 +188,27 @@ details{
   color: var(--gray-300);
   background-color: white;
   border: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 12px;
+  width: 220px;
+  height: 42px;
 }
+
+.category-more::after{
+  display: inline-block;
+  content: "";
+  width: 19px;
+  border: 1px;
+  height: 14px;
+  background-image: url(../assets/icon/Direction=Right.png);
+  background-repeat: no-repeat;
+  line-height: 24px;
+  
+}
+
 
 /* 브랜드 */
 .brand {
@@ -148,6 +219,7 @@ details{
   font-weight: 600;
   font-size: 1rem;
   /* line-height: 150%; */
+  
 }
 
 .brand-title {
