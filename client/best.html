@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="./css/best.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
+  <title>best-product-page</title>
+
+</head>
+
+<body>
+  <main>
+    <div class="best-container">
+      <h3 class="best-title">베스트</h3>
+      <div class="best-product">
+        <section class="best-filter-container">
+          <!-- section 태그 + heading(a11y-hidden) -->
+          <!-- 요부분은 나랑 같이 details+summury / input -->
+          <div class="best-filter-reset">
+            <span>필터</span>
+            <span class="reset-btn">초기화</span>
+          </div>
+
+          <!-- 카테고리 -->
+          <details>
+            <summary>카테고리</summary>
+            <ul class="category-ul">
+              <li>
+                <input type="checkbox" id="salad" name="salad" value="salad" />
+                <label class="list-item" for="salad">
+                  <span>샐러드・간편식</span><span class="list_item_count">65</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="main-dish" name="main-dish" value="main-dish" />
+                <label class="list-item" for="main-dish">
+                  <span>국・반찬・메인요리 </span><span class="list_item_count">52</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="livestock-products" name="livestock-products" value="livestock-products" />
+                <label class="list-item" for="livestock-products">
+                  <span>정육・계란</span><span class="list_item_count">41</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="agricultural-products" name="agricultural-products" value="agricultural-products" />
+                <label class="list-item" for="agricultural-products">
+                  <span>과일・견과・쌀</span><span class="list_item_count">30</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="snack" name="snack" value="snack" />
+                <label class="list-item" for="snack">
+                  <span>간식・과자・떡</span><span class="list_item_count">18</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="beverage" name="beverage" value="beverage" />
+                <label class="list-item" for="beverage">
+                  <span>생수・음료・우유・커피</span><span class="list_item_count">17</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="aquatic-products" name="aquatic-products" value="aquatic-products" />
+                <label class="list-item" for="aquatic-products">
+                  <span>수산・해산・건어물</span><span class="list_item_count">16</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="bakery" name="bakery" value="bakery" />
+                <label class="list-item" for="bakery">
+                  <span>베이커리・치즈・델리</span><span class="list_item_count">13</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="health-food" name="health-food" value="health-food" />
+                <label class="list-item" for="health-food">
+                  <span>건강식품</span><span class="list_item_count">10</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="living-products" name="living-products" value="living-products" />
+                <label class="list-item" for="living-products">
+                  <span>생활용품・리빙・캠핑</span><span class="list_item_count">10</span></label>
+              </li>
+              
+            </ul>
+            <button class="category-more">카테고리 더보기</button>
+          </details>
+
+
+
+            <!-- 브랜드 -->
+            <details>
+              <summary>브랜드</summary>
+              <ul class="category-ul">
+                <li>
+                  <input type="checkbox" id="potato-field" name="potato-field" value="potato-field" />
+                  <label class="list-item" for="potato-field">
+                    <span>감자밭</span><span class="list_item_count">1</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="gangnam-myeonok" name="gangnam-myeonok" value="gangnam-myeonok" />
+                  <label class="list-item" for="gangnam-myeonok">
+                    <span>강남면옥</span><span class="gangnam-myeonok">1</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="kyungnam-pharmaceutical" name="kyungnam-pharmaceutical" value="Kyungnam-pharmaceutical" />
+                  <label class="list-item" for="kyungnam-pharmaceutical">
+                    <span>경남제약</span><span class="list_item_count">1</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="gyeongbokgung" name="gyeongbokgung" value="gyeongbokgung" />
+                  <label class="list-item" for="gyeongbokgung">
+                    <span>경복궁</span><span class="list_item_count">1</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="golaesa" name="golaesa" value="golaesa" />
+                  <label class="list-item" for="golaesa">
+                    <span>고래사</span><span class="list_item_count">1</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="gourmet-workshop" name="gourmet-workshop" value="gourmet-workshop" />
+                  <label class="list-item" for="gourmet-workshop">
+                    <span>고메공방</span><span class="list_item_count">1</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="hot-fish-diet" name="hot-fish-diet" value="hot-fish-diet" />
+                  <label class="list-item" for="hot-fish-diet">
+                    <span>고온어다이어트</span><span class="list_item_count">1</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="kyoto-marble" name="kyoto-marble" value="kyoto-marble" />
+                  <label class="list-item" for="kyoto-marble">
+                    <span>교토마블</span><span class="list_item_count">1</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="granola-house" name="granola-house" value="granola-house" />
+                  <label class="list-item" for="granola-house">
+                    <span>그래놀라 하우스</span><span class="list_item_count">1</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="gritz-signature-lamb" name="gritz-signature-lamb" value="gritz-signature-lamb" />
+                  <label class="list-item" for="gritz-signature-lamb">
+                    <span>그리츠 시그니처 램</span><span class="list_item_count">1</span></label>
+                </li>
+              </ul>
+              <button class="category-more">가격 더보기</button>
+            </details>
+
+            <!-- 가격 -->
+            <details>
+              <summary>가격</summary>
+              <ul class="category-ul">
+                <li>
+                  <input type="checkbox" id="price1" name="price1" value="price1" />
+                  <label class="list-item" for="price1">
+                    <span>샐러드・간편식</span><span class="list_item_count">65</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="price2" name="price2" value="price2" />
+                  <label class="list-item" for="price2">
+                    <span>국・반찬・메인요리 </span><span class="list_item_count">52</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="price3" name="price3" value="price3" />
+                  <label class="list-item" for="price3">
+                    <span>정육・계란</span><span class="list_item_count">41</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="price4" name="price4" value="price4" />
+                  <label class="list-item" for="price4">
+                    <span>과일・견과・쌀</span><span class="list_item_count">30</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="price5" name="price5" value="price5" />
+                  <label class="list-item" for="price5">
+                    <span>간식・과자・떡</span><span class="list_item_count">18</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="price6" name="price6" value="price6" />
+                  <label class="list-item" for="price6">
+                    <span>생수・음료・우유・커피</span><span class="list_item_count">17</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="price7" name="price7" value="price7" />
+                  <label class="list-item" for="price7">
+                    <span>수산・해산・건어물</span><span class="list_item_count">16</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="price8" name="price8" value="price8" />
+                  <label class="list-item" for="price8">
+                    <span>베이커리・치즈・델리</span><span class="list_item_count">13</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="price9" name="price9" value="price9" />
+                  <label class="list-item" for="price9">
+                    <span>건강식품</span><span class="list_item_count">10</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="price10" name="price10" value="price10" />
+                  <label class="list-item" for="price10">
+                    <span>생활용품・리빙・캠핑</span><span class="list_item_count">10</span></label>
+                </li>
+                
+              </ul>
+              <button class="category-more">가격 더보기</button>
+              </details>
+            <!-- 혜택 -->
+           <details>
+            <summary>혜택</summary>
+            <ul class="category-ul">
+              <li>
+                <input type="checkbox" id="benefit1" name="benefit1" value="benefit1" />
+                <label class="list-item" for="benefit1">
+                  <span>샐러드・간편식</span><span class="list_item_count">65</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="benefit2" name="benefit2" value="benefit2" />
+                <label class="list-item" for="benefit2">
+                  <span>국・반찬・메인요리 </span><span class="list_item_count">52</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="benefit3" name="benefit3" value="benefit3" />
+                <label class="list-item" for="benefit3">
+                  <span>정육・계란</span><span class="list_item_count">41</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="benefit4" name="benefit4" value="benefit4" />
+                <label class="list-item" for="benefit4">
+                  <span>과일・견과・쌀</span><span class="list_item_count">30</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="benefit5" name="benefit5" value="benefit5" />
+                <label class="list-item" for="benefit5">
+                  <span>간식・과자・떡</span><span class="list_item_count">18</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="benefit6" name="benefit6" value="benefit6" />
+                <label class="list-item" for="benefit6">
+                  <span>생수・음료・우유・커피</span><span class="list_item_count">17</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="benefit7" name="benefit7" value="benefit7" />
+                <label class="list-item" for="benefit7">
+                  <span>수산・해산・건어물</span><span class="list_item_count">16</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="benefit8" name="benefit8" value="benefit8" />
+                <label class="list-item" for="benefit8">
+                  <span>베이커리・치즈・델리</span><span class="list_item_count">13</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="benefit9" name="benefit9" value="benefit9" />
+                <label class="list-item" for="benefit9">
+                  <span>건강식품</span><span class="list_item_count">10</span></label>
+              </li>
+              <li>
+                <input type="checkbox" id="benefit10" name="benefit10" value="benefit10" />
+                <label class="list-item" for="benefit10">
+                  <span>생활용품・리빙・캠핑</span><span class="list_item_count">10</span></label>
+              </li>
+              
+            </ul>
+            <button class="category-more">혜택 더보기</button>
+            </details>
+
+            <!-- 유형 -->
+            <details>
+              <summary>유형</summary>
+              <ul class="category-ul">
+                <li>
+                  <input type="checkbox" id="type1" name="type1" value="type1" />
+                  <label class="list-item" for="type1">
+                    <span>샐러드・간편식</span><span class="list_item_count">65</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="type2" name="type2" value="type2" />
+                  <label class="list-item" for="type2">
+                    <span>국・반찬・메인요리 </span><span class="list_item_count">52</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="type3" name="type3" value="type3" />
+                  <label class="list-item" for="type3">
+                    <span>정육・계란</span><span class="list_item_count">41</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="type4" name="type4" value="type4" />
+                  <label class="list-item" for="type4">
+                    <span>과일・견과・쌀</span><span class="list_item_count">30</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="type5" name="type5" value="type5" />
+                  <label class="list-item" for="type5">
+                    <span>간식・과자・떡</span><span class="list_item_count">18</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="type6" name="type6" value="type6" />
+                  <label class="list-item" for="type6">
+                    <span>생수・음료・우유・커피</span><span class="list_item_count">17</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="type7" name="type7" value="type7" />
+                  <label class="list-item" for="type7">
+                    <span>수산・해산・건어물</span><span class="list_item_count">16</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="type8" name="type8" value="type8" />
+                  <label class="list-item" for="type8">
+                    <span>베이커리・치즈・델리</span><span class="list_item_count">13</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="type9" name="type9" value="type9" />
+                  <label class="list-item" for="type9">
+                    <span>건강식품</span><span class="list_item_count">10</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="type10" name="type10" value="type10" />
+                  <label class="list-item" for="type10">
+                    <span>생활용품・리빙・캠핑</span><span class="list_item_count">10</span></label>
+                </li>
+                
+              </ul>
+              <button class="category-more">유형 더보기</button>
+              </details>
+
+            <!-- 특정상품제외 -->
+            <details>
+              <summary>특정상품제외</summary>
+              <ul class="category-ul">
+                <li>
+                  <input type="checkbox" id="excluding-specific-products1" name="excluding-specific-products1" value="excluding-specific-products1" />
+                  <label class="list-item" for="excluding-specific-products1">
+                    <span>샐러드・간편식</span><span class="list_item_count">65</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="excluding-specific-products2" name="excluding-specific-products2" value="excluding-specific-products2" />
+                  <label class="list-item" for="excluding-specific-products2">
+                    <span>국・반찬・메인요리 </span><span class="list_item_count">52</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="excluding-specific-products3" name="excluding-specific-products3" value="excluding-specific-products3" />
+                  <label class="list-item" for="excluding-specific-products3">
+                    <span>정육・계란</span><span class="list_item_count">41</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="excluding-specific-products4" name="excluding-specific-products4" value="excluding-specific-products4" />
+                  <label class="list-item" for="excluding-specific-products4">
+                    <span>과일・견과・쌀</span><span class="list_item_count">30</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="excluding-specific-products5" name="excluding-specific-products5" value="excluding-specific-products5" />
+                  <label class="list-item" for="excluding-specific-products5">
+                    <span>간식・과자・떡</span><span class="list_item_count">18</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="excluding-specific-products6" name="excluding-specific-products6" value="excluding-specific-products6" />
+                  <label class="list-item" for="excluding-specific-products6">
+                    <span>생수・음료・우유・커피</span><span class="list_item_count">17</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="excluding-specific-products7" name="excluding-specific-products7" value="excluding-specific-products7" />
+                  <label class="list-item" for="excluding-specific-products7">
+                    <span>수산・해산・건어물</span><span class="list_item_count">16</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="excluding-specific-products8" name="excluding-specific-products8" value="excluding-specific-products8" />
+                  <label class="list-item" for="excluding-specific-products8">
+                    <span>베이커리・치즈・델리</span><span class="list_item_count">13</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="excluding-specific-products9" name="excluding-specific-products9" value="excluding-specific-products9" />
+                  <label class="list-item" for="excluding-specific-products9">
+                    <span>건강식품</span><span class="list_item_count">10</span></label>
+                </li>
+                <li>
+                  <input type="checkbox" id="excluding-specific-products10" name="excluding-specific-products10" value="excluding-specific-products10" />
+                  <label class="list-item" for="excluding-specific-products10">
+                    <span>생활용품・리빙・캠핑</span><span class="list_item_count">10</span></label>
+                </li>
+                
+              </ul>
+              <button class="category-more">특정상품제외 더보기</button>
+              </details>
+
+        </section>
+
+        <!-- 아티클 //좌츨 필터링 부분 끝 부분 입니다 -->
+        <!----섹션 //우측 베스트 상품 시작 부분입니다----->
+
+
+        <!-- 베스트 상품 -->
+        <section class="food-container">
+          <!-- 상품갯수 및 네비게이션 -->
+          <div class="food-nav-box">
+            <div class="food-total">
+              <p>총 284건</p>
+              <!-- 텍스트 태그 사용 -->
+            </div>
+            <ul class="food-nav">
+              <!-- 버튼 태그 사용 -->
+              <li>추천순</li>
+              <li>신상품순</li>
+              <li>판매량순</li>
+              <li>혜택순</li>
+              <li>낮은 가격순</li>
+              <li>높은 가격순</li>
+            </ul>
+          </div>
+          <!-- 상품 리스트 -->
+          <div class="product-container">
+            <div class="product">
+              <!-- 페이지 전환을 위해 a태그 사용 -->
+              <!-- a태그를 감싸서 사용하면 안되고 이미지에만 사용 -->
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[대구 반할만떡] 유부호만두</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">5,244 원</p>
+                  </div>
+                  <p class="del-price"><del>6,900 원</del></p>
+                  <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[홍대주꾸미] 주꾸미 볶음 300g (냉동)</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">13%</p>
+                    <p class="sale-price">6,800 원</p>
+                  </div>
+                  <p class="del-price"><del>7,900 원</del></p>
+                  <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="tangtang" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">튀기지 않아 부담없는 매콤함</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="sun-cushion" src="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[온더바디] 죠르디 시카 자석 선쿠션</p>
+                  <p class="price">32,500 원</p>
+                  <p class="product-info-explain">끈적임 없이 보송한 무기자차 선쿠션</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="baby-cleanser" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[프로쉬] 베이비 세탁세제</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">18,900 원</p>
+                  </div>
+                  <p class="del-price"><del>24,900 원</del></p> <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">성분을 꼼꼼히 따져 골라 더욱 편안한</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="tangtang" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
+                    height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">튀기지 않아 부담없는 매콤함</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="sun-cushion" src="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[온더바디] 죠르디 시카 자석 선쿠션</p>
+                  <p class="price">32,500 원</p>
+                  <p class="product-info-explain">끈적임 없이 보송한 무기자차 선쿠션</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="baby-cleanser" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[프로쉬] 베이비 세탁세제</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">18,900 원</p>
+                  </div>
+                  <p class="del-price"><del>24,900 원</del></p>
+                  <p class="product-info-explain">성분을 꼼꼼히 따져 골라 더욱 편안한</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="tangtang" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
+                    height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">튀기지 않아 부담없는 매콤함</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="sun-cushion" src="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[온더바디] 죠르디 시카 자석 선쿠션</p>
+                  <p class="price">32,500 원</p>
+                  <p class="product-info-explain">끈적임 없이 보송한 무기자차 선쿠션</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="baby-cleanser" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[프로쉬] 베이비 세탁세제</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">18,900 원</p>
+                  </div>
+                  <p class="del-price"><del>24,900 원</del></p>
+                  <p class="product-info-explain">성분을 꼼꼼히 따져 골라 더욱 편안한</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="tangtang" src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면" width="249px"
+                    height="320px" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">튀기지 않아 부담없는 매콤함</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="sun-cushion" src="./assets/item/sun_cushion_main.png" alt="[온더바디]죠르디 선쿠션" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[온더바디] 죠르디 시카 자석 선쿠션</p>
+                  <p class="price">32,500 원</p>
+                  <p class="product-info-explain">끈적임 없이 보송한 무기자차 선쿠션</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="product-img-wrap">
+                  <img class="baby-cleanser" src="./assets/item/baby_cleanser_main.png" alt="[프로쉬]베이비 세탁세제" />
+                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                </div>
+                <div class="product-info">
+
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[프로쉬] 베이비 세탁세제</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">18,900 원</p>
+                  </div>
+                  <p class="del-price"><del>24,900 원</del></p>
+                  <p class="product-info-explain">성분을 꼼꼼히 따져 골라 더욱 편안한</p>
+                  <div class="box-container">
+                    <div class="left-box">Kalry Only</div>
+                    <div class="right-box">한정수량</div>
+                  </div>
+                </div>
+              </a>
+
+
+
+
+
+
+            </div>
+          </div>
+          <!-- 버튼 리스트?!어떻게짜지.. -->
+        </section>
+        <!-- <footer>
+          1,2,3,4,5 버튼 만들어야하나?
+        </footer> -->
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
