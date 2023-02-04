@@ -2,6 +2,7 @@
 @import url(./reset.css);
 @import url(./font.css);
 
+/* ally-hidden */
 .a11y-hidden
 legend{
   position: absolute;
@@ -105,7 +106,7 @@ a {
 /* 아이디 찾기와 비밀번호 찾기 사이 | 이 부분 */
 .search-space {
   width: 1px;
-  height: 10px;
+  height: 12px;
   margin: 3px 6px 0;
   background-color: var(--content);
 }
