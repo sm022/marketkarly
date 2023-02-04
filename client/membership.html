@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/membership.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./js/main.js" type="module"></script>
+  <title>회원가입 페이지</title>
+</head>
+
+<body>
+
+    <!-- 헤더 -->
+
+    <main class="main">
+      <!-- 회원가입 타이틀  -->
+      <h2 class="register-title">회원가입</h2>
+      <!-- 회원가입 폼 영역 전체 -->
+      <section class="register">
+          <!-- 구분선 위 영역 -->
+          <div class="linear-bold">
+            <!-- 필수입력사항 -->
+            <span class="emphasis">*</span> 필수입력사항
+        </div>
+          <!-- 필수입력사항 영역 전체 -->
+          <section class="required-entire">
+              <!-- 아이디 input 전체 -->
+              <ul class="input-entire">
+                  <!-- 아이디 영역(공백 포함) -->
+                  <li class="input-area-space">
+                       <!-- 아이디 글자 -->
+                      <label class="text-area">아이디
+                        <!-- 별표(강조) -->
+                        <span class="emphasis">*</span>
+                    </label>
+                  </li>
+                  <!-- 아이디 input창만 해당 -->
+                  <li class="input-area">
+                    <a class="input-first-layout"> 
+                      <div class="input-second-layout">
+                    <input data-testid="input-box" id="memberId" name="memberId" required placeholder="아이디를 입력해주세요" type="text" class="input-start" value="" />
+                      </div>
+                    </a>
+                  </li>
+                    <!-- 중복확인 버튼 -->
+                   <div class="button-area-space">
+                      <button class="button-entire" type="button">
+                        <span class="button-text">중복확인</span>
+                    </button>
+                 </div>
+                </ul>
+                <!-- 비밀번호 input 전체 -->
+                <ul class="input-entire">
+                  <!-- 비밀번호 영역(공백 포함) -->
+                  <li class="input-area-space">
+                      <!-- 비밀번호 글자 -->
+                      <label class="text-area">비밀번호
+                        <!-- 별표(강조) -->
+                        <span class="emphasis">*</span>
+                    </label>
+                  </li>
+                  <li class="input-area">
+                    <input data-testid="input-box" id="password" name="password" placeholder="비밀번호를 입력해주세요" type="password" autocomplete="off" class="input-start" value="" />
+                  <!-- 버튼 자리(레이아웃 체크용) -->
+                </li>
+                  <span class="button-area-space"></span>
+                </ul>
+              <!-- 비밀번호 확인 input 전체 -->
+              <ul class="input-entire">
+                  <!-- 비밀번호 확인 영역(공백 포함) -->
+                  <li class="input-area-space">
+                      <!-- 비밀번호확인 글자 -->
+                      <label class="text-area">비밀번호확인
+                        <!-- 별표(강조) -->
+                        <span class="emphasis">*</span>
+                    </label>
+                  </li>
+                  <li class="input-area">
+                   <input data-testid="input-box" id="passwordConfirm" name="passwordConfirm" placeholder="비밀번호를 한번 더 입력해주세요" type="password" autocomplete="off" class="input-start" value="" />
+                  </li>
+                  <!-- 버튼 자리(레이아웃 체크용) -->
+                  <span class="button-area-space"></span>
+                </ul>
+              <!-- 이름 input 전체  -->
+              <ul class="input-entire">
+                  <!-- 이름 영역(공백 포함) -->
+                  <li class="input-area-space">
+                       <!-- 이름 글자 -->
+                      <label class="text-area">이름
+                        <!-- 별표(강조) -->
+                        <span class="emphasis">*</span>
+                    </label>
+                  </li>
+                  <li class="input-area">
+                    <input data-testid="input-box" id="name" name="name" required placeholder="이름을 입력해 주세요" type="text" class="input-start" value="" />
+                  </li>
+                  <span class="button-area-space"></span>
+              </ul>
+              <!-- 이메일 input 전체 -->
+              <ul class="input-entire">
+                  <!-- 이메일 영역(공백 포함) -->
+                  <li class="input-area-space">
+                       <!-- 이메일 글자 -->
+                      <label class="text-area">이메일
+                        <!-- 별표(강조) -->
+                        <span class="emphasis">*</span>
+                    </label>
+                </li>
+                  <li class="input-area">
+                    <input data-testid="input-box" id="email" name="email" required placeholder="예: marketkurly@kurly.com" type="text" class="input-start" value="" />
+                    </li>
+                  <!-- 중복확인 버튼 -->
+                  <div class="button-area-space">
+                      <button class="button-entire" type="button">
+                        <span class="button-text">중복확인</span>
+                    </button>
+                  </div>
+                </ul>
+              <!-- 휴대폰 input 전체  -->
+              <ul class="input-entire">
+                  <!-- 휴대폰 영역(공백 포함)  -->
+                  <li class="input-area-space">
+                       <!-- 휴대폰 글자 -->
+                      <label class="text-area">휴대폰
+                        <span class="emphasis">*</span>
+                    </label>
+                </li>
+                  <li class="input-area">
+                    <input data-testid="input-box" id="mobileNumber" name="mobileNumber" required placeholder="숫자만 입력해주세요." type="tel" class="input-start" value="" />
+                    </li>
+                  <!-- 인증번호 받기 버튼 -->
+                  <div class="button-area-space">
+                      <button class="button-entire" type="button" disabled="">
+                        <span class="button-text">인증번호 받기</span>
+                    </button>
+                  </div>
+              </ul>
+              <!-- 주소 input 전체 -->
+              <ul class="input-entire">
+                  <!-- 주소 영역(공백 포함) -->
+                  <li class="input-area-space">
+                      <!-- 주소 글자  -->
+                      <label class="text-area">주소
+                        <!-- 별표(강조) -->
+                        <span class="emphasis">*</span>
+                    </label>
+                </li>
+                  <!-- 주소 검색 버튼 -->
+                  <div class="input-area">
+                      <button class="search-button" type="button" height="44" radius="4">
+                          <span class="button-text">
+                            <img src="./client/assets/icon/Search.png" alt="" class="search-button-img" />주소 검색</span>
+                      </button>
+                      <span class="detailed-description">배송지에 따라 상품 정보가 달라질 수 있습니다.</span>
+                  </div>
+                  <!-- 버튼 자리(레이아웃 체크용) -->
+                  <span class="button-area-space"></span>
+                </ul>
+              <!-- 성별 input 전체 -->
+              <ul class="input-entire">
+                  <!-- 성별 영역(공백 포함) -->
+                  <li class="input-area-space">
+                    <!-- 성별 글자 -->
+                    <label class="text-area">성별</label>
+                  </li>
+                  <!-- radio 버튼 전체 영역 -->
+                  <ul class="input-area">
+                      <!-- radio 버튼 (공백 표시) -->
+                      <li class="gender-selection">
+                          <!-- 남자 선택 버튼 영역 -->
+                          <label class="radio-button-entire" for="gender-man">
+                              <input data-testid="radio-MALE" id="gender-man" name="gender" type="radio" class="radio-button-input" value="MALE" />
+                            <!-- 버튼만 해당 -->
+                            <span class="radio-button">
+                                <!-- 체크할 때 안에 버튼 표시 영역 -->
+                                <div class="radio-button-inner-area"></div>
+                            </span>
+                              <span aria-labelledby="gender-man" class="button-text-area">남자</span>
+                          </label>
+                          <!-- 여자 선택 버튼 영역 -->
+                          <label class="radio-button-entire" for="gender-woman">
+                              <input data-testid="radio-FEMALE" id="gender-woman" name="gender" type="radio" class="radio-button-input" value="FEMALE" />
+                              <!-- 버튼만 해당 -->
+                              <span class="radio-button">
+                                <!-- 체크할 때 안에 버튼 표시 영역 -->
+                                <div class="radio-button-inner-area"></div>
+                            </span> 
+                            <span aria-labelledby="gender-woman" class="button-text-area">여자</span>
+                          </label>
+                          <!-- 선택안함의 버튼 영역 -->
+                          <label class="radio-button-entire" for="gender-none">
+                              <input data-testid="radio-NONE" id="gender-none" name="gender" type="radio" class="radio-button-input" value="NONE" checked="checked"/>
+                              <!-- 버튼만 해당 -->
+                              <span class="none-checked-button-area">
+                                <!-- 체크할 때 안에 버튼 표시 영역 -->
+                                <div class="none-checked-inner-area"></div>
+                             </span>
+                            <span aria-labelledby="gender-none" class="button-text-area">선택안함</span>
+                          </label>
+                        </li>
+                    </ul>
+                  <!-- 버튼 자리(레이아웃 체크용) -->
+                  <span class="button-area-space"></span>
+                </ul>
+              <!-- 생년월일 input 전체 -->
+              <ul class="input-entire">
+                  <!-- 생년월일 영역(공백 포함) -->
+                  <li class="input-area-space">
+                    <!-- 생년월일 글자 -->
+                    <label class="text-area">생년월일</label>
+                  </li>
+                  <!-- 생년월일 input-box 영역 전체 -->
+                  <li class="input-area">
+                      <!-- 생년/월/일 -->
+                      <a class="birthdate">
+                          <!-- 생년 -->
+                          <div class="birthdate-input-area" height="40">
+                              <input data-testid="input-box" name="birthYear" required placeholder="YYYY" type="text" height="40" class="birthdate-text-area " value="" />
+                            </div>
+                          <!-- / 구분선 -->
+                          <span class="slash"></span>
+                          <div class="birthdate-input-area" height="40">
+                              <input data-testid="input-box" name="birthMonth" required placeholder="MM" type="text" height="40" class="birthdate-text-area " value="" />
+                            </div>
+                          <!-- / 구분선 -->
+                          <span class="slash"></span>
+                          <div class="birthdate-input-area" div height="40">
+                              <input data-testid="input-box" name="birthDay" required placeholder="DD" type="text" height="40" class="birthdate-text-area " value="" />
+                            </div>
+                        </a>
+                    </li>
+                  <!-- 버튼 자리(레이아웃 체크용) -->  
+                  <span class="button-area-space"></span>
+                </ul>
+              <!-- 추가입력 사항 input 전체 -->
+              <ul class="input-entire">
+                  <!-- 추가입력 사항 영역(공백 포함) -->
+                  <li class="input-area-space">
+                    <label class="text-area">추가입력 사항</label>
+                  </li>
+                  <!-- 추가입력 사항 선택 버튼 영역 -->
+                  <li class="input-area">
+                      <!-- 추가입력 사항 선택 버튼(공백 구분) -->
+                      <a class="additional-selection">
+                          <!-- 친구초대 추천인 아이디  -->
+                          <label class="radio-button-entire" for="additional-recommender">
+                              <input data-testid="radio-RECOMMEND" id="additional-recommender" name="joinExtraInputType" type="radio" class="radio-button-input" value="RECOMMEND" />
+                              <!-- 버튼만 해당 -->
+                              <span class="radio-button">
+                                <!-- 체크할 때 안에 버튼 영역 표시 -->
+                                <div class="radio-button-inner-area"></div>
+                            </span>
+                            <span aria-labelledby="additional-recommender" class="button-text-area">친구초대 추천인 아이디</span>
+                          </label>
+                          <!-- 참여 이벤트명 -->
+                          <label class="radio-button-entire" for="additional-event">
+                              <input data-testid="radio-EVENT" id="additional-event" name="joinExtraInputType" type="radio" class="radio-button-input" value="EVENT" />
+                              <!-- 버튼만 해당 -->
+                              <span class="radio-button">
+                                <!-- 체크할 때 안에 버튼 영역 표시 -->
+                                <div class="radio-button-inner-area"></div>
+                            </span>
+                            <span aria-labelledby="additional-event" class="button-text-area">참여 이벤트명</span>
+                          </label>
+                        </a>
+                    </li>
+                  <!-- 버튼 자리(레이아웃 체크용) -->
+                  <span class="button-area-space"></span>
+                </ul>
+            </section>
+          <!-- 구분선  -->
+          <div class="linear"></div>
+          <!-- 이용약관동의 영역 전체 -->
+          <section class="terms-of-use">
+              <!-- 이용약관동의 (공백 구분) -->
+              <ul class="terms-of-use-area-space">
+                  <!-- 이용약관동의 영역 (공백 포함) -->
+                  <li class="input-area-space">
+                      <label class="text-area">이용약관동의
+                        <!-- 별표(강조) -->
+                        <span class="emphasis">*</span>
+                    </label>
+                  </li>
+                  <!-- 이용약관동의 선택 버튼 영역 -->
+                  <ul class="input-area">
+                      <!-- 전체 동의합니다 -->
+                      <li class="separate-entire-area">
+                          <label class="term-agree-all-entire-area" for="TermsAgreeAll">
+                              <input id="TermsAgreeAll" type="checkbox" class="check-button-input"/>
+                              <img
+                                  src="./client/assets/icon/checked.png"
+                                  alt=""
+                                  class="check-button-area"
+                              />
+                              <span>전체 동의합니다.</span>
+                          </label>
+                          <p class="additional-description">선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
+                        </li>
+                      <!-- 이용약관 동의 -->
+                      <li class="separate-entire-area">
+                          <!-- 이용약관 동의(글자 영역) -->
+                          <a class="terms-of-use-separate-area">
+                              <label class="terms-of-use-separate-text-area" for="RequiredTermsCondition">
+                                  <input id="RequiredTermsCondition" type="checkbox" class="check-button-input" />
+                                  <img
+                                      src="./client/assets/icon/checked.png"
+                                      alt=""
+                                      class="check-button-area"
+                                  />
+                                  <span>이용약관 동의</span>
+                              </label>
+                              <span class="required-or-option">(필수)</span>
+                          </a>
+                          <a class="terms-of-use-description">약관보기</a>
+                        </li>
+                      <!-- 개인정보수집,이용동의(필수) -->
+                      <li class="separate-entire-area">
+                          <a class="terms-of-use-separate-area">
+                              <label class="terms-of-use-separate-text-area" for="RequiredTermsOfPrivacy">
+                                  <input id="RequiredTermsOfPrivacy" type="checkbox" class="check-button-input" />
+                                  <img
+                                      src="./client/assets/icon/checked.png"
+                                      alt=""
+                                      class="check-button-area"
+                                  />
+                                  <span>개인정보 수집∙이용 동의</span>
+                              </label>
+                              <span class="required-or-option ">(필수)</span>
+                          </a>
+                          <a class="terms-of-use-description">약관보기</a>
+                        </li>
+                      <!-- 개인정보수집,이용동의(선택) -->
+                      <li class="separate-entire-area">
+                          <a class="terms-of-use-separate-area">
+                              <label class="terms-of-use-separate-text-area" for="OptionalTermsOfPrivacy">
+                                  <input id="OptionalTermsOfPrivacy" type="checkbox" class="check-button-input " />
+                                  <img
+                                      src="./client/assets/icon/checked.png"
+                                      alt=""
+                                      class="check-button-area"
+                                  />
+                                  <span>개인정보 수집∙이용 동의</span>
+                              </label>
+                              <span class="required-or-option">(선택)</span>
+                          </a>
+                          <a class="terms-of-use-description">약관보기</a>
+                        </li>
+                      <!-- 정보 수신 동의 -->
+                      <li class="receive-information">
+                          <a class="terms-of-use-separate-area">
+                              <label class="terms-of-use-separate-text-area" for="SignupEventAll">
+                                  <input id="SignupEventAll" type="checkbox" class="check-button-input" />
+                                  <img
+                                      src="./client/assets/icon/checked.png"
+                                      alt=""
+                                      class="check-button-area"
+                                  />
+                                  <span>무료배송, 할인쿠폰 등 혜택/정보 수신 동의</span>
+                              </label>
+                              <span class="required-or-option ">(선택)</span>
+                          </a>
+                          <!-- SMS/이메일 -->
+                          <li class="type-selection-area-entire ">
+                              <label class="choose-type-selection " for="OptionalTermsOfSms">
+                                  <input id="OptionalTermsOfSms" type="checkbox" class="check-button-input" />
+                                  <img
+                                      src="./client/assets/icon/checked.png"
+                                      alt=""
+                                      class="check-button-area"
+                                  />
+                                  <span>SMS</span>
+                              </label>
+                              <label class="choose-type-selection " for="OptionalTermsOfMailing">
+                                  <input id="OptionalTermsOfMailing" type="checkbox" class="check-button-input" />
+                                  <img
+                                      src="./client/assets/icon/checked.png"
+                                      alt=""
+                                      class="check-button-area"
+                                  />
+                                  <span>이메일</span>
+                              </label>
+                            </li>
+                          <div class="type-selection-area-entire ">
+                            <p class="first-customer-benefit">동의 시 한 달간 [5%적립] + [2만원 이상 무료배송] 첫 주문 후 안내</p></div>
+                        </li>
+                      <!-- 만 14세 이상 -->
+                      <li class="separate-entire-area">
+                          <a class="terms-of-use-separate-area">
+                              <label class="terms-of-use-separate-text-area " for="RequiredSignupAge">
+                                  <input id="RequiredSignupAge" type="checkbox" class="check-button-input" />
+                                  <img
+                                      src="./client/assets/icon/checked.png"
+                                      alt=""
+                                      class="check-button-area"
+                                  />
+                                  <span>본인은 만 14세 이상입니다.</span>
+                              </label>
+                              <span class="required-or-option ">(필수)</span>
+                          </a>
+                        </li>
+                    </ul>
+                </ul>
+          </section>
+          <!-- 가입하기 영역 전체 -->
+          <div class="register-button-entire">
+              <!-- 가입하기 버튼 -->
+              <button class="register-button" type="submit" width="240" height="56" radius="3">
+                <!-- 가입하기 글자 -->
+                <span class="button-text">가입하기</span>
+            </button>
+          </div>
+      </section>
+    </main>
+
+    
+      <!-- 푸터 -->
+  </body>
+</html>
