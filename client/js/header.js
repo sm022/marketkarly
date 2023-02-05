@@ -1,6 +1,9 @@
 import { getNode } from "../lib/dom/getNode.js";
 import { addClass, css, removeClass } from "../lib/dom/css.js";
 
+// 최상단 배너
+const topBanner = getNode(".top-banner");
+const closeButton = getNode(".close-icon");
 // 헤더
 const normalHeader = getNode(".normal-header");
 const scrollHeader = getNode(".scroll-header");
@@ -10,6 +13,10 @@ const main = getNode("main");
 const categoryMenu = getNode(".category-menu");
 const categoryList = getNode(".category-list");
 
+const onClickCloseHandler = () => {
+  css(topBanner, "display", "none");
+};
+
 const onMouseoverHandler = () => {
   addClass(categoryList, "is-active");
 };
@@ -18,6 +25,7 @@ const onMouseoutHandler = () => {
   removeClass(categoryList, "is-active");
 };
 
+closeButton.addEventListener("click", onClickCloseHandler);
 categoryMenu.addEventListener("mouseover", onMouseoverHandler);
 categoryMenu.addEventListener("mouseout", onMouseoutHandler);
 // 링크마다 해당하는 부분에 도달하면 is-selected 클래스 추가
