@@ -275,15 +275,15 @@ body {
 
 .recommend-prev-button {
   position: absolute;
-  top: 235px;
-  left: 400px;
+  top: 265px;
+  left: 403px;
   transform: rotate(180deg);
 }
 
 .recommend-next-button {
   position: absolute;
-  top: 235px;
-  right: 330px;
+  top: 265px;
+  right: 331px;
 }
 
 
@@ -292,19 +292,24 @@ body {
 /* 광고 배너 */
 
 .banner {
+  width: 1050px;
   height: 219px;
-  width: 1090px;
+  margin-left: 435px;
+}
+
+.line-banner {
+  width: 1050px;
+  height: 219px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: center;
 }
-
 
 .line-banner > img {
   height: 139px;
   width: 1050px;
 }
+
 
 
 /* -------------------------------- 특가 상품 목록 -------------------------------- */
@@ -348,15 +353,15 @@ body {
 
 .sale-prev-button {
   position: absolute;
-  top: 235px;
-  left: 400px;
+  top: 230px;
+  left: 403px;
   transform: rotate(180deg);
 }
 
 .sale-next-button {
   position: absolute;
-  top: 235px;
-  right: 330px;
+  top: 230px;
+  right: 331px;
 }
 
 /* --------------------------------- 최근 본 상품 -------------------------------- */
@@ -432,12 +437,3 @@ body {
 
 
 
-
-
-
-
-/* 광고 배너 */
-.banner {
-  height: 219px;
-  width: 1846px;
-}
