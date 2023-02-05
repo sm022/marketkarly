@@ -2,7 +2,6 @@
 @import url(./reset.css);
 @import url(./font.css);
 
-/* ally-hidden */
 .a11y-hidden
 legend{
   position: absolute;
