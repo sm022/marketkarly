@@ -61,8 +61,8 @@ const productImageTemplate = () => {
 
 const infoTextTemplate = () => {
   const { name, description, price, saleRatio, salePrice } = product;
-  const priceTemplate = price; //가격 표시 변경하기
-  const salePriceTemplate = salePrice; //가격 표시 변경하기
+  const priceTemplate = priceToString(price); //가격 표시 변경하기
+  const salePriceTemplate = priceToString(salePrice); //가격 표시 변경하기
   return salePrice === 0
     ? `
   <span class="early-delivery">샛별배송</span>
