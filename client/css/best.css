@@ -111,12 +111,18 @@ a {
 /* 카테고리 리스트별 버튼크기 설정 변경 성공 */
 summary{
   padding: 13px 0;
+  align-items: center;
 }
 /* 카테고리 리스트들 밑줄 효과 */
 details {
   border-bottom: 1px var(--content) solid;
-  /* padding: 13px 0; */
-  
+  /* padding: 13px 0; */ 
+}
+
+summary img{
+  width: 8px;
+  height: 4px;
+  z-index: 1px;
 }
 
 /* 카테고리 옆에 */
@@ -153,17 +159,21 @@ details {
 
 input[type="checkbox"]+label {
   /* display: inline-block; */
+  cursor:pointer;
   width: 23px;
   height: 23px;
   background: url('../assets/icon/isChecked=false.png') no-repeat 0 0px / contain;
+  
 }
 
 input[type='checkbox']:checked+label {
   background: url('../assets/icon/isChecked=true.png') no-repeat 0 1px / contain;
+ 
 }
 
 input[type="checkbox"] {
   display: none;
+  /* cursor:pointer; */
 }
 
 /* input[type="checkbox"]{
@@ -258,7 +268,10 @@ input[id="check1"]:checked + label::after{
 /* 카테고리 li 영역어디까지인지 확인 */
 
 summary {
+  display: flex;
+  justify-content: space-between;
   font-family: 'Pretendard';
+  cursor:pointer;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
