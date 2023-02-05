@@ -275,6 +275,7 @@ const renderPage = () => {
 window.onload = renderPage;
 
 const minusButton = getNode(".minus-button");
+const plusButton = getNode(".plus-button");
 const productQuantity = getNode(".product-counter span");
 const minusImg = getNode(".minus-button img");
 
@@ -293,5 +294,15 @@ const onClickMinusHandler = () => {
   productQuantity.textContent = quantity - 1;
   totalPrice.innerHTML = priceToString(sum - each) + "<small>원</small>";
 };
+const onClickPlusHandler = () => {
+  attr(minusImg, "src", "./assets/icon/Minus_able.png");
+  let quantity = Number(productQuantity.textContent);
+  // 함수로 분리해보기
+  let each = parseInt(eachPrice.textContent.split(",").join(""));
+  let sum = parseInt(totalPrice.textContent.split(",").join(""));
+  productQuantity.textContent = quantity + 1;
+  totalPrice.innerHTML = priceToString(sum + each) + "<small>원</small>";
+};
 
 minusButton.addEventListener("click", onClickMinusHandler);
+plusButton.addEventListener("click", onClickPlusHandler);
