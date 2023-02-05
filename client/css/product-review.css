@@ -314,15 +314,15 @@ legend{
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
-  background: url("/client/assets/icon/prev-activated.png");
+  background: url("/client/assets/icon/prev_activated.png");
 }
 
 .prev-page-disabled-button:hover{
-  background: url("/client/assets/icon/prev-hover.png");
+  background: url("/client/assets/icon/prev_hover.png");
 }
 
 .prev-page-disabled-button:disabled{
-  background: url("/client/assets/icon/prev-disabled.png");
+  background: url("/client/assets/icon/prev_disabled.png");
   cursor: default;
 }
 
@@ -344,15 +344,15 @@ legend{
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
-  background: url("/client/assets/icon/next-activated.png");
+  background: url("/client/assets/icon/next_activated.png");
 }
 
 .next-page-button:hover {
-  background: url("/client/assets/icon/next-hover.png");
+  background: url("/client/assets/icon/next_hover.png");
 }
 
 .next-page-button:disabled {
-  background: url("/client/assets/icon/next-disabled.png");
+  background: url("/client/assets/icon/next_disabled.png");
   cursor: default;
 }
 
