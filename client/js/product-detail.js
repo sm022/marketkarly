@@ -1,4 +1,5 @@
 import { getNode } from "../lib/dom/getNode.js";
+import { attr } from "../lib/dom/attr.js";
 import { insertFirst, insertLast } from "../lib/dom/insert.js";
 // 임시데이터
 // 할인 하는 상품
@@ -272,3 +273,25 @@ const renderPage = () => {
       : `${priceToString(product.salePrice)}<small>원</small>`;
 };
 window.onload = renderPage;
+
+const minusButton = getNode(".minus-button");
+const productQuantity = getNode(".product-counter span");
+const minusImg = getNode(".minus-button img");
+
+const onClickMinusHandler = () => {
+  let quantity = Number(productQuantity.textContent);
+  // 함수로 분리해보기
+  let each = parseInt(eachPrice.textContent.split(",").join(""));
+  let sum = parseInt(totalPrice.textContent.split(",").join(""));
+  if (quantity <= 1) {
+    return;
+  }
+  // 마이너스 버튼 비활성화 로직 다시 생각
+  if (quantity <= 2) {
+    attr(minusImg, "src", "./assets/icon/Minus.png");
+  }
+  productQuantity.textContent = quantity - 1;
+  totalPrice.innerHTML = priceToString(sum - each) + "<small>원</small>";
+};
+
+minusButton.addEventListener("click", onClickMinusHandler);
