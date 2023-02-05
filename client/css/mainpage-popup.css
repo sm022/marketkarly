@@ -5,8 +5,8 @@
   width: 440px;
   height: 672px;
   position: absolute;
-  top: 247px;
-  left: calc(50% - 440px/2);
+  top: 280px;
+  left: 947px;
   border-radius: 16px;
   box-shadow: 0 8px 36px rgba(0,0,0,0.2);
   transform: translateX(-55%);
