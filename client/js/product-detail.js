@@ -279,6 +279,8 @@ const plusButton = getNode(".plus-button");
 const productQuantity = getNode(".product-counter span");
 const minusImg = getNode(".minus-button img");
 
+const heartButton = getNode(".plus-wish");
+
 const onClickMinusHandler = () => {
   let quantity = Number(productQuantity.textContent);
   // 함수로 분리해보기
@@ -304,5 +306,27 @@ const onClickPlusHandler = () => {
   totalPrice.innerHTML = priceToString(sum + each) + "<small>원</small>";
 };
 
+// 함수 분리하기
+const onClickHeartHandler = (e) => {
+  console.log(e.target);
+  let imgSrc = attr(e.target, "src");
+  // tab접근성 고려
+  if (!imgSrc) {
+    imgSrc = attr(e.target.children[0], "src");
+    if (imgSrc.includes("false")) {
+      attr(e.target.children[0], "src", "./assets/icon/wish_true.png");
+    } else {
+      attr(e.target.children[0], "src", "./assets/icon/wish_false.png");
+    }
+  } else {
+    if (imgSrc.includes("false")) {
+      attr(e.target, "src", "./assets/icon/wish_true.png");
+    } else {
+      attr(e.target, "src", "./assets/icon/wish_false.png");
+    }
+  }
+};
+
 minusButton.addEventListener("click", onClickMinusHandler);
 plusButton.addEventListener("click", onClickPlusHandler);
+heartButton.addEventListener("click", onClickHeartHandler);
