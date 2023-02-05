@@ -38,6 +38,8 @@ const product = {
 
 const productSection = getNode(".product-detail");
 const productTextSection = getNode(".product-detail-text");
+const productDescriptionSection = getNode("#product-description");
+const productDetailSection = getNode("#product-detail");
 
 const productImageTemplate = () => {
   const { image } = product;
@@ -193,12 +195,60 @@ const infoTextTemplate = () => {
     </div>
   `;
 };
+
+const detailInfoTextTemplate = () => {
+  const { name, description, image } = product;
+  return `
+          <img
+            src="./assets/${image.banner}"
+            alt="${image.alt}"
+            width="1050px"
+            height="670px"
+          />
+
+          <div class="product-description-text">
+            <h3>
+              <small>${description}</small>
+              ${name}
+            </h3>
+            <p>
+              쫄면의 진가는 매콤새콤한 양념과 탱탱한 면발에서 찾을 수 있지요.
+              풀무원은 이 맛을 더 부담 없이 즐길 수 있도록 튀기지 않고 만든
+              탱탱쫄면을 선보입니다. 밀가루와 감자 전분을 적절히 배합해 탄력이
+              좋고, 입에 넣었을 때는 찰지게 씹히죠. 고추장을 넣어 숙성한
+              비빔장은 자연스럽고 깊은 맛을 냅니다. 간단하게 조리해 마지막 한
+              가닥까지 탱탱한 식감을 즐겨보세요. 취향에 따라 다양한 고명을 올려
+              드셔도 좋아요.
+            </p>
+          </div>
+  `;
+};
+
+const detailInfoImageTemplate = () => {
+  const { image } = product;
+  return `
+  <section>
+  <h3 class="a11y-hidden">상품 영양 정보</h3>
+  <img
+    src="./assets/${image.info}"
+    alt="${image.alt}"
+    aria-describedby="product-health-info"
+    width="1050px"
+    height="1066px"
+  />
+</section>
+`;
+};
 const renderPage = () => {
   // xhr or fetch로 데이터 가져오기
   // renderTemplate 함수 인자로 데이터 전달
   let imageTemplate = productImageTemplate();
   let textTemplate = infoTextTemplate();
+  let productDescriptionTemplate = detailInfoTextTemplate();
+  let productDeatilTemplate = detailInfoImageTemplate();
   insertFirst(productSection, imageTemplate);
   insertFirst(productTextSection, textTemplate);
+  insertFirst(productDescriptionSection, productDescriptionTemplate);
+  insertFirst(productDetailSection, productDeatilTemplate);
 };
 window.onload = renderPage;
