@@ -41,20 +41,21 @@ a {
 
 /* 베스트 전체 레이아웃 */
 .best-container {
-  margin: 0 435px;
+  background-color: antiquewhite;
+  /* width: 400px; */
+  margin: 0 427px;
 }
 
 
 /* h3 베스트 제목 */
 .best-title {
-  
   /* font-family: Pretendard; */
   font-size: 1.3125rem;
   font-weight: 600;
   line-height: 32px;
   letter-spacing: 0em;
   text-align: center;
-  margin: 48px 0;
+  margin: 47px 0;
 
 }
 
@@ -67,12 +68,14 @@ a {
 
 /* 필터링 전체 레이아웃 */
 .best-filter-container {
-  /* background-color: aqua; */
+  background-color: aqua;
+  /* margin-right: 47px; */
+  /* margin: 0; */
 }
 
 /* 필터링 초기화 head*/
 .best-filter-reset {
-  /* background-color: bisque; */
+  background-color: lightseagreen;
   display: flex;
   justify-content: space-between;
   font-family: 'Pretendard';
@@ -80,14 +83,16 @@ a {
   font-weight: 600;
   font-size: 1rem;
   color: var(--content);
-  /* margin-bottom: 22px; */
   flex-direction: row;
   align-items: center;
-  padding: 13px 0;
+  padding: 16px 0;
   gap: 8px;
+  width: 192px;
   width: 220px;
   height: 24px;
-  border-bottom: #333333 1px solid;
+  border-bottom: 1px solid var(--content);
+  line-height: 150%;
+  color: var(--content);
 
 }
 /* 필터링 버튼 */
@@ -99,11 +104,10 @@ a {
   font-size: .625rem;
   line-height: 160%;
   color: var(--gray-300);
-  /* border-bottom: #333333 1px solid; */
 }
 /* 디테일 밑줄 */
 details{
-  border-bottom: 1px black solid;
+  border-bottom: 1px var(--content) solid;
   padding: 13px 0;
   /* height: 80px; */
 }
@@ -127,12 +131,17 @@ details{
   /* padding: 0; */
 }
 
+
+
 .category-ul li{
-border-top: 1px solid black;
+  
+  margin-top: 22px;
+  background-color: lightseagreen;
+  /* padding: 12px; */
+  /* 패딩줘도 클릭범위가 늘어나진 않네유 */
 }
 
 .category-ul li span{
-  /* border-top: 1px solid black; */
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
@@ -141,19 +150,40 @@ border-top: 1px solid black;
   color: var(--content);
 }
 
-/* 카테고리 li 영역어디까지인지 확인 */
-.category-ul li {
-  margin-top: 22px;
-  /* background-color: lightseagreen; */
-  border: 0;
+
+/* 질문 샐러드 옆 숫자 회식깔로 안바뀜 왜? */
+.category-ul li.list-item-count{
+  /* width: 6px;
+  height: 19px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: .7502rem;
+  line-height: 160%;
+  color: var(--gray-300); */
+  margin-top: 4px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .625rem;
+  line-height: 160%;
+  color: var(--gray-300);
 }
+
+/* 카테고리 li 영역어디까지인지 확인 */
 
 summary{
-  display: flex;
-  justify-content:space-between;
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+color: var(--content);
+/* padding:14px 0; */
 }
 
-summary button{
+/* 보라님이 만나서 해야하는 거임 이거 아님 */
+/* summary button{
   width: 19px;
   border: 0px;
   height: 0px !important;
@@ -162,18 +192,18 @@ summary button{
   padding: 18px 0 0 0;
   line-height: 24px;
   
-}
+} */
 
-summary button::before{
-  /* width: 19px;
+/* summary button::before{
+  width: 19px;
   border: 0;
   height: 0 !important;
   background-image: url(../assets/icon/Direction=Up.png);
   background-repeat: no-repeat;
   padding: 18px 0 0 0;
   line-height: 24px;
-  background-color: white; */
-}
+  background-color: white;
+} */
 
 
 
@@ -210,34 +240,6 @@ summary button::before{
 }
 
 
-/* 브랜드 */
-.brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1rem;
-  /* line-height: 150%; */
-  
-}
-
-.brand-title {
-  /* background-color: lightskyblue; */
-}
-
-/* 브랜드 li 영역어디까지 */
-.brand-list li {
-  /* background-color: lightcoral; */
-  border: 0;
-  margin-top: 22px;
-}
-
-.brand-list li button {
-  background-color: white;
-  border: 0;
-}
-
 /* 애프터 왜 안먹지요? */
 .category-more ::after {
   content: "";
@@ -255,7 +257,8 @@ summary button::before{
 
 /* 섹션 베스트 상품  */
 .food-container {
-  margin-left: 50px;
+  margin-left: 47px;
+  width: 783px;
 }
 
 /* 상품 이미지들 크기 조정 5개 */
