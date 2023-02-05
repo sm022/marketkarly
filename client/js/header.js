@@ -8,18 +8,24 @@ const main = getNode("main");
 
 // 카테고리 메뉴
 const categoryMenu = getNode(".category-menu");
+const scrollCategoryMenu = getNode(".scroll-header-inner .category-menu");
 const categoryList = getNode(".category-list");
+const scrollCategoryList = getNode(".scroll-header-inner .category-list");
 
 const onMouseoverHandler = () => {
   addClass(categoryList, "is-active");
+  addClass(scrollCategoryList, "is-active");
 };
 
 const onMouseoutHandler = () => {
   removeClass(categoryList, "is-active");
+  removeClass(scrollCategoryList, "is-active");
 };
 
 categoryMenu.addEventListener("mouseover", onMouseoverHandler);
+scrollCategoryMenu.addEventListener("mouseover", onMouseoverHandler);
 categoryMenu.addEventListener("mouseout", onMouseoutHandler);
+scrollCategoryMenu.addEventListener("mouseout", onMouseoutHandler);
 // 링크마다 해당하는 부분에 도달하면 is-selected 클래스 추가
 // 이전 링크는 is-selected 제거
 // footer 위에 도달하면 마지막 위치에 있다가 스크롤 올릴 때 고정되어 나타남
