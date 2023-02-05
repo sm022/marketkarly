@@ -47,6 +47,9 @@ export default class CartItemDataClass {
     listItem.className = 'list-item';
     listItem.id = this.id;
     const priceInfo = +this.saleRatio > 0 ? `<span class="original-price">${this.price} 원</span>` : '';
+    const discountPriceInfo = `<span class="discount-price">${
+      this.saleRatio === 0 ? this.price : this.salePrice
+    } 원</span>`;
     listItem.innerHTML = `
                   <div class="item-left">
                     <!-- 상품 이름과 사진 체크유무 -->
@@ -73,8 +76,8 @@ export default class CartItemDataClass {
                     </div>
                     <!-- 상품 가격 표시 -->
                     <div class="product-price">
-                      <span class="discount-price">${this.salePrice} 원</span>
-                      ${priceInfo}
+                      ${discountPriceInfo}
+                      ${priceInfo}  
                     </div>
                     <!-- 상품 삭제 버튼 -->
                     <button class="delete-button">

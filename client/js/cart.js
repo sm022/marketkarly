@@ -9,7 +9,7 @@ class CartProcessClass {
   normalList = getNode('.normal-list').querySelector('.main-list');
 
   getTotalPrice(foods, deliveryPrice) {
-    foods.reduce((a, b) => {
+    foods.reduce((a, b) => {``
       console.log(a.getPrice().price, b.getPrice().price);
     });
     foods[0].getPrice().price;
