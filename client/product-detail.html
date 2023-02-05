@@ -615,17 +615,17 @@
               </li>
             </ul>
           </div>
-  
+
           <ul class="scroll-page-navigation">
             <li><a href="#">신상품</a></li>
             <li><a href="#">베스트</a></li>
             <li><a href="#">알뜰쇼핑</a></li>
             <li><a href="#">특가/혜택</a></li>
           </ul>
-  
+
           <div>
             <h2 class="a11y-hidden">검색</h2>
-            <form>
+            <form class="scroll-form">
               <fieldset>
                 <legend>검색 폼</legend>
                 <div class="scroll-form-group">
@@ -645,7 +645,7 @@
               </fieldset>
             </form>
           </div>
-          <ul class="icon-link">
+          <ul class="scroll-icon-link">
             <li>
               <a href="#"
                 ><img src="./assets/icon/Location.png" alt="배송지 설정"
@@ -662,6 +662,7 @@
                   width="36px"
                   height="36px"
               /></a>
+              <span class="cart-number">1</span>
               <div class="cart-alarm is-not-exist">
                 <img
                   src="./assets/tangtang/thumbnail.jpg"
@@ -683,77 +684,7 @@
     <main>
       <!-- 제품 정보-->
       <section class="product-detail">
-        <img
-          src="./assets/tangtang/detail_view.jpg"
-          alt="상품 이름 사진"
-          width="400px"
-          height="500px"
-        />
         <div class="product-detail-text">
-          <span class="early-delivery">샛별배송</span>
-          <h1 class="product-title">[풀무원] 탱탱쫄면 (4개입)</h1>
-          <h2 class="product-sub-title">튀기지 않아 부담 없는 매콤함</h2>
-          <span class="product-price">4,980<small>원</small></span>
-          <p class="login-notice">로그인 후, 적립 혜택이 제공됩니다.</p>
-          <div class="about-product">
-            <dl>
-              <dt>배송</dt>
-              <dd>
-                <p>샛별배송</p>
-                <p class="sub-description">
-                  23시 전 주문 시 내일 아침 7시 전 도착<br />
-                  (대구 부산 울산 샛별배송 운영시간 별도 확인)
-                </p>
-              </dd>
-            </dl>
-            <dl>
-              <dt>판매자</dt>
-              <dd>
-                <p>칼리</p>
-              </dd>
-            </dl>
-            <dl>
-              <dt>포장타임</dt>
-              <dd>
-                <p>상온(종이포장)</p>
-                <p class="sub-description">
-                  택배배송은 에코 포장이 스티로폼으로 대체됩니다.
-                </p>
-              </dd>
-            </dl>
-            <dl>
-              <dt>판매단위</dt>
-              <dd>
-                <p>1분</p>
-              </dd>
-            </dl>
-            <dl>
-              <dt>중량/용량</dt>
-              <dd>
-                <p>123*4봉</p>
-              </dd>
-            </dl>
-            <dl>
-              <dt>원산지</dt>
-              <dd>
-                <p>상세페이지 별도표기</p>
-              </dd>
-            </dl>
-            <dl>
-              <dt>알레르기 정보</dt>
-              <dd>
-                <p class="sub-description allergy-description">
-                  -대두, 밀, 쇠고기 함유
-                </p>
-                <p class="sub-description allergy-description">
-                  -계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아,
-                  토마토, 아황산류, 호두, 잣, 닭고기, 오징어, 조개류(굴, 전복,
-                  홍합 포함)를 사용한 제품과 같은 제조시설에서 제조
-                </p>
-              </dd>
-            </dl>
-          </div>
-          <!-- 제품 상세 및 부가 설명과 서비스 -->
           <div class="product-selector">
             <dl>
               <dt>상품선택</dt>
@@ -769,7 +700,7 @@
                       <img src="./assets/icon/Plus.png" alt="수량 더하기" />
                     </button>
                   </div>
-                  <span class="each-product-price">4980원</span>
+                  <span class="each-product-price">단품 가격원</span>
                 </div>
               </dd>
             </dl>
@@ -777,7 +708,7 @@
             <div>
               <div class="total-price">
                 총 상품금액:
-                <span class="total-price-number">4980<small>원</small></span>
+                <span class="total-price-number">총 금액 원</span>
               </div>
               <div class="accumulate-notice">
                 <span class="accumulate-icon">적립</span>
@@ -800,37 +731,14 @@
         <!-- 링크 모음 -->
         <ul class="hyper-link-container">
           <!-- is-selected 추가시 선택된 디자인으로 변경 -->
-          <li >
+          <li>
             <a class="is-selected" href="#product-description">상품설명</a>
           </li>
           <li><a href="#product-detail">상세정보</a></li>
           <li><a href="#product-review">후기</a></li>
           <li><a href="#customer-question">문의</a></li>
         </ul>
-        <!-- 상품 설명 -->
         <section id="product-description">
-          <img
-            src="./assets/tangtang/detail_banner.jpg"
-            alt="상품이름으로 변경 예정"
-            width="1050px"
-            height="670px"
-          />
-
-          <div class="product-description-text">
-            <h3>
-              <small>튀기지 않아 부담 없는 매콤함</small>
-              [풀무원] 탱탱쫄면
-            </h3>
-            <p>
-              쫄면의 진가는 매콤새콤한 양념과 탱탱한 면발에서 찾을 수 있지요.
-              풀무원은 이 맛을 더 부담 없이 즐길 수 있도록 튀기지 않고 만든
-              탱탱쫄면을 선보입니다. 밀가루와 감자 전분을 적절히 배합해 탄력이
-              좋고, 입에 넣었을 때는 찰지게 씹히죠. 고추장을 넣어 숙성한
-              비빔장은 자연스럽고 깊은 맛을 냅니다. 간단하게 조리해 마지막 한
-              가닥까지 탱탱한 식감을 즐겨보세요. 취향에 따라 다양한 고명을 올려
-              드셔도 좋아요.
-            </p>
-          </div>
           <!-- 체크 포인트 -->
           <div class="goods-point">
             <h3 class="goods-point-title"><span>Karly's Check Point</span></h3>
@@ -859,19 +767,7 @@
             </div>
           </div>
         </section>
-        <!-- 상품 상세 -->
         <section id="product-detail">
-          <section>
-            <h3 class="a11y-hidden">상품 영양 정보</h3>
-            <img
-              src="./assets/tangtang/detail_info.jpg"
-              alt="상품 영양정보"
-              aria-describedby="product-health-info"
-              width="1050px"
-              height="1066px"
-            />
-            <!-- 이미지 대체 텍스트 -->
-          </section>
           <section class="why-karly">
             <h3 class="why-karly-title">WHY KARLY</h3>
             <ul class="why-karly-description">
