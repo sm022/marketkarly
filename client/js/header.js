@@ -1,6 +1,9 @@
 import { getNode } from "../lib/dom/getNode.js";
 import { addClass, css, removeClass } from "../lib/dom/css.js";
 
+// 최상단 배너
+const topBanner = getNode(".top-banner");
+const closeButton = getNode(".close-icon");
 // 헤더
 const normalHeader = getNode(".normal-header");
 const scrollHeader = getNode(".scroll-header");
@@ -12,6 +15,10 @@ const scrollCategoryMenu = getNode(".scroll-header-inner .category-menu");
 const categoryList = getNode(".category-list");
 const scrollCategoryList = getNode(".scroll-header-inner .category-list");
 
+const onClickCloseHandler = () => {
+  css(topBanner, "display", "none");
+};
+
 const onMouseoverHandler = () => {
   addClass(categoryList, "is-active");
   addClass(scrollCategoryList, "is-active");
@@ -22,6 +29,7 @@ const onMouseoutHandler = () => {
   removeClass(scrollCategoryList, "is-active");
 };
 
+closeButton.addEventListener("click", onClickCloseHandler);
 categoryMenu.addEventListener("mouseover", onMouseoverHandler);
 scrollCategoryMenu.addEventListener("mouseover", onMouseoverHandler);
 categoryMenu.addEventListener("mouseout", onMouseoutHandler);
