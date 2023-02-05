@@ -14,11 +14,12 @@ legend {
 
 /* 효과 삭제 관련 부분시작 */
 /* 카테고리 details 앞머리 삭제 */
-details summary::marker{
+details summary::marker {
   content: "";
 }
+
 /* 사파리 버전도 삭제?! 잘모르겠음 된건지 */
-details summary::-webkit-details-marker{
+details summary::-webkit-details-marker {
   display: none;
 }
 
@@ -75,7 +76,7 @@ a {
 
 /* 필터링 초기화 head*/
 .best-filter-reset {
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
   display: flex;
   justify-content: space-between;
   font-family: 'Pretendard';
@@ -87,7 +88,7 @@ a {
   align-items: center;
   padding: 16px 0;
   gap: 8px;
-  width: 192px;
+  /* width: 192px; */
   width: 220px;
   height: 24px;
   border-bottom: 1px solid var(--content);
@@ -95,7 +96,8 @@ a {
   color: var(--content);
 
 }
-/* 필터링 버튼 */
+
+/* 필터 - 초기화버튼 */
 .reset-btn {
   margin-top: 4px;
   font-family: 'Pretendard';
@@ -105,19 +107,23 @@ a {
   line-height: 160%;
   color: var(--gray-300);
 }
-/* 디테일 밑줄 */
-details{
-  border-bottom: 1px var(--content) solid;
+
+/* 카테고리 리스트별 버튼크기 설정 변경 성공 */
+summary{
   padding: 13px 0;
-  /* height: 80px; */
+}
+/* 카테고리 리스트들 밑줄 효과 */
+details {
+  border-bottom: 1px var(--content) solid;
+  /* padding: 13px 0; */
+  
 }
 
-
-
-.category-ul li:after {
+/* 카테고리 옆에 */
+/* .category-ul li::after {
   content: "";
   background-image: url(../assets/icon/Direction=Down.png);
-}
+} */
 
 .category.ul {
   /* margin-top: 22px; */
@@ -131,28 +137,107 @@ details{
   /* padding: 0; */
 }
 
+/*---------- 카테고리 리스트 열었을 때 리스트 체크박스 ------------ */
+/*----- 체크박스 변경 시도중 시작------- */
 
+/* 어느순간 베스트 레이아웃 무너짐 이유 몰라 짱난다 */
+/* ㄴ100퍼센트로 키우니까 멀쩡해짐 ;; 뻘쭘 */
 
-.category-ul li{
-  
+/* 체크표시 구현완료 but 글씨가 이미지 크기까지만 입력되고 아래로 출력 됨 */
+/* 쫌만 더 하면 리스트까진 될 거 같음 */
+/* 내가 개발자 도구로 찾아본 글씨가 염병하는 이유
+글씨가 span태그인데 라벨에 감싸져있어서 크기가 같이 줄어들어버림 */
+/* 디스플레이 인라인블록 주면 글씨가 아이콘 크기처럼 줄바뀜됨 */
+/* 포지션을 글자랑 체크박스에 줘야하나..? */
+/* 너무 안자서 짜증나니까 자고 일어나서 해보자 */
+
+input[type="checkbox"]+label {
+  /* display: inline-block; */
+  width: 23px;
+  height: 23px;
+  background: url('../assets/icon/isChecked=false.png') no-repeat 0 0px / contain;
+}
+
+input[type='checkbox']:checked+label {
+  background: url('../assets/icon/isChecked=true.png') no-repeat 0 1px / contain;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/* input[type="checkbox"]{
+  display: none;
+}
+
+input[id="check1"]:checked + label::after{
+  content: "";
+  background-image: url(../assets/icon/isChecked=false.png);
+  width: 23px;
+  height: 23px;
+} */
+/* 위에 방금 꺼 */
+
+/* 여기 무너지나 전체화면 다시해보기 */
+/*  ㅇㅇ똑같이 무너짐 */
+/* input[type="checkbox"]{
+  display: none;
+}
+  input[type="checkbox"] + label{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    border:3px solid #707070;
+    position: relative;
+  }
+input[id="check1"]:checked + label::after{
+    content:"";
+    font-size: 25px;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top:0;
+} */
+
+/* ---------체크박스 변경 시도 끝 -----------------*/
+
+.category-ul li {
+
   margin-top: 22px;
   background-color: lightseagreen;
   /* padding: 12px; */
   /* 패딩줘도 클릭범위가 늘어나진 않네유 */
 }
 
-.category-ul li span{
+.category-ul li span {
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
   color: var(--content);
+  padding-left: 30px;
+}
+
+/* .category-ul li span을 스팬 앞에 붙이니까 갑자기 되네? */
+.category-ul li span.list-item-count {
+  width: 5px;
+  height: 16px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 160%;
+  padding-left: 4px;
+  /* identical to box height, or 16px */
+  color: var(--gray-300);
 }
 
 
 /* 질문 샐러드 옆 숫자 회식깔로 안바뀜 왜? */
-.category-ul li.list-item-count{
+/* .category-ul li.list-item-count { */
   /* width: 6px;
   height: 19px;
   font-family: 'Pretendard';
@@ -161,25 +246,25 @@ details{
   font-size: .7502rem;
   line-height: 160%;
   color: var(--gray-300); */
-  margin-top: 4px;
+  /* margin-top: 4px;
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: .625rem;
   line-height: 160%;
-  color: var(--gray-300);
-}
+  color: var(--gray-300); */
+/* } */
 
 /* 카테고리 li 영역어디까지인지 확인 */
 
-summary{
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-line-height: 150%;
-color: var(--content);
-/* padding:14px 0; */
+summary {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--content);
+  /* padding:14px 0; */
 }
 
 /* 보라님이 만나서 해야하는 거임 이거 아님 */
@@ -227,7 +312,7 @@ color: var(--content);
   height: 42px;
 }
 
-.category-more::after{
+.category-more::after {
   display: inline-block;
   content: "";
   width: 19px;
@@ -236,17 +321,19 @@ color: var(--content);
   background-image: url(../assets/icon/Direction=Right.png);
   background-repeat: no-repeat;
   line-height: 24px;
-  
+
 }
 
 
-/* 애프터 왜 안먹지요? */
-.category-more ::after {
+/* 애프터 왜 안먹지요?
+    ㄴ 수정 완료 위에 애프터 코드있심
+     */
+/* .category-more ::after {
   content: "";
   display: inline;
   height: 12.6px;
   width: 12.6px;
-}
+} */
 
 .is-checked-false {
   color: var(--gray-200);
@@ -263,27 +350,31 @@ color: var(--content);
 
 /* 상품 이미지들 크기 조정 5개 */
 /* 유부호만두 */
-.product-rksk{
+.product-rksk {
   width: 249px;
   height: 320px;
 }
+
 /* 탱탱쫄면 */
-.product-ekfk{
+.product-ekfk {
   width: 249px;
   height: 320px;
 }
+
 /* 홍대주꾸미 */
-.product-akqk{
+.product-akqk {
   width: 249px;
   height: 320px;
 }
+
 /* 소갈비찜 */
-.product-tkwk{
+.product-tkwk {
   width: 249px;
   height: 320px;
 }
+
 /* 한돈삼겹베이컨 */
-.product-ckzk{
+.product-ckzk {
   width: 249px;
   height: 320px;
 }
