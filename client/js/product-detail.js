@@ -41,6 +41,10 @@ const productTextSection = getNode(".product-detail-text");
 const productDescriptionSection = getNode("#product-description");
 const productDetailSection = getNode("#product-detail");
 
+const priceToString = (price) => {
+  return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
 const productImageTemplate = () => {
   const { image } = product;
   return `
@@ -239,6 +243,7 @@ const detailInfoImageTemplate = () => {
 </section>
 `;
 };
+
 const renderPage = () => {
   // xhr or fetch로 데이터 가져오기
   // renderTemplate 함수 인자로 데이터 전달
