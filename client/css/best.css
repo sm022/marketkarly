@@ -11,6 +11,10 @@ legend {
   overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
 }
+/* 
+body{
+  max-width: 1050px;
+} */
 
 /* 효과 삭제 관련 부분시작 */
 /* 카테고리 details 앞머리 삭제 */
@@ -119,11 +123,19 @@ details {
   /* padding: 13px 0; */ 
 }
 
-summary img{
-  width: 8px;
-  height: 4px;
-  z-index: 1px;
+details[open]{
+  
 }
+
+/* summary img{
+  width: 8px;
+  height: 4px; */
+  /* transform:rotate(180deg); */
+  /* z-index: 1px; */
+
+/* summary img:hover{
+  transform:rotate(180deg);
+} */
 
 /* 카테고리 옆에 */
 /* .category-ul li::after {
@@ -423,6 +435,7 @@ summary {
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
+  /* cursor:pointer; */
   /* line-height: 150%; */
   color: var(--gray-300);
 }
@@ -432,7 +445,7 @@ summary {
   color: black;
   position: relative;
   padding-right: 20px;
-
+  /* cursor:pointer; */
 }
 
 /* 푸드 네비게이션 추천순 우측 물음표 띄우기 */
@@ -458,7 +471,16 @@ summary {
   top: 7px;
   border-radius: 0px;
   margin-right: 8px;
+  /* cursor:pointer; */
   /* margin-bottom: 8px; */
+}
+.food-nav li:not(:nth-child(1)){
+  /* cursor:pointer; */
+}
+
+.nav-span{
+  cursor:pointer;
+  
 }
 
 
