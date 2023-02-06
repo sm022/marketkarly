@@ -36,13 +36,26 @@ main {
   margin-bottom: 16px;
 }
 
+.sale-ratio {
+  margin-right: 8px;
+  color: var(--accent-yellow);
+}
+
+del {
+  margin-right: 8px;
+}
+.original-price {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--gray-300);
+}
 .product-price {
   display: flex;
   align-items: center;
   color: var(--content);
   font-weight: 600;
   font-size: 1.7769rem;
-  margin-bottom: 16px;
 }
 
 .product-price small {
@@ -54,6 +67,7 @@ main {
   color: var(--primary);
   font-weight: 600;
   font-size: 1rem;
+  margin-top: 16px;
   margin-bottom: 20px;
 }
 
