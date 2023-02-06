@@ -42,6 +42,8 @@ a {
   color: black;
 }
 
+
+
 /* 효과관련 삭제 부분 끝 */
 
 
@@ -53,6 +55,7 @@ a {
 
 /* h3 베스트 제목 */
 .best-title {
+  background-color: lightcoral;
   /* font-family: Pretendard; */
   font-size: 1.3125rem;
   font-weight: 600;
@@ -94,7 +97,7 @@ a {
   /* width: 192px; */
   width: 220px;
   height: 24px;
-  border-bottom: 1px solid var(--content);
+  border-bottom: 1px solid var(--gray-300);
   line-height: 150%;
   color: var(--content);
 
@@ -118,7 +121,7 @@ summary{
 }
 /* 카테고리 리스트들 밑줄 효과 */
 details {
-  border-bottom: 1px var(--content) solid;
+  border-bottom: 1px var(--gray-300) solid;
   /* padding: 13px 0; */ 
 }
 
@@ -378,36 +381,6 @@ summary {
   width: 783px;
 }
 
-/* 상품 이미지들 크기 조정 5개 */
-/* 유부호만두 */
-.product-rksk {
-  width: 249px;
-  height: 320px;
-}
-
-/* 탱탱쫄면 */
-.product-ekfk {
-  width: 249px;
-  height: 320px;
-}
-
-/* 홍대주꾸미 */
-.product-akqk {
-  width: 249px;
-  height: 320px;
-}
-
-/* 소갈비찜 */
-.product-tkwk {
-  width: 249px;
-  height: 320px;
-}
-
-/* 한돈삼겹베이컨 */
-.product-ckzk {
-  width: 249px;
-  height: 320px;
-}
 
 
 /* 상품갯수 및 네비게이션 */
@@ -489,15 +462,51 @@ summary {
 }
 
 
-
+/*-------- 상품리스트의 시작부분-------- */
 /* 상품리스트 */
 
-.product {
+.product-container{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-
 }
+
+.product{
+  position: relative;
+}
+
+
+/* 상품 이미지들 크기 조정 5개 */
+/* 유부호만두 */
+.product-rksk {
+  width: 249px;
+  height: 320px;
+}
+
+/* 탱탱쫄면 */
+.product-ekfk {
+  width: 249px;
+  height: 320px;
+}
+
+/* 홍대주꾸미 */
+.product-akqk {
+  width: 249px;
+  height: 320px;
+}
+
+/* 소갈비찜 */
+.product-tkwk {
+  width: 249px;
+  height: 320px;
+}
+
+/* 한돈삼겹베이컨 */
+.product-ckzk {
+  width: 249px;
+  height: 320px;
+}
+
 
 /* 장바구니 이미지 부모요소 */
 .product-img-wrap {
@@ -519,12 +528,25 @@ summary {
   margin-bottom:18px;
 }  */
 
-.cart-icon {
+
+/* 장바구니 이미지 버튼쨰로 옮김 */
+button{
+  background: transparent; 
+  border: none;
   position: absolute;
   right: 15px;
-  bottom: 17px;
-  z-index: 1;
+  top: 258px;
+  
 }
+
+/* 처음 동현 */
+/* .cart-icon {
+  position: absolute;
+  right: 15px;
+  top: 258px;
+  /* z-index: 1; 
+} */
+
 
 
 
@@ -570,6 +592,10 @@ summary {
 }
 
 
+.product-info {
+  margin-bottom: 8px;
+  
+}
 
 
 .del-price {
@@ -581,9 +607,6 @@ summary {
 
 }
 
-.product-info {
-  margin-bottom: 50px;
-}
 
 .product-info-explain {
   color: var(--gray-400);
@@ -601,11 +624,12 @@ summary {
   gap: 8px;
   width: 200px;
   height: 26px;
-
+  /* margin-top: 0; */
+  margin-bottom: 50px;
 }
 
 /* 칼리온리박스 클래스명 나중에 바꾸기 */
-.left-box {
+.kalry-only {
 
   background-color: var(--gray-100);
 
@@ -630,7 +654,7 @@ summary {
 }
 
 /* 한정수량박스 클래스명 나중에 바꾸기 */
-.right-box {
+.limited-quantity {
 
   padding: 4px;
   gap: 4px;
