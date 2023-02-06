@@ -18,7 +18,7 @@ class CartProcessClass {
   }
 
   /**
-   * API에서 음식 데이터를 가져오는 함수
+   * API에서 음식 데이터를 가져오는 메서드
    */
   async getFoodsFromApi() {
     const url = 'http://localhost:3000/products';

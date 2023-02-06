@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" type="text/css" href="./css/mainpage.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script defer src="./js/mainpage.js" type="module"></script>
+  <title>메인페이지</title>
+</head>
+<body>
+
+  <div class="top-banner">상단 배너</div>
+  <header class="header">헤더</header>
+
+
+   <!-- 이벤트 배너 -->
+  <div class="event">
+    <h2 class="a11y-hidden">이벤트 배너</h2>
+
+    <div class="event-banner swiper-E">
+      
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/benefit_banner.png" alt="이 주의 특가 한 눈에 보기 배너" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/card_banner.png" alt="이달의 카드 혜택 배너" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/melon_banner.png" alt="컬리 과일 가게 홍보 배너" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/cosmetic_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/friend_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/gift_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/haircare_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/healing_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/makeup_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/perfume_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/santamaria_banner.png" alt="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/client/assets/banner/event_banner/thebodyshop_banner.png" alt="" />
+          </div>
+        </div>
+      
+      <!-- 이벤트 버튼 -->
+      <div class="button-wrapper">
+        
+        <button class="event-button event-button-prev">prev</button>
+        <button class="event-button event-button-next">next</button>
+
+      </div>  
+      
+      <div class="swiper-pagination"></div>
+    </div>
+      
+  </div>
+
+  <main class="main">
+
+    <div class="main-content">
+    
+      <!-- 추천 상품 목록 -->
+      <section class="recommend-items-list">
+        <h2 class="a11y-hidden">추천 상품 목록</h2>
+
+        <div class="recommend-container">
+
+          <h2 class="items-list-title">이 상품 어때요?</h2>
+  
+          <!-- 추천 상품 리스트 -->
+
+          <div class="swiper-R">
+            <div class="swiper-wrapper">
+              <div class="item-container swiper-slide">
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/ubuho/thumbnail.jpg" alt="유부호만두" />
+                    </p>
+                    <div class="cart-icon" tabindex="5">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail"  tabindex="4">
+                    <h3 class="item-title">[대구 반할만떡] 유부호만두</h3>
+                    <p class="discount-price"><span class="discount">24%</span><span class="item-price"> 5,244원</span></p>
+                    <del class="origin-price">6,900원</del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
+                    </p>
+                    <div class="cart-icon" tabindex="7">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="6">
+                    <h3 class="item-title" >[풀무원] 탱탱쫄면 (4개입)</h3>
+                    <p class="discount-price"><span class="discount"></span><span class="item-price">4,980원</span></p>
+                    <del class="origin-price"></del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
+                    </p>
+                    <div class="cart-icon" tabindex="9">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="8">
+                    <h3 class="item-title">[홍대주꾸미] 주꾸미 볶음 300g (냉동)</h3>
+                    <p class="discount-price"><span class="discount">13%</span><span class="item-price"> 7,900원</span></p>
+                    <del class="origin-price">6,800원</del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
+                    </p>
+                    <div class="cart-icon" tabindex="11">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail"  tabindex="10">
+                    <h3 class="item-title">[강남면옥] 소갈비찜</h3>
+                    <p class="discount-price"><span class="discount"></span><span class="item-price">29,800원</span></p>
+                    <del class="origin-price"></del>
+                  </a>
+                </div>
+      
+              </div>
+              <div class="item-container swiper-slide">
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/ubuho/thumbnail.jpg" alt="유부호만두" />
+                    </p>
+                    <div class="cart-icon" tabindex="5">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail"  tabindex="4">
+                    <h3 class="item-title">[대구 반할만떡] 유부호만두</h3>
+                    <p class="discount-price"><span class="discount">24%</span><span class="item-price"> 5,244원</span></p>
+                    <del class="origin-price">6,900원</del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
+                    </p>
+                    <div class="cart-icon" tabindex="7">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="6">
+                    <h3 class="item-title" >[풀무원] 탱탱쫄면 (4개입)</h3>
+                    <p class="discount-price"><span class="discount"></span><span class="item-price">4,980원</span></p>
+                    <del class="origin-price"></del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
+                    </p>
+                    <div class="cart-icon" tabindex="9">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="8">
+                    <h3 class="item-title">[홍대주꾸미] 주꾸미 볶음 300g (냉동)</h3>
+                    <p class="discount-price"><span class="discount">13%</span><span class="item-price"> 7,900원</span></p>
+                    <del class="origin-price">6,800원</del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
+                    </p>
+                    <div class="cart-icon" tabindex="11">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail"  tabindex="10">
+                    <h3 class="item-title">[강남면옥] 소갈비찜</h3>
+                    <p class="discount-price"><span class="discount"></span><span class="item-price">29,800원</span></p>
+                    <del class="origin-price"></del>
+                  </a>
+                </div>
+      
+              </div>
+            </div>
+            <!-- 추천 상품 버튼 -->
+              <button type="button" class="recommend-item-button recommend-prev-button">이전 추천 상품 보기</button>
+              <button type="button" class="recommend-item-button recommend-next-button">다음 추천 상품 보기</button>
+
+            
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- 광고 배너 -->
+      <div class="banner">
+        <h2 class="a11y-hidden">광고 배너</h2>
+        <div class="line-banner">
+          <img src="/client/assets/banner/line-banner.png" alt="광고 베너" />
+        </div>
+      </div>
+
+      <!-- 특가 상품 목록 -->
+      <section class="sale-items-list">
+        <h2 class="a11y-hidden">특가 상품 목록</h2>
+
+        <div class="sale-container">
+          
+          <h2 class="items-list-title sale-title">놓치면 후회할 가격</h2>
+          
+          <!-- 특가 상품 리스트 -->
+
+          <div class="swiper-S">
+            <div class="swiper-wrapper">
+              <div class="item-container swiper-slide">
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
+                    </p>
+                    <div class="cart-icon" tabindex="14">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="13">
+                    <h3 class="item-title">[대구 반할만떡] 유부호만두</h3>
+                    <p class="discount-price"><span class="discount">24%</span><span class="item-price"> 5,244원</span></p>
+                    <del class="origin-price">6,900원</del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
+                    </p>
+                    <div class="cart-icon" tabindex="16">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="15">
+                    <h3 class="item-title">[풀무원] 탱탱쫄면 (4개입)</h3>
+                    <p class="discount-price"><span class="discount"></span><span class="item-price">4,980원</span></p>
+                    <del class="origin-price"></del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
+                    </p>
+                    <div class="cart-icon" tabindex="18">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="17">
+                    <h3 class="item-title">[홍대주꾸미] 주꾸미 볶음 300g (냉동)</h3>
+                    <p class="discount-price"><span class="discount">13%</span><span class="item-price"> 6,800원</span></p>
+                    <del class="origin-price">7,900원</del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
+                    </p>
+                    <div class="cart-icon" tabindex="21">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="20">
+                    <h3 class="item-title">[강남면옥] 소갈비찜</h3>
+                    <p class="discount-price"><span class="discount"></span><span class="item-price">29,800원</span></p>
+                    <del class="origin-price"></del>
+                  </a>
+                </div>
+      
+              </div>     
+              <div class="item-container swiper-slide">
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
+                    </p>
+                    <div class="cart-icon" tabindex="14">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="13">
+                    <h3 class="item-title">[대구 반할만떡] 유부호만두</h3>
+                    <p class="discount-price"><span class="discount">24%</span><span class="item-price"> 5,244원</span></p>
+                    <del class="origin-price">6,900원</del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
+                    </p>
+                    <div class="cart-icon" tabindex="16">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="15">
+                    <h3 class="item-title">[풀무원] 탱탱쫄면 (4개입)</h3>
+                    <p class="discount-price"><span class="discount"></span><span class="item-price">4,980원</span></p>
+                    <del class="origin-price"></del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
+                    </p>
+                    <div class="cart-icon" tabindex="18">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="17">
+                    <h3 class="item-title">[홍대주꾸미] 주꾸미 볶음 300g (냉동)</h3>
+                    <p class="discount-price"><span class="discount">13%</span><span class="item-price"> 6,800원</span></p>
+                    <del class="origin-price">7,900원</del>
+                  </a>
+                </div>
+      
+                <div class="item-card">
+                  <div class="item">
+                    <p class="item-thumbnail">
+                      <img src="/client/assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
+                    </p>
+                    <div class="cart-icon" tabindex="21">
+                      <img src="/client/assets/icon/Cart.png" alt="장바구니 아이콘" />
+                    </div>
+                  </div>
+                  <a href="#" class="item-detail" tabindex="20">
+                    <h3 class="item-title">[강남면옥] 소갈비찜</h3>
+                    <p class="discount-price"><span class="discount"></span><span class="item-price">29,800원</span></p>
+                    <del class="origin-price"></del>
+                  </a>
+                </div>
+      
+              </div>     
+            </div>
+            <!-- 특가 상품 버튼 -->
+            <button type="button" class="sale-item-button sale-prev-button">이전 추천 상품 보기</button>
+            <button type="button" class="sale-item-button sale-next-button">다음 추천 상품 보기</button>
+          </div>
+
+
+        </div>
+
+      </section>
+
+    </div>
+
+     <!-- 최근 본 상품 -->
+    <aside class="recent">
+      <div class="recent-items-list">
+        <h2>최근 본 상품</h2>
+        <div class="recent-item-container">
+          <a href="#" class="recent-thumbnail recent1" tabindex="27">
+            <img src="/client/assets/item/tangtang_main.png" alt="풀무원 탱탱 쫄면" />
+          </a>
+          <a href="#" class="recent-thumbnail recent2" tabindex="28">
+            <img src="/client/assets/item/baby_cleanser_main.png" alt="프로쉬 베이비 세탁세제" />
+          </a>
+        </div>
+
+        <!-- 최근 본 상품 버튼 -->
+        <div class="recent-button-wrapper">
+          <button type="button" tabindex="25" class="recent-button recent-button-prev">이전 상품 보기</button>
+          <button type="button" tabindex="26" class="recent-button recent-button-next">다음 상품 보기</button>
+        </div>
+      </div>
+    </aside> 
+    
+  </main>
+  
+
+  <footer class="footer">푸터</footer>
+
+  
+</body>
+</html>
