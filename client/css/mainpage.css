@@ -254,7 +254,9 @@ body {
 
 .recommend-container {
   width: 1050px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-left: 435px;
+  margin-right: 435px;
 }
 
 
@@ -273,15 +275,15 @@ body {
 
 .recommend-prev-button {
   position: absolute;
-  top: 259px;
-  left: 359px;
+  top: 235px;
+  left: 400px;
   transform: rotate(180deg);
 }
 
 .recommend-next-button {
   position: absolute;
-  top: 259px;
-  right: 369px;
+  top: 235px;
+  right: 330px;
 }
 
 
@@ -327,7 +329,8 @@ body {
 
 .sale-container {
   width: 1050px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-left: 435px;
 }
 
 
@@ -345,15 +348,15 @@ body {
 
 .sale-prev-button {
   position: absolute;
-  top: 259px;
-  left: 359px;
+  top: 235px;
+  left: 400px;
   transform: rotate(180deg);
 }
 
 .sale-next-button {
   position: absolute;
-  top: 259px;
-  right: 369px;
+  top: 235px;
+  right: 330px;
 }
 
 /* --------------------------------- 최근 본 상품 -------------------------------- */
