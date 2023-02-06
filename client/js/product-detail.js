@@ -191,7 +191,6 @@ const heartButton = getNode(".plus-wish");
 const cartButton = getNode(".cart-button");
 const scrollCartButton = getNode(".scroll-header-inner .cart-alarm");
 const cartBubble = getNode(".cart-alarm");
-
 const onClickMinusHandler = () => {
   let quantity = Number(productQuantity.textContent);
   // 함수로 분리해보기
