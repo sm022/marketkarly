@@ -132,11 +132,11 @@ export default class CartItemDataClass {
                   <div class="item-right">
                     <!-- 상품 수량변경 -->
                     <div class="product-count">
-                      <button type="button" value="-" aria-label="수량내리기" class="product-minus-btn">
+                      <button type="button" aria-label="수량내리기" class="product-minus-btn">
                         <img src="./assets/icon/Minus=true.png" alt="수량내리기">
                       </button>
-                      <div class="count" id="count-result">${this.amount}</div>
-                      <button type="button" value="+" aria-label="수량올리기" class="product-plus-btn">
+                      <span class="count" id="count-result">${this.amount}</span>
+                      <button type="button" aria-label="수량올리기" class="product-plus-btn">
                         <img src="./assets/icon/Plus=false.png" alt="수량올리기">
                       </button>
                     </div>

@@ -2,13 +2,11 @@ import { xhrPromise } from '/client/lib/utils/xhr.js';
 import CartItemDataClass from '/client/lib/data-class/cart-item.data-class.js';
 import { checkImagePath } from '../lib/constant.js';
 import { getNode, getNodes } from '/client/lib/dom/getNode.js';
-
+import { css } from '../lib/dom/css.js';
+import { loadStorage, saveStorage } from '../lib/utils/storage.js';
 class CartProcessClass {
-  checkAlls = document.getElementsByClassName('check-all');
-  coldList = getNode('.cold-list').querySelector('.main-list');
-  frozenList = getNode('.frozen-list').querySelector('.main-list');
-  normalList = getNode('.normal-list').querySelector('.main-list');
   isSelectAll = true;
+  itemLength = 1;
 
   getTotalPrice(foods, deliveryPrice) {
     // foods.reduce((a, b) => {
@@ -43,12 +41,16 @@ class CartProcessClass {
    * 데이터를 가져오고 가져온 데이터를 데이터 클래스로 변환
    */
   async loadFoods() {
-    const foods = await this.getFoodsFromApi();
-    if (foods.length < 1) {
-      // 데이터가 없는 경우0
-      alert('아이템을 가져오지 못했습니다. 서버 상태를 확인해주세요.');
+    let foods = await loadStorage('foods');
+    if (!foods) {
+      foods = await this.getFoodsFromApi();
+      if (foods.length < 1) {
+        // 데이터가 없는 경우
+        alert('아이템을 가져오지 못했습니다. 서버 상태를 확인해주세요.');
+      }
     }
 
+    await saveStorage('foods', foods);
     this.foods = foods.map((food) => new CartItemDataClass(food));
   }
 
@@ -95,11 +97,7 @@ class CartProcessClass {
    * 아코디언 메뉴
    */
   listItemAccordion() {
-    //
-
-    const buttons = document.querySelectorAll('.click-down');
-
-    buttons.forEach((btn) => {
+    document.querySelectorAll('.click-down').forEach((btn) => {
       btn.addEventListener('click', () => {
         switch (btn.id) {
           case 'frozen-down-btn':
@@ -118,6 +116,8 @@ class CartProcessClass {
             normalEls.forEach((item) => this.toggleDisplay(item));
             break;
         }
+
+        this.rotateDownImage(getNode(`#${btn.id} > img`));
       });
     });
 
@@ -133,6 +133,14 @@ class CartProcessClass {
     //     }
     //   })
     // );
+  }
+
+  rotateDownImage(img) {
+    if (img.style.transform === 'rotate(180deg)') {
+      img.style.transform = 'rotate(360deg)';
+    } else {
+      img.style.transform = 'rotate(180deg)';
+    }
   }
 
   toggleDisplay(el) {
@@ -177,19 +185,37 @@ class CartProcessClass {
     });
   }
 
+  loadElements() {
+    this.checkAlls = document.getElementsByClassName('check-all');
+    this.coldList = getNode('.cold-list').querySelector('.main-list');
+    this.frozenList = getNode('.frozen-list').querySelector('.main-list');
+    this.normalList = getNode('.normal-list').querySelector('.main-list');
+  }
+
   /**
    * 최초실행 메서드
    */
   async run() {
     await this.loadFoods();
-    this.addFoodsToScreen();
-    this.applySelectEvent();
-    this.applyToggleSelectAllEvent();
-    this.listItemAccordion();
-    this.craditAddStickyEvent();
-    // this.getTotalPrice(this.foods, 1000);
+    if (new URL(window.location.href).pathname === '/client/cart.html') {
+      console.log('카트 페이지에서만 실행');
+      this.loadElements();
+      this.addFoodsToScreen();
+      this.applySelectEvent();
+      this.applyToggleSelectAllEvent();
+      this.listItemAccordion();
+      this.craditAddStickyEvent();
+      // this.getTotalPrice(this.foods, 1000);
+    }
+  }
+
+  addFood() {
+    this.itemLength += 1;
+
+    // 로컬 스토리지에 데이터 추가
   }
 }
 
 const cartProcessClass = new CartProcessClass();
 await cartProcessClass.run();
+window.cartProcessClass = cartProcessClass;
