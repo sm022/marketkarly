@@ -11,10 +11,11 @@ legend {
   overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
 }
-/* 
+
 body{
   max-width: 1050px;
-} */
+  margin: 0 auto;
+}
 
 /* 효과 삭제 관련 부분시작 */
 /* 카테고리 details 앞머리 삭제 */
@@ -47,8 +48,6 @@ a {
 /* 베스트 전체 레이아웃 */
 .best-container {
   background-color: antiquewhite;
-  /* width: 400px; */
-  margin: 0 427px;
 }
 
 
@@ -73,7 +72,7 @@ a {
 
 /* 필터링 전체 레이아웃 */
 .best-filter-container {
-  background-color: aqua;
+  /* background-color: aqua; */
   /* margin-right: 47px; */
   /* margin: 0; */
 }
@@ -123,8 +122,12 @@ details {
   /* padding: 13px 0; */ 
 }
 
-details[open]{
-  
+details summary img {
+  transition: 0.5s;
+}
+
+details[open] summary img {
+  transform: rotate(-180deg);
 }
 
 /* summary img{
@@ -145,6 +148,7 @@ details[open]{
 
 .category.ul {
   /* margin-top: 22px; */
+  /* transition: 0.5s; */
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
@@ -226,9 +230,10 @@ input[id="check1"]:checked + label::after{
 /* ---------체크박스 변경 시도 끝 -----------------*/
 
 .category-ul li {
+  /* transition: 0.5s; */
 
   margin-top: 22px;
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
   /* padding: 12px; */
   /* 패딩줘도 클릭범위가 늘어나진 않네유 */
 }
