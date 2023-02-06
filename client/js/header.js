@@ -1,5 +1,5 @@
 import { getNode, getNodes } from "../lib/dom/getNode.js";
-import { addClass, css, removeClass } from "../lib/dom/css.js";
+import { addClass, containClass, css, removeClass } from "../lib/dom/css.js";
 
 // 최상단 배너
 const topBanner = getNode(".top-banner");
@@ -44,38 +44,36 @@ scrollCategoryMenu.addEventListener("mouseout", onMouseoutHandler);
 // 쓰로틀, 디바운스 추가해보기
 const onScrollHandler = () => {
   let windowTop = window.scrollY;
-  const normalClassList = normalHeader.classList;
-  const linkClassList = linkContainer.classList;
 
-  if (windowTop > 160 && !normalClassList.contains("close")) {
+  if (windowTop > 160 && !containClass(normalHeader, "close")) {
     addClass(normalHeader, "close");
     removeClass(scrollHeader, "close");
     css(main, "padding-top", "240px");
   }
-  if (windowTop === 0 && normalClassList.contains("close")) {
+  if (windowTop === 0 && containClass(normalHeader, "close")) {
     addClass(scrollHeader, "close");
     removeClass(normalHeader, "close");
     css(main, "padding-top", "0");
   }
 
   //상품설명 도달
-  if (windowTop >= 1230 && !linkClassList.contains("is-fixed")) {
+  if (windowTop >= 1230 && !containClass(linkContainer, "is-fixed")) {
     addClass(linkContainer, "is-fixed");
     addClass(hyperLinks[0], "is-selected");
     css(productDescription, "padding-top", "80px");
   }
   // 상세정보 -> 상품설명
-  if (windowTop < 2800 && hyperLinks[1].classList.contains("is-selected")) {
+  if (windowTop < 2800 && containClass(hyperLinks[1], "is-selected")) {
     addClass(hyperLinks[0], "is-selected");
     removeClass(hyperLinks[1], "is-selected");
   }
   //상세정보 도달
-  if (windowTop >= 2800 && !hyperLinks[1].classList.contains("is-selected")) {
+  if (windowTop >= 2800 && !containClass(hyperLinks[1], "is-selected")) {
     addClass(hyperLinks[1], "is-selected");
     removeClass(hyperLinks[0], "is-selected");
   }
   // 링크 고정 해제
-  if (windowTop <= 1180 && linkClassList.contains("is-fixed")) {
+  if (windowTop <= 1180 && containClass(linkContainer, "is-fixed")) {
     removeClass(linkContainer, "is-fixed");
     css(productDescription, "padding-top", "0");
     removeClass(hyperLinks[0], "is-selected");
