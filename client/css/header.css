@@ -40,13 +40,12 @@ a:focus-visible {
   background-color: var(--primary);
   color: var(--white);
 }
-.top-banner-inner{
+.top-banner-inner {
   max-width: 1050px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
 }
 .top-banner-text {
   margin-left: 383px;
@@ -59,7 +58,7 @@ a:focus-visible {
   border: none;
 }
 
-header{
+header {
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.1);
 }
 /* 헤더 */
@@ -67,7 +66,6 @@ header{
   max-width: 1050px;
   margin: 0 auto;
   position: relative;
-
 }
 .karly-logo {
   position: absolute;
@@ -272,8 +270,6 @@ header{
   justify-content: space-between;
   align-items: center;
   margin-top: 13px;
-  
-
 }
 
 .navigation a,
@@ -297,10 +293,12 @@ header{
 
 /* 카테고리 hover 메뉴 */
 .category-list {
+  overflow: auto;
   display: none;
   position: absolute;
   top: 67px;
   width: 247px;
+  height: 720px;
   border: 1px solid var(--gray-300);
   z-index: 10;
 }
