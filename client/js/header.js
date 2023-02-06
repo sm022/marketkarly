@@ -19,6 +19,10 @@ const onClickCloseHandler = () => {
   css(topBanner, "display", "none");
 };
 
+const onClickCloseHandler = () => {
+  css(topBanner, "display", "none");
+};
+
 const onMouseoverHandler = () => {
   addClass(categoryList, "is-active");
   addClass(scrollCategoryList, "is-active");
