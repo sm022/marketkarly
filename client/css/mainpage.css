@@ -51,17 +51,7 @@ body {
 }
 
 
-/* 상단 배너 */
-.top-banner {
-  height: 50px;
-}
 
-
-/* 헤더 */
-.header {
-  background-color: pink;
-  height: 197px;
-}
 
 
 /* --------------------------------- 이벤트 영역 --------------------------------- */
@@ -373,14 +363,17 @@ body {
   height: 223px;
   border: 1px solid var(--gray-200);
   padding : 8px;
-  position: relative;
   padding-top: 34px;
 
-  position: absolute;
-  left: 1807px;
-  top: 193px;
-}
+  position: sticky;
 
+  top: 193px;
+  right: 39px;
+
+  margin-top: 193px;
+  margin-bottom: 185px;
+  
+}
 
 .recent-items-list > h2 {
   width: 58px;
@@ -393,8 +386,15 @@ body {
 
 .recent-item-container {
   width: 40px;
+  height: 129px;
   margin: 0 auto;
+  overflow: hidden;
 }
+
+.recent-swiper-wrapper {
+  height: 51.41px;
+}
+
 
 .recent-thumbnail > img {
   width: 40px;
@@ -429,14 +429,12 @@ body {
 
 
 
+
+
+
+
 /* 광고 배너 */
 .banner {
   height: 219px;
   width: 1846px;
-}
-
-/* 푸터 */
-.footer {
-  background-color: gray;
-  height: 629px;
 }

@@ -10,7 +10,7 @@
   background-color: var(--white);
   z-index: 10;
 }
-.scroll-header-inner{
+.scroll-header-inner {
   max-width: 1050px;
   margin: 0 auto;
   display: flex;
@@ -43,7 +43,6 @@
 /* 검색창 */
 .scroll-form-group {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 194px;
   height: 36px;
@@ -52,7 +51,7 @@
 }
 
 .scroll-form-group input {
-  flex-grow: 1;
+  flex-flow: 1;
   border: none;
   font-weight: 400;
   font-size: 0.75rem;
@@ -64,10 +63,9 @@
 }
 
 /* 아이콘 링크 모음 */
-.icon-link {
+.scroll-icon-link {
   display: flex;
   align-items: center;
-  transform: translateX(10px);
 }
 
 .heart-icon {

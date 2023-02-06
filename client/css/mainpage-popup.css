@@ -1,0 +1,49 @@
+@import url(./theme.css);
+
+
+.popup {
+  width: 440px;
+  height: 672px;
+  position: absolute;
+  top: 280px;
+  left: 947px;
+  border-radius: 16px;
+  box-shadow: 0 8px 36px rgba(0,0,0,0.2);
+  transform: translateX(-55%);
+  z-index: 100;
+}
+
+.popup img{
+  border-radius: 16px 16px 0 0;
+  cursor: pointer;
+}
+
+.close-oneday {
+  width: 220px;
+  height: 86px;
+  
+  background-color: var(--white);
+  padding: 0px 8px;
+  
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  
+  border-radius: 0 0 0 16px;
+  border-right: 1px solid var(--gray-100);
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.popup-close {
+  width: 220px;
+  height: 86px;
+  padding: 0px;
+  background-color: var(--white);
+  border: none;
+  border-radius: 0 0 16px 0;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
