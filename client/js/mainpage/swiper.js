@@ -21,7 +21,9 @@ const swiper_E = new Swiper('.swiper-E', {
 
 const swiper_R = new Swiper('.swiper-R', {
   loopFillGroupWithBlank: 'auto',
-  spaceBetween: 18,
+  slidesPerView: 4,
+  slidesperGroup: 4,
+  spaceBetween: 2,
   loop:true,
   speed:400,
   parallax: true,
@@ -33,7 +35,9 @@ const swiper_R = new Swiper('.swiper-R', {
 
 const swiper_S = new Swiper('.swiper-S', {
   loopFillGroupWithBlank: 'auto',
-  spaceBetween: 18,
+  slidesPerView: 4,
+  slidesperGroup: 4,
+  spaceBetween: 2,
   loop:true,
   speed:400,
   parallax: true,
