@@ -24,7 +24,8 @@ const swiper_R = new Swiper('.swiper-R', {
   slidesPerView: 4,
   slidesperGroup: 4,
   spaceBetween: 2,
-  loop:true,
+  observer: true,
+  observeParents: true, 
   speed:400,
   parallax: true,
   navigation: {
@@ -38,7 +39,8 @@ const swiper_S = new Swiper('.swiper-S', {
   slidesPerView: 4,
   slidesperGroup: 4,
   spaceBetween: 2,
-  loop:true,
+  observer: true,
+  observeParents: true, 
   speed:400,
   parallax: true,
   navigation: {
