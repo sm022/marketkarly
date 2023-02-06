@@ -1,41 +1,42 @@
-import { getNode } from "../lib/dom/getNode.js";
+import { getNode, getNodes } from "../lib/dom/getNode.js";
 import { attr } from "../lib/dom/attr.js";
 import { insertFirst, insertLast } from "../lib/dom/insert.js";
+import { addClass, removeClass } from "../lib/dom/css.js";
 // 임시데이터
 // 할인 하는 상품
-// const product = {
-//   id: "product-rksk",
-//   name: "[대구 반할만떡] 유부호만두",
-//   description: "유부로 속을 든든히 채운 군만두",
-//   price: 6900,
-//   saleRatio: 0.24,
-//   salePrice: 5244,
-//   image: {
-//     thumbnail: "ubuho/thumbnail.jpg",
-//     view: "ubuho/detail_view.jpg",
-//     banner: "ubuho/detail_banner.jpg",
-//     info: "ubuho/detail_info.jpg",
-//     alt: "유부호 만두",
-//   },
-//   stock: 3,
-// };
-// 할인 안하는 상품
 const product = {
-  id: "product-ekfk",
-  name: "[풀무원] 탱탱쫄면 (4개입)",
-  description: "튀기지 않아 부드럽고 매콤한",
-  price: 4980,
-  saleRatio: 0,
-  salePrice: 0,
+  id: "product-rksk",
+  name: "[대구 반할만떡] 유부호만두",
+  description: "유부로 속을 든든히 채운 군만두",
+  price: 6900,
+  saleRatio: 0.24,
+  salePrice: 5244,
   image: {
-    thumbnail: "tangtang/thumbnail.jpg",
-    view: "tangtang/detail_view.jpg",
-    banner: "tangtang/detail_banner.jpg",
-    info: "tangtang/detail_info.jpg",
-    alt: "풀무원 탱탱쫄면",
+    thumbnail: "ubuho/thumbnail.jpg",
+    view: "ubuho/detail_view.jpg",
+    banner: "ubuho/detail_banner.jpg",
+    info: "ubuho/detail_info.jpg",
+    alt: "유부호 만두",
   },
-  stock: 10,
+  stock: 3,
 };
+// 할인 안하는 상품
+// const product = {
+//   id: "product-ekfk",
+//   name: "[풀무원] 탱탱쫄면 (4개입)",
+//   description: "튀기지 않아 부드럽고 매콤한",
+//   price: 4980,
+//   saleRatio: 0,
+//   salePrice: 0,
+//   image: {
+//     thumbnail: "tangtang/thumbnail.jpg",
+//     view: "tangtang/detail_view.jpg",
+//     banner: "tangtang/detail_banner.jpg",
+//     info: "tangtang/detail_info.jpg",
+//     alt: "풀무원 탱탱쫄면",
+//   },
+//   stock: 10,
+// };
 
 const productSection = getNode(".product-detail");
 const productTextSection = getNode(".product-detail-text");
@@ -43,6 +44,8 @@ const productDescriptionSection = getNode("#product-description");
 const productDetailSection = getNode("#product-detail");
 const eachPrice = getNode(".each-product-price");
 const totalPrice = getNode(".total-price-number");
+const cartSections = getNodes(".cart-alarm");
+console.log(cartSections);
 
 const priceToString = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -71,64 +74,6 @@ const infoTextTemplate = () => {
       <h2 class="product-sub-title">${description}</h2>
       <span class="product-price">${priceTemplate}<small>원</small></span>
       <p class="login-notice">로그인 후, 적립 혜택이 제공됩니다.</p>
-      <div class="about-product">
-        <dl>
-          <dt>배송</dt>
-          <dd>
-            <p>샛별배송</p>
-            <p class="sub-description">
-              23시 전 주문 시 내일 아침 7시 전 도착<br />
-              (대구 부산 울산 샛별배송 운영시간 별도 확인)
-            </p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>판매자</dt>
-          <dd>
-            <p>칼리</p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>포장타임</dt>
-          <dd>
-            <p>상온(종이포장)</p>
-            <p class="sub-description">
-              택배배송은 에코 포장이 스티로폼으로 대체됩니다.
-            </p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>판매단위</dt>
-          <dd>
-            <p>1분</p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>중량/용량</dt>
-          <dd>
-            <p>123*4봉</p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>원산지</dt>
-          <dd>
-            <p>상세페이지 별도표기</p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>알레르기 정보</dt>
-          <dd>
-            <p class="sub-description allergy-description">
-              -대두, 밀, 쇠고기 함유
-            </p>
-            <p class="sub-description allergy-description">
-              -계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아,
-              토마토, 아황산류, 호두, 잣, 닭고기, 오징어, 조개류(굴, 전복,
-              홍합 포함)를 사용한 제품과 같은 제조시설에서 제조
-            </p>
-          </dd>
-        </dl>
-      </div>
   `
     : `
     <span class="early-delivery">샛별배송</span>
@@ -142,64 +87,6 @@ const infoTextTemplate = () => {
       <del class="original-price">${priceTemplate}원</del>
     </div>
     <p class="login-notice">로그인 후, 적립 혜택이 제공됩니다.</p>
-    <div class="about-product">
-      <dl>
-        <dt>배송</dt>
-        <dd>
-          <p>샛별배송</p>
-          <p class="sub-description">
-            23시 전 주문 시 내일 아침 7시 전 도착<br />
-            (대구 부산 울산 샛별배송 운영시간 별도 확인)
-          </p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>판매자</dt>
-        <dd>
-          <p>칼리</p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>포장타임</dt>
-        <dd>
-          <p>상온(종이포장)</p>
-          <p class="sub-description">
-            택배배송은 에코 포장이 스티로폼으로 대체됩니다.
-          </p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>판매단위</dt>
-        <dd>
-          <p>1분</p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>중량/용량</dt>
-        <dd>
-          <p>123*4봉</p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>원산지</dt>
-        <dd>
-          <p>상세페이지 별도표기</p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>알레르기 정보</dt>
-        <dd>
-          <p class="sub-description allergy-description">
-            -대두, 밀, 쇠고기 함유
-          </p>
-          <p class="sub-description allergy-description">
-            -계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아,
-            토마토, 아황산류, 호두, 잣, 닭고기, 오징어, 조개류(굴, 전복,
-            홍합 포함)를 사용한 제품과 같은 제조시설에서 제조
-          </p>
-        </dd>
-      </dl>
-    </div>
   `;
 };
 
@@ -247,6 +134,23 @@ const detailInfoImageTemplate = () => {
 `;
 };
 
+const cartBubbleTemplate = () => {
+  const { name, image } = product;
+
+  return `
+  <img
+  src="./assets/${image.thumbnail}"
+  alt="${image.alt}"
+  width="46px"
+  height="60px"
+  class="alarm-image"
+/>
+<div class="alarm-text">
+  <h2>${name}</h2>
+  <p>장바구니에 상품을 담았습니다.</p>
+</div>
+  `;
+};
 const renderPage = () => {
   // xhr or fetch로 데이터 가져오기
   // renderTemplate 함수 인자로 데이터 전달
@@ -254,12 +158,15 @@ const renderPage = () => {
   let textTemplate = infoTextTemplate();
   let productDescriptionTemplate = detailInfoTextTemplate();
   let productDeatilTemplate = detailInfoImageTemplate();
+  let cartTemplate = cartBubbleTemplate();
   let stringEachPrice = priceToString(product.price);
 
   insertFirst(productSection, imageTemplate);
   insertFirst(productTextSection, textTemplate);
   insertFirst(productDescriptionSection, productDescriptionTemplate);
   insertFirst(productDetailSection, productDeatilTemplate);
+  insertFirst(cartSections[0], cartTemplate);
+  insertFirst(cartSections[1], cartTemplate);
 
   eachPrice.innerHTML =
     product.saleRatio === 0
@@ -280,6 +187,10 @@ const productQuantity = getNode(".product-counter span");
 const minusImg = getNode(".minus-button img");
 
 const heartButton = getNode(".plus-wish");
+
+const cartButton = getNode(".cart-button");
+const scrollCartButton = getNode(".scroll-header-inner .cart-alarm");
+const cartBubble = getNode(".cart-alarm");
 
 const onClickMinusHandler = () => {
   let quantity = Number(productQuantity.textContent);
@@ -327,6 +238,18 @@ const onClickHeartHandler = (e) => {
   }
 };
 
+const onClickCartHandler = () => {
+  // 장바구니에 담긴 상품 목록 데이터의 길이를 파악하고
+  // 0개면 cart-number 보여주지 않고 1부터 cart-number 보이게 하는 로직 추가하기
+  removeClass(cartBubble, "is-not-exist");
+  removeClass(scrollCartButton, "is-not-exist");
+  setTimeout(() => {
+    addClass(cartBubble, "is-not-exist");
+    addClass(scrollCartButton, "is-not-exist");
+  }, 2000);
+};
+
+cartButton.addEventListener("click", onClickCartHandler);
 minusButton.addEventListener("click", onClickMinusHandler);
 plusButton.addEventListener("click", onClickPlusHandler);
 heartButton.addEventListener("click", onClickHeartHandler);
