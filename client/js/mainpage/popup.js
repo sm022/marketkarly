@@ -2,10 +2,7 @@
 import { setCookie, getCookie } from './cookie.js';
 
 // 팝업창 닫기
-let body = document.querySelector("body");
 let popupWrapper = document.querySelector(".popup-wrapper");
-let popupCloseOneDayBtn = document.querySelector(".close-oneday");
-let popupCloseBtn = document.querySelector(".popup-close");
 
 
 const onPopupClose = (target) => {

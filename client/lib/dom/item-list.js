@@ -45,7 +45,7 @@ const createSaleItem = ({
   },
 } = {}) => {
   return /*html */`
-  <div class="item-card swiper-slide">
+  <div class="item-card swiper-slide" id="${id}">
     <div class="item">
       <p class="item-thumbnail">
         <img src="${image.thumbnail}" alt="${image.alt}" />
