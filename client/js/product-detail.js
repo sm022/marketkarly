@@ -1,4 +1,4 @@
-import { getNode } from "../lib/dom/getNode.js";
+import { getNode, getNodes } from "../lib/dom/getNode.js";
 import { attr } from "../lib/dom/attr.js";
 import { insertFirst, insertLast } from "../lib/dom/insert.js";
 import { addClass, removeClass } from "../lib/dom/css.js";
@@ -44,6 +44,8 @@ const productDescriptionSection = getNode("#product-description");
 const productDetailSection = getNode("#product-detail");
 const eachPrice = getNode(".each-product-price");
 const totalPrice = getNode(".total-price-number");
+const cartSections = getNodes(".cart-alarm");
+console.log(cartSections);
 
 const priceToString = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -132,6 +134,23 @@ const detailInfoImageTemplate = () => {
 `;
 };
 
+const cartBubbleTemplate = () => {
+  const { name, image } = product;
+
+  return `
+  <img
+  src="./assets/${image.thumbnail}"
+  alt="${image.alt}"
+  width="46px"
+  height="60px"
+  class="alarm-image"
+/>
+<div class="alarm-text">
+  <h2>${name}</h2>
+  <p>장바구니에 상품을 담았습니다.</p>
+</div>
+  `;
+};
 const renderPage = () => {
   // xhr or fetch로 데이터 가져오기
   // renderTemplate 함수 인자로 데이터 전달
@@ -139,12 +158,15 @@ const renderPage = () => {
   let textTemplate = infoTextTemplate();
   let productDescriptionTemplate = detailInfoTextTemplate();
   let productDeatilTemplate = detailInfoImageTemplate();
+  let cartTemplate = cartBubbleTemplate();
   let stringEachPrice = priceToString(product.price);
 
   insertFirst(productSection, imageTemplate);
   insertFirst(productTextSection, textTemplate);
   insertFirst(productDescriptionSection, productDescriptionTemplate);
   insertFirst(productDetailSection, productDeatilTemplate);
+  insertFirst(cartSections[0], cartTemplate);
+  insertFirst(cartSections[1], cartTemplate);
 
   eachPrice.innerHTML =
     product.saleRatio === 0
@@ -166,6 +188,9 @@ const minusImg = getNode(".minus-button img");
 
 const heartButton = getNode(".plus-wish");
 
+const cartButton = getNode(".cart-button");
+const scrollCartButton = getNode(".scroll-header-inner .cart-alarm");
+const cartBubble = getNode(".cart-alarm");
 const onClickMinusHandler = () => {
   let quantity = Number(productQuantity.textContent);
   // 함수로 분리해보기
@@ -212,6 +237,18 @@ const onClickHeartHandler = (e) => {
   }
 };
 
+const onClickCartHandler = () => {
+  // 장바구니에 담긴 상품 목록 데이터의 길이를 파악하고
+  // 0개면 cart-number 보여주지 않고 1부터 cart-number 보이게 하는 로직 추가하기
+  removeClass(cartBubble, "is-not-exist");
+  removeClass(scrollCartButton, "is-not-exist");
+  setTimeout(() => {
+    addClass(cartBubble, "is-not-exist");
+    addClass(scrollCartButton, "is-not-exist");
+  }, 2000);
+};
+
+cartButton.addEventListener("click", onClickCartHandler);
 minusButton.addEventListener("click", onClickMinusHandler);
 plusButton.addEventListener("click", onClickPlusHandler);
 heartButton.addEventListener("click", onClickHeartHandler);
