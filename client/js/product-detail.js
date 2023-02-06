@@ -1,40 +1,42 @@
 import { getNode } from "../lib/dom/getNode.js";
+import { attr } from "../lib/dom/attr.js";
 import { insertFirst, insertLast } from "../lib/dom/insert.js";
+import { addClass, removeClass } from "../lib/dom/css.js";
 // 임시데이터
 // 할인 하는 상품
-// const product = {
-//   id: "product-rksk",
-//   name: "[대구 반할만떡] 유부호만두",
-//   description: "유부로 속을 든든히 채운 군만두",
-//   price: 6900,
-//   saleRatio: 0.24,
-//   salePrice: 5244,
-//   image: {
-//     thumbnail: "ubuho/thumbnail.jpg",
-//     view: "ubuho/detail_view.jpg",
-//     banner: "ubuho/detail_banner.jpg",
-//     info: "ubuho/detail_info.jpg",
-//     alt: "유부호 만두",
-//   },
-//   stock: 3,
-// };
-// 할인 안하는 상품
 const product = {
-  id: "product-ekfk",
-  name: "[풀무원] 탱탱쫄면 (4개입)",
-  description: "튀기지 않아 부드럽고 매콤한",
-  price: 4980,
-  saleRatio: 0,
-  salePrice: 0,
+  id: "product-rksk",
+  name: "[대구 반할만떡] 유부호만두",
+  description: "유부로 속을 든든히 채운 군만두",
+  price: 6900,
+  saleRatio: 0.24,
+  salePrice: 5244,
   image: {
-    thumbnail: "tangtang/thumbnail.jpg",
-    view: "tangtang/detail_view.jpg",
-    banner: "tangtang/detail_banner.jpg",
-    info: "tangtang/detail_info.jpg",
-    alt: "풀무원 탱탱쫄면",
+    thumbnail: "ubuho/thumbnail.jpg",
+    view: "ubuho/detail_view.jpg",
+    banner: "ubuho/detail_banner.jpg",
+    info: "ubuho/detail_info.jpg",
+    alt: "유부호 만두",
   },
-  stock: 10,
+  stock: 3,
 };
+// 할인 안하는 상품
+// const product = {
+//   id: "product-ekfk",
+//   name: "[풀무원] 탱탱쫄면 (4개입)",
+//   description: "튀기지 않아 부드럽고 매콤한",
+//   price: 4980,
+//   saleRatio: 0,
+//   salePrice: 0,
+//   image: {
+//     thumbnail: "tangtang/thumbnail.jpg",
+//     view: "tangtang/detail_view.jpg",
+//     banner: "tangtang/detail_banner.jpg",
+//     info: "tangtang/detail_info.jpg",
+//     alt: "풀무원 탱탱쫄면",
+//   },
+//   stock: 10,
+// };
 
 const productSection = getNode(".product-detail");
 const productTextSection = getNode(".product-detail-text");
@@ -70,64 +72,6 @@ const infoTextTemplate = () => {
       <h2 class="product-sub-title">${description}</h2>
       <span class="product-price">${priceTemplate}<small>원</small></span>
       <p class="login-notice">로그인 후, 적립 혜택이 제공됩니다.</p>
-      <div class="about-product">
-        <dl>
-          <dt>배송</dt>
-          <dd>
-            <p>샛별배송</p>
-            <p class="sub-description">
-              23시 전 주문 시 내일 아침 7시 전 도착<br />
-              (대구 부산 울산 샛별배송 운영시간 별도 확인)
-            </p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>판매자</dt>
-          <dd>
-            <p>칼리</p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>포장타임</dt>
-          <dd>
-            <p>상온(종이포장)</p>
-            <p class="sub-description">
-              택배배송은 에코 포장이 스티로폼으로 대체됩니다.
-            </p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>판매단위</dt>
-          <dd>
-            <p>1분</p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>중량/용량</dt>
-          <dd>
-            <p>123*4봉</p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>원산지</dt>
-          <dd>
-            <p>상세페이지 별도표기</p>
-          </dd>
-        </dl>
-        <dl>
-          <dt>알레르기 정보</dt>
-          <dd>
-            <p class="sub-description allergy-description">
-              -대두, 밀, 쇠고기 함유
-            </p>
-            <p class="sub-description allergy-description">
-              -계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아,
-              토마토, 아황산류, 호두, 잣, 닭고기, 오징어, 조개류(굴, 전복,
-              홍합 포함)를 사용한 제품과 같은 제조시설에서 제조
-            </p>
-          </dd>
-        </dl>
-      </div>
   `
     : `
     <span class="early-delivery">샛별배송</span>
@@ -141,64 +85,6 @@ const infoTextTemplate = () => {
       <del class="original-price">${priceTemplate}원</del>
     </div>
     <p class="login-notice">로그인 후, 적립 혜택이 제공됩니다.</p>
-    <div class="about-product">
-      <dl>
-        <dt>배송</dt>
-        <dd>
-          <p>샛별배송</p>
-          <p class="sub-description">
-            23시 전 주문 시 내일 아침 7시 전 도착<br />
-            (대구 부산 울산 샛별배송 운영시간 별도 확인)
-          </p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>판매자</dt>
-        <dd>
-          <p>칼리</p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>포장타임</dt>
-        <dd>
-          <p>상온(종이포장)</p>
-          <p class="sub-description">
-            택배배송은 에코 포장이 스티로폼으로 대체됩니다.
-          </p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>판매단위</dt>
-        <dd>
-          <p>1분</p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>중량/용량</dt>
-        <dd>
-          <p>123*4봉</p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>원산지</dt>
-        <dd>
-          <p>상세페이지 별도표기</p>
-        </dd>
-      </dl>
-      <dl>
-        <dt>알레르기 정보</dt>
-        <dd>
-          <p class="sub-description allergy-description">
-            -대두, 밀, 쇠고기 함유
-          </p>
-          <p class="sub-description allergy-description">
-            -계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아,
-            토마토, 아황산류, 호두, 잣, 닭고기, 오징어, 조개류(굴, 전복,
-            홍합 포함)를 사용한 제품과 같은 제조시설에서 제조
-          </p>
-        </dd>
-      </dl>
-    </div>
   `;
 };
 
@@ -272,3 +158,60 @@ const renderPage = () => {
       : `${priceToString(product.salePrice)}<small>원</small>`;
 };
 window.onload = renderPage;
+
+const minusButton = getNode(".minus-button");
+const plusButton = getNode(".plus-button");
+const productQuantity = getNode(".product-counter span");
+const minusImg = getNode(".minus-button img");
+
+const heartButton = getNode(".plus-wish");
+
+const onClickMinusHandler = () => {
+  let quantity = Number(productQuantity.textContent);
+  // 함수로 분리해보기
+  let each = parseInt(eachPrice.textContent.split(",").join(""));
+  let sum = parseInt(totalPrice.textContent.split(",").join(""));
+  if (quantity <= 1) {
+    return;
+  }
+  // 마이너스 버튼 비활성화 로직 다시 생각
+  if (quantity <= 2) {
+    attr(minusImg, "src", "./assets/icon/Minus.png");
+  }
+  productQuantity.textContent = quantity - 1;
+  totalPrice.innerHTML = priceToString(sum - each) + "<small>원</small>";
+};
+const onClickPlusHandler = () => {
+  attr(minusImg, "src", "./assets/icon/Minus_able.png");
+  let quantity = Number(productQuantity.textContent);
+  // 함수로 분리해보기
+  let each = parseInt(eachPrice.textContent.split(",").join(""));
+  let sum = parseInt(totalPrice.textContent.split(",").join(""));
+  productQuantity.textContent = quantity + 1;
+  totalPrice.innerHTML = priceToString(sum + each) + "<small>원</small>";
+};
+
+// 함수 분리하기
+const onClickHeartHandler = (e) => {
+  console.log(e.target);
+  let imgSrc = attr(e.target, "src");
+  // tab접근성 고려
+  if (!imgSrc) {
+    imgSrc = attr(e.target.children[0], "src");
+    if (imgSrc.includes("false")) {
+      attr(e.target.children[0], "src", "./assets/icon/wish_true.png");
+    } else {
+      attr(e.target.children[0], "src", "./assets/icon/wish_false.png");
+    }
+  } else {
+    if (imgSrc.includes("false")) {
+      attr(e.target, "src", "./assets/icon/wish_true.png");
+    } else {
+      attr(e.target, "src", "./assets/icon/wish_false.png");
+    }
+  }
+};
+
+minusButton.addEventListener("click", onClickMinusHandler);
+plusButton.addEventListener("click", onClickPlusHandler);
+heartButton.addEventListener("click", onClickHeartHandler);
