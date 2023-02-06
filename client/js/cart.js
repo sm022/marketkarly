@@ -1,6 +1,6 @@
 import { xhrPromise } from '/client/lib/utils/xhr.js';
 import CartItemDataClass from '/client/lib/data-class/cart-item.data-class.js';
-
+import { checkImagePath } from '../lib/constant.js';
 import { getNode } from '/client/lib/dom/getNode.js';
 
 class CartProcessClass {
@@ -70,6 +70,13 @@ class CartProcessClass {
         this.isSelectAll = this.isSelectAll ? false : true;
       });
     }
+  }
+
+  /**
+   * 선택 삭제 했을때 화면에서 지우기
+   */
+  singleDeleteEvent() {
+    this.foods.forEach((food) => {});
   }
 
   /**

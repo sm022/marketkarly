@@ -71,6 +71,14 @@ export default class CartItemDataClass {
     this.isSelect = this.isSelect ? false : true;
   }
 
+  /**
+   * 아이템의 delete 엘리먼트 가져오기
+   */
+  getDeleteElement() {
+    const deleteBtn = getNode('.delete-button');
+    console.log(deleteBtn);
+  }
+
   select() {
     const check = document.getElementById(`check-${this.id}`);
     if (!check || check.getAttribute('src') === checkImagePath(true)) {
