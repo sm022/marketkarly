@@ -73,9 +73,6 @@ button {
   height: 30px;
 }
 
-.click-down .active {
-  transform: rotate(180deg);
-}
 /* 장바구니 상품 리스트  */
 .list {
   border-top: 1px solid #212121;
@@ -177,13 +174,27 @@ ul .list-item {
   text-decoration: line-through;
 }
 
-/* 결제 폼  */
+/* 전체 결제 폼  */
+.cradit-wrapper {
+  position: relative;
+  min-height: 942px;
+  height: 100vh;
+}
 
 .cradit {
-  /* background-color: darkturquoise; */
   width: 284px;
   padding-top: 60px;
 }
+
+@supports (position: sticky) or (position: -webkit-sticky) {
+  .is-sticky {
+    position: -webkit-sticky; /* 사파리 브라우저 지원 */
+    position: sticky;
+    top: 4px;
+  }
+}
+
+/* 주소 */
 .location {
   padding: 23px 19px 20px;
   border-width: 1px 1px 0px;
@@ -202,8 +213,7 @@ ul .list-item {
 .location-mark img {
   width: 20px;
   height: 20px;
-  padding-right: 5px;
-  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 /*  배송지 주소 */

@@ -1,7 +1,7 @@
 import { xhrPromise } from '/client/lib/utils/xhr.js';
 import CartItemDataClass from '/client/lib/data-class/cart-item.data-class.js';
 import { checkImagePath } from '../lib/constant.js';
-import { getNode } from '/client/lib/dom/getNode.js';
+import { getNode, getNodes } from '/client/lib/dom/getNode.js';
 
 class CartProcessClass {
   checkAlls = document.getElementsByClassName('check-all');
@@ -80,6 +80,38 @@ class CartProcessClass {
   }
 
   /**
+   * 아코디언 메뉴
+   */
+  listItemAccordion() {
+    const buttons = document.querySelectorAll('.click-down');
+    const list = document.querySelector('.main-list');
+    const buttonsImgs = document.querySelectorAll('.click-down-img');
+    buttons.forEach(() =>
+      addEventListener('click', () => {
+        if (list.style.display === 'none') {
+          list.style.display = 'block';
+        } else {
+          list.style.display = 'none';
+          // buttonsImgs.style.transform('rotate(180deg)');
+        }
+      })
+    );
+  }
+
+  listItemShow() {
+    this.listItemAccordion.setAttribute('display', 'none');
+  }
+
+  /**
+   * 결제 창 고정
+   */
+  craditAddStickyEvent() {
+    const cradit = getNode('.cradit');
+    const topPos = cradit.offsetTop;
+    console.log(topPos);
+  }
+
+  /**
    * 화면에 음식 정보데이터 추가
    */
   addFoodsToScreen() {
@@ -112,7 +144,8 @@ class CartProcessClass {
     this.addFoodsToScreen();
     this.applySelectEvent();
     this.applyToggleSelectAllEvent();
-
+    // this.listItemAccordion();
+    this.craditAddStickyEvent();
     // this.getTotalPrice(this.foods, 1000);
   }
 }
