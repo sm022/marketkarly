@@ -45,6 +45,10 @@ export default class CartItemDataClass {
     return this.isSelect;
   }
 
+  getType() {
+    return this.type;
+  }
+
   /**
    * 아이템의 check 엘리먼트 가져오기
    * 이미 가져온 경우 저장된 엘리먼트 반환

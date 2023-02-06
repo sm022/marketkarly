@@ -17,6 +17,18 @@ class CartProcessClass {
     // });
   }
 
+  getFrozenItems() {
+    return this.foods.filter((food) => food.type === 'FROZEN');
+  }
+
+  getColdItems() {
+    return this.foods.filter((food) => food.type === 'COLD');
+  }
+
+  getNormalItems() {
+    return this.foods.filter((food) => food.type === 'NORMAL');
+  }
+
   /**
    * API에서 음식 데이터를 가져오는 메서드
    */
@@ -83,23 +95,52 @@ class CartProcessClass {
    * 아코디언 메뉴
    */
   listItemAccordion() {
+    //
+
     const buttons = document.querySelectorAll('.click-down');
-    const list = document.querySelector('.main-list');
-    const buttonsImgs = document.querySelectorAll('.click-down-img');
-    buttons.forEach(() =>
-      addEventListener('click', () => {
-        if (list.style.display === 'none') {
-          list.style.display = 'block';
-        } else {
-          list.style.display = 'none';
-          // buttonsImgs.style.transform('rotate(180deg)');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        switch (btn.id) {
+          case 'frozen-down-btn':
+            const frozenEls = this.getFrozenItems().map((item) => document.getElementById(item.id));
+            frozenEls.forEach((item) => this.toggleDisplay(item));
+            break;
+
+          case 'cold-down-btn':
+            const coldEls = this.getColdItems().map((item) => document.getElementById(item.id));
+            console.log(coldEls);
+            coldEls.forEach((item) => this.toggleDisplay(item));
+            break;
+
+          case 'normal-down-btn':
+            const normalEls = this.getNormalItems().map((item) => document.getElementById(item.id));
+            normalEls.forEach((item) => this.toggleDisplay(item));
+            break;
         }
-      })
-    );
+      });
+    });
+
+    // const list = document.querySelectorAll('.main-list');
+    // const buttonsImgs = document.querySelectorAll('.click-down-img');
+    // buttons.forEach(() =>
+    //   addEventListener('click', () => {
+    //     if (list.style.display === 'none') {
+    //       list.style.display = 'block';
+    //     } else {
+    //       list.style.display = 'none';
+    //       // buttonsImgs.style.transform('rotate(180deg)');
+    //     }
+    //   })
+    // );
   }
 
-  listItemShow() {
-    this.listItemAccordion.setAttribute('display', 'none');
+  toggleDisplay(el) {
+    if (el.style.display === 'none') {
+      el.style.display = '';
+    } else {
+      el.style.display = 'none';
+    }
   }
 
   /**
@@ -144,7 +185,7 @@ class CartProcessClass {
     this.addFoodsToScreen();
     this.applySelectEvent();
     this.applyToggleSelectAllEvent();
-    // this.listItemAccordion();
+    this.listItemAccordion();
     this.craditAddStickyEvent();
     // this.getTotalPrice(this.foods, 1000);
   }
