@@ -45,7 +45,6 @@ const productDetailSection = getNode("#product-detail");
 const eachPrice = getNode(".each-product-price");
 const totalPrice = getNode(".total-price-number");
 const cartSections = getNodes(".cart-alarm");
-console.log(cartSections);
 
 const priceToString = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -193,9 +192,13 @@ const scrollCartButton = getNode(".scroll-header-inner .cart-alarm");
 const cartBubble = getNode(".cart-alarm");
 const onClickMinusHandler = () => {
   let quantity = Number(productQuantity.textContent);
-  // 함수로 분리해보기
-  let each = parseInt(eachPrice.textContent.split(",").join(""));
+  let each =
+    eachPrice.textContent.length > 6
+      ? parseInt(eachPrice.textContent.slice(6).split(",").join(""))
+      : parseInt(eachPrice.textContent.split(",").join(""));
   let sum = parseInt(totalPrice.textContent.split(",").join(""));
+  console.log(eachPrice.textContent.length);
+
   if (quantity <= 1) {
     return;
   }
@@ -210,7 +213,10 @@ const onClickPlusHandler = () => {
   attr(minusImg, "src", "./assets/icon/Minus_able.png");
   let quantity = Number(productQuantity.textContent);
   // 함수로 분리해보기
-  let each = parseInt(eachPrice.textContent.split(",").join(""));
+  let each =
+    eachPrice.textContent.length > 6
+      ? parseInt(eachPrice.textContent.slice(6).split(",").join(""))
+      : parseInt(eachPrice.textContent.split(",").join(""));
   let sum = parseInt(totalPrice.textContent.split(",").join(""));
   productQuantity.textContent = quantity + 1;
   totalPrice.innerHTML = priceToString(sum + each) + "<small>원</small>";
