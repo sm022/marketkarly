@@ -285,6 +285,11 @@ del {
   border: 1px solid var(--gray-300);
 }
 
+.hyper-link-container.is-fixed {
+  position: fixed;
+  width: 1050px;
+  top: 67px;
+}
 /* 선택된 링크 스타일 */
 .hyper-link-container a.is-selected {
   border: 1px solid var(--gray-100);
