@@ -129,7 +129,7 @@ header {
   margin: 0 2px;
 }
 
-.karly-category-link a {
+.karly-category-link span {
   padding: 0 10px;
 }
 .karly-category-market {
@@ -306,7 +306,7 @@ header {
 .category-list img {
   margin: 0 8px 0 12px;
 }
-.category-list a {
+.category-list span {
   display: flex;
   align-items: center;
   padding: 8px 0;
@@ -321,7 +321,7 @@ header {
   display: block;
 }
 
-.category-list a:hover {
+.category-list span:hover {
   color: var(--primary);
   background-color: var(--gray-50);
 }
