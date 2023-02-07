@@ -17,9 +17,16 @@
 
 <body>
   <main>
+    <!-- 전체 레이아웃 -->
     <div class="best-container">
+
+      <!-- 레이아웃 맨 위 -->
       <h3 class="best-title">베스트</h3>
+
+      <!-- 필터링리스트와 상품리스트 레이아웃 -->
       <div class="best-product">
+
+        <!-- 필터링 레이아웃 -->
         <section class="best-filter-container">
           <!-- section 태그 + heading(a11y-hidden) -->
           <!-- 요부분은 나랑 같이 details+summury / input -->
@@ -414,9 +421,8 @@
           </details>
 
         </section>
-        <!-- 아티클 //좌츨 필터링 부분 끝 부분 입니다 -->
-        <!----섹션 //우측 베스트 상품 시작 부분입니다----->
-        <!-- 베스트 상품 -->
+
+        <!-- 베스트 상품 레이아웃 -->
         <section class="food-container">
           <!-- 상품갯수 및 네비게이션 -->
           <div class="food-nav-box">
@@ -434,92 +440,12 @@
               <li><span class="nav-span">높은 가격순</span></li>
             </ul>
           </div>
-          <!-- 상품 리스트 -->
-          <!-- <div class="product-container"> -->
-          <!-- <div class="product">
-              페이지 전환을 위해 a태그 사용
-              a태그를 감싸서 사용하면 안되고 이미지에만 사용
-              <a href="#">
-                <div class="product-img-wrap">
-                  <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
-                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-                </div>
-              </a>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[대구 반할만떡] 유부호만두</p>
-                <div class="sale-info">
-                  <p class="sale-percent">24%</p>
-                  <p class="sale-price">5,244 원</p>
-                </div>
-                <p class="del-price"><del>6,900 원</del></p>
-                <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
-                <div class="box-container">
-                  <div class="kalry-only">Kalry Only</div>
-                  <div class="limited-quantity">한정수량</div>
-                </div>
-              </div>
-            </div> 
-
-
-            <div class="product">
-              <a href="#">
-                <div class="product-img-wrap">
-                  <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-                </div>
-              </a>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
-                <p class="price">4,980 원</p>
-                <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
-              </div>
-            </div>
-
-
-            <div class="product">
-              <a href="#">
-                <div class="product-img-wrap">
-                  <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
-                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-                </div>
-              </a>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[홍대주꾸미] 주꾸미 볶음 300g<br> (냉동)</p>
-                <div class="sale-info">
-                  <p class="sale-percent">13%</p>
-                  <p class="sale-price">6,800 원</p>
-                </div>
-                <p class="del-price"><del>7,900 원</del></p>
-                <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <div class="product-img-wrap">
-                  <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="[풀무원]탱탱쫄면" />
-                  <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-                </div>
-              </a>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[강남면옥] 소갈비찜</p>
-                <p class="price">29,800 원</p>
-                <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
-                <div class="box-container">
-                  <div class="limited-quantity">한정수량</div>
-                </div>
-              </div>
-            </div> -->
-          <!-- 이렇게 수정 -->
           <div class="product-container">
             <div class="product">
               <a href="#">
                 <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -533,7 +459,6 @@
                 <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -541,30 +466,21 @@
               <a href="#">
                 <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
                 <p class="price">4,980 원</p>
-                <!-- <div class="sale-info"> -->
-                  <!-- <p class="sale-percent">25%</p> -->
-                  <!-- <p class="sale-price">3,375 원</p> -->
-                <!-- </div> -->
-                <!-- <p class="del-price"><del>4,980 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -577,31 +493,21 @@
                 <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
                 <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[강남면옥] 소갈비찜</p>
                 <p class="price">29,800 원</p>
-                <!-- <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div> -->
-                <!-- <p class="del-price"><del>4,500 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -609,7 +515,7 @@
               <a href="#">
                 <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -624,14 +530,13 @@
               </div>
               <div class="box-container">
                 <div class="kalry-only">Kalry Only</div>
-                <!-- <div class="limited-quantity">한정수량</div> -->
               </div>
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -645,7 +550,6 @@
                 <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -653,30 +557,21 @@
               <a href="#">
                 <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
                 <p class="price">4,980 원</p>
-                <!-- <div class="sale-info"> -->
-                  <!-- <p class="sale-percent">25%</p> -->
-                  <!-- <p class="sale-price">3,375 원</p> -->
-                <!-- </div> -->
-                <!-- <p class="del-price"><del>4,980 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -689,31 +584,21 @@
                 <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
                 <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[강남면옥] 소갈비찜</p>
                 <p class="price">29,800 원</p>
-                <!-- <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div> -->
-                <!-- <p class="del-price"><del>4,500 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -721,7 +606,7 @@
               <a href="#">
                 <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -736,14 +621,13 @@
               </div>
               <div class="box-container">
                 <div class="kalry-only">Kalry Only</div>
-                <!-- <div class="limited-quantity">한정수량</div> -->
               </div>
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -757,7 +641,6 @@
                 <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -765,30 +648,21 @@
               <a href="#">
                 <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
                 <p class="price">4,980 원</p>
-                <!-- <div class="sale-info"> -->
-                  <!-- <p class="sale-percent">25%</p> -->
-                  <!-- <p class="sale-price">3,375 원</p> -->
-                <!-- </div> -->
-                <!-- <p class="del-price"><del>4,980 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -801,31 +675,21 @@
                 <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
                 <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[강남면옥] 소갈비찜</p>
                 <p class="price">29,800 원</p>
-                <!-- <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div> -->
-                <!-- <p class="del-price"><del>4,500 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -833,7 +697,7 @@
               <a href="#">
                 <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -848,14 +712,13 @@
               </div>
               <div class="box-container">
                 <div class="kalry-only">Kalry Only</div>
-                <!-- <div class="limited-quantity">한정수량</div> -->
               </div>
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -869,7 +732,6 @@
                 <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -877,30 +739,21 @@
               <a href="#">
                 <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
                 <p class="price">4,980 원</p>
-                <!-- <div class="sale-info"> -->
-                  <!-- <p class="sale-percent">25%</p> -->
-                  <!-- <p class="sale-price">3,375 원</p> -->
-                <!-- </div> -->
-                <!-- <p class="del-price"><del>4,980 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -913,31 +766,21 @@
                 <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
                 <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[강남면옥] 소갈비찜</p>
                 <p class="price">29,800 원</p>
-                <!-- <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div> -->
-                <!-- <p class="del-price"><del>4,500 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -945,7 +788,7 @@
               <a href="#">
                 <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -960,14 +803,13 @@
               </div>
               <div class="box-container">
                 <div class="kalry-only">Kalry Only</div>
-                <!-- <div class="limited-quantity">한정수량</div> -->
               </div>
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -981,7 +823,6 @@
                 <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -989,30 +830,21 @@
               <a href="#">
                 <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
                 <p class="price">4,980 원</p>
-                <!-- <div class="sale-info"> -->
-                  <!-- <p class="sale-percent">25%</p> -->
-                  <!-- <p class="sale-price">3,375 원</p> -->
-                <!-- </div> -->
-                <!-- <p class="del-price"><del>4,980 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -1025,31 +857,21 @@
                 <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
                 <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[강남면옥] 소갈비찜</p>
                 <p class="price">29,800 원</p>
-                <!-- <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div> -->
-                <!-- <p class="del-price"><del>4,500 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -1057,7 +879,7 @@
               <a href="#">
                 <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -1072,14 +894,13 @@
               </div>
               <div class="box-container">
                 <div class="kalry-only">Kalry Only</div>
-                <!-- <div class="limited-quantity">한정수량</div> -->
               </div>
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -1093,7 +914,6 @@
                 <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -1101,30 +921,21 @@
               <a href="#">
                 <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
                 <p class="price">4,980 원</p>
-                <!-- <div class="sale-info"> -->
-                  <!-- <p class="sale-percent">25%</p> -->
-                  <!-- <p class="sale-price">3,375 원</p> -->
-                <!-- </div> -->
-                <!-- <p class="del-price"><del>4,980 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -1137,31 +948,21 @@
                 <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
                 <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
               </div>
-              <!-- <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-                <div class="limited-quantity">한정수량</div>
-              </div> -->
             </div>
             <div class="product">
               <a href="#">
                 <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
                 <p class="delivery-info">샛별배송</p>
                 <p class="product-name">[강남면옥] 소갈비찜</p>
                 <p class="price">29,800 원</p>
-                <!-- <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div> -->
-                <!-- <p class="del-price"><del>4,500 원</del></p> del 태그 굳!!! -->
                 <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
               </div>
               <div class="box-container">
-                <!-- <div class="kalry-only">Kalry Only</div> -->
                 <div class="limited-quantity">한정수량</div>
               </div>
             </div>
@@ -1169,7 +970,7 @@
               <a href="#">
                 <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
               </a>
-              <button>
+              <button class="cart-icon-btn">
                 <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
               </button>
               <div class="product-info">
@@ -1184,16 +985,21 @@
               </div>
               <div class="box-container">
                 <div class="kalry-only">Kalry Only</div>
-                <!-- <div class="limited-quantity">한정수량</div> -->
               </div>
             </div>
           </div>
+          <div class="pagination">
+            <ul class="pagination-modal">
+              <li><button class="first"><img src="./assets/icon/pagination_double_left.png" alt=""></button></li>
+              <li><button class="arrow-left"><img src="./assets/icon/pagination_left.png" alt=""></button></li>
+              <li><button class="active-num">1</button></li>
+              <li><button class="num">2</button></li>
+              <li><button class="num">3</button></li>
+              <li><button class="arrow right"><img src="./assets/icon/pagination_right.png" alt=""></button></li>
+              <li><button class="last"><img src="./assets/icon/pagination_double_right.png" alt=""></button></li>
+            </ul>
+          </div>
         </section>
-        <!-- 버튼 리스트?!어떻게짜지.. -->
-
-        <!-- <footer>
-          1,2,3,4,5 버튼 만들어야하나?
-        </footer> -->
       </div>
     </div>
   </main>
