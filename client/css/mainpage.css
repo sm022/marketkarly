@@ -26,6 +26,7 @@ body {
   width: 1920px;
   margin: 0;
   font-family: "Pretendard", "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+  min-width: 1050px; 
 }
 
 /* 레이아웃 */
@@ -132,7 +133,7 @@ body {
 .main {
   display: flex;
   flex-flow: row wrap;
-
+  
   /* 최근 본 상품 absolute */
   position: relative;
 }
@@ -154,11 +155,6 @@ body {
 
 .item-container {
   height: 429px;
-  
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  gap: 18px;
   margin-top: 28px;
   margin-bottom: 40px;
 }
@@ -254,11 +250,9 @@ body {
 
 .recommend-container {
   width: 1050px;
-  /* margin: 0 auto; */
   margin-left: 435px;
   margin-right: 435px;
 }
-
 
 /* 추천 상품 버튼 */
 
