@@ -1,4 +1,4 @@
-import { getNode, getNodes } from "../lib/dom/getNode.js";
+import { getNode } from "../lib/dom/getNode.js";
 import { addClass, containClass, css, removeClass } from "../lib/dom/css.js";
 
 // 최상단 배너
@@ -14,11 +14,6 @@ const categoryMenu = getNode(".category-menu");
 const scrollCategoryMenu = getNode(".scroll-header-inner .category-menu");
 const categoryList = getNode(".category-list");
 const scrollCategoryList = getNode(".scroll-header-inner .category-list");
-
-const linkContainer = getNode(".hyper-link-container");
-const productDescription = getNode("#product-description");
-
-const hyperLinks = getNodes(".hyper-link-container a");
 
 const onClickCloseHandler = () => {
   css(topBanner, "display", "none");
@@ -54,29 +49,6 @@ const onScrollHandler = () => {
     addClass(scrollHeader, "close");
     removeClass(normalHeader, "close");
     css(main, "padding-top", "0");
-  }
-
-  //상품설명 도달
-  if (windowTop >= 1230 && !containClass(linkContainer, "is-fixed")) {
-    addClass(linkContainer, "is-fixed");
-    addClass(hyperLinks[0], "is-selected");
-    css(productDescription, "padding-top", "80px");
-  }
-  // 상세정보 -> 상품설명
-  if (windowTop < 2800 && containClass(hyperLinks[1], "is-selected")) {
-    addClass(hyperLinks[0], "is-selected");
-    removeClass(hyperLinks[1], "is-selected");
-  }
-  //상세정보 도달
-  if (windowTop >= 2800 && !containClass(hyperLinks[1], "is-selected")) {
-    addClass(hyperLinks[1], "is-selected");
-    removeClass(hyperLinks[0], "is-selected");
-  }
-  // 링크 고정 해제
-  if (windowTop <= 1180 && containClass(linkContainer, "is-fixed")) {
-    removeClass(linkContainer, "is-fixed");
-    css(productDescription, "padding-top", "0");
-    removeClass(hyperLinks[0], "is-selected");
   }
 };
 
