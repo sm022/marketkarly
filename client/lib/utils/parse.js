@@ -3,7 +3,12 @@
 
 export const defaultOptions = {
   method: "GET",
-  mode: "cors",
+  mode: 'cors',
+  body: null,
+  cache: 'no-cache',
+  credential: 'same-origin',
+  redirect:'follow',
+  referrerPolicy:'no-referrer',
   headers: {
     "Content-Type": "application/json; charset=UTF-8",
   },
@@ -30,3 +35,20 @@ parse.get = async (url, options) => {
     ...options,
   });
 };
+
+parse.post = (url,body,options) =>{
+  return parse({
+    method:'POST',
+    url,
+    body:JSON.stringify(body),
+    ...options
+  })
+}
+
+parse.delete = (url,options) =>{
+  return parse({
+    method:'DELETE',
+    url,
+    ...options
+  })
+}

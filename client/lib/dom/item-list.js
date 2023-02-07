@@ -14,7 +14,7 @@ const createItem = ({
   },
 } = {}) => {
   return /*html */`
-  <div class="item-card swiper-slide">
+  <a href="#"  class="item-card swiper-slide" id="${id}">
   <div class="item">
     <p class="item-thumbnail">
       <img src="${image.thumbnail}" 
@@ -24,10 +24,11 @@ const createItem = ({
       <img src="./assets/icon/Cart.png" alt="장바구니 아이콘" />
     </div>
   </div>
-  <a href="#" class="item-detail">
+  <div href="#" class="item-detail">
     <h3 class="item-title">${name}</h3>
     <p class="discount-price"><span class="item-price"> ${price}원</span></p>
-  </a>  
+  </div> 
+  </a> 
   `;
 };
 
@@ -45,7 +46,7 @@ const createSaleItem = ({
   },
 } = {}) => {
   return /*html */`
-  <div class="item-card swiper-slide" id="${id}">
+  <a href="#"  class="item-card swiper-slide" id="${id}">
     <div class="item">
       <p class="item-thumbnail">
         <img src="${image.thumbnail}" alt="${image.alt}" />
@@ -54,12 +55,12 @@ const createSaleItem = ({
         <img src="./assets/icon/Cart.png" alt="장바구니 아이콘" />
       </div>
     </div>
-    <a href="#" class="item-detail">
+    <div class="item-detail">
       <h3 class="item-title">${name}</h3>
       <p class="discount-price"><span class="discount" class ="is-sale">${saleRatio * 100}%</span><span class="item-price"> ${salePrice}원</span></p>
       <del class="origin-price is-sale">${price}원</del>
-    </a>
-  </div>
+    </div>
+  </a>
   `
 };
 
