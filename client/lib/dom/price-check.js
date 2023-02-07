@@ -14,7 +14,7 @@ let itemData = response.data;
 export const setComma = itemData.map((item) => {
   return {
     ...item,
-    salePrice: item.salePrice.toLocaleString("en-US"),
-    price: item.price.toLocaleString("en-US"),
+    salePrice: item.salePrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+    price: item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
   };
 });
