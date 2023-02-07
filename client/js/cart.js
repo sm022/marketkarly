@@ -4,6 +4,7 @@ import { checkImagePath } from '../lib/constant.js';
 import { getNode, getNodes } from '/client/lib/dom/getNode.js';
 import { css } from '../lib/dom/css.js';
 import { loadStorage, saveStorage } from '../lib/utils/storage.js';
+
 class CartProcessClass {
   isSelectAll = true;
   itemLength = 1;
@@ -61,7 +62,10 @@ class CartProcessClass {
     this.foods.forEach((food) => {
       //하나의 엘리먼트에 이미지 src만 바꿔가면서 사용
       //각 체크 엘리먼트에 토글되는 이벤트 적용함
-      food.getCheckElement().addEventListener('click', () => food.toggleSelect());
+      food.getCheckElement().addEventListener('click', () => {
+        food.toggleSelect();
+        console.log('hello2');
+      });
     });
   }
 
@@ -79,6 +83,7 @@ class CartProcessClass {
           this.checkAlls[0].setAttribute('src', checkImagePath(true));
           this.checkAlls[1].setAttribute('src', checkImagePath(true));
         }
+        console.log('hello1');
 
         this.foods.forEach((food) => (this.isSelectAll ? food.unSelect() : food.select()));
         this.isSelectAll = this.isSelectAll ? false : true;
@@ -90,7 +95,13 @@ class CartProcessClass {
    * 선택 삭제 했을때 화면에서 지우기
    */
   singleDeleteEvent() {
-    this.foods.forEach((food) => {});
+    this.foods.forEach((food) => {
+      const deleteBtn = food.getNodes('.delete-button');
+
+      food.addEventListener('click', () => {
+        console.log('hi');
+      });
+    });
   }
 
   /**
@@ -163,11 +174,40 @@ class CartProcessClass {
       const minus = amountElement.querySelector('.product-minus-btn');
       const text = amountElement.querySelector('.count');
       const plus = amountElement.querySelector('.product-plus-btn');
-      console.log(text);
-      amountElement.addEventListener('click', () => {
-        // 여기에 변경 이벤트 추가
-        console.log(food.id);
+
+      plus.addEventListener('click', () => {
+        if (food.amount < 3) {
+          food.amount += 1;
+          text.innerText = food.amount;
+        }
       });
+
+      minus.addEventListener('click', () => {
+        if (food.amount > 0) {
+          food.amount -= 1;
+          text.innerText = food.amount;
+        }
+      });
+    });
+  }
+
+  /**
+   * 주문하기 버튼 클릭했을 때 표시
+   */
+
+  orderButtonShowAlert() {
+    const orderBtn = getNode('.cradit-order');
+    orderBtn.addEventListener('click', () => {
+      alert('등록되지 않은 기능입니다');
+    });
+  }
+  /**
+   * 배송지 변경 이벤트
+   */
+  locationShowAlert() {
+    const locationChangeBtn = getNode('.address li:nth-child(3) > button ');
+    locationChangeBtn.addEventListener('click', () => {
+      alert('등록되지 않은 기능입니다.');
     });
   }
   /**
@@ -215,6 +255,8 @@ class CartProcessClass {
       this.applyToggleSelectAllEvent();
       this.listItemAccordion();
       this.countFoods();
+      this.orderButtonShowAlert();
+      this.locationShowAlert();
       // this.getTotalPrice(this.foods, 1000);
     }
   }

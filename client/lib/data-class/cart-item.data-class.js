@@ -13,8 +13,8 @@ export default class CartItemDataClass {
       alert('올바르지 않은 타입의 아이템이 추가됩니다. 확인 후 추가해주세요.');
     }
     this.type = type;
-    this.price = price;
-    this.salePrice = salePrice;
+    this.price = price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+    this.salePrice = salePrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
     this.saleRatio = saleRatio;
     this.stock = stock;
     this.amount = 1;
@@ -39,7 +39,7 @@ export default class CartItemDataClass {
   }
 
   /**
-   *  plus 엘리먼트 가져오기
+   * amount 엘리먼트 가져오기
    */
   getAmountElement() {
     if (this.amountElement) {
@@ -135,7 +135,7 @@ export default class CartItemDataClass {
                       <button type="button" aria-label="수량내리기" class="product-minus-btn">
                         <img src="./assets/icon/Minus=true.png" alt="수량내리기">
                       </button>
-                      <span class="count" value=1 >${this.amount}</span>
+                      <span class="count">${this.amount}</span>
                       <button type="button" aria-label="수량올리기" class="product-plus-btn">
                         <img src="./assets/icon/Plus=false.png" alt="수량올리기">
                       </button>
