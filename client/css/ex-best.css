@@ -1,0 +1,417 @@
+@import url(./theme.css);
+@import url(./reset.css);
+@import url(./fonts.css);
+
+/* 효과 삭제 부분입니다. */
+/* 리스트 앞에 점 모양 삭제 */
+li {
+  list-style-type: none;
+}
+
+/* 링크태그 밑줄 제거 및 색상 검정색으로변경 */
+a {
+  text-decoration-line: none;
+  color: black;
+}
+
+
+/* 베스트 전체 레이아웃 */
+.best-container {
+  margin: 0 435px;
+}
+
+
+/* h3 베스트 제목 */
+.best-title {
+
+  /* font-family: Pretendard; */
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 48px 0;
+
+}
+
+/* h3 제외 필터와 상품리스트 레이아웃 */
+.best-filter-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* 필터링 전체 레이아웃 */
+.best-filter-container {
+  /* background-color: aqua; */
+}
+
+/* 필터링 초기화 head*/
+.best-filter-reset {
+  /* background-color: bisque; */
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 150%;
+  color: var(--content);
+  margin-bottom: 22px;
+}
+
+.reset-btn {
+  margin-top: 4px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .625rem;
+  line-height: 160%;
+  color: var(--gray-300);
+}
+
+
+/* 카테고리 */
+.category {
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.category-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+  /* background-color: burlywood; */
+}
+
+.category-title p{
+  height: 0;
+}
+
+.category-title button {
+  width: 19px;
+  border: 0;
+  height: 0 !important;
+  background-image: url(../assets/icon/Direction=Up.png);
+  background-repeat: no-repeat;
+  padding: 18px 0 0 0;
+  line-height: 24px;
+  background-color: white;
+}
+
+
+.category.list {
+  /* margin-top: 22px; */
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--content);
+  /* margin-bottom: 4px; */
+  /* padding: 0; */
+}
+
+/* 카테고리 li 영역어디까지 */
+.category-list li {
+  margin-top: 22px;
+  /* background-color: lightseagreen; */
+  border: 0;
+}
+
+.category-list li button {
+  background-color: white;
+  border: 0;
+}
+
+.category-more {
+  /* background-color: lightslategray; */
+  margin: 22px 0;
+}
+
+/* 브랜드 */
+.brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  /* line-height: 150%; */
+}
+
+.brand-title {
+  /* background-color: lightskyblue; */
+}
+
+/* 브랜드 li 영역어디까지 */
+.brand-list li {
+  /* background-color: lightcoral; */
+  border: 0;
+  margin-top: 22px;
+}
+
+.brand-list li button {
+  background-color: white;
+  border: 0;
+}
+
+/* 애프터 왜 안먹지요? */
+.category-more ::after {
+  content: "";
+
+  display: inline;
+  height: 12.6px;
+  width: 12.6px;
+}
+
+.is-checked-false {
+  color: var(--gray-200);
+}
+
+/* 리스트 끝입니다 */
+
+
+/* 섹션 베스트 상품  */
+.food-container {
+  margin-left: 50px;
+}
+
+/* 상품갯수 및 네비게이션 */
+.food-nav-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 20px 0;
+}
+
+
+/* 네비게이션 좌측 총 갯수 부분 */
+.food-total {
+  width: 62px;
+  height: 24px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+/* 네비게이션 우측 네비게이션 리스트(추천순,신상품..등) */
+.food-nav {
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  /* line-height: 150%; */
+  color: var(--gray-300);
+}
+
+/* 푸드 네비게이션 추천순 검정색으로 변경 */
+.food-nav>li:first-child {
+  color: black;
+  position: relative;
+  padding-right: 20px;
+
+}
+
+/* 푸드 네비게이션 추천순 우측 물음표 띄우기 */
+.food-nav li:nth-child(1)::after {
+  background: url(../assets/icon/question_mark.png) no-repeat 0px 0px;
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 20px;
+  margin-left: 4px;
+  position: absolute;
+
+
+
+}
+
+/* 첫번째 요소 빼고 before 가상요소 삽입 */
+.food-nav li:not(:nth-child(1))::before {
+  content: "|";
+  height: 10px;
+  width: 1px;
+  left: 68px;
+  top: 7px;
+  border-radius: 0px;
+  margin-right: 8px;
+  /* margin-bottom: 8px; */
+}
+
+
+
+/* 상품리스트 */
+
+.product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+}
+
+/* 장바구니 이미지 부모요소 */
+.product-img-wrap {
+  position: relative;
+  /* gap: 18px; */
+  /* margin : 20px 18px 18px 16px ; */
+  /* padding: 0; */
+}
+
+/* .tangtang {
+  margin-bottom: 16px;
+}
+
+.sun-cushion{
+  margin-bottom: 18px;
+}
+
+.baby-cleanser{
+  margin-bottom:18px;
+}  */
+
+.cart-icon {
+  position: absolute;
+  right: 15px;
+  bottom: 17px;
+  z-index: 1;
+}
+
+
+
+.delivery-info {
+  color: var(--gray-400);
+  font-weight: 600;
+  font-size: .75rem;
+  margin-bottom: 8px;
+  margin-top: 18px
+}
+
+.product-name {
+  color: #333333;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 1.3125rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.sale-price {
+  display: inline-block;
+  font-size: 1.3125rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.sale-percent {
+  display: inline-block;
+  color: var(--accent-yellow);
+  font-weight: 600;
+  font-size: 1.3333rem;
+  line-height: 150%;
+  margin-right: 8px;
+}
+
+
+
+
+.del-price {
+  color: var(--gray-400);
+  font-size: .75rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 8px;
+
+}
+
+.product-info {
+  margin-bottom: 50px;
+}
+
+.product-info-explain {
+  color: var(--gray-400);
+  font-size: .75rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 8px;
+
+}
+
+.box-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  gap: 8px;
+  width: 200px;
+  height: 26px;
+
+}
+
+/* 칼리온리박스 클래스명 나중에 바꾸기 */
+.left-box {
+
+  background-color: var(--gray-100);
+
+  color: var(--primary);
+
+  align-items: flex-start;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 4px;
+  width: 65px;
+  height: 26px;
+  width: 57px;
+  height: 18px;
+
+  /* Label/Small */
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .7502rem;
+  line-height: 150%;
+}
+
+/* 한정수량박스 클래스명 나중에 바꾸기 */
+.right-box {
+
+  padding: 4px;
+  gap: 4px;
+  width: 42px;
+  height: 18px;
+  background-color: var(--gray-100);
+  border-radius: 4px;
+
+  /* 한정수량 */
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .7502rem;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+
+
+
+}
+
+/* 색상 적용 코드 */
+
+/* .class{
+  color: var(--gray-400)
+} */

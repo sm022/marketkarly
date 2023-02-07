@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="/client/css/login.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="./js/main.js" type="module"></script>
-  <title>로그인 페이지</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/client/css/login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/main.js" type="module"></script>
 
+    <title>로그인 페이지</title>
+  </head>
 
-    <!-- 헤더 -->
-    <body>
+  <!-- 헤더 -->
+  <body>
     <main class="main">
       <!-- 로그인 타이틀 -->
       <h2 class="login-title">로그인</h2>
@@ -29,24 +28,39 @@
               <a class="form-entire">
                 <!-- 아이디&비밀번호 부분 입력 커서가 시작되는 곳 -->
                 <label for="input id"></label>
-                  <input data-testid="input-box" name="id" placeholder="아이디를 입력해주세요" type="text" class="input-start" value="" />
+                <input
+                  data-testid="input-box"
+                  name="id"
+                  placeholder="아이디를 입력해주세요"
+                  type="text"
+                  class="input-start"
+                  value=""
+                />
               </a>
-          </li>
+            </li>
             <li class="form-space">
-                <a class="form-entire">
-                 <label for="input password"></label>
-                    <input data-testid="input-box" name="password" placeholder="비밀번호를 입력해주세요" type="password" autocomplete="off" class="input-start" value="" />
+              <a class="form-entire">
+                <label for="input password"></label>
+                <input
+                  data-testid="input-box"
+                  name="password"
+                  placeholder="비밀번호를 입력해주세요"
+                  type="password"
+                  autocomplete="off"
+                  class="input-start"
+                  value=""
+                />
               </a>
-          </li>
-         </ul>
+            </li>
+          </ul>
           <!-- 아이디 찾기/비밀번호 찾기 전체 영역 -->
           <div class="search-entire">
-              <!-- 아이디 찾기 & 비밀번호 찾기 -->
-              <a href="/"><span class="search-user-account" aria-hidden="true"></span>아이디 찾기</a>
-              <!-- 아이디 찾기와 비밀번호 찾기 사이 | 이 부분 -->
-              <span class="search-space"></span>
-              <!-- 아이디 찾기 & 비밀번호 찾기 -->
-              <a href="/"><span class="search-user-account" aria-hidden="true"></span>비밀번호 찾기</a>
+            <!-- 아이디 찾기 & 비밀번호 찾기 -->
+            <a href="/"><span class="search-user-account" aria-hidden="true"></span>아이디 찾기</a>
+            <!-- 아이디 찾기와 비밀번호 찾기 사이 | 이 부분 -->
+            <span class="search-space"></span>
+            <!-- 아이디 찾기 & 비밀번호 찾기 -->
+            <a href="/"><span class="search-user-account" aria-hidden="true"></span>비밀번호 찾기</a>
           </div>
           <!-- 로그인&회원가입 영역 전체(공백 포함) -->
           <ul class="button-entire">
@@ -54,18 +68,17 @@
             <button class="login-button" type="submit" height="54" radius="3">
               <!-- 로그인&회원가입 글자-->
               <span class="button-text">로그인</span>
-          </button>
+            </button>
             <!--회원가입 버튼 -->
             <button class="register-button" type="button" height="54" radius="3">
               <!-- 로그인&회원가입 글자-->
               <span class="button-text">회원가입</span>
-          </button>
-      </ul>
+            </button>
+          </ul>
         </form>
       </section>
     </main>
 
-
-      <!-- 푸터 -->
+    <!-- 푸터 -->
   </body>
 </html>
