@@ -152,14 +152,24 @@ class CartProcessClass {
   }
 
   /**
-   * 결제 창 고정
+   * 아이템 리스트에 수량 추가 감소
    */
-  craditAddStickyEvent() {
-    const cradit = getNode('.cradit');
-    const topPos = cradit.offsetTop;
-    console.log(topPos);
-  }
 
+  countFoods() {
+    this.foods.forEach((food) => {
+      //하나의 엘리먼트에 이미지 src만 바꿔가면서 사용
+      //각 체크 엘리먼트에 토글되는 이벤트 적용함
+      const amountElement = food.getAmountElement();
+      const minus = amountElement.querySelector('.product-minus-btn');
+      const text = amountElement.querySelector('.count');
+      const plus = amountElement.querySelector('.product-plus-btn');
+      console.log(text);
+      amountElement.addEventListener('click', () => {
+        // 여기에 변경 이벤트 추가
+        console.log(food.id);
+      });
+    });
+  }
   /**
    * 화면에 음식 정보데이터 추가
    */
@@ -204,7 +214,7 @@ class CartProcessClass {
       this.applySelectEvent();
       this.applyToggleSelectAllEvent();
       this.listItemAccordion();
-      this.craditAddStickyEvent();
+      this.countFoods();
       // this.getTotalPrice(this.foods, 1000);
     }
   }

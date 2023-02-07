@@ -1,19 +1,8 @@
 import { checkImagePath } from '../constant.js';
+import { getNode } from '../dom/getNode.js';
 
 export default class CartItemDataClass {
   storeType = ['FROZEN', 'COLD', 'NORMAL'];
-  id;
-  type;
-  name;
-  description;
-  price;
-  salePrice;
-  saleRatio;
-  stock;
-  amount;
-  image;
-  isSelect;
-  checkElement;
 
   constructor(args) {
     const { id, type, name, description, price, salePrice, saleRatio, image, stock } = args;
@@ -50,6 +39,18 @@ export default class CartItemDataClass {
   }
 
   /**
+   *  plus 엘리먼트 가져오기
+   */
+  getAmountElement() {
+    if (this.amountElement) {
+      return this.amountElement;
+    }
+
+    this.amountElement = document.getElementById(`${this.id}-count-amount`);
+    return this.amountElement;
+  }
+
+  /**
    * 아이템의 check 엘리먼트 가져오기
    * 이미 가져온 경우 저장된 엘리먼트 반환
    */
@@ -70,7 +71,6 @@ export default class CartItemDataClass {
     if (!check || check.getAttribute('src') === checkImagePath(!this.isSelect)) {
       return;
     }
-
     check.setAttribute('src', checkImagePath(!this.isSelect));
     this.isSelect = this.isSelect ? false : true;
   }
@@ -131,11 +131,11 @@ export default class CartItemDataClass {
                   </div>
                   <div class="item-right">
                     <!-- 상품 수량변경 -->
-                    <div class="product-count">
+                    <div class="product-count" id="${this.id}-count-amount">
                       <button type="button" aria-label="수량내리기" class="product-minus-btn">
                         <img src="./assets/icon/Minus=true.png" alt="수량내리기">
                       </button>
-                      <span class="count" id="count-result">${this.amount}</span>
+                      <span class="count" value=1 >${this.amount}</span>
                       <button type="button" aria-label="수량올리기" class="product-plus-btn">
                         <img src="./assets/icon/Plus=false.png" alt="수량올리기">
                       </button>

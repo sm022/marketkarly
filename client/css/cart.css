@@ -134,7 +134,7 @@ ul .list-item {
 .product-count {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border: 0.0625rem solid var(--gray-100);
   border-radius: 0.25rem;
   width: 90px;
@@ -142,17 +142,19 @@ ul .list-item {
 }
 .product-count button {
   border: none;
+  width: 30px;
+  height: 30px;
   background-color: transparent;
 }
 .product-minus-btn img,
 .product-plus-btn img {
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
 }
 .count {
-  width: 31px;
+  /* padding: 0 10px; */
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 28px;
 }
 
