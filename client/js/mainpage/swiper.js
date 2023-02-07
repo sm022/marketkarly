@@ -21,8 +21,11 @@ const swiper_E = new Swiper('.swiper-E', {
 
 const swiper_R = new Swiper('.swiper-R', {
   loopFillGroupWithBlank: 'auto',
-  spaceBetween: 18,
-  loop:true,
+  slidesPerView: 4,
+  slidesperGroup: 4,
+  spaceBetween: 2,
+  observer: true,
+  observeParents: true, 
   speed:400,
   parallax: true,
   navigation: {
@@ -33,23 +36,15 @@ const swiper_R = new Swiper('.swiper-R', {
 
 const swiper_S = new Swiper('.swiper-S', {
   loopFillGroupWithBlank: 'auto',
-  spaceBetween: 18,
-  loop:true,
+  slidesPerView: 4,
+  slidesperGroup: 4,
+  spaceBetween: 2,
+  observer: true,
+  observeParents: true, 
   speed:400,
   parallax: true,
   navigation: {
     nextEl: '.sale-next-button',
     prevEl: '.sale-prev-button',
-  },
-});
-
-const swiper_RC = new Swiper('.swiper-RC', {
-  direction: 'vertical',
-  spaceBetween: 4,
-  speed:200,
-  parallax: true,
-  navigation: {
-    nextEl: '.recent-button-next',
-    prevEl: '.recent-button-prev',
   },
 });
