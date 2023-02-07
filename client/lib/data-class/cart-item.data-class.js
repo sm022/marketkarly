@@ -106,6 +106,7 @@ export default class CartItemDataClass {
 
   toElement() {
     const listItem = document.createElement('li');
+
     listItem.className = 'list-item';
     listItem.id = this.id;
 
@@ -114,42 +115,41 @@ export default class CartItemDataClass {
       this.saleRatio === 0 ? this.price : this.salePrice
     } 원</span>`;
 
-    listItem.innerHTML = `
-                  <div class="item-left">
-                    <!-- 상품 이름과 사진 체크유무 -->
-                    <div class="list-pr-info">
-                      <img id="check-${this.id}"  class="is-checked-false" src="${checkImagePath(
-      this.isSelect
-    )}" alt="전채선택">
-                      <a href="/" class="list-image">
-                        <img src="${this.image.thumbnail}" alt="상품이미지">
-                      </a>
-                      <div class="product-name">
-                        <span> ${this.name} </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item-right">
-                    <!-- 상품 수량변경 -->
-                    <div class="product-count" id="${this.id}-count-amount">
-                      <button type="button" aria-label="수량내리기" class="product-minus-btn">
-                        <img src="./assets/icon/Minus=true.png" alt="수량내리기">
-                      </button>
-                      <span class="count">${this.amount}</span>
-                      <button type="button" aria-label="수량올리기" class="product-plus-btn">
-                        <img src="./assets/icon/Plus=false.png" alt="수량올리기">
-                      </button>
+    listItem.innerHTML = `  
+    <div class="item-left">
+    <!-- 상품 이름과 사진 체크유무 -->
+    <div class="list-pr-info">
+    <img id="check-${this.id}"  class="is-checked-false" src="${checkImagePath(this.isSelect)}" alt="전채선택">
+      <a href="/" class="list-image">
+      <img src="${this.image.thumbnail}" alt="상품이미지">
+      </a>
+      <div class="product-name">
+      <span> ${this.name} </span>
+      </div>
+      </div>
+      </div>
+      <div class="item-right">
+      <!-- 상품 수량변경 -->
+      <div class="product-count" id="${this.id}-count-amount">
+      <button type="button" aria-label="수량내리기" class="product-minus-btn">
+      <img src="./assets/icon/Minus=true.png" alt="수량내리기">
+      </button>
+      <span class="count">${this.amount}</span>
+      <button type="button" aria-label="수량올리기" class="product-plus-btn">
+      <img src="./assets/icon/Plus=false.png" alt="수량올리기">
+      </button>
                     </div>
                     <!-- 상품 가격 표시 -->
                     <div class="product-price">
-                      ${discountPriceInfo}
-                      ${priceInfo}  
+                    ${discountPriceInfo}
+                    ${priceInfo}  
                     </div>
                     <!-- 상품 삭제 버튼 -->
                     <button class="delete-button">
-                      <img src="./assets/icon/Cancel.png" alt="상품 삭제">
+                    <img src="./assets/icon/Cancel.png" alt="상품 삭제">
                     </button>
-                  </div>`;
+                    </div>`;
+
     return listItem;
   }
 }
