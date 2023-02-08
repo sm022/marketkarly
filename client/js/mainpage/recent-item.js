@@ -88,7 +88,7 @@ const items = JSON.parse(localStorage.getItem('recentItems'))
 //데이터 렌더링
 items.forEach(function (value) {
 
-  let template = /*html */`<a href="#" class="swiper-slide recent-thumbnail">
+  let template = /*html */`<a href="http://localhost:5500/product-detail.html" class="swiper-slide recent-thumbnail">
   <img src="${value.thumbnail}" alt="${value.alt}" width="40px" height="51.41px" />
 </a>`;
   
