@@ -2,101 +2,97 @@
 @import url(./reset.css);
 @import url(./fonts.css);
 
-
-
-
-body{
-  font-family: 'Pretendard';
-  max-width: 1050px;
+body {
+  font-family: "Pretendard";
+  /* max-width: 1050px; */
   margin: 0 auto;
 }
 
-.product-inquiry{
+.product-inquiry {
   /* background-color:lightcoral; */
-  margin-bottom: 56px;  
+  margin-bottom: 56px;
 }
 
-.inquiry-header{
+.inquiry-header {
   display: flex;
   justify-content: space-between;
 }
 
-h3{
-margin-bottom: 24px;
-font-weight: 700;
-font-size: 1.7769rem;
-color: var(--black);
+h3 {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 1.7769rem;
+  color: var(--black);
 }
 
-.inquiry-btn{
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-padding: 0px;
-width: 155px;
-height: 44px;
-color:var(--white);
-background: var(--primary);
-border-radius: 4px;
-font-weight: 600;
-font-size: 1rem;
-line-height: 150%;
-border: 1px;
-cursor: pointer;
+.inquiry-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  width: 155px;
+  height: 44px;
+  color: var(--white);
+  background: var(--primary);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 150%;
+  border: 1px;
+  cursor: pointer;
 }
 
-.inquiry-desc{
-font-weight: 600;
-font-size: .7502rem;
-line-height: 150%;
-color: var(--gray-500);
-/* margin-left: 14px; */
-/* list-style-type: disc; */
+.inquiry-desc {
+  font-weight: 600;
+  font-size: 0.7502rem;
+  line-height: 150%;
+  color: var(--gray-500);
+  /* margin-left: 14px; */
+  /* list-style-type: disc; */
 }
 
-.inquiry-desc li{
+.inquiry-desc li {
   list-style-type: disc;
   margin-left: 14px;
 }
 
-.inquiry-list-wrap{
+.inquiry-list-wrap {
   /* display: flex; */
   /* justify-content: ; */
   border-top: 2px solid var(--content);
-
 }
 
-.inquiry-list-header{
+.inquiry-list-header {
   /* line-height: 58px; */
   /* height: 58px; */
   border-bottom: 2px solid var(--gray-500);
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
   color: var(--black);
 }
 
-.header-title{
+.header-title {
   text-align: center;
 }
 
-.inquiry-list-notice{
+.inquiry-list-notice {
   border-bottom: 1px solid var(--gray-200);
   font-weight: 600;
   font-size: 1rem;
-  color:var(--gray-400);
+  color: var(--gray-400);
   /* color:var(--gray-400); */
 }
 
-.inquiry-list-title span{
+.inquiry-list-title span {
   color: var(--content);
 }
 
-.inquiry-notice-box{
+.inquiry-notice-box {
   background-color: var(--gray-100);
-  font-size: .75rem;
+  font-size: 0.75rem;
   /* width: 21px; */
   /* height: 18px; */
   padding: 0 8px 0 8px;
@@ -104,7 +100,7 @@ color: var(--gray-500);
   margin-right: 20px;
 }
 
-.inquiry-list-title{
+.inquiry-list-title {
   display: inline-block;
   width: 782px;
   line-height: 58px;
@@ -112,58 +108,54 @@ color: var(--gray-500);
   font-weight: 600;
 }
 
-
-
-.customer-post li{
+.customer-post li {
   border-bottom: 1px solid var(--gray-200);
 }
 
-
-
 /* 자물쇠문단 */
-.inquiry-list-title-secret{
-  display: inline-block ;
-  color:var(--gray-400);
+.inquiry-list-title-secret {
+  display: inline-block;
+  color: var(--gray-400);
   height: 58px;
   line-height: 58px;
   margin-right: 20px;
 }
 
-.inquiry-list-who{
+.inquiry-list-who {
   display: inline-block;
   width: 80px;
   text-align: center;
   font-size: 1rem;
-  color:var(--gray-400);
+  color: var(--gray-400);
   font-weight: 600;
 }
 
-.inquiry-list-day{
+.inquiry-list-day {
   display: inline-block;
   width: 100px;
   text-align: center;
   font-size: 1rem;
-  color:var(--gray-400);
+  color: var(--gray-400);
   font-weight: 600;
 }
 
-.inquiry-list-answer-state{
+.inquiry-list-answer-state {
   display: inline-block;
   width: 55.41px;
   text-align: center;
   font-size: 1rem;
-  color:var(--gray-400);
-  font-weight:600;
+  color: var(--gray-400);
+  font-weight: 600;
 }
 
-.inquiry-list-answer-complete{
+.inquiry-list-answer-complete {
   color: var(--primary);
   font-weight: 600;
   text-align: center;
 }
 
-.pagination-modal{
-  display : flex;
+.pagination-modal {
+  display: flex;
   margin-top: 36px;
   flex-direction: row;
   justify-content: center;
@@ -171,81 +163,73 @@ color: var(--gray-500);
   padding: 4px;
   gap: 4px;
 
-  
   /* width: 56px; */
   /* height: 56px; */
   /* gray/100 */
   /* border: 1px solid #E1E1E1; */
   /* border-radius: 4px; */
-
 }
 
-.inquiry-prev{
-background-color: var(--white);
-border: 0;
+.inquiry-prev {
+  background-color: var(--white);
+  border: 0;
 }
-.inquiry-next{
+.inquiry-next {
   background-color: var(--white);
   background-color: none;
   border: 0;
 }
 
-.list-question{
+.list-question {
   width: 974px;
-  display:flex;
+  display: flex;
   margin-top: 20px;
   margin-bottom: 40px;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: .7502rem;
+  font-size: 0.7502rem;
   line-height: 150%;
-  color:var(--content);
-
+  color: var(--content);
 }
 
-.list-answer{
+.list-answer {
   display: flex;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: .7502rem;
+  font-size: 0.7502rem;
   line-height: 150%;
   color: var(--content);
 
   /* margin-right: 19px;   */
   width: 481px;
   margin-right: 500px;
-
 }
-.list-question-icon{
-  width: 24px;
-  height: 24px;
-  margin-right: 19px;  
-}
-
-
-
-.list-answer-icon{
+.list-question-icon {
   width: 24px;
   height: 24px;
   margin-right: 19px;
 }
 
-
-.list-question p{
-/* display: inline-block; */
+.list-answer-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 19px;
 }
 
-.list-answer-box p{
+.list-question p {
+  /* display: inline-block; */
+}
+
+.list-answer-box p {
   margin-bottom: 8px;
 }
 
-
-.list-answer-box{
+.list-answer-box {
   width: 481px;
   height: 216px;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 12.003px;
@@ -255,11 +239,11 @@ border: 0;
   width: 481px;
 }
 
-.list-answer-date{
-font-family: 'Pretendard';
-font-style: normal;
-font-weight: 600;
-font-size: 12.003px;
-line-height: 150%;
-color: var(--gray-400);
+.list-answer-date {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12.003px;
+  line-height: 150%;
+  color: var(--gray-400);
 }
