@@ -43,6 +43,7 @@ font-weight: 600;
 font-size: 1rem;
 line-height: 150%;
 border: 1px;
+cursor: pointer;
 }
 
 .inquiry-desc{
@@ -148,6 +149,7 @@ color: var(--gray-500);
 
 .inquiry-list-answer-state{
   display: inline-block;
+  width: 55.41px;
   text-align: center;
   font-size: 1rem;
   color:var(--gray-400);
