@@ -7,7 +7,6 @@ const hyperLinks = getNodes(".hyper-link-container a");
 
 const onScrollHandler = () => {
   let windowTop = window.scrollY;
-  console.log(windowTop);
   if (windowTop >= 1230 && !containClass(linkContainer, "is-fixed")) {
     addClass(linkContainer, "is-fixed");
     css(productDescription, "padding-top", "80px");
