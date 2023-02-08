@@ -15,13 +15,17 @@
 </head>
 
 <body>
-  <div id="myModal" class="modal">
+  <div id="inquiry-modal" class="inquiry-modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <form name="noticeInsertForm">
+      <div class="madal-header">
         <h3>상품 문의하기</h3>
-        <img src="./assets/item/tangtang_main.png" alt="[풀무원]탱탱쫄면">
-        <h4>[풀무원]탱탱쫄면(4개입)</h4>
+        <span class="close">&times;</span>
+      </div>
+      <form name="">
+        <div class="modal-info">
+          <img class="modal-tangtang" src="./assets/tangtang/thumbnail.jpg" alt="[풀무원]탱탱쫄면">
+          <h4>[풀무원]탱탱쫄면(4개입)</h4>
+        </div>
         <ol>
           <div class="modal-textbox">
             <div class="modal-textbox-s">
@@ -30,11 +34,11 @@
             </div>
           </div>
           <!-- overflow-y:scroll : 세로(높이) 스크롤만 표시합니다. -->
-          <!-- 스크롤은 CSS로 추가하는 거같음  -->
+          <!-- 스크롤은 CSS로 생각해보자  -->
           <div class="modal-textbox">
             <div class="modal-textbox-ss">
               <label for="content">내용</label>
-              <td><textarea placeholder="텍스트" id="content" name="content" cols="20"></textarea></td>
+              <td><textarea placeholder="상품 문의 작성 전 확인해주세요 " id="content" name="content" cols="20"></textarea></td>
             </div>
           </div>
         </ol>
@@ -42,9 +46,11 @@
           <label for="title" class="private-inquiry">비밀글로 문의하기</label><br>
 
         <div class="form-check">
-          <button type="button" id="noticeInsertBtn" name="noticeInsertBtn" class="btn btn-lg btn-block btn-success">
-            작성</button>
+          <button type="button" id="Btn" name="noticeInsertBtn" class="btn btn-lg btn-block btn-success">
+            취소</button>
           <br>
+          <button type="button" id="Btn" name="noticeInsertBtn" class="btn btn-lg btn-block btn-success">
+            등록</button>
         </div>
       </form>
     </div>
