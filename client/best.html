@@ -1,1008 +1,2612 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/scroll-header.css" />
+    <link rel="stylesheet" href="./css/best.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/header.js" type="module"></script>
+    <title>best-product-page</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
-  <link rel="stylesheet" href="./css/best.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="./js/main.js" type="module"></script>
-  <title>best-product-page</title>
-
-</head>
-
-<body>
-  <main>
-    <!-- 전체 레이아웃 -->
-    <div class="best-container">
-
-      <!-- 레이아웃 맨 위 -->
-      <h3 class="best-title">베스트</h3>
-
-      <!-- 필터링리스트와 상품리스트 레이아웃 -->
-      <div class="best-product">
-
-        <!-- 필터링 레이아웃 -->
-        <section class="best-filter-container">
-          <!-- section 태그 + heading(a11y-hidden) -->
-          <!-- 요부분은 나랑 같이 details+summury / input -->
-          <div class="best-filter-reset">
-            <span>필터</span>
-            <span class="reset-btn">초기화</span>
+  <body>
+    <header>
+      <div class="normal-header">
+        <div class="top-banner">
+          <div class="top-banner-inner">
+            <p class="top-banner-text">
+              지금 가입하고 인기상품 100원에 받아가세요!
+            </p>
+            <button type="button" class="close-icon">
+              <img
+                src="./assets/icon/Close.png"
+                alt="닫기"
+                width="42px"
+                height="42px"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="header-container">
+          <h1 class="karly-logo">
+            <!-- 접근성은 이미지 속성으로 처리 -->
+            <a href="/mainpage.html"
+              ><img src="./assets/icon/karly_logo.png" alt="marketKarly"
+            /></a>
+          </h1>
+          <!-- 텍스트 링크 -->
+          <ul class="text-link">
+            <li><a href="/membership.html" class="signin">회원가입</a></li>
+            <li>
+              <img src="./assets/icon/bar.png" alt="" />
+              <a href="/login.html" class="login">로그인</a>
+            </li>
+            <li>
+              <img src="./assets/icon/bar.png" alt="" />
+              <div class="customer-center">
+                <span>고객센터</span>
+                <img src="./assets/icon/Icon_down 1.png" alt="고객센터 열기" />
+              </div>
+            </li>
+          </ul>
+          <!-- 검색창 포함 영역 -->
+          <div class="header-main">
+            <ul class="karly-category-link">
+              <li><span class="karly-category-market">마켓칼리</span></li>
+              <li>
+                <img src="./assets/icon/bar.png" alt="" />
+                <span class="karly-category-beauty"
+                  >뷰티칼리
+                  <img src="./assets/icon/logo_sup.png" alt="" />
+                </span>
+              </li>
+            </ul>
+            <!-- 검색창 -->
+            <h2 class="a11y-hidden">검색</h2>
+            <form>
+              <fieldset>
+                <legend>검색 폼</legend>
+                <div class="form-group">
+                  <label for="product-search">상품검색</label>
+                  <input
+                    id="product-search"
+                    type="search"
+                    required
+                    placeholder="검색어를 입력해주세요."
+                  />
+                  <button type="button" class="search-button">
+                    <img src="./assets/icon/Search.png" alt="검색 버튼" />
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+            <!-- 배송지, 찜목록, 장바구니 이동   -->
+            <ul class="icon-link">
+              <li>
+                <span
+                  ><img
+                    src="./assets/icon/Location.png"
+                    alt="배송지 설정"
+                    width="36px"
+                    height="36px"
+                /></span>
+              </li>
+              <li>
+                <span
+                  ><img
+                    src="./assets/icon/Heart.png"
+                    alt="찜 목록보기"
+                    width="36px"
+                    height="36px"
+                /></span>
+              </li>
+              <li class="cart-link">
+                <a href="/cart.html"
+                  ><img
+                    src="./assets/icon/Cart-1.png"
+                    alt="장바구니 목록 보기 "
+                    width="36px"
+                    height="36px"
+                /></a>
+                <!-- cart-number 표시는 is-active 클래스를 추가해주세요 -->
+                <span class="cart-number">1</span>
+                <!-- 장바구니 알림창 띄우기는 is-not-exist 클래스를 제거해주세요 -->
+                <div class="cart-alarm is-not-exist"></div>
+              </li>
+            </ul>
+          </div>
+          <!-- 헤더 메뉴 영역 -->
+          <nav class="navigation">
+            <div class="category-menu">
+              <div class="category-menu-cover" tabindex="0">
+                <img src="./assets/icon/black_hamburger.png" alt="카테고리" />
+                <span class="category-text">카테고리</span>
+              </div>
+              <!-- 카테고리 상세 메뉴 is-active 추가하면 드롭다운 block-->
+              <ul class="category-list">
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Type23.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />선물하기</span
+                  >
+                </li>
+                <li>
+                  <span
+                    ><img
+                      src="./assets/icon/Vegetable.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />채소</span
+                  >
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Fruit.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />과일 · 견과 · 쌀</span
+                  >
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/SeaFood.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />수산 · 해산 · 건어물</span
+                  >
+                </li>
+                <li>
+                  <span
+                    ><img
+                      src="./assets/icon/Meet.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />정육 · 계란</span
+                  >
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Cook.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />국 · 반찬 · 메인요리
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Salad.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />샐러드 · 간편식
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Oil.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />면 · 양념 · 오일
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Coffee.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />생수 · 음료 · 우유 · 커피
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Snack.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />간식 · 과자 · 떡
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Bread.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />베이커리 · 치즈 · 델리
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Health.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />건강식품
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Wine.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />와인
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Traditional Liquor.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />전통주
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Detergent.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />생활용품 · 리빙 · 캠핑
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Cosmetics.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />스킨케어 · 메이크업
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/shampoo.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />헤어 · 바디 · 구강
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Food.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />주방용품
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/HomeAppliances.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />가전제품
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Dog.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />반려동물
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Baby.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />베이비 · 키즈 · 완구
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <img
+                      src="./assets/icon/Travel.png"
+                      alt=""
+                      width="24px"
+                      height="24px"
+                    />여행 · 티켓
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <ul class="page-navigation">
+              <li><a href="#">신상품</a></li>
+              <li><a href="#">베스트</a></li>
+              <li><a href="#">알뜰쇼핑</a></li>
+              <li><a href="#">특가/혜택</a></li>
+            </ul>
+            <span class="delivery-info"><span>샛별·낮</span> 배송안내</span>
+          </nav>
+        </div>
+      </div>
+      <!-- 스크롤 이벤트로 close 클래스 제거하면 보여지도록 -->
+      <div class="scroll-header close">
+        <div class="scroll-header-inner">
+          <div class="category-menu">
+            <div class="category-menu-cover" tabindex="0">
+              <img src="./assets/icon/black_hamburger.png" alt="카테고리" />
+              <span class="scroll-category-text">카테고리</span>
+            </div>
+            <!-- 카테고리 상세 메뉴 -->
+            <ul class="category-list">
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Type23.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />선물하기</span
+                >
+              </li>
+              <li>
+                <span
+                  ><img
+                    src="./assets/icon/Vegetable.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />채소</span
+                >
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Fruit.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />과일 · 견과 · 쌀</span
+                >
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/SeaFood.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />수산 · 해산 · 건어물</span
+                >
+              </li>
+              <li>
+                <span
+                  ><img
+                    src="./assets/icon/Meet.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />정육 · 계란</span
+                >
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Cook.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />국 · 반찬 · 메인요리
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Salad.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />샐러드 · 간편식
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Oil.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />면 · 양념 · 오일
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Coffee.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />생수 · 음료 · 우유 · 커피
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Snack.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />간식 · 과자 · 떡
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Bread.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />베이커리 · 치즈 · 델리
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Health.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />건강식품
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Wine.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />와인
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Traditional Liquor.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />전통주
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Detergent.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />생활용품 · 리빙 · 캠핑
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Cosmetics.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />스킨케어 · 메이크업
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/shampoo.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />헤어 · 바디 · 구강
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Food.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />주방용품
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/HomeAppliances.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />가전제품
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Dog.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />반려동물
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Baby.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />베이비 · 키즈 · 완구
+                </span>
+              </li>
+              <li>
+                <span>
+                  <img
+                    src="./assets/icon/Travel.png"
+                    alt=""
+                    width="24px"
+                    height="24px"
+                  />여행 · 티켓
+                </span>
+              </li>
+            </ul>
           </div>
 
-          <!-- 카테고리 -->
-          <details>
-            <summary>
-              <span>카테고리</span>
-              <img src="./assets/icon/category_down.png" alt="" />
-            </summary>
+          <ul class="scroll-page-navigation">
+            <li><a href="#">신상품</a></li>
+            <li><a href="#">베스트</a></li>
+            <li><a href="#">알뜰쇼핑</a></li>
+            <li><a href="#">특가/혜택</a></li>
+          </ul>
 
-            <ul class="category-ul">
-              <li>
-                <input type="checkbox" id="salad" name="salad" value="salad" />
-                <label class="list-item" for="salad">
-                  <span>샐러드・간편식</span><span class="list-item-count">65</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="main-dish" name="main-dish" value="main-dish" />
-                <label class="list-item" for="main-dish">
-                  <span>국・반찬・메인요리</span><span class="list-item-count">52</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="livestock-products" name="livestock-products" value="livestock-products" />
-                <label class="list-item" for="livestock-products">
-                  <span>정육・계란</span><span class="list-item-count">41</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="agricultural-products" name="agricultural-products"
-                  value="agricultural-products" />
-                <label class="list-item" for="agricultural-products">
-                  <span>과일・견과・쌀</span><span class="list-item-count">30</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="snack" name="snack" value="snack" />
-                <label class="list-item" for="snack">
-                  <span>간식・과자・떡</span><span class="list-item-count">18</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="beverage" name="beverage" value="beverage" />
-                <label class="list-item" for="beverage">
-                  <span>생수・음료・우유・커피</span><span class="list-item-count">17</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="aquatic-products" name="aquatic-products" value="aquatic-products" />
-                <label class="list-item" for="aquatic-products">
-                  <span>수산・해산・건어물</span><span class="list-item-count">16</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="bakery" name="bakery" value="bakery" />
-                <label class="list-item" for="bakery">
-                  <span>베이커리・치즈・델리</span><span class="list-item-count">13</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="health-food" name="health-food" value="health-food" />
-                <label class="list-item" for="health-food">
-                  <span>건강식품</span><span class="list-item-count">10</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="living-products" name="living-products" value="living-products" />
-                <label class="list-item" for="living-products">
-                  <span>생활용품・리빙・캠핑</span><span class="list-item-count">10</span></label>
-              </li>
+          <div>
+            <h2 class="a11y-hidden">검색</h2>
+            <form class="scroll-form">
+              <fieldset>
+                <legend>검색 폼</legend>
+                <div class="scroll-form-group">
+                  <label for="scroll-product-search"
+                    ><span aria-hidden="true"></span>상품검색</label
+                  >
+                  <input
+                    id="scroll-product-search"
+                    type="search"
+                    required
+                    placeholder="검색어를 입력해주세요."
+                  />
+                  <button type="button" class="search-button">
+                    <img src="./assets/icon/Search.png" alt="검색 버튼" />
+                  </button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <ul class="scroll-icon-link">
+            <li>
+              <span
+                ><img src="./assets/icon/Location.png" alt="배송지 설정"
+              /></span>
+            </li>
+            <li class="heart-icon">
+              <span><img src="./assets/icon/Heart.png" alt="찜" /></span>
+            </li>
+            <li class="cart-link">
+              <a href="/cart.html"
+                ><img
+                  src="./assets/icon/Cart-1.png"
+                  alt="장바구니 목록 보기 "
+                  width="36px"
+                  height="36px"
+              /></a>
+              <span class="cart-number">1</span>
+              <div class="cart-alarm is-not-exist"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- 전체 레이아웃 -->
+      <div class="best-container">
+        <!-- 레이아웃 맨 위 -->
+        <h3 class="best-title">베스트</h3>
 
+        <!-- 필터링리스트와 상품리스트 레이아웃 -->
+        <div class="best-product">
+          <!-- 필터링 레이아웃 -->
+          <section class="best-filter-container">
+            <!-- section 태그 + heading(a11y-hidden) -->
+            <!-- 요부분은 나랑 같이 details+summury / input -->
+            <div class="best-filter-reset">
+              <span>필터</span>
+              <span class="reset-btn">초기화</span>
+            </div>
+
+            <!-- 카테고리 -->
+            <details>
+              <summary>
+                <span>카테고리</span>
+                <img src="./assets/icon/category_down.png" alt="" />
+              </summary>
+
+              <ul class="category-ul">
+                <li>
+                  <input
+                    type="checkbox"
+                    id="salad"
+                    name="salad"
+                    value="salad"
+                  />
+                  <label class="list-item" for="salad">
+                    <span>샐러드・간편식</span
+                    ><span class="list-item-count">65</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="main-dish"
+                    name="main-dish"
+                    value="main-dish"
+                  />
+                  <label class="list-item" for="main-dish">
+                    <span>국・반찬・메인요리</span
+                    ><span class="list-item-count">52</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="livestock-products"
+                    name="livestock-products"
+                    value="livestock-products"
+                  />
+                  <label class="list-item" for="livestock-products">
+                    <span>정육・계란</span
+                    ><span class="list-item-count">41</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="agricultural-products"
+                    name="agricultural-products"
+                    value="agricultural-products"
+                  />
+                  <label class="list-item" for="agricultural-products">
+                    <span>과일・견과・쌀</span
+                    ><span class="list-item-count">30</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="snack"
+                    name="snack"
+                    value="snack"
+                  />
+                  <label class="list-item" for="snack">
+                    <span>간식・과자・떡</span
+                    ><span class="list-item-count">18</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="beverage"
+                    name="beverage"
+                    value="beverage"
+                  />
+                  <label class="list-item" for="beverage">
+                    <span>생수・음료・우유・커피</span
+                    ><span class="list-item-count">17</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="aquatic-products"
+                    name="aquatic-products"
+                    value="aquatic-products"
+                  />
+                  <label class="list-item" for="aquatic-products">
+                    <span>수산・해산・건어물</span
+                    ><span class="list-item-count">16</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="bakery"
+                    name="bakery"
+                    value="bakery"
+                  />
+                  <label class="list-item" for="bakery">
+                    <span>베이커리・치즈・델리</span
+                    ><span class="list-item-count">13</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="health-food"
+                    name="health-food"
+                    value="health-food"
+                  />
+                  <label class="list-item" for="health-food">
+                    <span>건강식품</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="living-products"
+                    name="living-products"
+                    value="living-products"
+                  />
+                  <label class="list-item" for="living-products">
+                    <span>생활용품・리빙・캠핑</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+              </ul>
+              <button class="category-more">카테고리 더보기</button>
+            </details>
+
+            <!-- 브랜드 -->
+            <details>
+              <summary>
+                <span>브랜드</span>
+                <img src="./assets/icon/category_down.png" alt="" />
+              </summary>
+              <ul class="category-ul">
+                <li>
+                  <input
+                    type="checkbox"
+                    id="potato-field"
+                    name="potato-field"
+                    value="potato-field"
+                  />
+                  <label class="list-item" for="potato-field">
+                    <span>감자밭</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="gangnam-myeonok"
+                    name="gangnam-myeonok"
+                    value="gangnam-myeonok"
+                  />
+                  <label class="list-item" for="gangnam-myeonok">
+                    <span>강남면옥</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="kyungnam-pharmaceutical"
+                    name="kyungnam-pharmaceutical"
+                    value="Kyungnam-pharmaceutical"
+                  />
+                  <label class="list-item" for="kyungnam-pharmaceutical">
+                    <span>경남제약</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="gyeongbokgung"
+                    name="gyeongbokgung"
+                    value="gyeongbokgung"
+                  />
+                  <label class="list-item" for="gyeongbokgung">
+                    <span>경복궁</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="golaesa"
+                    name="golaesa"
+                    value="golaesa"
+                  />
+                  <label class="list-item" for="golaesa">
+                    <span>고래사</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="gourmet-workshop"
+                    name="gourmet-workshop"
+                    value="gourmet-workshop"
+                  />
+                  <label class="list-item" for="gourmet-workshop">
+                    <span>고메공방</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="hot-fish-diet"
+                    name="hot-fish-diet"
+                    value="hot-fish-diet"
+                  />
+                  <label class="list-item" for="hot-fish-diet">
+                    <span>고온어다이어트</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="kyoto-marble"
+                    name="kyoto-marble"
+                    value="kyoto-marble"
+                  />
+                  <label class="list-item" for="kyoto-marble">
+                    <span>교토마블</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="granola-house"
+                    name="granola-house"
+                    value="granola-house"
+                  />
+                  <label class="list-item" for="granola-house">
+                    <span>그래놀라 하우스</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="gritz-signature-lamb"
+                    name="gritz-signature-lamb"
+                    value="gritz-signature-lamb"
+                  />
+                  <label class="list-item" for="gritz-signature-lamb">
+                    <span>그리츠 시그니처 램</span
+                    ><span class="list-item-count">1</span></label
+                  >
+                </li>
+              </ul>
+              <button class="category-more">가격 더보기</button>
+            </details>
+
+            <!-- 가격 -->
+            <details>
+              <summary>
+                <span>가격</span>
+                <img src="./assets/icon/category_down.png" alt="" />
+              </summary>
+              <ul class="category-ul">
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price1"
+                    name="price1"
+                    value="price1"
+                  />
+                  <label class="list-item" for="price1">
+                    <span>샐러드・간편식</span
+                    ><span class="list-item-count">65</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price2"
+                    name="price2"
+                    value="price2"
+                  />
+                  <label class="list-item" for="price2">
+                    <span>국・반찬・메인요리 </span
+                    ><span class="list-item-count">52</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price3"
+                    name="price3"
+                    value="price3"
+                  />
+                  <label class="list-item" for="price3">
+                    <span>정육・계란</span
+                    ><span class="list-item-count">41</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price4"
+                    name="price4"
+                    value="price4"
+                  />
+                  <label class="list-item" for="price4">
+                    <span>과일・견과・쌀</span
+                    ><span class="list-item-count">30</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price5"
+                    name="price5"
+                    value="price5"
+                  />
+                  <label class="list-item" for="price5">
+                    <span>간식・과자・떡</span
+                    ><span class="list-item-count">18</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price6"
+                    name="price6"
+                    value="price6"
+                  />
+                  <label class="list-item" for="price6">
+                    <span>생수・음료・우유・커피</span
+                    ><span class="list-item-count">17</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price7"
+                    name="price7"
+                    value="price7"
+                  />
+                  <label class="list-item" for="price7">
+                    <span>수산・해산・건어물</span
+                    ><span class="list-item-count">16</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price8"
+                    name="price8"
+                    value="price8"
+                  />
+                  <label class="list-item" for="price8">
+                    <span>베이커리・치즈・델리</span
+                    ><span class="list-item-count">13</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price9"
+                    name="price9"
+                    value="price9"
+                  />
+                  <label class="list-item" for="price9">
+                    <span>건강식품</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="price10"
+                    name="price10"
+                    value="price10"
+                  />
+                  <label class="list-item" for="price10">
+                    <span>생활용품・리빙・캠핑</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+              </ul>
+              <button class="category-more">가격 더보기</button>
+            </details>
+
+            <!-- 혜택 -->
+            <details>
+              <summary>
+                <span>혜택</span>
+                <img src="./assets/icon/category_down.png" alt="" />
+              </summary>
+              <ul class="category-ul">
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit1"
+                    name="benefit1"
+                    value="benefit1"
+                  />
+                  <label class="list-item" for="benefit1">
+                    <span>샐러드・간편식</span
+                    ><span class="list-item-count">65</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit2"
+                    name="benefit2"
+                    value="benefit2"
+                  />
+                  <label class="list-item" for="benefit2">
+                    <span>국・반찬・메인요리 </span
+                    ><span class="list-item-count">52</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit3"
+                    name="benefit3"
+                    value="benefit3"
+                  />
+                  <label class="list-item" for="benefit3">
+                    <span>정육・계란</span
+                    ><span class="list-item-count">41</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit4"
+                    name="benefit4"
+                    value="benefit4"
+                  />
+                  <label class="list-item" for="benefit4">
+                    <span>과일・견과・쌀</span
+                    ><span class="list-item-count">30</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit5"
+                    name="benefit5"
+                    value="benefit5"
+                  />
+                  <label class="list-item" for="benefit5">
+                    <span>간식・과자・떡</span
+                    ><span class="list-item-count">18</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit6"
+                    name="benefit6"
+                    value="benefit6"
+                  />
+                  <label class="list-item" for="benefit6">
+                    <span>생수・음료・우유・커피</span
+                    ><span class="list-item-count">17</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit7"
+                    name="benefit7"
+                    value="benefit7"
+                  />
+                  <label class="list-item" for="benefit7">
+                    <span>수산・해산・건어물</span
+                    ><span class="list-item-count">16</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit8"
+                    name="benefit8"
+                    value="benefit8"
+                  />
+                  <label class="list-item" for="benefit8">
+                    <span>베이커리・치즈・델리</span
+                    ><span class="list-item-count">13</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit9"
+                    name="benefit9"
+                    value="benefit9"
+                  />
+                  <label class="list-item" for="benefit9">
+                    <span>건강식품</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="benefit10"
+                    name="benefit10"
+                    value="benefit10"
+                  />
+                  <label class="list-item" for="benefit10">
+                    <span>생활용품・리빙・캠핑</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+              </ul>
+              <button class="category-more">혜택 더보기</button>
+            </details>
+
+            <!-- 유형 -->
+            <details>
+              <summary>
+                <span>유형</span>
+                <img src="./assets/icon/category_down.png" alt="" />
+              </summary>
+              <ul class="category-ul">
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type1"
+                    name="type1"
+                    value="type1"
+                  />
+                  <label class="list-item" for="type1">
+                    <span>샐러드・간편식</span
+                    ><span class="list-item-count">65</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type2"
+                    name="type2"
+                    value="type2"
+                  />
+                  <label class="list-item" for="type2">
+                    <span>국・반찬・메인요리 </span
+                    ><span class="list-item-count">52</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type3"
+                    name="type3"
+                    value="type3"
+                  />
+                  <label class="list-item" for="type3">
+                    <span>정육・계란</span
+                    ><span class="list-item-count">41</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type4"
+                    name="type4"
+                    value="type4"
+                  />
+                  <label class="list-item" for="type4">
+                    <span>과일・견과・쌀</span
+                    ><span class="list-item-count">30</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type5"
+                    name="type5"
+                    value="type5"
+                  />
+                  <label class="list-item" for="type5">
+                    <span>간식・과자・떡</span
+                    ><span class="list-item-count">18</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type6"
+                    name="type6"
+                    value="type6"
+                  />
+                  <label class="list-item" for="type6">
+                    <span>생수・음료・우유・커피</span
+                    ><span class="list-item-count">17</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type7"
+                    name="type7"
+                    value="type7"
+                  />
+                  <label class="list-item" for="type7">
+                    <span>수산・해산・건어물</span
+                    ><span class="list-item-count">16</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type8"
+                    name="type8"
+                    value="type8"
+                  />
+                  <label class="list-item" for="type8">
+                    <span>베이커리・치즈・델리</span
+                    ><span class="list-item-count">13</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type9"
+                    name="type9"
+                    value="type9"
+                  />
+                  <label class="list-item" for="type9">
+                    <span>건강식품</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="type10"
+                    name="type10"
+                    value="type10"
+                  />
+                  <label class="list-item" for="type10">
+                    <span>생활용품・리빙・캠핑</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+              </ul>
+              <button class="category-more">유형 더보기</button>
+            </details>
+
+            <!-- 특정상품 제외 -->
+            <details>
+              <summary>
+                <span>특정상품 제외</span>
+                <img src="./assets/icon/category_down.png" alt="" />
+              </summary>
+              <ul class="category-ul">
+                <li>
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products1"
+                    name="excluding-specific-products1"
+                    value="excluding-specific-products1"
+                  />
+                  <label class="list-item" for="excluding-specific-products1">
+                    <span>샐러드・간편식</span
+                    ><span class="list-item-count">65</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products2"
+                    name="excluding-specific-products2"
+                    value="excluding-specific-products2"
+                  />
+                  <label class="list-item" for="excluding-specific-products2">
+                    <span>국・반찬・메인요리 </span
+                    ><span class="list-item-count">52</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products3"
+                    name="excluding-specific-products3"
+                    value="excluding-specific-products3"
+                  />
+                  <label class="list-item" for="excluding-specific-products3">
+                    <span>정육・계란</span
+                    ><span class="list-item-count">41</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products4"
+                    name="excluding-specific-products4"
+                    value="excluding-specific-products4"
+                  />
+                  <label class="list-item" for="excluding-specific-products4">
+                    <span>과일・견과・쌀</span
+                    ><span class="list-item-count">30</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products5"
+                    name="excluding-specific-products5"
+                    value="excluding-specific-products5"
+                  />
+                  <label class="list-item" for="excluding-specific-products5">
+                    <span>간식・과자・떡</span
+                    ><span class="list-item-count">18</span></label
+                  >
+                </li>
+                <li>
+                  &gt;
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products6"
+                    name="excluding-specific-products6"
+                    value="excluding-specific-products6"
+                  />
+                  <label class="list-item" for="excluding-specific-products6">
+                    <span>생수・음료・우유・커피</span
+                    ><span class="list-item-count">17</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products7"
+                    name="excluding-specific-products7"
+                    value="excluding-specific-products7"
+                  />
+                  <label class="list-item" for="excluding-specific-products7">
+                    <span>수산・해산・건어물</span
+                    ><span class="list-item-count">16</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products8"
+                    name="excluding-specific-products8"
+                    value="excluding-specific-products8"
+                  />
+                  <label class="list-item" for="excluding-specific-products8">
+                    <span>베이커리・치즈・델리</span
+                    ><span class="list-item-count">13</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products9"
+                    name="excluding-specific-products9"
+                    value="excluding-specific-products9"
+                  />
+                  <label class="list-item" for="excluding-specific-products9">
+                    <span>건강식품</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+                <li>
+                  <input
+                    type="checkbox"
+                    id="excluding-specific-products10"
+                    name="excluding-specific-products10"
+                    value="excluding-specific-products10"
+                  />
+                  <label class="list-item" for="excluding-specific-products10">
+                    <span>생활용품・리빙・캠핑</span
+                    ><span class="list-item-count">10</span></label
+                  >
+                </li>
+              </ul>
+              <button class="category-more">특정상품 제외 더보기</button>
+            </details>
+          </section>
+
+          <!-- 베스트 상품 레이아웃 -->
+          <section class="food-container">
+            <!-- 상품갯수 및 네비게이션 -->
+            <div class="food-nav-box">
+              <div class="food-total">
+                <p>총 284건</p>
+                <!-- 텍스트 태그 사용 -->
+              </div>
+              <ul class="food-nav">
+                <!-- 버튼 태그 사용 -->
+                <li>추천순</li>
+                <li><span class="nav-span">신상품순</span></li>
+                <li><span class="nav-span">판매량순</span></li>
+                <li><span class="nav-span">혜택순</span></li>
+                <li><span class="nav-span">낮은 가격순</span></li>
+                <li><span class="nav-span">높은 가격순</span></li>
+              </ul>
+            </div>
+            <div class="product-container">
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-rksk"
+                    src="./assets/ubuho/thumbnail.jpg"
+                    alt="유부호 만두"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[대구 반할만떡] 유부호만두</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">5,244 원</p>
+                  </div>
+                  <p class="del-price"><del>6,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    유부로 속을 든든히 채운 군만두
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ekfk"
+                    src="./assets/tangtang/thumbnail.jpg"
+                    alt="풀무원 탱탱쫄면"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">
+                    튀기지 않아 부드럽고 매콤한
+                  </p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-akqk"
+                    src="./assets/jukkumi/thumbnail.jpg"
+                    alt="홍대 주꾸미"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">
+                    [홍대주꾸미] 주꾸미 볶음 300g<br />
+                    (냉동)
+                  </p>
+                  <div class="sale-info">
+                    <p class="sale-percent">13%</p>
+                    <p class="sale-price">6,800 원</p>
+                  </div>
+                  <p class="del-price"><del>7,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-tkwk"
+                    src="./assets/kangnam/thumbnail.jpg"
+                    alt="강남면옥 소갈비찜"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[강남면옥] 소갈비찜</p>
+                  <p class="price">29,800 원</p>
+                  <p class="product-info-explain">
+                    보는 맛과 먹는 맛 모두 푸짐
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ckzk"
+                    src="./assets/bacon/thumbnail.jpg"
+                    alt="칼리 한돈 삼겹 베이컨"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">25%</p>
+                    <p class="sale-price">3,375 원</p>
+                  </div>
+                  <p class="del-price"><del>4,500 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    무항생제 한돈 삼겹살의 고소한 풍미 그대로
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="kalry-only">Kalry Only</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-rksk"
+                    src="./assets/ubuho/thumbnail.jpg"
+                    alt="유부호 만두"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[대구 반할만떡] 유부호만두</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">5,244 원</p>
+                  </div>
+                  <p class="del-price"><del>6,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    유부로 속을 든든히 채운 군만두
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ekfk"
+                    src="./assets/tangtang/thumbnail.jpg"
+                    alt="풀무원 탱탱쫄면"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">
+                    튀기지 않아 부드럽고 매콤한
+                  </p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-akqk"
+                    src="./assets/jukkumi/thumbnail.jpg"
+                    alt="홍대 주꾸미"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">
+                    [홍대주꾸미] 주꾸미 볶음 300g<br />
+                    (냉동)
+                  </p>
+                  <div class="sale-info">
+                    <p class="sale-percent">13%</p>
+                    <p class="sale-price">6,800 원</p>
+                  </div>
+                  <p class="del-price"><del>7,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-tkwk"
+                    src="./assets/kangnam/thumbnail.jpg"
+                    alt="강남면옥 소갈비찜"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[강남면옥] 소갈비찜</p>
+                  <p class="price">29,800 원</p>
+                  <p class="product-info-explain">
+                    보는 맛과 먹는 맛 모두 푸짐
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ckzk"
+                    src="./assets/bacon/thumbnail.jpg"
+                    alt="칼리 한돈 삼겹 베이컨"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">25%</p>
+                    <p class="sale-price">3,375 원</p>
+                  </div>
+                  <p class="del-price"><del>4,500 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    무항생제 한돈 삼겹살의 고소한 풍미 그대로
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="kalry-only">Kalry Only</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-rksk"
+                    src="./assets/ubuho/thumbnail.jpg"
+                    alt="유부호 만두"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[대구 반할만떡] 유부호만두</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">5,244 원</p>
+                  </div>
+                  <p class="del-price"><del>6,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    유부로 속을 든든히 채운 군만두
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ekfk"
+                    src="./assets/tangtang/thumbnail.jpg"
+                    alt="풀무원 탱탱쫄면"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">
+                    튀기지 않아 부드럽고 매콤한
+                  </p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-akqk"
+                    src="./assets/jukkumi/thumbnail.jpg"
+                    alt="홍대 주꾸미"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">
+                    [홍대주꾸미] 주꾸미 볶음 300g<br />
+                    (냉동)
+                  </p>
+                  <div class="sale-info">
+                    <p class="sale-percent">13%</p>
+                    <p class="sale-price">6,800 원</p>
+                  </div>
+                  <p class="del-price"><del>7,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-tkwk"
+                    src="./assets/kangnam/thumbnail.jpg"
+                    alt="강남면옥 소갈비찜"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[강남면옥] 소갈비찜</p>
+                  <p class="price">29,800 원</p>
+                  <p class="product-info-explain">
+                    보는 맛과 먹는 맛 모두 푸짐
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ckzk"
+                    src="./assets/bacon/thumbnail.jpg"
+                    alt="칼리 한돈 삼겹 베이컨"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">25%</p>
+                    <p class="sale-price">3,375 원</p>
+                  </div>
+                  <p class="del-price"><del>4,500 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    무항생제 한돈 삼겹살의 고소한 풍미 그대로
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="kalry-only">Kalry Only</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-rksk"
+                    src="./assets/ubuho/thumbnail.jpg"
+                    alt="유부호 만두"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[대구 반할만떡] 유부호만두</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">5,244 원</p>
+                  </div>
+                  <p class="del-price"><del>6,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    유부로 속을 든든히 채운 군만두
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ekfk"
+                    src="./assets/tangtang/thumbnail.jpg"
+                    alt="풀무원 탱탱쫄면"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">
+                    튀기지 않아 부드럽고 매콤한
+                  </p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-akqk"
+                    src="./assets/jukkumi/thumbnail.jpg"
+                    alt="홍대 주꾸미"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">
+                    [홍대주꾸미] 주꾸미 볶음 300g<br />
+                    (냉동)
+                  </p>
+                  <div class="sale-info">
+                    <p class="sale-percent">13%</p>
+                    <p class="sale-price">6,800 원</p>
+                  </div>
+                  <p class="del-price"><del>7,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-tkwk"
+                    src="./assets/kangnam/thumbnail.jpg"
+                    alt="강남면옥 소갈비찜"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[강남면옥] 소갈비찜</p>
+                  <p class="price">29,800 원</p>
+                  <p class="product-info-explain">
+                    보는 맛과 먹는 맛 모두 푸짐
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ckzk"
+                    src="./assets/bacon/thumbnail.jpg"
+                    alt="칼리 한돈 삼겹 베이컨"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">25%</p>
+                    <p class="sale-price">3,375 원</p>
+                  </div>
+                  <p class="del-price"><del>4,500 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    무항생제 한돈 삼겹살의 고소한 풍미 그대로
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="kalry-only">Kalry Only</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-rksk"
+                    src="./assets/ubuho/thumbnail.jpg"
+                    alt="유부호 만두"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[대구 반할만떡] 유부호만두</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">5,244 원</p>
+                  </div>
+                  <p class="del-price"><del>6,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    유부로 속을 든든히 채운 군만두
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ekfk"
+                    src="./assets/tangtang/thumbnail.jpg"
+                    alt="풀무원 탱탱쫄면"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">
+                    튀기지 않아 부드럽고 매콤한
+                  </p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-akqk"
+                    src="./assets/jukkumi/thumbnail.jpg"
+                    alt="홍대 주꾸미"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">
+                    [홍대주꾸미] 주꾸미 볶음 300g<br />
+                    (냉동)
+                  </p>
+                  <div class="sale-info">
+                    <p class="sale-percent">13%</p>
+                    <p class="sale-price">6,800 원</p>
+                  </div>
+                  <p class="del-price"><del>7,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-tkwk"
+                    src="./assets/kangnam/thumbnail.jpg"
+                    alt="강남면옥 소갈비찜"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[강남면옥] 소갈비찜</p>
+                  <p class="price">29,800 원</p>
+                  <p class="product-info-explain">
+                    보는 맛과 먹는 맛 모두 푸짐
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ckzk"
+                    src="./assets/bacon/thumbnail.jpg"
+                    alt="칼리 한돈 삼겹 베이컨"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">25%</p>
+                    <p class="sale-price">3,375 원</p>
+                  </div>
+                  <p class="del-price"><del>4,500 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    무항생제 한돈 삼겹살의 고소한 풍미 그대로
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="kalry-only">Kalry Only</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-rksk"
+                    src="./assets/ubuho/thumbnail.jpg"
+                    alt="유부호 만두"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[대구 반할만떡] 유부호만두</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">24%</p>
+                    <p class="sale-price">5,244 원</p>
+                  </div>
+                  <p class="del-price"><del>6,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    유부로 속을 든든히 채운 군만두
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ekfk"
+                    src="./assets/tangtang/thumbnail.jpg"
+                    alt="풀무원 탱탱쫄면"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
+                  <p class="price">4,980 원</p>
+                  <p class="product-info-explain">
+                    튀기지 않아 부드럽고 매콤한
+                  </p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-akqk"
+                    src="./assets/jukkumi/thumbnail.jpg"
+                    alt="홍대 주꾸미"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">
+                    [홍대주꾸미] 주꾸미 볶음 300g<br />
+                    (냉동)
+                  </p>
+                  <div class="sale-info">
+                    <p class="sale-percent">13%</p>
+                    <p class="sale-price">6,800 원</p>
+                  </div>
+                  <p class="del-price"><del>7,900 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-tkwk"
+                    src="./assets/kangnam/thumbnail.jpg"
+                    alt="강남면옥 소갈비찜"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[강남면옥] 소갈비찜</p>
+                  <p class="price">29,800 원</p>
+                  <p class="product-info-explain">
+                    보는 맛과 먹는 맛 모두 푸짐
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="limited-quantity">한정수량</div>
+                </div>
+              </div>
+              <div class="product">
+                <a href="#">
+                  <img
+                    class="product-ckzk"
+                    src="./assets/bacon/thumbnail.jpg"
+                    alt="칼리 한돈 삼겹 베이컨"
+                  />
+                </a>
+                <button class="cart-icon-btn">
+                  <img
+                    class="cart-icon"
+                    src="./assets/icon/Cart.png"
+                    art="cart"
+                  />
+                </button>
+                <div class="product-info">
+                  <p class="delivery-info">샛별배송</p>
+                  <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
+                  <div class="sale-info">
+                    <p class="sale-percent">25%</p>
+                    <p class="sale-price">3,375 원</p>
+                  </div>
+                  <p class="del-price"><del>4,500 원</del></p>
+                  <!-- del 태그 굳!!! -->
+                  <p class="product-info-explain">
+                    무항생제 한돈 삼겹살의 고소한 풍미 그대로
+                  </p>
+                </div>
+                <div class="box-container">
+                  <div class="kalry-only">Kalry Only</div>
+                </div>
+              </div>
+            </div>
+            <div class="pagination">
+              <ul class="pagination-modal">
+                <li>
+                  <button class="first">
+                    <img
+                      src="./assets/icon/pagination_double_left.png"
+                      alt=""
+                    />
+                  </button>
+                </li>
+                <li>
+                  <button class="arrow-left">
+                    <img src="./assets/icon/pagination_left.png" alt="" />
+                  </button>
+                </li>
+                <li><button class="active-num">1</button></li>
+                <li><button class="num">2</button></li>
+                <li><button class="num">3</button></li>
+                <li>
+                  <button class="arrow right">
+                    <img src="./assets/icon/pagination_right.png" alt="" />
+                  </button>
+                </li>
+                <li>
+                  <button class="last">
+                    <img
+                      src="./assets/icon/pagination_double_right.png"
+                      alt=""
+                    />
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-inner">
+        <section class="footer-top">
+          <div class="customer-inquiry">
+            <h2 class="inquiry-title">고객행복센터</h2>
+            <strong class="inquiry-number"
+              >1644-1107
+              <span>월~토요일 오전 7시 - 오후 6시</span>
+            </strong>
+            <div class="inquiry-kakao">
+              <button type="button">카카오톡 문의</button>
+              <div>
+                월~토요일 | 오전 7시 - 오후 6시<br />
+                일/공휴일 | 오전 7시 - 오후 1시
+              </div>
+            </div>
+            <div class="inquiry-personal">
+              <button type="button">1:1 문의</button>
+              <div>
+                <span>365일</span>
+                <p>고객센터 운영시간에 순차적으로 답변드리겠습니다.</p>
+              </div>
+            </div>
+            <div class="inquiry-order">
+              <button type="button">대량주문 문의</button>
+              <div>
+                월~금요일 | 오전9시 - 오후 6시<br />
+                점심시간 | 낮 12시 - 오후 1시
+              </div>
+            </div>
+            <div class="inquiry-non-member">
+              비회원 문의 :
+              <span href="#">help@karlycorp.com</span>
+            </div>
+            <div class="inquiry-non-member-order">
+              비회원 대량주문 문의 :
+              <span href="#">help@karlycorp.com</span>
+            </div>
+          </div>
+          <div class="about">
+            <ul class="information">
+              <li><span>칼리소개</span></li>
+              <li><span>칼리소개영상</span></li>
+              <li><span>인재채용</span></li>
+              <li><span>이용약관</span></li>
+              <li><span>개인정보처리방침</span></li>
+              <li><span>이용안내</span></li>
             </ul>
-            <button class="category-more">카테고리 더보기</button>
-          </details>
+            <div class="additional-info">
+              <span>법인명 (상호) : 주식회사 컬리 </span>
+              <span class="bar-icon">|</span>
+              <span>사업자등록번호 : 261-81-23567</span>
+              <span class="bar-icon">|</span>
+              <span class="text-color">사업자정보 확인</span>
+              <br />
 
-          <!-- 브랜드 -->
-          <details>
-            <summary>
-              <span>브랜드</span>
-              <img src="./assets/icon/category_down.png" alt="" />
-            </summary>
-            <ul class="category-ul">
+              <span>통신판매업 : 제 2018-서울강남-01646 호</span>
+              <span class="bar-icon">|</span>
+              <span>개인정보보호책임자 : 이원준</span>
+              <br />
+
+              <address>
+                주소 : 서울특별시 강남구 테헤란로 133, 18층(역삼동)
+              </address>
+              <span class="bar-icon">|</span>
+              <span>대표이사 : 김승아</span>
+              <br />
+
+              <span
+                >입점문의 : <span class="text-color">입점문의하기</span></span
+              >
+              <span class="bar-icon">|</span>
+              <span
+                >제휴문의 :
+                <span class="text-color">business@karlycorp.com</span></span
+              >
+              <br />
+
+              <span
+                >채용문의 :
+                <span class="text-color">recruit@karlycorp.com</span></span
+              >
+              <br />
+
+              <span>팩스 : 070 - 7500 - 6098 </span>
+            </div>
+            <ul class="sns-link">
               <li>
-                <input type="checkbox" id="potato-field" name="potato-field" value="potato-field" />
-                <label class="list-item" for="potato-field">
-                  <span>감자밭</span><span class="list-item-count">1</span></label>
+                <a
+                  href="https://blog.naver.com/marketkurly"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="./assets/icon/Blog.png"
+                    alt="블로그로 이동"
+                    width="30px"
+                    height="30px"
+                /></a>
               </li>
               <li>
-                <input type="checkbox" id="gangnam-myeonok" name="gangnam-myeonok" value="gangnam-myeonok" />
-                <label class="list-item" for="gangnam-myeonok">
-                  <span>강남면옥</span><span class="list-item-count">1</span></label>
+                <a
+                  href="https://www.facebook.com/Marketkurly/"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="./assets/icon/FaceBook.png"
+                    alt="페이스북으로 이동"
+                    width="30px"
+                    height="30px"
+                /></a>
               </li>
               <li>
-                <input type="checkbox" id="kyungnam-pharmaceutical" name="kyungnam-pharmaceutical"
-                  value="Kyungnam-pharmaceutical" />
-                <label class="list-item" for="kyungnam-pharmaceutical">
-                  <span>경남제약</span><span class="list-item-count">1</span></label>
+                <a
+                  href="https://www.instagram.com/marketkurly/"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="./assets/icon/Instagram.png"
+                    alt="인스타로 이동"
+                    width="30px"
+                    height="30px"
+                /></a>
               </li>
               <li>
-                <input type="checkbox" id="gyeongbokgung" name="gyeongbokgung" value="gyeongbokgung" />
-                <label class="list-item" for="gyeongbokgung">
-                  <span>경복궁</span><span class="list-item-count">1</span></label>
+                <a
+                  href="https://m.post.naver.com/marketkurly"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="./assets/icon/NaverPost.png"
+                    alt="네이버로 이동"
+                    width="30px"
+                    height="30px"
+                /></a>
               </li>
               <li>
-                <input type="checkbox" id="golaesa" name="golaesa" value="golaesa" />
-                <label class="list-item" for="golaesa">
-                  <span>고래사</span><span class="list-item-count">1</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="gourmet-workshop" name="gourmet-workshop" value="gourmet-workshop" />
-                <label class="list-item" for="gourmet-workshop">
-                  <span>고메공방</span><span class="list-item-count">1</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="hot-fish-diet" name="hot-fish-diet" value="hot-fish-diet" />
-                <label class="list-item" for="hot-fish-diet">
-                  <span>고온어다이어트</span><span class="list-item-count">1</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="kyoto-marble" name="kyoto-marble" value="kyoto-marble" />
-                <label class="list-item" for="kyoto-marble">
-                  <span>교토마블</span><span class="list-item-count">1</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="granola-house" name="granola-house" value="granola-house" />
-                <label class="list-item" for="granola-house">
-                  <span>그래놀라 하우스</span><span class="list-item-count">1</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="gritz-signature-lamb" name="gritz-signature-lamb"
-                  value="gritz-signature-lamb" />
-                <label class="list-item" for="gritz-signature-lamb">
-                  <span>그리츠 시그니처 램</span><span class="list-item-count">1</span></label>
+                <a
+                  href="https://www.youtube.com/channel/UCfpdjL5pl-1qKT7Xp4UQzQg"
+                  target="_blank"
+                  rel="noreferrer"
+                  ><img
+                    src="./assets/icon/Youtube.png"
+                    alt="유튜브로 이동"
+                    width="30px"
+                    height="30px"
+                /></a>
               </li>
             </ul>
-            <button class="category-more">가격 더보기</button>
-          </details>
-
-          <!-- 가격 -->
-          <details>
-            <summary>
-              <span>가격</span>
-              <img src="./assets/icon/category_down.png" alt="" />
-            </summary>
-            <ul class="category-ul">
-              <li>
-                <input type="checkbox" id="price1" name="price1" value="price1" />
-                <label class="list-item" for="price1">
-                  <span>샐러드・간편식</span><span class="list-item-count">65</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="price2" name="price2" value="price2" />
-                <label class="list-item" for="price2">
-                  <span>국・반찬・메인요리 </span><span class="list-item-count">52</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="price3" name="price3" value="price3" />
-                <label class="list-item" for="price3">
-                  <span>정육・계란</span><span class="list-item-count">41</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="price4" name="price4" value="price4" />
-                <label class="list-item" for="price4">
-                  <span>과일・견과・쌀</span><span class="list-item-count">30</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="price5" name="price5" value="price5" />
-                <label class="list-item" for="price5">
-                  <span>간식・과자・떡</span><span class="list-item-count">18</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="price6" name="price6" value="price6" />
-                <label class="list-item" for="price6">
-                  <span>생수・음료・우유・커피</span><span class="list-item-count">17</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="price7" name="price7" value="price7" />
-                <label class="list-item" for="price7">
-                  <span>수산・해산・건어물</span><span class="list-item-count">16</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="price8" name="price8" value="price8" />
-                <label class="list-item" for="price8">
-                  <span>베이커리・치즈・델리</span><span class="list-item-count">13</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="price9" name="price9" value="price9" />
-                <label class="list-item" for="price9">
-                  <span>건강식품</span><span class="list-item-count">10</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="price10" name="price10" value="price10" />
-                <label class="list-item" for="price10">
-                  <span>생활용품・리빙・캠핑</span><span class="list-item-count">10</span></label>
-              </li>
-
-            </ul>
-            <button class="category-more">가격 더보기</button>
-          </details>
-
-          <!-- 혜택 -->
-          <details>
-            <summary>
-              <span>혜택</span>
-              <img src="./assets/icon/category_down.png" alt="" />
-            </summary>
-            <ul class="category-ul">
-              <li>
-                <input type="checkbox" id="benefit1" name="benefit1" value="benefit1" />
-                <label class="list-item" for="benefit1">
-                  <span>샐러드・간편식</span><span class="list-item-count">65</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="benefit2" name="benefit2" value="benefit2" />
-                <label class="list-item" for="benefit2">
-                  <span>국・반찬・메인요리 </span><span class="list-item-count">52</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="benefit3" name="benefit3" value="benefit3" />
-                <label class="list-item" for="benefit3">
-                  <span>정육・계란</span><span class="list-item-count">41</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="benefit4" name="benefit4" value="benefit4" />
-                <label class="list-item" for="benefit4">
-                  <span>과일・견과・쌀</span><span class="list-item-count">30</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="benefit5" name="benefit5" value="benefit5" />
-                <label class="list-item" for="benefit5">
-                  <span>간식・과자・떡</span><span class="list-item-count">18</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="benefit6" name="benefit6" value="benefit6" />
-                <label class="list-item" for="benefit6">
-                  <span>생수・음료・우유・커피</span><span class="list-item-count">17</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="benefit7" name="benefit7" value="benefit7" />
-                <label class="list-item" for="benefit7">
-                  <span>수산・해산・건어물</span><span class="list-item-count">16</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="benefit8" name="benefit8" value="benefit8" />
-                <label class="list-item" for="benefit8">
-                  <span>베이커리・치즈・델리</span><span class="list-item-count">13</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="benefit9" name="benefit9" value="benefit9" />
-                <label class="list-item" for="benefit9">
-                  <span>건강식품</span><span class="list-item-count">10</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="benefit10" name="benefit10" value="benefit10" />
-                <label class="list-item" for="benefit10">
-                  <span>생활용품・리빙・캠핑</span><span class="list-item-count">10</span></label>
-              </li>
-
-            </ul>
-            <button class="category-more">혜택 더보기</button>
-          </details>
-
-          <!-- 유형 -->
-          <details>
-            <summary>
-              <span>유형</span>
-              <img src="./assets/icon/category_down.png" alt="" />
-            </summary>
-            <ul class="category-ul">
-              <li>
-                <input type="checkbox" id="type1" name="type1" value="type1" />
-                <label class="list-item" for="type1">
-                  <span>샐러드・간편식</span><span class="list-item-count">65</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="type2" name="type2" value="type2" />
-                <label class="list-item" for="type2">
-                  <span>국・반찬・메인요리 </span><span class="list-item-count">52</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="type3" name="type3" value="type3" />
-                <label class="list-item" for="type3">
-                  <span>정육・계란</span><span class="list-item-count">41</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="type4" name="type4" value="type4" />
-                <label class="list-item" for="type4">
-                  <span>과일・견과・쌀</span><span class="list-item-count">30</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="type5" name="type5" value="type5" />
-                <label class="list-item" for="type5">
-                  <span>간식・과자・떡</span><span class="list-item-count">18</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="type6" name="type6" value="type6" />
-                <label class="list-item" for="type6">
-                  <span>생수・음료・우유・커피</span><span class="list-item-count">17</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="type7" name="type7" value="type7" />
-                <label class="list-item" for="type7">
-                  <span>수산・해산・건어물</span><span class="list-item-count">16</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="type8" name="type8" value="type8" />
-                <label class="list-item" for="type8">
-                  <span>베이커리・치즈・델리</span><span class="list-item-count">13</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="type9" name="type9" value="type9" />
-                <label class="list-item" for="type9">
-                  <span>건강식품</span><span class="list-item-count">10</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="type10" name="type10" value="type10" />
-                <label class="list-item" for="type10">
-                  <span>생활용품・리빙・캠핑</span><span class="list-item-count">10</span></label>
-              </li>
-
-            </ul>
-            <button class="category-more">유형 더보기</button>
-          </details>
-
-          <!-- 특정상품 제외 -->
-          <details>
-            <summary>
-              <span>특정상품 제외</span>
-              <img src="./assets/icon/category_down.png" alt="" />
-            </summary>
-            <ul class="category-ul">
-              <li>
-                <input type="checkbox" id="excluding-specific-products1" name="excluding-specific-products1"
-                  value="excluding-specific-products1" />
-                <label class="list-item" for="excluding-specific-products1">
-                  <span>샐러드・간편식</span><span class="list-item-count">65</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="excluding-specific-products2" name="excluding-specific-products2"
-                  value="excluding-specific-products2" />
-                <label class="list-item" for="excluding-specific-products2">
-                  <span>국・반찬・메인요리 </span><span class="list-item-count">52</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="excluding-specific-products3" name="excluding-specific-products3"
-                  value="excluding-specific-products3" />
-                <label class="list-item" for="excluding-specific-products3">
-                  <span>정육・계란</span><span class="list-item-count">41</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="excluding-specific-products4" name="excluding-specific-products4"
-                  value="excluding-specific-products4" />
-                <label class="list-item" for="excluding-specific-products4">
-                  <span>과일・견과・쌀</span><span class="list-item-count">30</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="excluding-specific-products5" name="excluding-specific-products5"
-                  value="excluding-specific-products5" />
-                <label class="list-item" for="excluding-specific-products5">
-                  <span>간식・과자・떡</span><span class="list-item-count">18</span></label>
-              </li>
-              <li>&gt;
-                <input type="checkbox" id="excluding-specific-products6" name="excluding-specific-products6"
-                  value="excluding-specific-products6" />
-                <label class="list-item" for="excluding-specific-products6">
-                  <span>생수・음료・우유・커피</span><span class="list-item-count">17</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="excluding-specific-products7" name="excluding-specific-products7"
-                  value="excluding-specific-products7" />
-                <label class="list-item" for="excluding-specific-products7">
-                  <span>수산・해산・건어물</span><span class="list-item-count">16</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="excluding-specific-products8" name="excluding-specific-products8"
-                  value="excluding-specific-products8" />
-                <label class="list-item" for="excluding-specific-products8">
-                  <span>베이커리・치즈・델리</span><span class="list-item-count">13</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="excluding-specific-products9" name="excluding-specific-products9"
-                  value="excluding-specific-products9" />
-                <label class="list-item" for="excluding-specific-products9">
-                  <span>건강식품</span><span class="list-item-count">10</span></label>
-              </li>
-              <li>
-                <input type="checkbox" id="excluding-specific-products10" name="excluding-specific-products10"
-                  value="excluding-specific-products10" />
-                <label class="list-item" for="excluding-specific-products10">
-                  <span>생활용품・리빙・캠핑</span><span class="list-item-count">10</span></label>
-              </li>
-
-            </ul>
-            <button class="category-more">특정상품 제외 더보기</button>
-          </details>
-
+          </div>
         </section>
+        <section class="footer-middle">
+          <ul class="partner-organization">
+            <li>
+              <button type="button">
+                <img
+                  src="./assets/icon/isms.png"
+                  alt="isms"
+                  width="34px"
+                  height="34px"
+                />
+                [인증범위] 마켓칼리 쇼핑몰 서비스 개발 운영<br />
+                (심사받지 않은 물리적 인프라 제외)<br />
+                [유효기간] 2022.01.19 ~ 2025.01.18
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <img
+                  src="./assets/icon/logo_privacy.png"
+                  alt="privacy"
+                  width="34px"
+                  height="34px"
+                />
+                개인정보보호 우수 웹사이트 <br />개인정보처리시스템 인증
+                (ePRIVACY PLUS)
+              </button>
+            </li>
+            <li>
+              <button type="button">
+                <img
+                  src="./assets/icon/logo_tosspayments.png"
+                  alt="tosspayment"
+                  class="toss-icon"
+                />
 
-        <!-- 베스트 상품 레이아웃 -->
-        <section class="food-container">
-          <!-- 상품갯수 및 네비게이션 -->
-          <div class="food-nav-box">
-            <div class="food-total">
-              <p>총 284건</p>
-              <!-- 텍스트 태그 사용 -->
-            </div>
-            <ul class="food-nav">
-              <!-- 버튼 태그 사용 -->
-              <li>추천순</li>
-              <li><span class="nav-span">신상품순</span></li>
-              <li><span class="nav-span">판매량순</span></li>
-              <li><span class="nav-span">혜택순</span></li>
-              <li><span class="nav-span">낮은 가격순</span></li>
-              <li><span class="nav-span">높은 가격순</span></li>
-            </ul>
-          </div>
-          <div class="product-container">
-            <div class="product">
-              <a href="#">
-                <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+                토스페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.
               </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[대구 반할만떡] 유부호만두</p>
-                <div class="sale-info">
-                  <p class="sale-percent">24%</p>
-                  <p class="sale-price">5,244 원</p>
-                </div>
-                <p class="del-price"><del>6,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
+            </li>
+            <li>
+              <button type="button">
+                <img
+                  src="./assets/icon/logo_wooriBank.png"
+                  alt="woriBank"
+                  width="34px"
+                  height="34px"
+                />
+                고객님이 현금으로 결제한 금액에 대해 우리은행과 채무지급보증
+                계약을 체결하여 안전거래를 보장하고 있습니다.
               </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
-                <p class="price">4,980 원</p>
-                <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[홍대주꾸미] 주꾸미 볶음 300g<br> (냉동)</p>
-                <div class="sale-info">
-                  <p class="sale-percent">13%</p>
-                  <p class="sale-price">6,800 원</p>
-                </div>
-                <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[강남면옥] 소갈비찜</p>
-                <p class="price">29,800 원</p>
-                <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
-                <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div>
-                <p class="del-price"><del>4,500 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">무항생제 한돈 삼겹살의 고소한 풍미 그대로</p>
-              </div>
-              <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[대구 반할만떡] 유부호만두</p>
-                <div class="sale-info">
-                  <p class="sale-percent">24%</p>
-                  <p class="sale-price">5,244 원</p>
-                </div>
-                <p class="del-price"><del>6,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
-                <p class="price">4,980 원</p>
-                <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[홍대주꾸미] 주꾸미 볶음 300g<br> (냉동)</p>
-                <div class="sale-info">
-                  <p class="sale-percent">13%</p>
-                  <p class="sale-price">6,800 원</p>
-                </div>
-                <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[강남면옥] 소갈비찜</p>
-                <p class="price">29,800 원</p>
-                <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
-                <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div>
-                <p class="del-price"><del>4,500 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">무항생제 한돈 삼겹살의 고소한 풍미 그대로</p>
-              </div>
-              <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[대구 반할만떡] 유부호만두</p>
-                <div class="sale-info">
-                  <p class="sale-percent">24%</p>
-                  <p class="sale-price">5,244 원</p>
-                </div>
-                <p class="del-price"><del>6,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
-                <p class="price">4,980 원</p>
-                <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[홍대주꾸미] 주꾸미 볶음 300g<br> (냉동)</p>
-                <div class="sale-info">
-                  <p class="sale-percent">13%</p>
-                  <p class="sale-price">6,800 원</p>
-                </div>
-                <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[강남면옥] 소갈비찜</p>
-                <p class="price">29,800 원</p>
-                <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
-                <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div>
-                <p class="del-price"><del>4,500 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">무항생제 한돈 삼겹살의 고소한 풍미 그대로</p>
-              </div>
-              <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[대구 반할만떡] 유부호만두</p>
-                <div class="sale-info">
-                  <p class="sale-percent">24%</p>
-                  <p class="sale-price">5,244 원</p>
-                </div>
-                <p class="del-price"><del>6,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
-                <p class="price">4,980 원</p>
-                <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[홍대주꾸미] 주꾸미 볶음 300g<br> (냉동)</p>
-                <div class="sale-info">
-                  <p class="sale-percent">13%</p>
-                  <p class="sale-price">6,800 원</p>
-                </div>
-                <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[강남면옥] 소갈비찜</p>
-                <p class="price">29,800 원</p>
-                <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
-                <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div>
-                <p class="del-price"><del>4,500 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">무항생제 한돈 삼겹살의 고소한 풍미 그대로</p>
-              </div>
-              <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[대구 반할만떡] 유부호만두</p>
-                <div class="sale-info">
-                  <p class="sale-percent">24%</p>
-                  <p class="sale-price">5,244 원</p>
-                </div>
-                <p class="del-price"><del>6,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
-                <p class="price">4,980 원</p>
-                <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[홍대주꾸미] 주꾸미 볶음 300g<br> (냉동)</p>
-                <div class="sale-info">
-                  <p class="sale-percent">13%</p>
-                  <p class="sale-price">6,800 원</p>
-                </div>
-                <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[강남면옥] 소갈비찜</p>
-                <p class="price">29,800 원</p>
-                <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
-                <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div>
-                <p class="del-price"><del>4,500 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">무항생제 한돈 삼겹살의 고소한 풍미 그대로</p>
-              </div>
-              <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-rksk" src="./assets/ubuho/thumbnail.jpg" alt="유부호 만두" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[대구 반할만떡] 유부호만두</p>
-                <div class="sale-info">
-                  <p class="sale-percent">24%</p>
-                  <p class="sale-price">5,244 원</p>
-                </div>
-                <p class="del-price"><del>6,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">유부로 속을 든든히 채운 군만두</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ekfk" src="./assets/tangtang/thumbnail.jpg" alt="풀무원 탱탱쫄면" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[풀무원] 탱탱쫄면 (4개입)</p>
-                <p class="price">4,980 원</p>
-                <p class="product-info-explain">튀기지 않아 부드럽고 매콤한</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-akqk" src="./assets/jukkumi/thumbnail.jpg" alt="홍대 주꾸미" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[홍대주꾸미] 주꾸미 볶음 300g<br> (냉동)</p>
-                <div class="sale-info">
-                  <p class="sale-percent">13%</p>
-                  <p class="sale-price">6,800 원</p>
-                </div>
-                <p class="del-price"><del>7,900 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">매콤달콤한 마력의 밥도둑</p>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-tkwk" src="./assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[강남면옥] 소갈비찜</p>
-                <p class="price">29,800 원</p>
-                <p class="product-info-explain">보는 맛과 먹는 맛 모두 푸짐</p>
-              </div>
-              <div class="box-container">
-                <div class="limited-quantity">한정수량</div>
-              </div>
-            </div>
-            <div class="product">
-              <a href="#">
-                <img class="product-ckzk" src="./assets/bacon/thumbnail.jpg" alt="칼리 한돈 삼겹 베이컨" />
-              </a>
-              <button class="cart-icon-btn">
-                <img class="cart-icon" src="./assets/icon/Cart.png" art="cart">
-              </button>
-              <div class="product-info">
-                <p class="delivery-info">샛별배송</p>
-                <p class="product-name">[Kalry's] 한돈 삼겹 베이컨</p>
-                <div class="sale-info">
-                  <p class="sale-percent">25%</p>
-                  <p class="sale-price">3,375 원</p>
-                </div>
-                <p class="del-price"><del>4,500 원</del></p> <!-- del 태그 굳!!! -->
-                <p class="product-info-explain">무항생제 한돈 삼겹살의 고소한 풍미 그대로</p>
-              </div>
-              <div class="box-container">
-                <div class="kalry-only">Kalry Only</div>
-              </div>
-            </div>
-          </div>
-          <div class="pagination">
-            <ul class="pagination-modal">
-              <li><button class="first"><img src="./assets/icon/pagination_double_left.png" alt=""></button></li>
-              <li><button class="arrow-left"><img src="./assets/icon/pagination_left.png" alt=""></button></li>
-              <li><button class="active-num">1</button></li>
-              <li><button class="num">2</button></li>
-              <li><button class="num">3</button></li>
-              <li><button class="arrow right"><img src="./assets/icon/pagination_right.png" alt=""></button></li>
-              <li><button class="last"><img src="./assets/icon/pagination_double_right.png" alt=""></button></li>
-            </ul>
-          </div>
+            </li>
+          </ul>
         </section>
       </div>
-    </div>
-  </main>
-</body>
-
+      <section class="footer-bottom">
+        <section>
+          <p>
+            마켓컬리에서 판매되는 상품 중에는 마켓컬리에 입점한 개별 판매자가
+            판매하는 마켓플레이스(오픈마켓) 상품이 포함되어 있습니다.
+          </p>
+          <p>
+            마켓플레이스(오픈마켓) 상품의 경우 컬리는 통신판매중개자로서
+            통신판매의 당사자가 아닙니다. 컬리는 해당 상품의 주문, 품질,
+            교환/환불 등 의무와 책임을 부담하지 않습니다.
+          </p>
+        </section>
+        <p>© KURLY CORP. ALL RIGHTS RESERVED</p>
+      </section>
+    </footer>
+  </body>
 </html>
