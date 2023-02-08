@@ -376,7 +376,7 @@ button[disabled], input[disabled] {
   cursor: pointer;
   outline: none;
   appearance: none;
-  background-image: url("/client/assets/icon/Checked.png");
+  background-image: url("../assets/icon/Checked.png");
 }
 
 [type="checkbox"]:checked {

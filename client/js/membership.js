@@ -143,7 +143,7 @@ const emailValidate=()=>{
 }
 
 const findMemberId=(memberList)=>{
-  let duplicateResult=memberList.some(memberInfo=>memberInfo.id===member.id)
+  let duplicateResult=memberList.find(memberInfo=>memberInfo.id===member.id)
   return duplicateResult
 }
 
@@ -159,7 +159,7 @@ const onIdDuplicateClickHandler= async () => {
 
 
 const findMemberemail=(memberList)=>{
-  let duplicateResult=memberList.some(memberInfo=>memberInfo.email===member.email)
+  let duplicateResult=memberList.find(memberInfo=>memberInfo.email===member.email)
   return duplicateResult
 }
 
