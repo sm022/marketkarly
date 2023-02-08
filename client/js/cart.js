@@ -71,6 +71,10 @@ class CartProcessClass {
     this.foods = foods.map((food) => new CartItemDataClass(food));
   }
 
+  /**
+   * 총 결제 가격
+   */
+
   calculateResultPricesToScreen() {
     let totalPrice = 0;
     let totalSalePrice = 0;
