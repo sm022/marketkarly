@@ -4,9 +4,9 @@ import { checkImagePath } from '../lib/constant.js';
 import { getNode, getNodes } from '/client/lib/dom/getNode.js';
 import { css } from '../lib/dom/css.js';
 import { loadStorage, saveStorage } from '../lib/utils/storage.js';
+
 class CartProcessClass {
   isSelectAll = true;
-  itemLength = 1;
 
   getTotalPrice(foods, deliveryPrice) {
     // foods.reduce((a, b) => {
@@ -14,6 +14,8 @@ class CartProcessClass {
     //   console.log(a.getPrice().price, b.getPrice().price);
     // });
   }
+
+  // 각 아이템 가져오기
 
   getFrozenItems() {
     return this.foods.filter((food) => food.type === 'FROZEN');
@@ -25,6 +27,11 @@ class CartProcessClass {
 
   getNormalItems() {
     return this.foods.filter((food) => food.type === 'NORMAL');
+  }
+
+  async setDefaultFoods() {
+    const foods = await this.getFoodsFromApi();
+    this.defaultFoods = foods.map((food) => new CartItemDataClass(food));
   }
 
   /**
@@ -42,7 +49,7 @@ class CartProcessClass {
    */
   async loadFoods() {
     let foods = await loadStorage('foods');
-    if (!foods) {
+    if (!foods || foods.length < 1) {
       foods = await this.getFoodsFromApi();
       if (foods.length < 1) {
         // 데이터가 없는 경우
@@ -50,19 +57,46 @@ class CartProcessClass {
       }
     }
 
+    console.log(foods);
     await saveStorage('foods', foods);
     this.foods = foods.map((food) => new CartItemDataClass(food));
+  }
+
+  async forceLoadFoods() {
+    const foods = await this.getFoodsFromApi();
+    if (foods.length < 1) {
+      // 데이터가 없는 경우
+      alert('아이템을 가져오지 못했습니다. 서버 상태를 확인해주세요.');
+    }
+
+    await saveStorage('foods', foods);
+    this.foods = foods.map((food) => new CartItemDataClass(food));
+  }
+
+  /**
+   * 총 결제 가격
+   */
+
+  calculateResultPricesToScreen() {
+    let totalPrice = 0;
+    let totalSalePrice = 0;
+    const priceResult = this.foods.forEach((food) => {
+      const { price, salePrice } = food.getPrice();
+      totalPrice += price;
+      totalSalePrice += salePrice;
+    });
+
+    const shipmentPrice = 3000;
+    this.totalPrice.children[1].childNodes[0].nodeValue = totalPrice;
+    this.totalSalePrice.children[1].childNodes[0].nodeValue = totalSalePrice;
+    this.totalPaymentPrice.children[1].childNodes[0].nodeValue = totalPrice - totalSalePrice + shipmentPrice;
   }
 
   /**
    * 각 선택버튼에 이벤트 추가
    */
   applySelectEvent() {
-    this.foods.forEach((food) => {
-      //하나의 엘리먼트에 이미지 src만 바꿔가면서 사용
-      //각 체크 엘리먼트에 토글되는 이벤트 적용함
-      food.getCheckElement().addEventListener('click', () => food.toggleSelect());
-    });
+    this.foods.forEach((food) => food.applySelectEvent());
   }
 
   /**
@@ -89,8 +123,14 @@ class CartProcessClass {
   /**
    * 선택 삭제 했을때 화면에서 지우기
    */
-  singleDeleteEvent() {
-    this.foods.forEach((food) => {});
+  async applyDeleteEvent() {
+    this.foods.forEach((food) => {
+      food.getDeleteElement().addEventListener('click', async () => {
+        food.removeElement();
+        this.foods = this.foods.filter((f) => f.id !== food.id);
+        await saveStorage('foods', this.foods);
+      });
+    });
   }
 
   /**
@@ -107,7 +147,6 @@ class CartProcessClass {
 
           case 'cold-down-btn':
             const coldEls = this.getColdItems().map((item) => document.getElementById(item.id));
-            console.log(coldEls);
             coldEls.forEach((item) => this.toggleDisplay(item));
             break;
 
@@ -152,22 +191,32 @@ class CartProcessClass {
   }
 
   /**
-   * 아이템 리스트에 수량 추가 감소
+   * 아이템 수량 추가 감소 이벤트 적용
+   */
+  applyModifyFoodAmount() {
+    this.foods.forEach((food) => {
+      food.applyPlusAmount();
+      food.applyMinusAmount();
+    });
+  }
+
+  /**
+   * 주문하기 버튼 클릭했을 때 표시
    */
 
-  countFoods() {
-    this.foods.forEach((food) => {
-      //하나의 엘리먼트에 이미지 src만 바꿔가면서 사용
-      //각 체크 엘리먼트에 토글되는 이벤트 적용함
-      const amountElement = food.getAmountElement();
-      const minus = amountElement.querySelector('.product-minus-btn');
-      const text = amountElement.querySelector('.count');
-      const plus = amountElement.querySelector('.product-plus-btn');
-      console.log(text);
-      amountElement.addEventListener('click', () => {
-        // 여기에 변경 이벤트 추가
-        console.log(food.id);
-      });
+  orderButtonShowAlert() {
+    const orderBtn = getNode('.cradit-order');
+    orderBtn.addEventListener('click', () => {
+      alert('등록되지 않은 기능입니다');
+    });
+  }
+  /**
+   * 배송지 변경 이벤트
+   */
+  locationShowAlert() {
+    const locationChangeBtn = getNode('.address li:nth-child(3) > button ');
+    locationChangeBtn.addEventListener('click', () => {
+      alert('등록되지 않은 기능입니다.');
     });
   }
   /**
@@ -175,6 +224,10 @@ class CartProcessClass {
    */
   addFoodsToScreen() {
     this.foods.map((food) => {
+      if (document.getElementById(food.id)) {
+        return;
+      }
+
       switch (food.type) {
         case 'COLD':
           this.coldList.appendChild(food.toElement());
@@ -200,6 +253,10 @@ class CartProcessClass {
     this.coldList = getNode('.cold-list').querySelector('.main-list');
     this.frozenList = getNode('.frozen-list').querySelector('.main-list');
     this.normalList = getNode('.normal-list').querySelector('.main-list');
+    const totalPriceElements = getNodes('.pay-item');
+    this.totalPrice = totalPriceElements[0];
+    this.totalSalePrice = totalPriceElements[1];
+    this.totalPaymentPrice = getNode('.total-up');
   }
 
   /**
@@ -208,24 +265,80 @@ class CartProcessClass {
   async run() {
     await this.loadFoods();
     if (new URL(window.location.href).pathname === '/client/cart.html') {
-      console.log('카트 페이지에서만 실행');
+      this.setDefaultFoods();
       this.loadElements();
       this.addFoodsToScreen();
       this.applySelectEvent();
       this.applyToggleSelectAllEvent();
+      await this.applyDeleteEvent();
       this.listItemAccordion();
-      this.countFoods();
-      // this.getTotalPrice(this.foods, 1000);
+      this.applyModifyFoodAmount();
+      this.orderButtonShowAlert();
+      this.locationShowAlert();
+      this.calculateResultPricesToScreen();
     }
   }
 
-  addFood() {
-    this.itemLength += 1;
+  /**
+   * food.id를 입력으로 받아서 수량(amount)을 증가시키고 수량을 반환
+   */
+  async addFoodToCart(foodId) {
+    if (typeof foodId !== 'string') {
+      alert('올바른 푸드 ID가 아닙니다. 문자열을 입력해주세요.');
+      return;
+    }
 
-    // 로컬 스토리지에 데이터 추가
+    let food = this.foods.find((food) => food.id === foodId);
+    if (!food) {
+      const newFood = this.defaultFoods.find((food) => food.id === foodId);
+      this.foods.push(newFood);
+      this.addFoodsToScreen();
+      newFood.applyPlusAmount();
+      newFood.applyMinusAmount();
+      newFood.applySelectEvent();
+
+      await saveStorage('foods', this.foods);
+      return newFood.amount;
+    }
+
+    food.plusAmount();
+
+    await saveStorage('foods', food);
+    return food.amount;
+  }
+
+  getFoodsAmount() {
+    return this.foods.length;
+  }
+
+  async removeFood(foodId) {
+    if (typeof foodId !== 'string') {
+      alert('올바른 푸드 ID가 아닙니다. 문자열을 입력해주세요.');
+      return false;
+    }
+
+    const food = this.foods.find((food) => food.id === foodId);
+    if (!food) {
+      alert('foodId에 해당하는 식품을 찾을 수 없습니다. foodId를 다시 확인해주세요.');
+    }
+
+    this.foods = this.foods.filter((food) => food.id !== foodId);
+    await saveStorage('foods', this.foods);
+    food.removeElement();
+    return true;
   }
 }
 
 const cartProcessClass = new CartProcessClass();
 await cartProcessClass.run();
 window.cartProcessClass = cartProcessClass;
+
+//데이터 추가 할떄
+//await cartProcessClass.addFoodToCart('food.id')
+//await cartProcessClass.addFoodToCart('product-ckzk') -> 이미 있으면 수량이 추가된다
+
+//데이터 리셋
+//await cartProcessClass.forceLoadFoods()
+
+//데이터 삭제
+//await cartProcessClass.removeFood('product-akqk') -> 삭제됨
