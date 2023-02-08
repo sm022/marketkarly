@@ -17,12 +17,16 @@
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/scroll-header.css" />
     <link rel="stylesheet" href="./css/product-detail.css" />
+    <link rel="stylesheet" href="./css/product-review.css" />
+    <link rel="stylesheet" href="./css/inquiry.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/main.js" type="module"></script>
     <script src="./js/header.js" type="module"></script>
     <script src="./js/product-detail.js" type="module"></script>
-    <title>Document</title>
+    <script src="./js/product-link.js" type="module"></script>
+
+    <title>상품상세페이지</title>
   </head>
   <body>
     <header>
@@ -45,21 +49,21 @@
         <div class="header-container">
           <h1 class="karly-logo">
             <!-- 접근성은 이미지 속성으로 처리 -->
-            <a href="#"
+            <a href="/mainpage.html"
               ><img src="./assets/icon/karly_logo.png" alt="marketKarly"
             /></a>
           </h1>
           <!-- 텍스트 링크 -->
           <ul class="text-link">
-            <li><a href="#" class="signin">회원가입</a></li>
+            <li><a href="/membership.html" class="signin">회원가입</a></li>
             <li>
               <img src="./assets/icon/bar.png" alt="" />
-              <a href="#" class="login">로그인</a>
+              <a href="/login.html" class="login">로그인</a>
             </li>
             <li>
               <img src="./assets/icon/bar.png" alt="" />
               <div class="customer-center">
-                <a href="#">고객센터</a>
+                <span>고객센터</span>
                 <img src="./assets/icon/Icon_down 1.png" alt="고객센터 열기" />
               </div>
             </li>
@@ -67,13 +71,13 @@
           <!-- 검색창 포함 영역 -->
           <div class="header-main">
             <ul class="karly-category-link">
-              <li><a href="#" class="karly-category-market">마켓칼리</a></li>
+              <li><span class="karly-category-market">마켓칼리</span></li>
               <li>
                 <img src="./assets/icon/bar.png" alt="" />
-                <a class="karly-category-beauty" href="#"
+                <span class="karly-category-beauty"
                   >뷰티칼리
                   <img src="./assets/icon/logo_sup.png" alt="" />
-                </a>
+                </span>
               </li>
             </ul>
             <!-- 검색창 -->
@@ -82,9 +86,9 @@
               <fieldset>
                 <legend>검색 폼</legend>
                 <div class="form-group">
-                  <label for="search">상품검색</label>
+                  <label for="product-search">상품검색</label>
                   <input
-                    id="search"
+                    id="product-search"
                     type="search"
                     required
                     placeholder="검색어를 입력해주세요."
@@ -98,25 +102,25 @@
             <!-- 배송지, 찜목록, 장바구니 이동   -->
             <ul class="icon-link">
               <li>
-                <a href="#"
+                <span
                   ><img
                     src="./assets/icon/Location.png"
                     alt="배송지 설정"
                     width="36px"
                     height="36px"
-                /></a>
+                /></span>
               </li>
               <li>
-                <a href="#"
+                <span
                   ><img
                     src="./assets/icon/Heart.png"
                     alt="찜 목록보기"
                     width="36px"
                     height="36px"
-                /></a>
+                /></span>
               </li>
               <li class="cart-link">
-                <a href="#"
+                <a href="/cart.html"
                   ><img
                     src="./assets/icon/Cart-1.png"
                     alt="장바구니 목록 보기 "
@@ -126,19 +130,7 @@
                 <!-- cart-number 표시는 is-active 클래스를 추가해주세요 -->
                 <span class="cart-number">1</span>
                 <!-- 장바구니 알림창 띄우기는 is-not-exist 클래스를 제거해주세요 -->
-                <div class="cart-alarm is-not-exist">
-                  <img
-                    src="./assets/tangtang/thumbnail.jpg"
-                    alt="임시이미지"
-                    width="46px"
-                    height="60px"
-                    class="alarm-image"
-                  />
-                  <div class="alarm-text">
-                    <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
-                    <p>장바구니에 상품을 담았습니다.</p>
-                  </div>
-                </div>
+                <div class="cart-alarm is-not-exist"></div>
               </li>
             </ul>
           </div>
@@ -152,234 +144,234 @@
               <!-- 카테고리 상세 메뉴 is-active 추가하면 드롭다운 block-->
               <ul class="category-list">
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Type23.png"
+                      src="./assets/icon/Type23.png"
                       alt=""
                       width="24px"
                       height="24px"
-                    />선물하기</a
+                    />선물하기</span
                   >
                 </li>
                 <li>
-                  <a href="#"
+                  <span
                     ><img
-                      src="../assets/icon/Vegetable.png"
+                      src="./assets/icon/Vegetable.png"
                       alt=""
                       width="24px"
                       height="24px"
-                    />채소</a
+                    />채소</span
                   >
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Fruit.png"
+                      src="./assets/icon/Fruit.png"
                       alt=""
                       width="24px"
                       height="24px"
-                    />과일 · 견과 · 쌀</a
+                    />과일 · 견과 · 쌀</span
                   >
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/SeaFood.png"
+                      src="./assets/icon/SeaFood.png"
                       alt=""
                       width="24px"
                       height="24px"
-                    />수산 · 해산 · 건어물</a
+                    />수산 · 해산 · 건어물</span
                   >
                 </li>
                 <li>
-                  <a href="#"
+                  <span
                     ><img
-                      src="../assets/icon/Meet.png"
+                      src="./assets/icon/Meet.png"
                       alt=""
                       width="24px"
                       height="24px"
-                    />정육 · 계란</a
+                    />정육 · 계란</span
                   >
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Cook.png"
+                      src="./assets/icon/Cook.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />국 · 반찬 · 메인요리
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Salad.png"
+                      src="./assets/icon/Salad.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />샐러드 · 간편식
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Oil.png"
+                      src="./assets/icon/Oil.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />면 · 양념 · 오일
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Coffee.png"
+                      src="./assets/icon/Coffee.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />생수 · 음료 · 우유 · 커피
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Snack.png"
+                      src="./assets/icon/Snack.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />간식 · 과자 · 떡
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Bread.png"
+                      src="./assets/icon/Bread.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />베이커리 · 치즈 · 델리
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Health.png"
+                      src="./assets/icon/Health.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />건강식품
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Wine.png"
+                      src="./assets/icon/Wine.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />와인
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
                       src="./assets/icon/Traditional Liquor.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />전통주
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Detergent.png"
+                      src="./assets/icon/Detergent.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />생활용품 · 리빙 · 캠핑
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Cosmetics.png"
+                      src="./assets/icon/Cosmetics.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />스킨케어 · 메이크업
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/shampoo.png"
+                      src="./assets/icon/shampoo.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />헤어 · 바디 · 구강
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Food.png"
+                      src="./assets/icon/Food.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />주방용품
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/HomeAppliances.png"
+                      src="./assets/icon/HomeAppliances.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />가전제품
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Dog.png"
+                      src="./assets/icon/Dog.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />반려동물
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Baby.png"
+                      src="./assets/icon/Baby.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />베이비 · 키즈 · 완구
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="#">
+                  <span>
                     <img
-                      src="../assets/icon/Travel.png"
+                      src="./assets/icon/Travel.png"
                       alt=""
                       width="24px"
                       height="24px"
                     />여행 · 티켓
-                  </a>
+                  </span>
                 </li>
               </ul>
             </div>
             <ul class="page-navigation">
               <li><a href="#">신상품</a></li>
-              <li><a href="#">베스트</a></li>
+              <li><a href="/best.html">베스트</a></li>
               <li><a href="#">알뜰쇼핑</a></li>
               <li><a href="#">특가/혜택</a></li>
             </ul>
-            <a href="#" class="delivery-info"><span>샛별·낮</span> 배송안내</a>
+            <span class="delivery-info"><span>샛별·낮</span> 배송안내</span>
           </nav>
         </div>
       </div>
@@ -394,246 +386,246 @@
             <!-- 카테고리 상세 메뉴 -->
             <ul class="category-list">
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Type23.png"
+                    src="./assets/icon/Type23.png"
                     alt=""
                     width="24px"
                     height="24px"
-                  />선물하기</a
+                  />선물하기</span
                 >
               </li>
               <li>
-                <a href="#"
+                <span
                   ><img
-                    src="../assets/icon/Vegetable.png"
+                    src="./assets/icon/Vegetable.png"
                     alt=""
                     width="24px"
                     height="24px"
-                  />채소</a
+                  />채소</span
                 >
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Fruit.png"
+                    src="./assets/icon/Fruit.png"
                     alt=""
                     width="24px"
                     height="24px"
-                  />과일 · 견과 · 쌀</a
+                  />과일 · 견과 · 쌀</span
                 >
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/SeaFood.png"
+                    src="./assets/icon/SeaFood.png"
                     alt=""
                     width="24px"
                     height="24px"
-                  />수산 · 해산 · 건어물</a
+                  />수산 · 해산 · 건어물</span
                 >
               </li>
               <li>
-                <a href="#"
+                <span
                   ><img
-                    src="../assets/icon/Meet.png"
+                    src="./assets/icon/Meet.png"
                     alt=""
                     width="24px"
                     height="24px"
-                  />정육 · 계란</a
+                  />정육 · 계란</span
                 >
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Cook.png"
+                    src="./assets/icon/Cook.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />국 · 반찬 · 메인요리
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Salad.png"
+                    src="./assets/icon/Salad.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />샐러드 · 간편식
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Oil.png"
+                    src="./assets/icon/Oil.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />면 · 양념 · 오일
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Coffee.png"
+                    src="./assets/icon/Coffee.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />생수 · 음료 · 우유 · 커피
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Snack.png"
+                    src="./assets/icon/Snack.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />간식 · 과자 · 떡
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Bread.png"
+                    src="./assets/icon/Bread.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />베이커리 · 치즈 · 델리
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Health.png"
+                    src="./assets/icon/Health.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />건강식품
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Wine.png"
+                    src="./assets/icon/Wine.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />와인
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
                     src="./assets/icon/Traditional Liquor.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />전통주
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Detergent.png"
+                    src="./assets/icon/Detergent.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />생활용품 · 리빙 · 캠핑
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Cosmetics.png"
+                    src="./assets/icon/Cosmetics.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />스킨케어 · 메이크업
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/shampoo.png"
+                    src="./assets/icon/shampoo.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />헤어 · 바디 · 구강
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Food.png"
+                    src="./assets/icon/Food.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />주방용품
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/HomeAppliances.png"
+                    src="./assets/icon/HomeAppliances.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />가전제품
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Dog.png"
+                    src="./assets/icon/Dog.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />반려동물
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Baby.png"
+                    src="./assets/icon/Baby.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />베이비 · 키즈 · 완구
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img
-                    src="../assets/icon/Travel.png"
+                    src="./assets/icon/Travel.png"
                     alt=""
                     width="24px"
                     height="24px"
                   />여행 · 티켓
-                </a>
+                </span>
               </li>
             </ul>
           </div>
-  
+
           <ul class="scroll-page-navigation">
             <li><a href="#">신상품</a></li>
             <li><a href="#">베스트</a></li>
             <li><a href="#">알뜰쇼핑</a></li>
             <li><a href="#">특가/혜택</a></li>
           </ul>
-  
+
           <div>
             <h2 class="a11y-hidden">검색</h2>
-            <form>
+            <form class="scroll-form">
               <fieldset>
                 <legend>검색 폼</legend>
                 <div class="scroll-form-group">
-                  <label for="search"
+                  <label for="scroll-product-search"
                     ><span aria-hidden="true"></span>상품검색</label
                   >
                   <input
-                    id="search"
+                    id="scroll-product-search"
                     type="search"
                     required
                     placeholder="검색어를 입력해주세요."
@@ -645,36 +637,25 @@
               </fieldset>
             </form>
           </div>
-          <ul class="icon-link">
+          <ul class="scroll-icon-link">
             <li>
-              <a href="#"
+              <span
                 ><img src="./assets/icon/Location.png" alt="배송지 설정"
-              /></a>
+              /></span>
             </li>
             <li class="heart-icon">
-              <a href="#"><img src="./assets/icon/Heart.png" alt="찜" /></a>
+              <span><img src="./assets/icon/Heart.png" alt="찜" /></span>
             </li>
             <li class="cart-link">
-              <a href="#"
+              <a href="/cart.html"
                 ><img
                   src="./assets/icon/Cart-1.png"
                   alt="장바구니 목록 보기 "
                   width="36px"
                   height="36px"
               /></a>
-              <div class="cart-alarm is-not-exist">
-                <img
-                  src="./assets/tangtang/thumbnail.jpg"
-                  alt="임시이미지"
-                  width="46px"
-                  height="60px"
-                  class="alarm-image"
-                />
-                <div class="alarm-text">
-                  <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
-                  <p>장바구니에 상품을 담았습니다.</p>
-                </div>
-              </div>
+              <span class="cart-number">1</span>
+              <div class="cart-alarm is-not-exist"></div>
             </li>
           </ul>
         </div>
@@ -683,18 +664,7 @@
     <main>
       <!-- 제품 정보-->
       <section class="product-detail">
-        <img
-          src="./assets/tangtang/detail_view.jpg"
-          alt="상품 이름 사진"
-          width="400px"
-          height="500px"
-        />
         <div class="product-detail-text">
-          <span class="early-delivery">샛별배송</span>
-          <h1 class="product-title">[풀무원] 탱탱쫄면 (4개입)</h1>
-          <h2 class="product-sub-title">튀기지 않아 부담 없는 매콤함</h2>
-          <span class="product-price">4,980<small>원</small></span>
-          <p class="login-notice">로그인 후, 적립 혜택이 제공됩니다.</p>
           <div class="about-product">
             <dl>
               <dt>배송</dt>
@@ -753,7 +723,6 @@
               </dd>
             </dl>
           </div>
-          <!-- 제품 상세 및 부가 설명과 서비스 -->
           <div class="product-selector">
             <dl>
               <dt>상품선택</dt>
@@ -762,14 +731,17 @@
                 <div class="calculate-container">
                   <div class="product-counter">
                     <button type="button" class="counter-icon minus-button">
-                      <img src="./assets/icon/Minus.png" alt="수량 빼기" />
+                      <img src="./assets/icon/Minus=true.png" alt="수량 빼기" />
                     </button>
                     <span>1</span>
                     <button type="button" class="counter-icon plus-button">
-                      <img src="./assets/icon/Plus.png" alt="수량 더하기" />
+                      <img
+                        src="./assets/icon/Plus=false.png"
+                        alt="수량 더하기"
+                      />
                     </button>
                   </div>
-                  <span class="each-product-price">4980원</span>
+                  <span class="each-product-price">단품 가격원</span>
                 </div>
               </dd>
             </dl>
@@ -777,7 +749,7 @@
             <div>
               <div class="total-price">
                 총 상품금액:
-                <span class="total-price-number">4980<small>원</small></span>
+                <span class="total-price-number">총 금액 원</span>
               </div>
               <div class="accumulate-notice">
                 <span class="accumulate-icon">적립</span>
@@ -800,37 +772,14 @@
         <!-- 링크 모음 -->
         <ul class="hyper-link-container">
           <!-- is-selected 추가시 선택된 디자인으로 변경 -->
-          <li >
-            <a class="is-selected" href="#product-description">상품설명</a>
+          <li>
+            <a href="#product-description">상품설명</a>
           </li>
           <li><a href="#product-detail">상세정보</a></li>
           <li><a href="#product-review">후기</a></li>
           <li><a href="#customer-question">문의</a></li>
         </ul>
-        <!-- 상품 설명 -->
         <section id="product-description">
-          <img
-            src="./assets/tangtang/detail_banner.jpg"
-            alt="상품이름으로 변경 예정"
-            width="1050px"
-            height="670px"
-          />
-
-          <div class="product-description-text">
-            <h3>
-              <small>튀기지 않아 부담 없는 매콤함</small>
-              [풀무원] 탱탱쫄면
-            </h3>
-            <p>
-              쫄면의 진가는 매콤새콤한 양념과 탱탱한 면발에서 찾을 수 있지요.
-              풀무원은 이 맛을 더 부담 없이 즐길 수 있도록 튀기지 않고 만든
-              탱탱쫄면을 선보입니다. 밀가루와 감자 전분을 적절히 배합해 탄력이
-              좋고, 입에 넣었을 때는 찰지게 씹히죠. 고추장을 넣어 숙성한
-              비빔장은 자연스럽고 깊은 맛을 냅니다. 간단하게 조리해 마지막 한
-              가닥까지 탱탱한 식감을 즐겨보세요. 취향에 따라 다양한 고명을 올려
-              드셔도 좋아요.
-            </p>
-          </div>
           <!-- 체크 포인트 -->
           <div class="goods-point">
             <h3 class="goods-point-title"><span>Karly's Check Point</span></h3>
@@ -859,19 +808,7 @@
             </div>
           </div>
         </section>
-        <!-- 상품 상세 -->
         <section id="product-detail">
-          <section>
-            <h3 class="a11y-hidden">상품 영양 정보</h3>
-            <img
-              src="./assets/tangtang/detail_info.jpg"
-              alt="상품 영양정보"
-              aria-describedby="product-health-info"
-              width="1050px"
-              height="1066px"
-            />
-            <!-- 이미지 대체 텍스트 -->
-          </section>
           <section class="why-karly">
             <h3 class="why-karly-title">WHY KARLY</h3>
             <ul class="why-karly-description">
@@ -954,8 +891,369 @@
             </ul>
           </section>
         </section>
-        <section id="product-review"></section>
-        <section id="customer-question"></section>
+        <section id="product-review">
+          <main class="main">
+            <!-- 상품 후기 영역 전체 -->
+            <ul id="review" class="product-review">
+              <!-- 상품 후기 영역(공백 포함) -->
+              <section class="product-review-area-space">
+                <!-- 상품 후기 헤더 -->
+                <div class="product-review-text-header">
+                  <!-- 상품 후기 글자 -->
+                  <h2 aria-label="product-review" class="product-review-text">
+                    상품 후기
+                  </h2>
+                  <!-- 후기 작성하기 버튼 -->
+                  <div class="product-review-button-area-space">
+                    <button class="product-review-button" type="button">
+                      후기 작성하기
+                    </button>
+                  </div>
+                </div>
+                <!-- 상품 후기 상세 설명 영역 전체-->
+                <ul class="product-review-description-entire">
+                  <!-- 상품 후기 상세 설명 -->
+                  <li class="product-review-description">
+                    글후기 50원 적립금 혜택이 있어요.
+                  </li>
+                  <li class="product-review-description">
+                    퍼플, 더퍼플은 2배 적립 (사진 200원, 글 100원) / 주간 베스트
+                    후기로 선정 시 5,000원을 추가 적립
+                  </li>
+                  <li class="product-review-description">
+                    후기 작성은 배송완료일로부터 30일 이내 가능합니다.
+                  </li>
+                  <li class="product-review-description">
+                    작성하신 후기는 확인 후 적립금이 지급됩니다. (영업일 기준
+                    평균 1~2일 소요)
+                  </li>
+                </ul>
+                <!-- 상품 후기 메인 영역 -->
+                <ul class="product-review-board">
+                  <!-- 상품 후기 메인 윗 상단 영역-->
+                  <li class="product-review-board-upper-area">
+                    <!-- 상품 후기 총 갯수 -->
+                    <span class="product-review-total-number">총 3개</span>
+                    <!--상품 후기 메인 윗 상단 영역(공백 포함)  -->
+                    <div class="product-review-board-upper-area-space">
+                      <!-- 추천순&최근등록순 버튼 -->
+                      <button class="recommendation-order">추천순</button>
+                      <button class="recent-registration-order">
+                        최근등록순
+                      </button>
+                    </div>
+                  </li>
+                  <!-- 상품 후기 공지 영역 전체 -->
+                  <li class="product-review-notice-entire">
+                    <!-- 상품 후기 공지 영역 -->
+                    <span class="product-review-notice">공지</span>
+                    <!-- 금주의 베스트 후기 안내 -->
+                    <button class="product-review-notice-button">
+                      금주의 베스트 후기 안내
+                    </button>
+                  </li>
+                  <!-- 상품 후기 공지 영역 전체-->
+                  <li class="product-review-notice-entire">
+                    <!-- 상품 후기 공지 영역 -->
+                    <span class="product-review-notice">공지</span>
+                    <!-- 상품 후기 적립금 정책 안내 -->
+                    <button class="product-review-notice-button">
+                      상품 후기 적립금 정책 안내
+                    </button>
+                  </li>
+                  <!-- 상품 후기 개별 영역 -->
+                  <ul class="product-review-separate-area">
+                    <!-- 상품 후기 등급 및 베스트 영역 -->
+                    <li class="product-review-separate-grade-best">
+                      <!-- 상품 후기 등급 및 베스트 영역(공백 포함) -->
+                      <div
+                        class="product-review-separate-grade-best-space-area"
+                      >
+                        <!-- 상품 후기 베스트 -->
+                        <span class="product-review-best">베스트</span>
+                        <!-- 상품 후기 등급 -->
+                        <span class="product-review-grade">퍼플</span>
+                        <!-- 상품 후기 회원 이름 -->
+                        <span class="product-review-member-name">김*진</span>
+                      </div>
+                    </li>
+                    <!-- 상품 후기 메인 영역 -->
+                    <article class="product-review-bottom">
+                      <header>
+                        <!-- 상품 후기 메인 영역(공백 포함) -->
+                        <h2 class="product-review-bottom-space-area">
+                          <!-- 상품 후기 해당 상품 이름 -->
+                          <h3 class="product-review-item-name">
+                            [풀무원] 탱탱쫄면 (4개입)
+                          </h3>
+                        </h2>
+                        <!-- 상품 후기 해당 텍스트 영역 -->
+                        <p class="product-review-text-area">
+                          너무 맛있어여 <br />
+                          면이 쫄깃하고 양념도 짱맛나요!!
+                        </p>
+                        <!-- 상품 후기 하단 영역(공백 포함) -->
+                        <span class="product-review-lower-space-area"></span>
+                        <!-- 상품 후기 하단 영역 전체 -->
+                        <footer class="product-review-lower-space-area-entire">
+                          <!-- 상품 후기 등록 날짜 -->
+                          <span class="product-review-datetime">
+                            <time datetime="2022-11-10">2022.11.10</time>
+                          </span>
+                        </footer>
+                      </header>
+                    </article>
+                  </ul>
+                  <!-- 상품 후기 개별 영역 -->
+                  <ul class="product-review-separate-area">
+                    <!-- 상품 후기 등급 및 베스트 영역 -->
+                    <li class="product-review-separate-grade-best">
+                      <!-- 상품 후기 등급 및 베스트 영역(공백 포함) -->
+                      <div
+                        class="product-review-separate-grade-best-space-area"
+                      >
+                        <!-- 상품 후기 베스트 -->
+                        <span class="product-review-best">베스트</span>
+                        <!-- 상품 후기 등급 -->
+                        <span class="product-review-grade">퍼플</span>
+                        <!-- 상품 후기 회원 이름 -->
+                        <span class="product-review-member-name">김*식</span>
+                      </div>
+                    </li>
+                    <!-- 상품 후기 메인 영역 -->
+                    <article class="product-review-bottom">
+                      <header>
+                        <!-- 상품 후기 메인 영역(공백 포함) -->
+                        <h2 class="product-review-bottom-space-area">
+                          <!-- 상품 후기 해당 상품 이름 -->
+                          <h3 class="product-review-item-name">
+                            [풀무원] 탱탱쫄면 (4개입)
+                          </h3>
+                        </h2>
+                        <!-- 상품 후기 해당 텍스트 영역 -->
+                        <p class="product-review-text-area">
+                          또 주문할것 같습니다. <br />
+                          너무 맛있어요 내 스타일이야~!
+                        </p>
+                        <!-- 상품 후기 하단 영역(공백 포함) -->
+                        <span class="product-review-lower-space-area"></span>
+                        <!-- 상품 후기 하단 영역 전체 -->
+                        <footer class="product-review-lower-space-area-entire">
+                          <!-- 상품 후기 등록 날짜 -->
+                          <span class="product-review-datetime">
+                            <time datetime="2022-11-10">2022.11.10</time>
+                          </span>
+                        </footer>
+                      </header>
+                    </article>
+                  </ul>
+                  <!-- 상품 후기 개별 영역 -->
+                  <ul class="product-review-separate-area">
+                    <!-- 상품 후기 등급 및 베스트 영역 -->
+                    <li class="product-review-separate-grade-best">
+                      <!-- 상품 후기 등급 및 베스트 영역(공백 포함) -->
+                      <div
+                        class="product-review-separate-grade-best-space-area"
+                      >
+                        <!-- 상품 후기 베스트 -->
+                        <span class="product-review-best">베스트</span>
+                        <!-- 상품 후기 등급 -->
+                        <span class="product-review-grade">퍼플</span>
+                        <!-- 상품 후기 회원 이름 -->
+                        <span class="product-review-member-name">김*범</span>
+                      </div>
+                    </li>
+                    <!-- 상품 후기 메인 영역 -->
+                    <article class="product-review-bottom">
+                      <header>
+                        <!-- 상품 후기 메인 영역(공백 포함) -->
+                        <h2 class="product-review-bottom-space-area">
+                          <!-- 상품 후기 해당 상품 이름 -->
+                          <h3 class="product-review-item-name">
+                            [풀무원] 탱탱쫄면 (4개입)
+                          </h3>
+                        </h2>
+                        <!-- 상품 후기 해당 텍스트 영역 -->
+                        <p class="product-review-text-area">
+                          너무 맛있어여 <br />
+                          면이 쫄깃하고 양념도 짱맛나요!!
+                        </p>
+                        <!-- 상품 후기 하단 영역(공백 포함) -->
+                        <span class="product-review-lower-space-area"></span>
+                        <!-- 상품 후기 하단 영역 전체 -->
+                        <footer class="product-review-lower-space-area-entire">
+                          <!-- 상품 후기 등록 날짜 -->
+                          <span class="product-review-datetime">
+                            <time datetime="2022-11-10">2022.11.10</time>
+                          </span>
+                        </footer>
+                      </header>
+                    </article>
+                  </ul>
+                  <!-- 이전&다음 버튼 영역 전체 -->
+                  <li class="page-switching-button">
+                    <!-- 이전 버튼 disabled 상태 -->
+                    <button disabled="" class="prev-page-disabled-button">
+                      <!-- 이전 버튼(텍스트 hidden) -->
+                      <span class="prev-page-button-text-hidden">이전</span>
+                    </button>
+                    <!-- 다음 버튼 -->
+                    <button class="next-page-button">
+                      <!-- 다음 버튼(텍스트 hidden) -->
+                      <span class="next-page-button-text-hidden">다음</span>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+            </ul>
+          </main>
+        </section>
+        <section id="customer-question">
+          <article class="product-inquiry">
+            <div class="inquiry-header">
+              <h3>상품문의</h3>
+              <button id="inquiry-open" class="inquiry-btn">문의하기</button>
+            </div>
+            <ul class="inquiry-desc">
+              <li>
+                <p>
+                  상품에 대한 문의를 남기는 공간입니다. 해당 게시판의 성격과
+                  다른 글은 사전동의 없이 담당 게시판으로 이동될 수 있습니다.
+                </p>
+              </li>
+              <li>
+                <p>
+                  배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리
+                  내 1:1 문의에 남겨주세요.
+                </p>
+              </li>
+            </ul>
+          </article>
+          <article class="inquiry-list-wrap">
+            <div class="inquiry-list-header">
+              <span class="inquiry-list-title header-title">제목</span>
+              <span class="inquiry-list-who">작성자</span>
+              <span class="inquiry-list-day">작성일</span>
+              <span class="inquiry-list-answer-state">답변상태</span>
+            </div>
+            <div class="inquiry-list-notice">
+              <div class="inquiry-list-title">
+                <span class="inquiry-notice-box">공지</span>
+                <span>판매(일시)중단 제품 안내(22.11.10 업데이트)</span>
+              </div>
+              <span class="inquiry-list-who">칼리</span>
+              <span class="inquiry-list-day">2017.02.01</span>
+              <span class="inquiry-list-answer-state">-</span>
+            </div>
+            <ul class="customer-post">
+              <li>
+                <p class="inquiry-list-title inquiry-list-title-geul">
+                  팩이 터져서 왔어요
+                </p>
+                <span class="inquiry-list-who">김*식</span>
+                <span class="inquiry-list-day">2022.11.11</span>
+                <span class="inquiry-list-answer-state">답변대기</span>
+              </li>
+              <ul class="list-is-active">
+                <li>
+                  <div class="list-question">
+                    <img
+                      class="list-question-icon"
+                      src="./assets/icon/inquiry_question.png"
+                      alt=""
+                    />
+                    <p>
+                      스티로폼 박스도 손상되어 있어 포장이 터져 엉망이네요<br />
+                      환불 요청합니다.
+                    </p>
+                  </div>
+                  <div class="list-answer">
+                    <img
+                      class="list-answer-icon"
+                      src="./assets/icon/inquiry_answer.png"
+                      alt=""
+                    />
+                    <div class="list-answer-box">
+                      <p>
+                        안녕하세요. 칼리입니다.<br />
+                        믿고 찾아주신 상품에 불편을 드려 정말 죄송합니다.<br /><br />
+                        다행히도 고객님의 불편하셨던 사항은 고객행복센터를 통해
+                        안내 받으신 점 확인하였습니다.<br /><br />
+                        불편을 드려 정말 죄송할 따름이며, 고객님께 늘 신선하고
+                        최상의 상품을 불편 없이 전달드리기 위해 최선 을 다하는
+                        칼리가 되겠습니다.<br /><br />
+                        칼리 드림.
+                      </p>
+                      <span class="list-answer-date">2022. 11.11</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <li>
+                <div class="inquiry-list-title">
+                  <p class="inquiry-list-title-secret">비밀글입니다.</p>
+                  <img src="./assets/icon/secret_icon.png" alt="" />
+                </div>
+                <span class="inquiry-list-who">김*진</span>
+                <span class="inquiry-list-day">2022.10.09</span>
+                <span class="inquiry-list-answer-state">답변대기</span>
+              </li>
+              <li>
+                <div class="inquiry-list-title">
+                  <p class="inquiry-list-title-secret">비밀글입니다.</p>
+                  <img src="./assets/icon/secret_icon.png" alt="" />
+                </div>
+                <span class="inquiry-list-who">김*진</span>
+                <span class="inquiry-list-day">2022.09.13</span>
+                <span
+                  class="inquiry-list-answer-state inquiry-list-answer-complete"
+                  >답변완료</span
+                >
+              </li>
+              <li>
+                <div class="inquiry-list-title">
+                  <p class="inquiry-list-title-secret">비밀글입니다.</p>
+                  <img src="./assets/icon/secret_icon.png" alt="" />
+                </div>
+                <span class="inquiry-list-who">김*진</span>
+                <span class="inquiry-list-day">2022.08.30</span>
+                <span class="inquiry-list-answer-complete">답변완료</span>
+              </li>
+              <li>
+                <div class="inquiry-list-title">
+                  <p class="inquiry-list-title-secret">비밀글입니다.</p>
+                  <img src="./assets/icon/secret_icon.png" alt="" />
+                </div>
+                <span class="inquiry-list-who">김*진</span>
+                <span class="inquiry-list-day">2022.08.12</span>
+                <span class="inquiry-list-answer-complete">답변완료</span>
+              </li>
+              <li>
+                <div class="inquiry-list-title">
+                  <p class="inquiry-list-title-secret">비밀글입니다.</p>
+                  <img src="./assets/icon/secret_icon.png" alt="" />
+                </div>
+                <span class="inquiry-list-who">김*진</span>
+                <span class="inquiry-list-day">2022.07.23</span>
+                <span class="inquiry-list-answer-complete">답변완료</span>
+              </li>
+            </ul>
+            <div class="pagination">
+              <ul class="pagination-modal">
+                <li>
+                  <button class="inquiry-prev">
+                    <img src="./assets/icon/prev_disabled.png" alt="" />
+                  </button>
+                </li>
+                <li>
+                  <button class="inquiry-next">
+                    <img src="./assets/icon/next_activated.png" alt="" />
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </section>
       </section>
     </main>
     <footer>

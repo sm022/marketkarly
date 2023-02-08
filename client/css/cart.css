@@ -1,11 +1,27 @@
 @import url(./style.css);
+
+body {
+  display: block;
+  font-family: 'Pretendard', 'Noto Sans', 'malgun gothic', AppleGothic, dotum, sans-serif;
+}
+.a11y-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
 main {
   width: 1050px;
   margin: 0px auto;
+  height: 100%;
   padding-bottom: 80px;
   min-width: 1050px;
+  min-height: 1075px;
   font-size: 1rem;
   font-family: fontello;
+  margin-bottom: 80px;
 }
 
 button {
@@ -23,10 +39,11 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding: 50px 0px 48px;
   font-size: 1.75rem;
   font-weight: 500;
   text-align: center;
+  margin-top: 50px;
 }
 
 .is-checked-false {
@@ -56,13 +73,13 @@ button {
   width: 30px;
   height: 30px;
 }
+
 /* 장바구니 상품 리스트  */
 .list {
   border-top: 1px solid #212121;
 }
 .cart-list {
   width: 742px;
-  height: 292px;
   display: flex;
   flex-direction: column;
   margin-right: 24px;
@@ -117,7 +134,7 @@ ul .list-item {
 .product-count {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border: 0.0625rem solid var(--gray-100);
   border-radius: 0.25rem;
   width: 90px;
@@ -125,18 +142,20 @@ ul .list-item {
 }
 .product-count button {
   border: none;
+  width: 30px;
+  height: 30px;
   background-color: transparent;
 }
 .product-minus-btn img,
 .product-plus-btn img {
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
 }
 .count {
-  width: 31px;
+  /* padding: 0 10px; */
   text-align: center;
-  font-size: 0.875rem;
-  line-height: 28px;
+  font-size: 1rem;
+  line-height: 22px;
 }
 
 /* 리스트 안의 상품 가격 표시 */
@@ -157,13 +176,26 @@ ul .list-item {
   text-decoration: line-through;
 }
 
-/* 결제 폼  */
+/* 전체 결제 폼  */
+.cradit-wrapper {
+  position: relative;
+  min-height: 942px;
+}
 
 .cradit {
-  /* background-color: darkturquoise; */
   width: 284px;
   padding-top: 60px;
 }
+
+@supports (position: sticky) or (position: -webkit-sticky) {
+  .is-sticky {
+    position: -webkit-sticky; /* 사파리 브라우저 지원 */
+    position: sticky;
+    top: 20px;
+  }
+}
+
+/* 주소 */
 .location {
   padding: 23px 19px 20px;
   border-width: 1px 1px 0px;
@@ -182,8 +214,7 @@ ul .list-item {
 .location-mark img {
   width: 20px;
   height: 20px;
-  padding-right: 5px;
-  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 /*  배송지 주소 */
@@ -231,15 +262,21 @@ ul .list-item {
   flex-direction: column;
   padding-top: 18px;
 }
+
 .price-unit {
   font-weight: 600;
   margin-left: 2px;
+  font-size: 16px;
 }
 
 .total-up {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.total-number {
+  font-weight: 700;
+  font-size: 1.7769rem;
 }
 .total-down {
   margin-top: 16px;

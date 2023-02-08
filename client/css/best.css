@@ -1,0 +1,677 @@
+@import url(./theme.css);
+@import url(./reset.css);
+@import url(./fonts.css);
+
+/* 숨김 콘텐츠*/
+.a11y-hidden,
+legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+.best-container {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* 효과 삭제 관련 부분시작 */
+/* 카테고리 details 앞머리 삭제 */
+details summary::marker {
+  content: "";
+}
+
+/* 사파리 버전도 삭제?! 잘모르겠음 된건지 */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 효과 삭제 부분입니다. */
+/* 리스트 앞에 점 모양 삭제 */
+li {
+  list-style-type: none;
+}
+
+/* 링크태그 밑줄 제거 및 색상 검정색으로변경 */
+a {
+  text-decoration-line: none;
+  color: black;
+}
+
+/* 효과관련 삭제 부분 끝 */
+
+/* 베스트 전체 레이아웃 */
+.best-container {
+  /* background-color: antiquewhite; */
+}
+
+/* h3 베스트 제목 */
+.best-title {
+  /* background-color: lightcoral; */
+  /* font-family: Pretendard; */
+  font-size: 1.3125rem;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 47px 0;
+}
+
+/* h3 제외 필터와 상품리스트 레이아웃 */
+.best-product {
+  display: flex;
+  flex-wrap: nowrap;
+  /* background-color: lightcoral; */
+}
+
+/* 필터링 전체 레이아웃 */
+.best-filter-container {
+  /* background-color: aqua; */
+  /* margin-right: 47px; */
+  /* margin: 0; */
+}
+
+/* 필터링 초기화 head*/
+.best-filter-reset {
+  /* background-color: lightseagreen; */
+  display: flex;
+  justify-content: space-between;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--content);
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 0;
+  gap: 8px;
+  /* width: 192px; */
+  width: 220px;
+  height: 24px;
+  border-bottom: 1px solid var(--gray-300);
+  line-height: 150%;
+  color: var(--content);
+}
+
+/* 필터 - 초기화버튼 */
+.reset-btn {
+  margin-top: 4px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.625rem;
+  line-height: 160%;
+  color: var(--gray-300);
+}
+
+/* 카테고리 리스트별 버튼크기 설정 변경 성공 */
+summary {
+  padding: 13px 0;
+  align-items: center;
+}
+/* 카테고리 리스트들 밑줄 효과 */
+details {
+  border-bottom: 1px var(--gray-300) solid;
+  /* padding: 13px 0; */
+}
+
+details summary img {
+  transition: 0.5s;
+}
+
+details[open] summary img {
+  transform: rotate(-180deg);
+}
+
+/* summary img{
+  width: 8px;
+  height: 4px; */
+/* transform:rotate(180deg); */
+/* z-index: 1px; */
+
+/* summary img:hover{
+  transform:rotate(180deg);
+} */
+
+/* 카테고리 옆에 */
+/* .category-ul li::after {
+  content: "";
+  background-image: url(../assets/icon/Direction=Down.png);
+} */
+
+.category.ul {
+  /* margin-top: 22px; */
+  /* transition: 0.5s; */
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--content);
+  /* padding: 13px 0; */
+  /* margin-bottom: 4px; */
+  /* padding: 0; */
+}
+
+/*---------- 카테고리 리스트 열었을 때 리스트 체크박스 ------------ */
+/*----- 체크박스 변경 시도중 시작------- */
+
+/* 어느순간 베스트 레이아웃 무너짐 이유 몰라 짱난다 */
+/* ㄴ100퍼센트로 키우니까 멀쩡해짐 ;; 뻘쭘 */
+
+/* 체크표시 구현완료 but 글씨가 이미지 크기까지만 입력되고 아래로 출력 됨 */
+/* 쫌만 더 하면 리스트까진 될 거 같음 */
+/* 내가 개발자 도구로 찾아본 글씨가 염병하는 이유
+글씨가 span태그인데 라벨에 감싸져있어서 크기가 같이 줄어들어버림 */
+/* 디스플레이 인라인블록 주면 글씨가 아이콘 크기처럼 줄바뀜됨 */
+/* 포지션을 글자랑 체크박스에 줘야하나..? */
+/* 너무 안자서 짜증나니까 자고 일어나서 해보자 */
+
+input[type="checkbox"] + label {
+  /* display: inline-block; */
+  cursor: pointer;
+  width: 23px;
+  height: 23px;
+  background: url("../assets/icon/isChecked=false.png") no-repeat 0 0px /
+    contain;
+}
+
+input[type="checkbox"]:checked + label {
+  background: url("../assets/icon/isChecked=true.png") no-repeat 0 1px / contain;
+}
+
+input[type="checkbox"] {
+  display: none;
+  /* cursor:pointer; */
+}
+
+/* input[type="checkbox"]{
+  display: none;
+}
+
+input[id="check1"]:checked + label::after{
+  content: "";
+  background-image: url(../assets/icon/isChecked=false.png);
+  width: 23px;
+  height: 23px;
+} */
+/* 위에 방금 꺼 */
+
+/* 여기 무너지나 전체화면 다시해보기 */
+/*  ㅇㅇ똑같이 무너짐 */
+/* input[type="checkbox"]{
+  display: none;
+}
+  input[type="checkbox"] + label{
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    border:3px solid #707070;
+    position: relative;
+  }
+input[id="check1"]:checked + label::after{
+    content:"";
+    font-size: 25px;
+    width: 23px;
+    height: 23px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top:0;
+} */
+
+/* ---------체크박스 변경 시도 끝 -----------------*/
+
+.category-ul li {
+  /* transition: 0.5s; */
+
+  margin-top: 22px;
+  /* background-color: lightseagreen; */
+  /* padding: 12px; */
+  /* 패딩줘도 클릭범위가 늘어나진 않네유 */
+}
+
+.category-ul li span {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--content);
+  padding-left: 30px;
+}
+
+/* .category-ul li span을 스팬 앞에 붙이니까 갑자기 되네? */
+.category-ul li span.list-item-count {
+  width: 5px;
+  height: 16px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 160%;
+  padding-left: 4px;
+  /* identical to box height, or 16px */
+  color: var(--gray-300);
+}
+
+/* 질문 샐러드 옆 숫자 회식깔로 안바뀜 왜? */
+/* .category-ul li.list-item-count { */
+/* width: 6px;
+  height: 19px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: .7502rem;
+  line-height: 160%;
+  color: var(--gray-300); */
+/* margin-top: 4px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: .625rem;
+  line-height: 160%;
+  color: var(--gray-300); */
+/* } */
+
+/* 카테고리 li 영역어디까지인지 확인 */
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Pretendard";
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--content);
+  /* padding:14px 0; */
+}
+
+/* 보라님이 만나서 해야하는 거임 이거 아님 */
+/* summary button{
+  width: 19px;
+  border: 0px;
+  height: 0px !important;
+  background-image: url(../assets/icon/Direction=Down.png);
+  background-repeat: no-repeat;
+  padding: 18px 0 0 0;
+  line-height: 24px;
+  
+} */
+
+/* summary button::before{
+  width: 19px;
+  border: 0;
+  height: 0 !important;
+  background-image: url(../assets/icon/Direction=Up.png);
+  background-repeat: no-repeat;
+  padding: 18px 0 0 0;
+  line-height: 24px;
+  background-color: white;
+} */
+
+.category-more {
+  /* width: 66px;
+  height: 18px; */
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.7502rem;
+  /* line-height: 150%; */
+  color: var(--gray-300);
+  background-color: var(--white);
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0px 12px 0px;
+  margin-bottom: 10px;
+  width: 220px;
+  height: 42px;
+}
+
+.category-more::after {
+  display: inline-block;
+  content: "";
+  width: 19px;
+  border: 1px;
+  height: 14px;
+  background-image: url(../assets/icon/Direction=Right.png);
+  background-repeat: no-repeat;
+  line-height: 24px;
+}
+
+/* 애프터 왜 안먹지요?
+    ㄴ 수정 완료 위에 애프터 코드있심
+     */
+/* .category-more ::after {
+  content: "";
+  display: inline;
+  height: 12.6px;
+  width: 12.6px;
+} */
+
+.is-checked-false {
+  color: var(--gray-200);
+}
+
+/* 리스트 끝입니다 */
+
+/* 섹션 베스트 상품  */
+.food-container {
+  margin-left: 47px;
+  width: 783px;
+}
+
+/* 상품갯수 및 네비게이션 */
+.food-nav-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 20px 0;
+}
+
+/* 네비게이션 좌측 총 갯수 부분 */
+.food-total {
+  width: 62px;
+  height: 24px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 150%;
+}
+
+/* 네비게이션 우측 네비게이션 리스트(추천순,신상품..등) */
+.food-nav {
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  display: flex;
+  flex-direction: row;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  /* cursor:pointer; */
+  /* line-height: 150%; */
+  color: var(--gray-300);
+}
+
+/* 푸드 네비게이션 추천순 검정색으로 변경 */
+.food-nav > li:first-child {
+  color: var(--black);
+  position: relative;
+  padding-right: 20px;
+  /* cursor:pointer; */
+}
+
+/* 푸드 네비게이션 추천순 우측 물음표 띄우기 */
+.food-nav li:nth-child(1)::after {
+  background: url(../assets/icon/question_mark.png) no-repeat 0px 0px;
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 20px;
+  margin-left: 4px;
+  position: absolute;
+}
+
+/* 첫번째 요소 빼고 before 가상요소 삽입 */
+.food-nav li:not(:nth-child(1))::before {
+  content: "|";
+  height: 10px;
+  width: 1px;
+  left: 68px;
+  top: 7px;
+  border-radius: 0px;
+  margin-right: 8px;
+  /* cursor:pointer; */
+  /* margin-bottom: 8px; */
+}
+
+.food-nav li:not(:nth-child(1)) {
+  /* cursor:pointer; */
+}
+
+.nav-span {
+  cursor: pointer;
+}
+
+/*-------- 상품리스트의 시작부분-------- */
+/* 상품리스트 */
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.product {
+  position: relative;
+}
+
+/* 상품 이미지들 크기 조정 5개 */
+/* 유부호만두 */
+.product-rksk {
+  width: 249px;
+  height: 320px;
+}
+
+/* 탱탱쫄면 */
+.product-ekfk {
+  width: 249px;
+  height: 320px;
+}
+
+/* 홍대주꾸미 */
+.product-akqk {
+  width: 249px;
+  height: 320px;
+}
+
+/* 소갈비찜 */
+.product-tkwk {
+  width: 249px;
+  height: 320px;
+}
+
+/* 한돈삼겹베이컨 */
+.product-ckzk {
+  width: 249px;
+  height: 320px;
+}
+
+/* 장바구니 이미지 부모요소 */
+.product-img-wrap {
+  position: relative;
+  /* gap: 18px; */
+  /* margin : 20px 18px 18px 16px ; */
+  /* padding: 0; */
+}
+
+/* .tangtang {
+  margin-bottom: 16px;
+}
+
+.sun-cushion{
+  margin-bottom: 18px;
+}
+
+.baby-cleanser{
+  margin-bottom:18px;
+}  */
+
+/* 장바구니 이미지 버튼쨰로 옮김 */
+.cart-icon-btn {
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 15px;
+  top: 258px;
+}
+
+/* 처음 동현 */
+/* .cart-icon {
+  position: absolute;
+  right: 15px;
+  top: 258px;
+  /* z-index: 1; 
+} */
+
+.delivery-info {
+  color: var(--gray-400);
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+  margin-top: 18px;
+}
+
+.product-name {
+  color: var(--content);
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 1.3125rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.sale-price {
+  display: inline-block;
+  font-size: 1.3125rem;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.sale-percent {
+  display: inline-block;
+  color: var(--accent-yellow);
+  font-weight: 600;
+  font-size: 1.3333rem;
+  line-height: 150%;
+  margin-right: 8px;
+}
+
+.product-info {
+  margin-bottom: 8px;
+}
+
+.del-price {
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.product-info-explain {
+  color: var(--gray-400);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.box-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  gap: 8px;
+  width: 200px;
+  height: 26px;
+  /* margin-top: 0; */
+  margin-bottom: 50px;
+}
+
+/* 칼리온리박스 클래스명 나중에 바꾸기 */
+.kalry-only {
+  background-color: var(--gray-100);
+
+  color: var(--primary);
+
+  align-items: flex-start;
+  padding: 4px;
+  gap: 4px;
+  border-radius: 4px;
+  width: 65px;
+  height: 26px;
+  width: 57px;
+  height: 18px;
+
+  /* Label/Small */
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.7502rem;
+  line-height: 150%;
+}
+
+/* 한정수량박스 클래스명 나중에 바꾸기 */
+.limited-quantity {
+  padding: 4px;
+  gap: 4px;
+  width: 42px;
+  height: 18px;
+  background-color: var(--gray-100);
+  border-radius: 4px;
+
+  /* 한정수량 */
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.7502rem;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+}
+
+.pagination {
+  /* background-color: aqua; */
+  text-align: center;
+  width: 100%;
+}
+
+.pagination-modal {
+  display: flex;
+  justify-content: center;
+  /* width: 8px;
+  height: 15px; */
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--content);
+}
+
+.pagination-modal button {
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: var(--white);
+  border: 1px solid var(--gray-100);
+}
+
+.pagination-modal img {
+  /* align-items: center;   */
+}
+
+/* 색상 적용 코드 */
+
+/* .class{
+  color: var(--gray-400)
+} */

@@ -7,11 +7,12 @@
       "price": 6900,
       "saleRatio": 0.24,
       "salePrice": 5244,
+      "type": "FROZEN",
       "image": {
-        "thumbnail": "ubuho/thumbnail.jpg",
-        "view": "ubuho/detail_view.jpg",
-        "banner": "ubuho/detail_banner.jpg",
-        "info": "ubuho/detail_info.jpg",
+        "thumbnail": "./assets/ubuho/thumbnail.jpg",
+        "view": "./assets/ubuho/detail_view.jpg",
+        "banner": "./assets/ubuho/detail_banner.jpg",
+        "info": "./assets/ubuho/detail_info.jpg",
         "alt": "유부호 만두"
       },
       "stock": 3
@@ -23,11 +24,12 @@
       "price": 4980,
       "saleRatio": 0,
       "salePrice": 0,
+      "type": "NORMAL",
       "image": {
-        "thumbnail": "tangtang/thumbnail.jpg",
-        "view": "tangtang/detail_view.jpg",
-        "banner": "tangtang/detail_banner.jpg",
-        "info": "tangtang/detail_info.jpg",
+        "thumbnail": "./assets/tangtang/thumbnail.jpg",
+        "view": "./assets/tangtang/detail_view.jpg",
+        "banner": "./assets/tangtang/detail_banner.jpg",
+        "info": "./assets/tangtang/detail_info.jpg",
         "alt": "풀무원 탱탱쫄면"
       },
       "stock": 10
@@ -39,11 +41,12 @@
       "price": 7900,
       "saleRatio": 0.13,
       "salePrice": 6800,
+      "type": "FROZEN",
       "image": {
-        "thumbnail": "jukkumi/thumbnail.jpg",
-        "view": "jukkumi/detail_view.jpg",
-        "banner": "jukkumi/detail_banner.jpg",
-        "info": "jukkumi/detail_info.jpg",
+        "thumbnail": "./assets/jukkumi/thumbnail.jpg",
+        "view": "./assets/jukkumi/detail_view.jpg",
+        "banner": "./assets/jukkumi/detail_banner.jpg",
+        "info": "./assets/jukkumi/detail_info.jpg",
         "alt": "홍대 주꾸미"
       },
       "stock": 8
@@ -55,11 +58,12 @@
       "price": 29800,
       "saleRatio": 0,
       "salePrice": 0,
+      "type": "COLD",
       "image": {
-        "thumbnail": "kangnam/thumbnail.jpg",
-        "view": "kangnam/detail_view.jpg",
-        "banner": "kangnam/detail_banner.jpg",
-        "info": "kangnam/detail_info.jpg",
+        "thumbnail": "./assets/kangnam/thumbnail.jpg",
+        "view": "./assets/kangnam/detail_view.jpg",
+        "banner": "./assets/kangnam/detail_banner.jpg",
+        "info": "./assets/kangnam/detail_info.jpg",
         "alt": "강남면옥 소갈비찜"
       },
       "stock": 2
@@ -71,14 +75,100 @@
       "price": 4500,
       "saleRatio": 0.25,
       "salePrice": 3375,
+      "type": "COLD",
       "image": {
-        "thumbnail": "bacon/thumbnail.jpg",
-        "view": "bacon/detail_view.jpg",
-        "banner": "bacon/detail_banner.jpg",
-        "info": "bacon/detail_info.jpg",
+        "thumbnail": "./assets/bacon/thumbnail.jpg",
+        "view": "./assets/bacon/detail_view.jpg",
+        "banner": "./assets/bacon/detail_banner.jpg",
+        "info": "./assets/bacon/detail_info.jpg",
         "alt": "칼리 한돈 삼겹 베이컨"
       },
       "stock": 13
+    },
+    {
+      "id": "product-rice",
+      "name": "땅끝 해남 쌀 10kg",
+      "description": "해남에서 온 건강한 밥맛",
+			"price": 29900,
+      "saleRatio": 0,
+      "salePrice": 0,
+      "type": "NORMAL",
+      "image": {
+        "thumbnail": "./assets/rice/thumbnail.jpg",
+        "view": "./assets/rice/detail_view.jpg",
+        "banner": "./assets/rice/detail_banner.jpg",
+        "info": "./assets/rice/detail_info.jpg",
+        "alt": "땅끝 해남 쌀"
+      },
+      "stock": 12
+    },
+{
+      "id": "product-vita",
+      "name": "[덴프스] 트루바이타민 (30일분)",
+      "description": "본질에 충실한 비타민",
+      "price": 65000,
+      "saleRatio": 0.62,
+      "salePrice": 24700,
+      "type": "NORMAL",
+      "image": {
+        "thumbnail": "./assets/vitamin/thumbnail.jpg",
+        "view": "./assets/vitamin/detail_view.jpg",
+        "banner": "./assets/vitamin/detail_banner.jpg",
+        "info": "./assets/vitamin/detail_info.jpg",
+        "alt": "덴프스 트루바이타민"
+      },
+      "stock": 7
+    },
+{
+      "id": "product-vien",
+      "name": "[오뗄블랙라벨] 제주돼지로 만든 비엔나 소시지 250g",
+      "description": "제주돼지로 만든 비엔나 소세지",
+			"price": 4400,
+      "saleRatio": 0,
+      "salePrice": 0,
+      "type": "COLD",
+      "image": {
+        "thumbnail": "./assets/vienna/thumbnail.jpg",
+        "view": "./assets/vienna/detail_view.jpg",
+        "banner": "./assets/vienna/detail_banner.jpg",
+        "info": "./assets/vienna/detail_info.jpg",
+        "alt": "오뗄블랙라벨 제주돼지로 만든 비엔나 소시지"
+      },
+      "stock": 5
+    },
+{
+      "id": "product-shin",
+      "name": "향기가득 샤인머스켓 2kg",
+      "description": "입안 가득 퍼지는 과즙과 향기, 달콤함의 극치",
+			"price": 37900,
+      "saleRatio": 0,
+      "salePrice": 0,
+      "type": "COLD",
+      "image": {
+        "thumbnail": "./assets/shine/thumbnail.jpg",
+        "view": "./assets/shine/detail_view.jpg",
+        "banner": "./assets/shine/detail_banner.jpg",
+        "info": "./assets/shine/detail_info.jpg",
+        "alt": "향기가득 샤인머스켓"
+      },
+      "stock": 7
+    },
+{
+      "id": "product-cher",
+      "name": "칠레산 생체리 300g (10row)",
+      "description": "붉은 알알이 들어찬 아삭 달콤함",
+			"price": 37900,
+      "saleRatio": 0.4,
+      "salePrice": 5900,
+      "type": "COLD",
+      "image": {
+        "thumbnail": "./assets/cherry/thumbnail.jpg",
+        "view": "./assets/cherry/detail_view.jpg",
+        "banner": "./assets/cherry/detail_banner.jpg",
+        "info": "./assets/cherry/detail_info.jpg",
+        "alt": "칠레산 생체리"
+      },
+      "stock": 4
     }
   ]
 }
