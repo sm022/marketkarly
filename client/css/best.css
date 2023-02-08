@@ -522,12 +522,13 @@ summary {
   /* z-index: 1; 
 } */
 
-.delivery-info {
+.early-delivery {
   color: var(--gray-400);
   font-weight: 600;
   font-size: 0.75rem;
   margin-bottom: 8px;
   margin-top: 18px;
+  width: 60px;
 }
 
 .product-name {
@@ -602,27 +603,22 @@ summary {
 
   align-items: flex-start;
   padding: 4px;
-  gap: 4px;
   border-radius: 4px;
   width: 65px;
   height: 26px;
-  width: 57px;
-  height: 18px;
-
   /* Label/Small */
 
   font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 0.7502rem;
-  line-height: 150%;
 }
 
 /* 한정수량박스 클래스명 나중에 바꾸기 */
 .limited-quantity {
   padding: 4px;
   gap: 4px;
-  width: 42px;
+  width: 50px;
   height: 18px;
   background-color: var(--gray-100);
   border-radius: 4px;
@@ -633,7 +629,6 @@ summary {
   font-style: normal;
   font-weight: 600;
   font-size: 0.7502rem;
-  line-height: 150%;
   /* identical to box height, or 18px */
 }
 
