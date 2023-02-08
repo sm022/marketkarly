@@ -43,6 +43,7 @@ button {
   font-size: 1.75rem;
   font-weight: 500;
   text-align: center;
+  margin-top: 50px;
 }
 
 .is-checked-false {
@@ -79,7 +80,6 @@ button {
 }
 .cart-list {
   width: 742px;
-  height: 292px;
   display: flex;
   flex-direction: column;
   margin-right: 24px;
@@ -180,7 +180,6 @@ ul .list-item {
 .cradit-wrapper {
   position: relative;
   min-height: 942px;
-  height: 100vh;
 }
 
 .cradit {
@@ -192,7 +191,7 @@ ul .list-item {
   .is-sticky {
     position: -webkit-sticky; /* 사파리 브라우저 지원 */
     position: sticky;
-    top: 4px;
+    top: 20px;
   }
 }
 
@@ -263,15 +262,21 @@ ul .list-item {
   flex-direction: column;
   padding-top: 18px;
 }
+
 .price-unit {
   font-weight: 600;
   margin-left: 2px;
+  font-size: 16px;
 }
 
 .total-up {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.total-number {
+  font-weight: 700;
+  font-size: 1.7769rem;
 }
 .total-down {
   margin-top: 16px;

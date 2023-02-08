@@ -85,9 +85,15 @@ class CartProcessClass {
     });
 
     const shipmentPrice = 3000;
-    this.totalPrice.children[1].childNodes[0].nodeValue = totalPrice;
-    this.totalSalePrice.children[1].childNodes[0].nodeValue = totalSalePrice;
-    this.totalPaymentPrice.children[1].childNodes[0].nodeValue = totalPrice - totalSalePrice + shipmentPrice;
+    this.totalPrice.children[1].childNodes[0].nodeValue = totalPrice
+      .toString()
+      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+    this.totalSalePrice.children[1].childNodes[0].nodeValue = totalSalePrice
+      .toString()
+      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+    this.totalPaymentPrice.children[1].childNodes[0].nodeValue = (totalPrice - totalSalePrice + shipmentPrice)
+      .toString()
+      .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
   }
 
   /**

@@ -20,6 +20,7 @@
     <script src="./js/main.js" type="module"></script>
     <script src="./js/header.js" type="module"></script>
     <script src="./js/product-detail.js" type="module"></script>
+    <script src="./js/product-link.js" type="module"></script>
     <title>Document</title>
   </head>
   <body>
@@ -411,10 +412,7 @@
                     </button>
                     <span>1</span>
                     <button type="button" class="counter-icon plus-button">
-                      <img
-                        src="./assets/icon/Plus=false.png"
-                        alt="수량 더하기"
-                      />
+                      <img src="./assets/icon/Plus=false.png" alt="수량 더하기" />
                     </button>
                   </div>
                   <span class="each-product-price">단품 가격원</span>
@@ -546,32 +544,22 @@
                 <!-- 상품 후기 헤더 -->
                 <div class="product-review-text-header">
                   <!-- 상품 후기 글자 -->
-                  <h2 aria-label="product-review" class="product-review-text">
-                    상품 후기
-                  </h2>
+                  <h2 aria-label="product-review" class="product-review-text">상품 후기</h2>
                   <!-- 후기 작성하기 버튼 -->
                   <div class="product-review-button-area-space">
-                    <button class="product-review-button" type="button">
-                      후기 작성하기
-                    </button>
+                    <button class="product-review-button" type="button">후기 작성하기</button>
                   </div>
                 </div>
                 <!-- 상품 후기 상세 설명 영역 전체-->
                 <ul class="product-review-description-entire">
                   <!-- 상품 후기 상세 설명 -->
+                  <li class="product-review-description">글후기 50원 적립금 혜택이 있어요.</li>
                   <li class="product-review-description">
-                    글후기 50원 적립금 혜택이 있어요.
+                    퍼플, 더퍼플은 2배 적립 (사진 200원, 글 100원) / 주간 베스트 후기로 선정 시 5,000원을 추가 적립
                   </li>
+                  <li class="product-review-description">후기 작성은 배송완료일로부터 30일 이내 가능합니다.</li>
                   <li class="product-review-description">
-                    퍼플, 더퍼플은 2배 적립 (사진 200원, 글 100원) / 주간 베스트
-                    후기로 선정 시 5,000원을 추가 적립
-                  </li>
-                  <li class="product-review-description">
-                    후기 작성은 배송완료일로부터 30일 이내 가능합니다.
-                  </li>
-                  <li class="product-review-description">
-                    작성하신 후기는 확인 후 적립금이 지급됩니다. (영업일 기준
-                    평균 1~2일 소요)
+                    작성하신 후기는 확인 후 적립금이 지급됩니다. (영업일 기준 평균 1~2일 소요)
                   </li>
                 </ul>
                 <!-- 상품 후기 메인 영역 -->
@@ -584,9 +572,7 @@
                     <div class="product-review-board-upper-area-space">
                       <!-- 추천순&최근등록순 버튼 -->
                       <button class="recommendation-order">추천순</button>
-                      <button class="recent-registration-order">
-                        최근등록순
-                      </button>
+                      <button class="recent-registration-order">최근등록순</button>
                     </div>
                   </li>
                   <!-- 상품 후기 공지 영역 전체 -->
@@ -594,27 +580,21 @@
                     <!-- 상품 후기 공지 영역 -->
                     <span class="product-review-notice">공지</span>
                     <!-- 금주의 베스트 후기 안내 -->
-                    <button class="product-review-notice-button">
-                      금주의 베스트 후기 안내
-                    </button>
+                    <button class="product-review-notice-button">금주의 베스트 후기 안내</button>
                   </li>
                   <!-- 상품 후기 공지 영역 전체-->
                   <li class="product-review-notice-entire">
                     <!-- 상품 후기 공지 영역 -->
                     <span class="product-review-notice">공지</span>
                     <!-- 상품 후기 적립금 정책 안내 -->
-                    <button class="product-review-notice-button">
-                      상품 후기 적립금 정책 안내
-                    </button>
+                    <button class="product-review-notice-button">상품 후기 적립금 정책 안내</button>
                   </li>
                   <!-- 상품 후기 개별 영역 -->
                   <ul class="product-review-separate-area">
                     <!-- 상품 후기 등급 및 베스트 영역 -->
                     <li class="product-review-separate-grade-best">
                       <!-- 상품 후기 등급 및 베스트 영역(공백 포함) -->
-                      <div
-                        class="product-review-separate-grade-best-space-area"
-                      >
+                      <div class="product-review-separate-grade-best-space-area">
                         <!-- 상품 후기 베스트 -->
                         <span class="product-review-best">베스트</span>
                         <!-- 상품 후기 등급 -->
@@ -629,9 +609,7 @@
                         <!-- 상품 후기 메인 영역(공백 포함) -->
                         <h2 class="product-review-bottom-space-area">
                           <!-- 상품 후기 해당 상품 이름 -->
-                          <h3 class="product-review-item-name">
-                            [풀무원] 탱탱쫄면 (4개입)
-                          </h3>
+                          <h3 class="product-review-item-name">[풀무원] 탱탱쫄면 (4개입)</h3>
                         </h2>
                         <!-- 상품 후기 해당 텍스트 영역 -->
                         <p class="product-review-text-area">
@@ -655,9 +633,7 @@
                     <!-- 상품 후기 등급 및 베스트 영역 -->
                     <li class="product-review-separate-grade-best">
                       <!-- 상품 후기 등급 및 베스트 영역(공백 포함) -->
-                      <div
-                        class="product-review-separate-grade-best-space-area"
-                      >
+                      <div class="product-review-separate-grade-best-space-area">
                         <!-- 상품 후기 베스트 -->
                         <span class="product-review-best">베스트</span>
                         <!-- 상품 후기 등급 -->
@@ -672,9 +648,7 @@
                         <!-- 상품 후기 메인 영역(공백 포함) -->
                         <h2 class="product-review-bottom-space-area">
                           <!-- 상품 후기 해당 상품 이름 -->
-                          <h3 class="product-review-item-name">
-                            [풀무원] 탱탱쫄면 (4개입)
-                          </h3>
+                          <h3 class="product-review-item-name">[풀무원] 탱탱쫄면 (4개입)</h3>
                         </h2>
                         <!-- 상품 후기 해당 텍스트 영역 -->
                         <p class="product-review-text-area">
@@ -698,9 +672,7 @@
                     <!-- 상품 후기 등급 및 베스트 영역 -->
                     <li class="product-review-separate-grade-best">
                       <!-- 상품 후기 등급 및 베스트 영역(공백 포함) -->
-                      <div
-                        class="product-review-separate-grade-best-space-area"
-                      >
+                      <div class="product-review-separate-grade-best-space-area">
                         <!-- 상품 후기 베스트 -->
                         <span class="product-review-best">베스트</span>
                         <!-- 상품 후기 등급 -->
@@ -715,9 +687,7 @@
                         <!-- 상품 후기 메인 영역(공백 포함) -->
                         <h2 class="product-review-bottom-space-area">
                           <!-- 상품 후기 해당 상품 이름 -->
-                          <h3 class="product-review-item-name">
-                            [풀무원] 탱탱쫄면 (4개입)
-                          </h3>
+                          <h3 class="product-review-item-name">[풀무원] 탱탱쫄면 (4개입)</h3>
                         </h2>
                         <!-- 상품 후기 해당 텍스트 영역 -->
                         <p class="product-review-text-area">
