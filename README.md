@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=wave&customColorList=0,2,2,5,30&height=250&section=header&text=marketkary%20&fontSize=90&)
+![header](https://capsule-render.vercel.app/api?type=wave&customColorList=0,2,2,5,30&height=250&section=header&text=marketkarly%20&fontSize=90&)
 
 
 </br>
