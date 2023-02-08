@@ -34,23 +34,22 @@
             </button>
           </div>
         </div>
-
         <div class="header-container">
           <h1 class="karly-logo">
             <!-- 접근성은 이미지 속성으로 처리 -->
-            <a href="#"><img src="./assets/icon/karly_logo.png" alt="marketKarly" /></a>
+            <a href="/mainpage.html"><img src="./assets/icon/karly_logo.png" alt="marketKarly" /></a>
           </h1>
           <!-- 텍스트 링크 -->
           <ul class="text-link">
-            <li><a href="#" class="signin">회원가입</a></li>
+            <li><a href="/membership.html" class="signin">회원가입</a></li>
             <li>
               <img src="./assets/icon/bar.png" alt="" />
-              <a href="#" class="login">로그인</a>
+              <a href="/login.html" class="login">로그인</a>
             </li>
             <li>
               <img src="./assets/icon/bar.png" alt="" />
               <div class="customer-center">
-                <a href="#">고객센터</a>
+                <span>고객센터</span>
                 <img src="./assets/icon/Icon_down 1.png" alt="고객센터 열기" />
               </div>
             </li>
@@ -58,13 +57,13 @@
           <!-- 검색창 포함 영역 -->
           <div class="header-main">
             <ul class="karly-category-link">
-              <li><a href="#" class="karly-category-market">마켓칼리</a></li>
+              <li><span class="karly-category-market">마켓칼리</span></li>
               <li>
                 <img src="./assets/icon/bar.png" alt="" />
-                <a class="karly-category-beauty" href="#"
+                <span class="karly-category-beauty"
                   >뷰티칼리
                   <img src="./assets/icon/logo_sup.png" alt="" />
-                </a>
+                </span>
               </li>
             </ul>
             <!-- 검색창 -->
@@ -84,31 +83,19 @@
             <!-- 배송지, 찜목록, 장바구니 이동   -->
             <ul class="icon-link">
               <li>
-                <a href="#"><img src="./assets/icon/Location.png" alt="배송지 설정" width="36px" height="36px" /></a>
+                <span><img src="./assets/icon/Location.png" alt="배송지 설정" width="36px" height="36px" /></span>
               </li>
               <li>
-                <a href="#"><img src="./assets/icon/Heart.png" alt="찜 목록보기" width="36px" height="36px" /></a>
+                <span><img src="./assets/icon/Heart.png" alt="찜 목록보기" width="36px" height="36px" /></span>
               </li>
               <li class="cart-link">
-                <a href="#"
+                <a href="/cart.html"
                   ><img src="./assets/icon/Cart-1.png" alt="장바구니 목록 보기 " width="36px" height="36px"
                 /></a>
                 <!-- cart-number 표시는 is-active 클래스를 추가해주세요 -->
                 <span class="cart-number">1</span>
                 <!-- 장바구니 알림창 띄우기는 is-not-exist 클래스를 제거해주세요 -->
-                <div class="cart-alarm is-not-exist">
-                  <img
-                    src="./assets/tangtang/thumbnail.jpg"
-                    alt="임시이미지"
-                    width="46px"
-                    height="60px"
-                    class="alarm-image"
-                  />
-                  <div class="alarm-text">
-                    <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
-                    <p>장바구니에 상품을 담았습니다.</p>
-                  </div>
-                </div>
+                <div class="cart-alarm is-not-exist"></div>
               </li>
             </ul>
           </div>
@@ -230,92 +217,88 @@
             <!-- 카테고리 상세 메뉴 -->
             <ul class="category-list">
               <li>
-                <a href="#"> <img src="./assets/icon/Type23.png" alt="" width="24px" height="24px" />선물하기</a>
+                <span> <img src="./assets/icon/Type23.png" alt="" width="24px" height="24px" />선물하기</span>
               </li>
               <li>
-                <a href="#"><img src="./assets/icon/Vegetable.png" alt="" width="24px" height="24px" />채소</a>
+                <span><img src="./assets/icon/Vegetable.png" alt="" width="24px" height="24px" />채소</span>
               </li>
               <li>
-                <a href="#"> <img src="./assets/icon/Fruit.png" alt="" width="24px" height="24px" />과일 · 견과 · 쌀</a>
+                <span> <img src="./assets/icon/Fruit.png" alt="" width="24px" height="24px" />과일 · 견과 · 쌀</span>
               </li>
               <li>
-                <a href="#">
-                  <img src="./assets/icon/SeaFood.png" alt="" width="24px" height="24px" />수산 · 해산 · 건어물</a
+                <span>
+                  <img src="./assets/icon/SeaFood.png" alt="" width="24px" height="24px" />수산 · 해산 · 건어물</span
                 >
               </li>
               <li>
-                <a href="#"><img src="./assets/icon/Meet.png" alt="" width="24px" height="24px" />정육 · 계란</a>
+                <span><img src="./assets/icon/Meet.png" alt="" width="24px" height="24px" />정육 · 계란</span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img src="./assets/icon/Cook.png" alt="" width="24px" height="24px" />국 · 반찬 · 메인요리
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#"> <img src="./assets/icon/Salad.png" alt="" width="24px" height="24px" />샐러드 · 간편식 </a>
+                <span> <img src="./assets/icon/Salad.png" alt="" width="24px" height="24px" />샐러드 · 간편식 </span>
               </li>
               <li>
-                <a href="#"> <img src="./assets/icon/Oil.png" alt="" width="24px" height="24px" />면 · 양념 · 오일 </a>
+                <span> <img src="./assets/icon/Oil.png" alt="" width="24px" height="24px" />면 · 양념 · 오일 </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img src="./assets/icon/Coffee.png" alt="" width="24px" height="24px" />생수 · 음료 · 우유 · 커피
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
-                  <img src="./assets/icon/Snack.png" alt="" width="24px" height="24px" />간식 · 과자 · 떡
-                </a>
+                <span> <img src="./assets/icon/Snack.png" alt="" width="24px" height="24px" />간식 · 과자 · 떡 </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img src="./assets/icon/Bread.png" alt="" width="24px" height="24px" />베이커리 · 치즈 · 델리
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#"> <img src="./assets/icon/Health.png" alt="" width="24px" height="24px" />건강식품 </a>
+                <span> <img src="./assets/icon/Health.png" alt="" width="24px" height="24px" />건강식품 </span>
               </li>
               <li>
-                <a href="#"> <img src="./assets/icon/Wine.png" alt="" width="24px" height="24px" />와인 </a>
+                <span> <img src="./assets/icon/Wine.png" alt="" width="24px" height="24px" />와인 </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img src="./assets/icon/Traditional Liquor.png" alt="" width="24px" height="24px" />전통주
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img src="./assets/icon/Detergent.png" alt="" width="24px" height="24px" />생활용품 · 리빙 · 캠핑
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img src="./assets/icon/Cosmetics.png" alt="" width="24px" height="24px" />스킨케어 · 메이크업
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img src="./assets/icon/shampoo.png" alt="" width="24px" height="24px" />헤어 · 바디 · 구강
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#"> <img src="./assets/icon/Food.png" alt="" width="24px" height="24px" />주방용품 </a>
+                <span> <img src="./assets/icon/Food.png" alt="" width="24px" height="24px" />주방용품 </span>
               </li>
               <li>
-                <a href="#">
-                  <img src="./assets/icon/HomeAppliances.png" alt="" width="24px" height="24px" />가전제품
-                </a>
+                <span> <img src="./assets/icon/HomeAppliances.png" alt="" width="24px" height="24px" />가전제품 </span>
               </li>
               <li>
-                <a href="#"> <img src="./assets/icon/Dog.png" alt="" width="24px" height="24px" />반려동물 </a>
+                <span> <img src="./assets/icon/Dog.png" alt="" width="24px" height="24px" />반려동물 </span>
               </li>
               <li>
-                <a href="#">
+                <span>
                   <img src="./assets/icon/Baby.png" alt="" width="24px" height="24px" />베이비 · 키즈 · 완구
-                </a>
+                </span>
               </li>
               <li>
-                <a href="#"> <img src="./assets/icon/Travel.png" alt="" width="24px" height="24px" />여행 · 티켓 </a>
+                <span> <img src="./assets/icon/Travel.png" alt="" width="24px" height="24px" />여행 · 티켓 </span>
               </li>
             </ul>
           </div>
@@ -329,7 +312,7 @@
 
           <div>
             <h2 class="a11y-hidden">검색</h2>
-            <form>
+            <form class="scroll-form">
               <fieldset>
                 <legend>검색 폼</legend>
                 <div class="scroll-form-group">
@@ -342,30 +325,19 @@
               </fieldset>
             </form>
           </div>
-          <ul class="icon-link">
+          <ul class="scroll-icon-link">
             <li>
-              <a href="#"><img src="./assets/icon/Location.png" alt="배송지 설정" /></a>
+              <span><img src="./assets/icon/Location.png" alt="배송지 설정" /></span>
             </li>
             <li class="heart-icon">
-              <a href="#"><img src="./assets/icon/Heart.png" alt="찜" /></a>
+              <span><img src="./assets/icon/Heart.png" alt="찜" /></span>
             </li>
             <li class="cart-link">
-              <a href="#"
+              <a href="/cart.html"
                 ><img src="./assets/icon/Cart-1.png" alt="장바구니 목록 보기 " width="36px" height="36px"
               /></a>
-              <div class="cart-alarm is-not-exist">
-                <img
-                  src="./assets/tangtang/thumbnail.jpg"
-                  alt="임시이미지"
-                  width="46px"
-                  height="60px"
-                  class="alarm-image"
-                />
-                <div class="alarm-text">
-                  <h2>[풀무원] 탱탱쫄면 (4개입)</h2>
-                  <p>장바구니에 상품을 담았습니다.</p>
-                </div>
-              </div>
+              <span class="cart-number">1</span>
+              <div class="cart-alarm is-not-exist"></div>
             </li>
           </ul>
         </div>
@@ -481,7 +453,7 @@
                 <div class="total">
                   <div class="total-up">
                     <span>결제예정금액</span>
-                    <span>${total}<span class="price-unit">원</span></span>
+                    <span class="total-number">${total}<span class="price-unit">원</span></span>
                   </div>
                   <div class="total-down">
                     <span class="accumulate">적립</span>
