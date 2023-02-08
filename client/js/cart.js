@@ -15,8 +15,6 @@ class CartProcessClass {
     // });
   }
 
-  // 각 아이템 가져오기
-
   getFrozenItems() {
     return this.foods.filter((food) => food.type === 'FROZEN');
   }
@@ -243,6 +241,7 @@ class CartProcessClass {
 
         default:
           alert('올바르지 않은 타입의 식품입니다.', food.name);
+          break;
           return;
       }
     });
