@@ -124,6 +124,20 @@ body {
   right: 350px;
 }
 
+/* 이벤트 배너 화살표 버튼 애니메이션 효과 */
+
+
+.button-wrapper {
+  opacity: 0;
+}
+
+.event:hover .button-wrapper{
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+
+
 
 /* ----------------------------------- 메인 ----------------------------------- */
 
