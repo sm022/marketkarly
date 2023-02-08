@@ -14,7 +14,7 @@ const createItem = ({
   },
 } = {}) => {
   return /*html */`
-  <a href="#"  class="item-card swiper-slide" id="${id}">
+  <a href="http://localhost:5500/product-detail.html"  class="item-card swiper-slide" id="${id}">
   <div class="item">
     <p class="item-thumbnail">
       <img src="${image.thumbnail}" 
@@ -46,7 +46,7 @@ const createSaleItem = ({
   },
 } = {}) => {
   return /*html */`
-  <a href="#"  class="item-card swiper-slide" id="${id}">
+  <a href="http://localhost:5500/product-detail.html"  class="item-card swiper-slide" id="${id}">
     <div class="item">
       <p class="item-thumbnail">
         <img src="${image.thumbnail}" alt="${image.alt}" />

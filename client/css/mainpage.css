@@ -104,7 +104,7 @@ body {
 .event-button {
   width: 52px;
   height: 52px;
-  background: url('/client/assets/icon/event_arraow.png') no-repeat;
+  background: url('../assets/icon/event_arraow.png') no-repeat;
   border: 0;
   padding: 50px 0 0 0;
   overflow: hidden;
@@ -259,7 +259,7 @@ body {
 .recommend-item-button {
   width: 60px;
   height: 60px;
-  background: url('/client/assets/icon/White_arrow.png') no-repeat;
+  background: url('../assets/icon/White_arrow.png') no-repeat;
   border: 0;
   padding: 60px 0 0 0;
   overflow: hidden;
@@ -337,7 +337,7 @@ body {
 .sale-item-button {
   width: 60px;
   height: 60px;
-  background: url('/client/assets/icon/White_arrow.png') no-repeat;
+  background: url('../assets/icon/White_arrow.png') no-repeat;
   border: 0;
   padding: 60px 0 0 0;
   overflow: hidden;
@@ -416,14 +416,14 @@ body {
 }
 
 .recent-button-prev {
-  background: url('/client/assets/icon/Direction=Up.png') no-repeat;
+  background: url('../assets/icon/Direction=Up.png') no-repeat;
   position: absolute;
   top: 8px;
   left: 28px;
 }
 
 .recent-button-next {
-  background: url('/client/assets/icon/Direction=Down.png') no-repeat;
+  background: url('../assets/icon/Direction=Down.png') no-repeat;
   position: absolute;
   bottom: 8px;
   left: 28px;
