@@ -15,6 +15,8 @@ class CartProcessClass {
     // });
   }
 
+  // 각 아이템 가져오기
+
   getFrozenItems() {
     return this.foods.filter((food) => food.type === 'FROZEN');
   }
