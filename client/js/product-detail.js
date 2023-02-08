@@ -177,7 +177,7 @@ const cartBubble = getNode(".cart-alarm");
 const onClickMinusHandler = () => {
   let quantity = Number(productQuantity.textContent);
   let each =
-    eachPrice.textContent.length > 12
+    eachPrice.textContent.length > 11
       ? parseInt(eachPrice.textContent.slice(6).split(",").join(""))
       : parseInt(eachPrice.textContent.split(",").join(""));
   let sum = parseInt(totalPrice.textContent.split(",").join(""));
@@ -187,17 +187,17 @@ const onClickMinusHandler = () => {
   }
   // 마이너스 버튼 비활성화 로직 다시 생각
   if (quantity <= 2) {
-    attr(minusImg, "src", "./assets/icon/Minus.png");
+    attr(minusImg, "src", "./assets/icon/Minus=true.png");
   }
   productQuantity.textContent = quantity - 1;
   totalPrice.innerHTML = priceToString(sum - each) + "<small>원</small>";
 };
 const onClickPlusHandler = () => {
-  attr(minusImg, "src", "./assets/icon/Minus_able.png");
+  attr(minusImg, "src", "./assets/icon/Minus=false.png");
   let quantity = Number(productQuantity.textContent);
   // 함수로 분리해보기
   let each =
-    eachPrice.textContent.length > 12
+    eachPrice.textContent.length > 11
       ? parseInt(eachPrice.textContent.slice(6).split(",").join(""))
       : parseInt(eachPrice.textContent.split(",").join(""));
   let sum = parseInt(totalPrice.textContent.split(",").join(""));
