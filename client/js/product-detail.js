@@ -5,6 +5,7 @@ import { addClass, removeClass } from "../lib/dom/css.js";
 import { tiger } from "../lib/utils/tiger.js";
 import { loadStorage } from "../lib/utils/storage.js";
 
+const textLink = getNode(".text-link");
 const productSection = getNode(".product-detail");
 const productTextSection = getNode(".product-detail-text");
 const productDescriptionSection = getNode("#product-description");
@@ -124,6 +125,12 @@ const getRecentItems = async () => {
   return recentItems[0].id;
 };
 
+const getUserData = async () => {
+  let users = await loadStorage("loginUser");
+  if (!users) return false;
+  return true;
+};
+
 const getData = async (productId) => {
   let response = await tiger.get("http://localhost:3000/products");
   let data = await response.data;
@@ -132,6 +139,10 @@ const getData = async (productId) => {
 };
 
 const renderPage = async () => {
+  let user = await getUserData();
+  if (user) {
+    textLink.innerHTML = "<li><span>로그아웃</span></li>";
+  }
   const productId = await getRecentItems();
   console.log(productId);
   const product = await getData(productId);
