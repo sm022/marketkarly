@@ -1,7 +1,7 @@
-import { xhrPromise } from '/client/lib/utils/xhr.js';
-import CartItemDataClass from '/client/lib/data-class/cart-item.data-class.js';
+import { xhrPromise } from '../lib/utils/xhr.js';
+import CartItemDataClass from '../lib/data-class/cart-item.data-class.js';
 import { checkImagePath } from '../lib/constant.js';
-import { getNode, getNodes } from '/client/lib/dom/getNode.js';
+import { getNode, getNodes } from '../lib/dom/getNode.js';
 import { css } from '../lib/dom/css.js';
 import { loadStorage, saveStorage } from '../lib/utils/storage.js';
 
@@ -263,7 +263,7 @@ class CartProcessClass {
    */
   async run() {
     await this.loadFoods();
-    if (new URL(window.location.href).pathname === '/client/cart.html') {
+    if (new URL(window.location.href).pathname === '/cart.html') {
       this.setDefaultFoods();
       this.loadElements();
       this.addFoodsToScreen();
