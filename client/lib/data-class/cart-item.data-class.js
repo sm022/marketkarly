@@ -10,7 +10,7 @@ export default class CartItemDataClass {
     this.name = name;
     this.description = description;
     if (!this.storeType.includes(type)) {
-      alert('올바르지 않은 타입의 아이템이 추가됩니다. 확인 후 추가해주세요.');
+      console.log('올바르지 않은 타입의 아이템이 추가됩니다. 확인 후 추가해주세요.');
     }
     this.type = type;
     this.price = price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');

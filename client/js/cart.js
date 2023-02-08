@@ -1,7 +1,7 @@
-import { xhrPromise } from '/client/lib/utils/xhr.js';
-import CartItemDataClass from '/client/lib/data-class/cart-item.data-class.js';
+import { xhrPromise } from '../lib/utils/xhr.js';
+import CartItemDataClass from '../lib/data-class/cart-item.data-class.js';
 import { checkImagePath } from '../lib/constant.js';
-import { getNode, getNodes } from '/client/lib/dom/getNode.js';
+import { getNode, getNodes } from '../lib/dom/getNode.js';
 import { css } from '../lib/dom/css.js';
 import { loadStorage, saveStorage } from '../lib/utils/storage.js';
 
@@ -14,8 +14,6 @@ class CartProcessClass {
     //   console.log(a.getPrice().price, b.getPrice().price);
     // });
   }
-
-  // 각 아이템 가져오기
 
   getFrozenItems() {
     return this.foods.filter((food) => food.type === 'FROZEN');
@@ -243,6 +241,7 @@ class CartProcessClass {
 
         default:
           alert('올바르지 않은 타입의 식품입니다.', food.name);
+          break;
           return;
       }
     });
@@ -264,7 +263,7 @@ class CartProcessClass {
    */
   async run() {
     await this.loadFoods();
-    if (new URL(window.location.href).pathname === '/client/cart.html') {
+    if (new URL(window.location.href).pathname === '/cart.html') {
       this.setDefaultFoods();
       this.loadElements();
       this.addFoodsToScreen();
