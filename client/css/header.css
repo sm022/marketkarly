@@ -12,7 +12,7 @@ body {
 }
 
 /* 숨김처리 */
-label,
+.a11y-hidden,
 legend {
   position: absolute;
   width: 1px;
@@ -89,6 +89,13 @@ header {
   padding: 2px 0;
 }
 
+.text-link span {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin: 0 2px;
+  padding: 2px 0;
+  transform: translateX(-10px);
+}
 .signin,
 .login {
   display: inline-block;

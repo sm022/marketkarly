@@ -1,10 +1,9 @@
-footer{
+footer {
   border-top: 1px solid var(--gray-100);
+  margin-top: 96px;
 }
 .footer-inner {
-  /* 임시 마진 */
-  margin-top: 30px;
-  max-width: 1050px; 
+  max-width: 1050px;
   margin: 0 auto;
 }
 
@@ -91,7 +90,7 @@ footer{
   margin-bottom: 28px;
 }
 
-.additional-info span{
+.additional-info span {
   display: inline-block;
   height: 19px;
 }
@@ -146,7 +145,7 @@ address {
 /* footer-bottom */
 .footer-bottom {
   background-color: var(--gray-50);
-  color: var(--gray-400);
+  color: var(--gray-500);
   text-align: center;
   padding: 20px 32px;
 }

@@ -1,0 +1,29 @@
+@import url(./theme.css);
+@import url(./reset.css);
+@import url(./fonts.css);
+
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .content {
+  height: 80vh;
+  min-width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.5);
+  transform: translateY(20%);
+  opacity: 0;
+}

@@ -93,9 +93,17 @@ video {
 }
 
 button {
+  display: inline-block;
+  text-align: center;
   font-size: 1em;
   font-family: inherit;
+  font: inherit;
+  margin: 0;
   cursor: pointer;
+  overflow: visible;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 

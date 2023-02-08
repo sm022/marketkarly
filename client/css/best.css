@@ -12,7 +12,7 @@ legend {
   clip-path: polygon(0 0, 0 0, 0 0);
 }
 
-body{
+.best-container {
   max-width: 1050px;
   margin: 0 auto;
 }
@@ -28,13 +28,11 @@ details summary::-webkit-details-marker {
   display: none;
 }
 
-
 /* 효과 삭제 부분입니다. */
 /* 리스트 앞에 점 모양 삭제 */
 li {
   list-style-type: none;
 }
-
 
 /* 링크태그 밑줄 제거 및 색상 검정색으로변경 */
 a {
@@ -42,16 +40,12 @@ a {
   color: black;
 }
 
-
-
 /* 효과관련 삭제 부분 끝 */
-
 
 /* 베스트 전체 레이아웃 */
 .best-container {
   /* background-color: antiquewhite; */
 }
-
 
 /* h3 베스트 제목 */
 .best-title {
@@ -63,7 +57,6 @@ a {
   letter-spacing: 0em;
   text-align: center;
   margin: 47px 0;
-
 }
 
 /* h3 제외 필터와 상품리스트 레이아웃 */
@@ -85,7 +78,7 @@ a {
   /* background-color: lightseagreen; */
   display: flex;
   justify-content: space-between;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
@@ -100,29 +93,28 @@ a {
   border-bottom: 1px solid var(--gray-300);
   line-height: 150%;
   color: var(--content);
-
 }
 
 /* 필터 - 초기화버튼 */
 .reset-btn {
   margin-top: 4px;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: .625rem;
+  font-size: 0.625rem;
   line-height: 160%;
   color: var(--gray-300);
 }
 
 /* 카테고리 리스트별 버튼크기 설정 변경 성공 */
-summary{
+summary {
   padding: 13px 0;
   align-items: center;
 }
 /* 카테고리 리스트들 밑줄 효과 */
 details {
   border-bottom: 1px var(--gray-300) solid;
-  /* padding: 13px 0; */ 
+  /* padding: 13px 0; */
 }
 
 details summary img {
@@ -136,8 +128,8 @@ details[open] summary img {
 /* summary img{
   width: 8px;
   height: 4px; */
-  /* transform:rotate(180deg); */
-  /* z-index: 1px; */
+/* transform:rotate(180deg); */
+/* z-index: 1px; */
 
 /* summary img:hover{
   transform:rotate(180deg);
@@ -152,7 +144,7 @@ details[open] summary img {
 .category.ul {
   /* margin-top: 22px; */
   /* transition: 0.5s; */
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -176,18 +168,17 @@ details[open] summary img {
 /* 포지션을 글자랑 체크박스에 줘야하나..? */
 /* 너무 안자서 짜증나니까 자고 일어나서 해보자 */
 
-input[type="checkbox"]+label {
+input[type="checkbox"] + label {
   /* display: inline-block; */
-  cursor:pointer;
+  cursor: pointer;
   width: 23px;
   height: 23px;
-  background: url('../assets/icon/isChecked=false.png') no-repeat 0 0px / contain;
-  
+  background: url("../assets/icon/isChecked=false.png") no-repeat 0 0px /
+    contain;
 }
 
-input[type='checkbox']:checked+label {
-  background: url('../assets/icon/isChecked=true.png') no-repeat 0 1px / contain;
- 
+input[type="checkbox"]:checked + label {
+  background: url("../assets/icon/isChecked=true.png") no-repeat 0 1px / contain;
 }
 
 input[type="checkbox"] {
@@ -242,7 +233,7 @@ input[id="check1"]:checked + label::after{
 }
 
 .category-ul li span {
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -255,7 +246,7 @@ input[id="check1"]:checked + label::after{
 .category-ul li span.list-item-count {
   width: 5px;
   height: 16px;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 10px;
@@ -265,10 +256,9 @@ input[id="check1"]:checked + label::after{
   color: var(--gray-300);
 }
 
-
 /* 질문 샐러드 옆 숫자 회식깔로 안바뀜 왜? */
 /* .category-ul li.list-item-count { */
-  /* width: 6px;
+/* width: 6px;
   height: 19px;
   font-family: 'Pretendard';
   font-style: normal;
@@ -276,7 +266,7 @@ input[id="check1"]:checked + label::after{
   font-size: .7502rem;
   line-height: 160%;
   color: var(--gray-300); */
-  /* margin-top: 4px;
+/* margin-top: 4px;
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
@@ -290,8 +280,8 @@ input[id="check1"]:checked + label::after{
 summary {
   display: flex;
   justify-content: space-between;
-  font-family: 'Pretendard';
-  cursor:pointer;
+  font-family: "Pretendard";
+  cursor: pointer;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -323,15 +313,13 @@ summary {
   background-color: white;
 } */
 
-
-
 .category-more {
   /* width: 66px;
   height: 18px; */
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: .7502rem;
+  font-size: 0.7502rem;
   /* line-height: 150%; */
   color: var(--gray-300);
   background-color: var(--white);
@@ -355,9 +343,7 @@ summary {
   background-image: url(../assets/icon/Direction=Right.png);
   background-repeat: no-repeat;
   line-height: 24px;
-
 }
-
 
 /* 애프터 왜 안먹지요?
     ㄴ 수정 완료 위에 애프터 코드있심
@@ -375,14 +361,11 @@ summary {
 
 /* 리스트 끝입니다 */
 
-
 /* 섹션 베스트 상품  */
 .food-container {
   margin-left: 47px;
   width: 783px;
 }
-
-
 
 /* 상품갯수 및 네비게이션 */
 .food-nav-box {
@@ -391,12 +374,11 @@ summary {
   padding: 0 0 20px 0;
 }
 
-
 /* 네비게이션 좌측 총 갯수 부분 */
 .food-total {
   width: 62px;
   height: 24px;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
@@ -410,7 +392,7 @@ summary {
   gap: 8px;
   display: flex;
   flex-direction: row;
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
@@ -420,7 +402,7 @@ summary {
 }
 
 /* 푸드 네비게이션 추천순 검정색으로 변경 */
-.food-nav>li:first-child {
+.food-nav > li:first-child {
   color: var(--black);
   position: relative;
   padding-right: 20px;
@@ -436,9 +418,6 @@ summary {
   height: 20px;
   margin-left: 4px;
   position: absolute;
-
-
-
 }
 
 /* 첫번째 요소 빼고 before 가상요소 삽입 */
@@ -454,29 +433,26 @@ summary {
   /* margin-bottom: 8px; */
 }
 
-.food-nav li:not(:nth-child(1)){
+.food-nav li:not(:nth-child(1)) {
   /* cursor:pointer; */
 }
 
-.nav-span{
-  cursor:pointer;
-  
+.nav-span {
+  cursor: pointer;
 }
-
 
 /*-------- 상품리스트의 시작부분-------- */
 /* 상품리스트 */
 
-.product-container{
+.product-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
-.product{
+.product {
   position: relative;
 }
-
 
 /* 상품 이미지들 크기 조정 5개 */
 /* 유부호만두 */
@@ -509,7 +485,6 @@ summary {
   height: 320px;
 }
 
-
 /* 장바구니 이미지 부모요소 */
 .product-img-wrap {
   position: relative;
@@ -530,15 +505,13 @@ summary {
   margin-bottom:18px;
 }  */
 
-
 /* 장바구니 이미지 버튼쨰로 옮김 */
-.cart-icon-btn{
-  background: transparent; 
+.cart-icon-btn {
+  background: transparent;
   border: none;
   position: absolute;
   right: 15px;
   top: 258px;
-  
 }
 
 /* 처음 동현 */
@@ -549,15 +522,12 @@ summary {
   /* z-index: 1; 
 } */
 
-
-
-
 .delivery-info {
   color: var(--gray-400);
   font-weight: 600;
-  font-size: .75rem;
+  font-size: 0.75rem;
   margin-bottom: 8px;
-  margin-top: 18px
+  margin-top: 18px;
 }
 
 .product-name {
@@ -593,30 +563,24 @@ summary {
   margin-right: 8px;
 }
 
-
 .product-info {
   margin-bottom: 8px;
-  
 }
-
 
 .del-price {
   color: var(--gray-400);
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 400;
   text-align: left;
   margin-bottom: 8px;
-
 }
-
 
 .product-info-explain {
   color: var(--gray-400);
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 400;
   text-align: left;
   margin-bottom: 8px;
-
 }
 
 .box-container {
@@ -632,7 +596,6 @@ summary {
 
 /* 칼리온리박스 클래스명 나중에 바꾸기 */
 .kalry-only {
-
   background-color: var(--gray-100);
 
   color: var(--primary);
@@ -648,16 +611,15 @@ summary {
 
   /* Label/Small */
 
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: .7502rem;
+  font-size: 0.7502rem;
   line-height: 150%;
 }
 
 /* 한정수량박스 클래스명 나중에 바꾸기 */
 .limited-quantity {
-
   padding: 4px;
   gap: 4px;
   width: 42px;
@@ -667,37 +629,34 @@ summary {
 
   /* 한정수량 */
 
-  font-family: 'Pretendard';
+  font-family: "Pretendard";
   font-style: normal;
   font-weight: 600;
-  font-size: .7502rem;
+  font-size: 0.7502rem;
   line-height: 150%;
   /* identical to box height, or 18px */
-
 }
 
-
-
-.pagination{
+.pagination {
   /* background-color: aqua; */
   text-align: center;
   width: 100%;
 }
 
-.pagination-modal{
-  display : flex;
+.pagination-modal {
+  display: flex;
   justify-content: center;
   /* width: 8px;
   height: 15px; */
-  
-  font-family: 'Inter';
+
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   color: var(--content);
 }
 
-.pagination-modal button{
+.pagination-modal button {
   width: 34px;
   height: 34px;
   align-items: center;
@@ -707,11 +666,9 @@ summary {
   border: 1px solid var(--gray-100);
 }
 
-.pagination-modal img{
+.pagination-modal img {
   /* align-items: center;   */
-  
 }
-
 
 /* 색상 적용 코드 */
 

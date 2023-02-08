@@ -1,5 +1,5 @@
-import { getNode } from "../../lib/dom/getNode.js";
-import { loadStorage } from "../../lib/utils/storage.js";
+import { getNode } from "../lib/dom/getNode.js";
+import { loadStorage } from "../lib/utils/storage.js";
 
 const textLink = getNode(".text-link");
 
