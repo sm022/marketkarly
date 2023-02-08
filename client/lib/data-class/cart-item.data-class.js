@@ -207,6 +207,7 @@ export default class CartItemDataClass {
       <img src="./assets/icon/Cancel.png" alt="상품 삭제">
       </button>
       </div>`;
+
     this.element = listItem;
     return listItem;
   }

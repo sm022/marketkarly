@@ -47,7 +47,7 @@ class CartProcessClass {
    */
   async loadFoods() {
     let foods = await loadStorage('foods');
-    if (!foods) {
+    if (!foods || foods.length < 1) {
       foods = await this.getFoodsFromApi();
       if (foods.length < 1) {
         // 데이터가 없는 경우
@@ -55,6 +55,7 @@ class CartProcessClass {
       }
     }
 
+    console.log(foods);
     await saveStorage('foods', foods);
     this.foods = foods.map((food) => new CartItemDataClass(food));
   }
@@ -325,3 +326,13 @@ class CartProcessClass {
 const cartProcessClass = new CartProcessClass();
 await cartProcessClass.run();
 window.cartProcessClass = cartProcessClass;
+
+//데이터 추가 할떄
+//await cartProcessClass.addFoodToCart('food.id')
+//await cartProcessClass.addFoodToCart('product-ckzk') -> 이미 있으면 수량이 추가된다
+
+//데이터 리셋
+//await cartProcessClass.forceLoadFoods()
+
+//데이터 삭제
+//await cartProcessClass.removeFood('product-akqk') -> 삭제됨
