@@ -289,6 +289,7 @@ del {
   position: fixed;
   width: 1050px;
   top: 67px;
+  z-index: 100;
 }
 /* 선택된 링크 스타일 */
 .hyper-link-container a.is-selected {

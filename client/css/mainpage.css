@@ -26,6 +26,7 @@ body {
   width: 1920px;
   margin: 0;
   font-family: "Pretendard", "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+  min-width: 1050px; 
 }
 
 /* 레이아웃 */
@@ -103,7 +104,7 @@ body {
 .event-button {
   width: 52px;
   height: 52px;
-  background: url('/client/assets/icon/event_arraow.png') no-repeat;
+  background: url('../assets/icon/event_arraow.png') no-repeat;
   border: 0;
   padding: 50px 0 0 0;
   overflow: hidden;
@@ -123,6 +124,20 @@ body {
   right: 350px;
 }
 
+/* 이벤트 배너 화살표 버튼 애니메이션 효과 */
+
+
+.button-wrapper {
+  opacity: 0;
+}
+
+.event:hover .button-wrapper{
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+
+
+
 
 /* ----------------------------------- 메인 ----------------------------------- */
 
@@ -132,7 +147,7 @@ body {
 .main {
   display: flex;
   flex-flow: row wrap;
-
+  
   /* 최근 본 상품 absolute */
   position: relative;
 }
@@ -154,11 +169,6 @@ body {
 
 .item-container {
   height: 429px;
-  
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  gap: 18px;
   margin-top: 28px;
   margin-bottom: 40px;
 }
@@ -254,18 +264,16 @@ body {
 
 .recommend-container {
   width: 1050px;
-  /* margin: 0 auto; */
   margin-left: 435px;
   margin-right: 435px;
 }
-
 
 /* 추천 상품 버튼 */
 
 .recommend-item-button {
   width: 60px;
   height: 60px;
-  background: url('/client/assets/icon/White_arrow.png') no-repeat;
+  background: url('../assets/icon/White_arrow.png') no-repeat;
   border: 0;
   padding: 60px 0 0 0;
   overflow: hidden;
@@ -275,15 +283,15 @@ body {
 
 .recommend-prev-button {
   position: absolute;
-  top: 235px;
-  left: 400px;
+  top: 265px;
+  left: 403px;
   transform: rotate(180deg);
 }
 
 .recommend-next-button {
   position: absolute;
-  top: 235px;
-  right: 330px;
+  top: 265px;
+  right: 331px;
 }
 
 
@@ -292,19 +300,24 @@ body {
 /* 광고 배너 */
 
 .banner {
+  width: 1050px;
   height: 219px;
-  width: 1090px;
+  margin-left: 435px;
+}
+
+.line-banner {
+  width: 1050px;
+  height: 219px;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: center;
 }
-
 
 .line-banner > img {
   height: 139px;
   width: 1050px;
 }
+
 
 
 /* -------------------------------- 특가 상품 목록 -------------------------------- */
@@ -338,7 +351,7 @@ body {
 .sale-item-button {
   width: 60px;
   height: 60px;
-  background: url('/client/assets/icon/White_arrow.png') no-repeat;
+  background: url('../assets/icon/White_arrow.png') no-repeat;
   border: 0;
   padding: 60px 0 0 0;
   overflow: hidden;
@@ -348,15 +361,15 @@ body {
 
 .sale-prev-button {
   position: absolute;
-  top: 235px;
-  left: 400px;
+  top: 230px;
+  left: 403px;
   transform: rotate(180deg);
 }
 
 .sale-next-button {
   position: absolute;
-  top: 235px;
-  right: 330px;
+  top: 230px;
+  right: 331px;
 }
 
 /* --------------------------------- 최근 본 상품 -------------------------------- */
@@ -417,14 +430,14 @@ body {
 }
 
 .recent-button-prev {
-  background: url('/client/assets/icon/Direction=Up.png') no-repeat;
+  background: url('../assets/icon/Direction=Up.png') no-repeat;
   position: absolute;
   top: 8px;
   left: 28px;
 }
 
 .recent-button-next {
-  background: url('/client/assets/icon/Direction=Down.png') no-repeat;
+  background: url('../assets/icon/Direction=Down.png') no-repeat;
   position: absolute;
   bottom: 8px;
   left: 28px;
@@ -432,12 +445,3 @@ body {
 
 
 
-
-
-
-
-/* 광고 배너 */
-.banner {
-  height: 219px;
-  width: 1846px;
-}
