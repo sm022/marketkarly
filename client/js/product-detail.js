@@ -12,6 +12,7 @@ const productDetailSection = getNode("#product-detail");
 const eachPrice = getNode(".each-product-price");
 const totalPrice = getNode(".total-price-number");
 const cartSections = getNodes(".cart-alarm");
+const productName = getNode(".product-counter-container p");
 
 const priceToString = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -118,6 +119,11 @@ const cartBubbleTemplate = ({ name, image }) => {
   `;
 };
 
+const getRecentItems = async () => {
+  let recentItems = await loadStorage("recentItems");
+  return recentItems[0].id;
+};
+
 const getData = async (productId) => {
   let response = await tiger.get("http://localhost:3000/products");
   let data = await response.data;
@@ -126,9 +132,9 @@ const getData = async (productId) => {
 };
 
 const renderPage = async () => {
-  // xhr or fetch로 데이터 가져오기
-  // renderTemplate 함수 인자로 데이터 전달
-  const product = await getData("product-ckzk");
+  const productId = await getRecentItems();
+  console.log(productId);
+  const product = await getData(productId);
 
   let imageTemplate = productImageTemplate(product);
   let textTemplate = infoTextTemplate(product);
@@ -144,6 +150,7 @@ const renderPage = async () => {
   insertFirst(cartSections[0], cartTemplate);
   insertFirst(cartSections[1], cartTemplate);
 
+  productName.textContent = product.name;
   eachPrice.innerHTML =
     product.saleRatio === 0
       ? stringEachPrice + "원"
