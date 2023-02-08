@@ -43,12 +43,16 @@ const onScrollHandler = () => {
   if (windowTop > 160 && !containClass(normalHeader, "close")) {
     addClass(normalHeader, "close");
     removeClass(scrollHeader, "close");
-    css(main, "padding-top", "240px");
+    if (window.location.pathname === "/product-detail.html") {
+      css(main, "padding-top", "240px");
+    }
   }
   if (windowTop === 0 && containClass(normalHeader, "close")) {
     addClass(scrollHeader, "close");
     removeClass(normalHeader, "close");
-    css(main, "padding-top", "0");
+    if (window.location.pathname === "/product-detail.html") {
+      css(main, "padding-top", "0");
+    }
   }
 };
 
