@@ -1,9 +1,8 @@
 footer {
   border-top: 1px solid var(--gray-100);
+  margin-top: 96px;
 }
 .footer-inner {
-  /* 임시 마진 */
-  margin-top: 30px;
   max-width: 1050px;
   margin: 0 auto;
 }
