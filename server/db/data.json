@@ -89,7 +89,7 @@
       "id": "product-rice",
       "name": "땅끝 해남 쌀 10kg",
       "description": "해남에서 온 건강한 밥맛",
-			"price": 29900,
+      "price": 29900,
       "saleRatio": 0,
       "salePrice": 0,
       "type": "NORMAL",
@@ -102,7 +102,7 @@
       },
       "stock": 12
     },
-{
+    {
       "id": "product-vita",
       "name": "[덴프스] 트루바이타민 (30일분)",
       "description": "본질에 충실한 비타민",
@@ -119,11 +119,11 @@
       },
       "stock": 7
     },
-{
+    {
       "id": "product-vien",
       "name": "[오뗄블랙라벨] 제주돼지로 만든 비엔나 소시지 250g",
       "description": "제주돼지로 만든 비엔나 소세지",
-			"price": 4400,
+      "price": 4400,
       "saleRatio": 0,
       "salePrice": 0,
       "type": "COLD",
@@ -136,11 +136,11 @@
       },
       "stock": 5
     },
-{
+    {
       "id": "product-shin",
       "name": "향기가득 샤인머스켓 2kg",
       "description": "입안 가득 퍼지는 과즙과 향기, 달콤함의 극치",
-			"price": 37900,
+      "price": 37900,
       "saleRatio": 0,
       "salePrice": 0,
       "type": "COLD",
@@ -153,11 +153,11 @@
       },
       "stock": 7
     },
-{
+    {
       "id": "product-cher",
       "name": "칠레산 생체리 300g (10row)",
       "description": "붉은 알알이 들어찬 아삭 달콤함",
-			"price": 37900,
+      "price": 37900,
       "saleRatio": 0.4,
       "salePrice": 5900,
       "type": "COLD",
@@ -170,5 +170,6 @@
       },
       "stock": 4
     }
-  ]
+  ],
+  "users": []
 }
