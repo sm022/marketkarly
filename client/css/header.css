@@ -12,6 +12,7 @@ body {
 }
 
 /* 숨김처리 */
+.a11y-hidden,
 label,
 legend {
   position: absolute;

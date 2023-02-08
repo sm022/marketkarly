@@ -2,41 +2,8 @@ import { getNode, getNodes } from "../lib/dom/getNode.js";
 import { attr } from "../lib/dom/attr.js";
 import { insertFirst, insertLast } from "../lib/dom/insert.js";
 import { addClass, removeClass } from "../lib/dom/css.js";
-// 임시데이터
-// 할인 하는 상품
-const product = {
-  id: "product-rksk",
-  name: "[대구 반할만떡] 유부호만두",
-  description: "유부로 속을 든든히 채운 군만두",
-  price: 6900,
-  saleRatio: 0.24,
-  salePrice: 5244,
-  image: {
-    thumbnail: "ubuho/thumbnail.jpg",
-    view: "ubuho/detail_view.jpg",
-    banner: "ubuho/detail_banner.jpg",
-    info: "ubuho/detail_info.jpg",
-    alt: "유부호 만두",
-  },
-  stock: 3,
-};
-// 할인 안하는 상품
-// const product = {
-//   id: "product-ekfk",
-//   name: "[풀무원] 탱탱쫄면 (4개입)",
-//   description: "튀기지 않아 부드럽고 매콤한",
-//   price: 4980,
-//   saleRatio: 0,
-//   salePrice: 0,
-//   image: {
-//     thumbnail: "tangtang/thumbnail.jpg",
-//     view: "tangtang/detail_view.jpg",
-//     banner: "tangtang/detail_banner.jpg",
-//     info: "tangtang/detail_info.jpg",
-//     alt: "풀무원 탱탱쫄면",
-//   },
-//   stock: 10,
-// };
+import { tiger } from "../lib/utils/tiger.js";
+import { loadStorage } from "../lib/utils/storage.js";
 
 const productSection = getNode(".product-detail");
 const productTextSection = getNode(".product-detail-text");
@@ -45,16 +12,16 @@ const productDetailSection = getNode("#product-detail");
 const eachPrice = getNode(".each-product-price");
 const totalPrice = getNode(".total-price-number");
 const cartSections = getNodes(".cart-alarm");
+const productName = getNode(".product-counter-container p");
 
 const priceToString = (price) => {
   return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
-const productImageTemplate = () => {
-  const { image } = product;
+const productImageTemplate = ({ image }) => {
   return `
   <img
-    src="./assets/${image.view}"
+    src="./${image.view}"
     alt="${image.alt}"
     width="400px"
     height="500px"
@@ -62,8 +29,13 @@ const productImageTemplate = () => {
   `;
 };
 
-const infoTextTemplate = () => {
-  const { name, description, price, saleRatio, salePrice } = product;
+const infoTextTemplate = ({
+  name,
+  description,
+  price,
+  saleRatio,
+  salePrice,
+}) => {
   const priceTemplate = priceToString(price); //가격 표시 변경하기
   const salePriceTemplate = priceToString(salePrice); //가격 표시 변경하기
   return salePrice === 0
@@ -89,11 +61,10 @@ const infoTextTemplate = () => {
   `;
 };
 
-const detailInfoTextTemplate = () => {
-  const { name, description, image } = product;
+const detailInfoTextTemplate = ({ name, description, image }) => {
   return `
           <img
-            src="./assets/${image.banner}"
+            src="./${image.banner}"
             alt="${image.alt}"
             width="1050px"
             height="670px"
@@ -117,13 +88,12 @@ const detailInfoTextTemplate = () => {
   `;
 };
 
-const detailInfoImageTemplate = () => {
-  const { image } = product;
+const detailInfoImageTemplate = ({ image }) => {
   return `
   <section>
   <h3 class="a11y-hidden">상품 영양 정보</h3>
   <img
-    src="./assets/${image.info}"
+    src="./${image.info}"
     alt="${image.alt}"
     aria-describedby="product-health-info"
     width="1050px"
@@ -133,12 +103,10 @@ const detailInfoImageTemplate = () => {
 `;
 };
 
-const cartBubbleTemplate = () => {
-  const { name, image } = product;
-
+const cartBubbleTemplate = ({ name, image }) => {
   return `
   <img
-  src="./assets/${image.thumbnail}"
+  src="./${image.thumbnail}"
   alt="${image.alt}"
   width="46px"
   height="60px"
@@ -150,14 +118,29 @@ const cartBubbleTemplate = () => {
 </div>
   `;
 };
-const renderPage = () => {
-  // xhr or fetch로 데이터 가져오기
-  // renderTemplate 함수 인자로 데이터 전달
-  let imageTemplate = productImageTemplate();
-  let textTemplate = infoTextTemplate();
-  let productDescriptionTemplate = detailInfoTextTemplate();
-  let productDeatilTemplate = detailInfoImageTemplate();
-  let cartTemplate = cartBubbleTemplate();
+
+const getRecentItems = async () => {
+  let recentItems = await loadStorage("recentItems");
+  return recentItems[0].id;
+};
+
+const getData = async (productId) => {
+  let response = await tiger.get("http://localhost:3000/products");
+  let data = await response.data;
+  let filterProduct = data.find((data) => data.id === productId);
+  return filterProduct;
+};
+
+const renderPage = async () => {
+  const productId = await getRecentItems();
+  console.log(productId);
+  const product = await getData(productId);
+
+  let imageTemplate = productImageTemplate(product);
+  let textTemplate = infoTextTemplate(product);
+  let productDescriptionTemplate = detailInfoTextTemplate(product);
+  let productDeatilTemplate = detailInfoImageTemplate(product);
+  let cartTemplate = cartBubbleTemplate(product);
   let stringEachPrice = priceToString(product.price);
 
   insertFirst(productSection, imageTemplate);
@@ -167,6 +150,7 @@ const renderPage = () => {
   insertFirst(cartSections[0], cartTemplate);
   insertFirst(cartSections[1], cartTemplate);
 
+  productName.textContent = product.name;
   eachPrice.innerHTML =
     product.saleRatio === 0
       ? stringEachPrice + "원"
@@ -193,11 +177,10 @@ const cartBubble = getNode(".cart-alarm");
 const onClickMinusHandler = () => {
   let quantity = Number(productQuantity.textContent);
   let each =
-    eachPrice.textContent.length > 6
+    eachPrice.textContent.length > 12
       ? parseInt(eachPrice.textContent.slice(6).split(",").join(""))
       : parseInt(eachPrice.textContent.split(",").join(""));
   let sum = parseInt(totalPrice.textContent.split(",").join(""));
-  console.log(eachPrice.textContent.length);
 
   if (quantity <= 1) {
     return;
@@ -214,11 +197,12 @@ const onClickPlusHandler = () => {
   let quantity = Number(productQuantity.textContent);
   // 함수로 분리해보기
   let each =
-    eachPrice.textContent.length > 6
+    eachPrice.textContent.length > 12
       ? parseInt(eachPrice.textContent.slice(6).split(",").join(""))
       : parseInt(eachPrice.textContent.split(",").join(""));
   let sum = parseInt(totalPrice.textContent.split(",").join(""));
   productQuantity.textContent = quantity + 1;
+  console.log(eachPrice.textContent);
   totalPrice.innerHTML = priceToString(sum + each) + "<small>원</small>";
 };
 

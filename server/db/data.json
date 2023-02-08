@@ -64,7 +64,7 @@
         "view": "./assets/kangnam/detail_view.jpg",
         "banner": "./assets/kangnam/detail_banner.jpg",
         "info": "./assets/kangnam/detail_info.jpg",
-        "alt": "./assets/강남면옥 소갈비찜"
+        "alt": "강남면옥 소갈비찜"
       },
       "stock": 2
     },
